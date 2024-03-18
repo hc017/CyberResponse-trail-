@@ -1,0 +1,24 @@
+.Navbar_Container{
+    
+}
+.logo{
+    width: 125px;
+    height: 112px;
+    border-radius: 44.5px;
+    margin-right: 80%;
+}
+.CyberSoochna {
+    width: 346px;
+    height: 66px;
+    margin: auto;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: SawarabiMincho;
+    font-size: 42px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #88bdf2;
+  }
