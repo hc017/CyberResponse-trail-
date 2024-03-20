@@ -173,13 +173,7 @@
     color: #fff;
   }
   
-  .Group-36 .Line-1 {
-    width: 1195px;
-    height: 2px;
-    margin: 50px 0 3px -60px;
-    transform: rotate(-359.95deg);
-    background-color: #5b5858;
-  }
+  
   
   .Group-36 .Frame-10 {
     width: 46px;
@@ -397,7 +391,7 @@
 .Group-36 .Line-1 {
   width: 1195px;
   height: 2px;
-  margin: 50px 0 3px -60px;
+  margin: 30px 0 3px -60px;
   transform: rotate(-359.95deg);
   background-color: #5b5858;
 }
@@ -420,9 +414,5 @@
   margin: 9px 45px 12px 10px;
 }
 
-.Group-36 .Frame-7 {
-  width: 46px;
-  height: 49px;
-  margin: 9px 27px 12px 1099px;
-}
+
  
