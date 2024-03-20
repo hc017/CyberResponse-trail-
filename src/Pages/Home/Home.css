@@ -11,19 +11,20 @@
     width: 1440px;
     height: 764px;
     display: flex; /* Change to flexbox for side-by-side layout */
+    flex: 0;
   }
   .leftside_HS{
     position: relative;
-    right:80px;
+    right:50px;
     width: 722px;
     height: 764px;
-    padding:60px 150px 30px 0;
+    padding:60px 0px 30px 0;
     margin: 0 0px 2px 0;
   }
   .hero_CyberSoochna{
     width: 322px;
     height: 55px;
-    margin: 7px 400px 49px 0;
+    margin: 7px 0px 49px 0;
     background-image: linear-gradient(to bottom, #a9e3f4, #62848e);
     font-family: Roboto;
     font-size: 70px;
@@ -124,25 +125,26 @@
   background-color: #67acc1;
 }
 .rightside_HS{
-  display: flex;
   margin: 0;
-  width: 900px;
+  width: 600px;
+}
+.hero_i {
+  height: 742px;
+  width: 750px;
   position: relative;
-  right: 32%;
+}
 
-}
-.hero_i{
-  height: 764px;
-}
-.em{
-  position: relative;
-  right: 169%;
+.em {
   border: 0;
-  top: 45%;
   width: 625px;
   height: 64.2px;
   border-radius: 5px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   color: white;
   background-image: linear-gradient(to right, #111, #431111 22%, #f00 50%, #151515 82%, #431111);
+  position: absolute;
+  top: 54%;
+  left: 75%;
+  transform: translate(-50%, -50%);
 }
+
