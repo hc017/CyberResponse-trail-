@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className="Rectangle-135">
       <div className="navbar-content">
         <img src={logo} className="image-remofgvsfvebg-preview-2" alt="Logo" />
-        <span className="CyberSoochna">CyberSoochna</span>
+        <span className="CyberSoochna-1">CyberSoochna</span>
         <div className="navbartitle_container">
           <button className="complaint-btn">Register a Complaint</button>
           <button className="complaint-btn">Track a Complaint</button>
