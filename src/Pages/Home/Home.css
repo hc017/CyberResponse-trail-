@@ -1,48 +1,9 @@
-.home_container{
-    width: 100%;
-    height: 5000px;
+.Home-Container{
+    width: 1440px;
+    height: 3200px;
+    margin: 0;
+    padding: 0 28px 0 212px;
     flex-grow: 0;
-    padding: 2px 3px 0 0;
     border-radius: 2px;
     background-image: linear-gradient(to bottom, rgba(21, 21, 21, 0.85), #000, rgba(21, 21, 21, 0.89));
   }
-.logo{
-    width: 125px;
-  height: 112px;
-  margin-right:85% ;
-  margin-top: 2px;
-  border-radius: 44.5px;
-}
-.CyberSoochna{
-    position: absolute;
-    top: 2rem;
-    left: 8%;
-    width: 346px;
-    height: 66px;
-    margin-right:80% ;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: SawarabiMincho;
-    font-size: 42px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #88bdf2;
-}
-.Register-a-Complaint{
-    width: 228px;
-    height: 66px;
-    margin: 16px 135px 0 28px;
-    padding: 32px 57px 31px 163px;
-    font-family: Poppins;
-    font-size: 15px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #a4e1f4;
-}
