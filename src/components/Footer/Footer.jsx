@@ -32,7 +32,7 @@ const Footer = () => {
         <img src={Twitter} alt="twitter" className="Frame-9" />
         <img src={LinkedIn} alt="linkedin" className="Frame-10" />
         <div>
-        <div className="CyberSoochna">Cyber Soochna</div>
+        <div className="CyberComponent">Cyber Soochna</div>
         <div className="A-resilient-Framework-for-collecting-and-responding-t-o-digital-crimes-and-frauds">A resilient Framework for collecting and responding to digital crimes and frauds</div>
         <div className="Rising-Threat-National-Concern-Action-Needed">Rising Threat National Concern Action Needed</div>
         </div>
