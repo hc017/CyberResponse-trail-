@@ -65,19 +65,14 @@
   .Group-36 .icc{
     width: 209px;
     height: 80px;
-    margin: -10px 134px 28px 660px;
+    margin: -10px 134px 28px 600px;
   }
   
-  .Group-36 .CyberDost {
-    width: 99.4px;
-    height: 100px;
-    margin: 10px 189.6px 36px 680px;
-  }
   
   .Group-36 .emblem {
     width: 145px;
     height: 120px;
-    margin: -800px 209px 32px 650px;
+    margin: -800px 209px 32px 600px;
   }
  
   .Group-36 .httpswwwmygovin {
@@ -142,11 +137,11 @@
   .Group-36 .Frame-8 {
     width: 46px;
     height: 49px;
-    margin: 9px 45px 12px 10px;
+    margin: 9px 45px 12px 11px;
   }
   
   .Group-36 .Frame-7 {
-    width: 46px;
+    width: 56px;
     height: 49px;
     margin: 9px 27px 12px 980px;
   }
@@ -247,16 +242,11 @@
   background-color: #5b5858;
 }
 
-.Group-36 .icc{
-  width: 209px;
-  height: 80px;
-  margin: -10px 134px 28px 660px;
-}
 
 .Group-36 .CyberDost {
   width: 99.4px;
   height: 100px;
-  margin: 10px 189.6px 36px 680px;
+  margin: 10px 189.6px 36px 625px;
 }
 
 .Group-36 .httpscybercrimegovin {
@@ -337,7 +327,7 @@
 .Group-36 .Line-1 {
   width: 1195px;
   height: 2px;
-  margin: 45px 0 3px -60px;
+  margin: 55px 0 3px -60px;
   transform: rotate(-359.95deg);
   background-color: #5b5858;
 }
