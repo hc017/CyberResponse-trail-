@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import H_img from "./hero -img.png";
+import UsefulLinks from "../../components/UsefuLinks/UsefulLinks";
 
 const Home = () => {
   return (
@@ -45,7 +46,12 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div>
+      <UsefulLinks/>
     </div>
+    </div>
+    
+    
   );
 };
 
