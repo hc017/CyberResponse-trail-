@@ -31,18 +31,34 @@ const Footer = () => {
         <img src={Facebook} alt="facebook" className="Frame-8" />
         <img src={Twitter} alt="twitter" className="Frame-9" />
         <img src={LinkedIn} alt="linkedin" className="Frame-10" />
-        
+        <div>
         <div className="CyberSoochna">Cyber Soochna</div>
         <div className="A-resilient-Framework-for-collecting-and-responding-t-o-digital-crimes-and-frauds">A resilient Framework for collecting and responding to digital crimes and frauds</div>
         <div className="Rising-Threat-National-Concern-Action-Needed">Rising Threat National Concern Action Needed</div>
-
-        <div className="Legal-Information">Legal Information</div>
-        <div className="Accessibility">Accessibility</div>
-        <div className="Cookie-Management">Cookie Management</div>
+        </div>
+        <div>
         <div className="Line-1"></div>
+        </div>
+        <div>
+        <div>
+        <div className="Legal-Information">Legal Information</div>
+        </div>
+        <div>
+        <div className="Accessibility">Accessibility</div>
+        </div>
 
+        <div>
+        <div className="Cookie-Management">Cookie Management</div>
+        </div>
+        </div>
+        <div>
+      <div>
         <div className="Line-2"></div>
+        </div>
+        <div>
         <div className="Line-3"></div>
+        </div>
+        </div>
         
       </div>
     </div>
