@@ -5,5 +5,144 @@
     padding: 0 28px 0 212px;
     flex-grow: 0;
     border-radius: 2px;
-    background-image: linear-gradient(to bottom, rgba(21, 21, 21, 0.85), #000, rgba(21, 21, 21, 0.89));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), #0b0000, rgba(0, 0, 0, 0.89));
   }
+  .hero_section{
+    width: 1440px;
+    height: 764px;
+    display: flex; /* Change to flexbox for side-by-side layout */
+  }
+  .leftside_HS{
+    position: relative;
+    right:80px;
+    width: 722px;
+    height: 764px;
+    padding:60px 150px 30px 0;
+    margin: 0 0px 2px 0;
+  }
+  .hero_CyberSoochna{
+    width: 322px;
+    height: 55px;
+    margin: 7px 400px 49px 0;
+    background-image: linear-gradient(to bottom, #a9e3f4, #62848e);
+    font-family: Roboto;
+    font-size: 70px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero_hd2{
+    width: 722px;
+    height: 67px;
+    margin: 49px 0 42px;
+    background-image: linear-gradient(to bottom, #0080ff, #62848e);
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    
+  }
+  .hero_hd3{
+    width: 540px;
+    height: 47px;
+    margin: 47px 182px 0 0;
+    background-image: linear-gradient(to bottom, #a9e3f4, #62848e);
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .pp{
+    padding-top: 25px;
+  }
+  .hero_sbh{
+    width: 652px;
+    height: 27px;
+    margin: 29px 26px 36px 0;
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #f4f4f4;
+  }
+  .left_bottom{
+    padding-top: 1rem;
+  }
+.report_btn{
+  width: 500px;
+  height: 70px;
+  padding: 0 80.4px 0 48.2px;
+  margin: 1rem;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #5a737a 0%, #68afc4 49%, #5a737a 100%);
+}
+.Report_text{
+  width: 308.7px;
+  height: 70px;
+  margin: 0 0 0 5.6px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #101010;
+}
+.report_btn:hover{
+    width: 502px;
+  height: 72px;
+  padding: 0 80.7px 0 48.4px;
+  border-radius: 10px;
+  background-color: #67acc1;
+}
+.rightside_HS{
+  display: flex;
+  margin: 0;
+  width: 900px;
+  position: relative;
+  right: 32%;
+
+}
+.hero_i{
+  height: 764px;
+}
+.em{
+  position: relative;
+  right: 169%;
+  border: 0;
+  top: 45%;
+  width: 625px;
+  height: 64.2px;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+  background-image: linear-gradient(to right, #111, #431111 22%, #f00 50%, #151515 82%, #431111);
+}

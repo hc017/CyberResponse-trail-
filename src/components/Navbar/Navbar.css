@@ -8,10 +8,18 @@
   .navbar-content {  /* New class for content container */
     display: flex;  /* Enable flexbox for side-by-side layout */
   }  
+  .navcircle{
+    width: 79px;
+    height: 80px;
+    background-color: #151F2B;
+    border-radius: 100%;
+    position: relative;
+    bottom: 1.05rem;
+    right: 0.5rem;
+  }
   .image-remofgvsfvebg-preview-2 {
     width: 79px;
     height: 80px;
-    margin: 0;
   }
   .CyberSoochna-1 {
     position: relative;
@@ -30,7 +38,7 @@
   }
 .navbartitle_container{
     position: relative;
-    left: 15rem;
+    left: 25rem;
 }
   .complaint-btn {
     background-color: transparent;
