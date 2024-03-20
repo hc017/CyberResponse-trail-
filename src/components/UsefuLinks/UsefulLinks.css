@@ -28,7 +28,7 @@
   .Group-107 .ThirdRectangle  {
     width: 208px;
     height: 86px;
-    margin: -160px 31px 740px 680px;
+    margin: -10px 31px 74px 20px;
     border-radius: 10px;
     border: solid 1px #929292;
     background-color: #d9d9d9;
@@ -37,7 +37,7 @@
   .Group-107 .FourthRectangle  {
     width: 208px;
     height: 86px;
-    margin: -830px 31px 74px 950px;
+    margin: -10px 31px 74px 20px;
     border-radius: 10px;
     border: solid 1px #929292;
     background-color: #d9d9d9;
@@ -46,7 +46,7 @@
   .Group-107 .FifthRectangle  {
     width: 208px;
     height: 86px;
-    margin: -160px 0 74px 1220px;
+    margin: -10px 31px 74px 20px;
     border-radius: 10px;
     border: solid 1px #929292;
     background-color: #d9d9d9;
@@ -55,7 +55,7 @@
   .Group-107 .SecondRectangle {
     width: 208px;
     height: 86px;
-    margin: -163px 12px 74px 410px;
+    margin: -10px 31px 74px 20px;
     border-radius: 10px;
     border: solid 1px #929292;
     background-color: #d9d9d9;
@@ -64,43 +64,29 @@
   .Group-107 .FirstRectangle {
     width: 208px;
     height: 86px;
-    margin: 44px 31px 74px 150px;
+    margin: -10px 31px 74px 100px;
     border-radius: 10px;
     border: solid 1px #929292;
     background-color: #d9d9d9;
   }
   
-  .Group-107 .SixEllipse {
-    width: 11px;
-    height: 11px;
-    margin: -70px 0 7px 1000px;
-    background-color: #d9d9d9;
+
+  .Group-107.AllRectangles{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 200%;
   }
-  
-  .Group-107 .SevenEllipse {
-    width: 11px;
-    height: 11px;
-    margin: 704px 7px 0;
-    background-color: #d9d9d9;
+
+  .Group-107.AllBoxes{
+    padding-right: 4000px;
   }
-  
-  .Group-107 .EigthEllipse {
-    width: 11px;
-    height: 11px;
-    margin: 20px 7px 0 -90px;
-    background-color: #eb1c1c;
-  }
-  
-  .Group-107 .NinthEllipse {
-    width: 11px;
-    height: 11px;
-    margin: 7px 9px 0 70px;
-    background-color: #d9d9d9;
-  }
-  
-  .Group-107 .TenthEllipse {
-    width: 11px;
-    height: 11px;
-    margin: 7px 91px 0 9px;
-    background-color: #d9d9d9;
-  }
+
+.FirstRectangle:hover,
+.SecondRectangle:hover,
+.ThirdRectangle:hover,
+.FourthRectangle:hover,
+.FifthRectangle:hover {
+  background-color: #c0c0c0;
+  transform: scale(1.05); /* Change to desired hover background color */
+}
