@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import H_img from "./hero -img.png";
 import UsefulLinks from "../../components/UsefuLinks/UsefulLinks";
+import Playback_video from "./Playback_video/Playback_video";
 
 const Home = () => {
   return (
@@ -39,19 +40,16 @@ const Home = () => {
           </div>
           <div class="Emergency">
             <button className="em">
-              <span class="em_text">
-                IN ANY EMERGENCY CASE CALL 1930
-              </span>
+              <span class="em_text">IN ANY EMERGENCY CASE CALL 1930</span>
             </button>
           </div>
         </div>
       </div>
       <div>
-      <UsefulLinks/>
+        <Playback_video />
+        <UsefulLinks />
+      </div>
     </div>
-    </div>
-    
-    
   );
 };
 
