@@ -1,114 +1,124 @@
-.Home-Container{
-    width: 1440px;
-    height: 3200px;
-    margin: 0;
-    padding: 0 28px 0 212px;
-    flex-grow: 0;
-    border-radius: 2px;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), #0b0000, rgba(0, 0, 0, 0.89));
-  }
-  .hero_section{
-    width: 1440px;
-    height: 764px;
-    display: flex; /* Change to flexbox for side-by-side layout */
-    flex: 0;
-  }
-  .leftside_HS{
-    position: relative;
-    right:50px;
-    width: 722px;
-    height: 764px;
-    padding:60px 0px 30px 0;
-    margin: 0 0px 2px 0;
-  }
-  .hero_CyberSoochna{
-    width: 322px;
-    height: 55px;
-    margin: 7px 0px 49px 0;
-    background-image: linear-gradient(to bottom, #a9e3f4, #62848e);
-    font-family: Roboto;
-    font-size: 70px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .hero_hd2{
-    width: 722px;
-    height: 67px;
-    margin: 49px 0 42px;
-    background-image: linear-gradient(to bottom, #0080ff, #62848e);
-    font-family: Roboto;
-    font-size: 48px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    
-  }
-  .hero_hd3{
-    width: 540px;
-    height: 47px;
-    margin: 47px 182px 0 0;
-    background-image: linear-gradient(to bottom, #a9e3f4, #62848e);
-    font-family: Roboto;
-    font-size: 48px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .pp{
-    padding-top: 25px;
-  }
-  .hero_sbh{
-    width: 652px;
-    height: 27px;
-    margin: 29px 26px 36px 0;
-    font-family: Roboto;
-    font-size: 22px;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #f4f4f4;
-  }
-  .left_bottom{
-    padding-top: 1rem;
-  }
-.report_btn{
-  width: 500px;
-  height: 70px;
-  padding: 0 80.4px 0 48.2px;
-  margin: 1rem;
-  border-radius: 10px;
-  background-image: linear-gradient(to right, #5a737a 0%, #68afc4 49%, #5a737a 100%);
+.Home-Container {
+  width: 100vw;
+  height: 400vh;
+  margin: 0;
+  flex-grow: 0;
+  border-radius: 2px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.85),
+    #0b0000,
+    rgba(0, 0, 0, 0.89)
+  );
 }
-.Report_text{
-  width: 308.7px;
-  height: 70px;
-  margin: 0 0 0 5.6px;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+.hero_section {
+  width: 100vw;
+  height: 100vh;
+  display: flex; /* Change to flexbox for side-by-side layout */
+  flex: 0;
+}
+.leftside_HS {
+  width: 50%;
+  height: 100vh;
+  padding-left: 3.5rem;
+  margin: 0;
+  padding-top: 1.5rem;
+}
+.hero_CyberSoochna {
+  width: 20rem;
+  height: 3rem;
+  margin: 0.4rem 0rem 3rem 0;
+  background-image: linear-gradient(to bottom, #a9e3f4, #62848e);
   font-family: Roboto;
-  font-size: 24px;
+  font-size: 4rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero_hd2 {
+  width: 45.125rem; /* 722px converted to rem */
+  height: 4.1875rem; /* 67px converted to rem */
+  margin: 3.0625rem 0 2.625rem 0; /* Convert px values to rem */
+  background-image: linear-gradient(to bottom, #0080ff, #62848e);
+  font-family: Roboto;
+  font-size: 3rem; /* 48px converted to rem */
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero_hd3 {
+  width: 33.75rem; /* 540px converted to rem */
+  height: 3.0625rem; /* 47px converted to rem */
+  margin: 2.9375rem 11.375rem 0 0; /* Convert px values to rem */
+  background-image: linear-gradient(to bottom, #a9e3f4, #62848e);
+  font-family: Roboto;
+  font-size: 3rem; /* 48px converted to rem */
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pp {
+  padding-top: 1.5625rem; /* 25px converted to rem */
+}
+.hero_sbh {
+  width: 40.75rem; /* 652px converted to rem */
+  height: 1.6875rem; /* 27px converted to rem */
+  margin: 1.8125rem 1.625rem 2.25rem 0; /* Convert px values to rem */
+  font-family: Roboto;
+  font-size: 1.375rem; /* 22px converted to rem */
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #f4f4f4;
+}
+
+.left_bottom {
+  padding-top: 1rem; /* Convert px values to rem */
+}
+
+.report_btn {
+  width: 31.25rem; /* 500px converted to rem */
+  height: 4.375rem; /* 70px converted to rem */
+  padding: 0 5.025rem 0 3.0125rem; /* Convert px values to rem */
+  margin: 1rem; /* Convert px value to rem */
+  border-radius: 0.625rem; /* 10px converted to rem */
+  background-image: linear-gradient(
+    to right,
+    #5a737a 0%,
+    #68afc4 49%,
+    #5a737a 100%
+  );
+}
+
+.Report_text {
+  width: 19.3125rem; /* 308.7px converted to rem */
+  height: 4.375rem; /* 70px converted to rem */
+  margin: 0 0 0 0.35rem; /* Convert px values to rem */
+  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25); /* Convert px values to rem */
+  font-family: Roboto;
+  font-size: 1.5rem; /* 24px converted to rem */
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -117,34 +127,166 @@
   text-align: center;
   color: #101010;
 }
-.report_btn:hover{
-  width: 502px;
-  height: 72px;
-  padding: 0 80.7px 0 48.4px;
-  border-radius: 10px;
-  background-image: linear-gradient(to right, #68afc4 100%, #5a737a 0%, #68afc4 100%);
-}
-.rightside_HS{
-  margin: 0;
-  width: 600px;
-}
-.hero_i {
-  height: 742px;
-  width: 750px;
-  position: relative;
+
+.report_btn:hover {
+  width: 31.375rem; /* 502px converted to rem */
+  height: 4.5rem; /* 72px converted to rem */
+  padding: 0 5.04375rem 0 3.025rem; /* Convert px values to rem */
+  border-radius: 0.625rem; /* 10px converted to rem */
+  background-image: linear-gradient(
+    to right,
+    #68afc4 100%,
+    #5a737a 0%,
+    #68afc4 100%
+  );
 }
 
+.rightside_HS {
+  width: 50%;
+  margin: auto;
+}
+.hero_i {
+  height: 46.375rem; /* 742px converted to rem */
+  width: 45rem; /* 750px converted to rem */
+}
 .em {
   border: 0;
-  width: 625px;
-  height: 64.2px;
-  border-radius: 5px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 39.0625rem; /* 625px converted to rem */
+  height: 4.0125rem; /* 64.2px converted to rem */
+  border-radius: 0.3125rem; /* 5px converted to rem */
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25); /* Convert px values to rem */
   color: white;
-  background-image: linear-gradient(to right, #111, #431111 22%, #f00 50%, #151515 82%, #431111);
-  position: absolute;
-  top: 54%;
-  left: 75%;
+  background-image: linear-gradient(
+    to right,
+    #111,
+    #431111 22%,
+    #f00 50%,
+    #151515 82%,
+    #431111
+  );
   transform: translate(-50%, -50%);
 }
 
+
+@media (max-width: 768px) {
+  .Home-Container {
+    width: 100vw;
+    height: 400vh;
+    margin: 0;
+    flex-grow: 0;
+    border-radius: 0.5vw; /* Convert 2px to vw */
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.85),
+      #0b0000,
+      rgba(0, 0, 0, 0.89)
+    );
+  }
+  
+  .hero_section {
+    width: 100vw;
+    height: 100vh;
+    display: flex; /* Change to flexbox for side-by-side layout */
+    flex: 0;
+  }
+  
+  .leftside_HS {
+    width: 50%;
+    height: 100vh;
+    padding-left: 2.5vw; /* Convert 3.5rem to vw */
+    margin: 0;
+    padding-top: 1.5vh;
+  }
+  
+  .hero_CyberSoochna {
+    width: 6.6667vw; /* Convert 20rem to vw */
+    height: 1.5vh; /* Convert 3rem to vh */
+    margin: 0.4vh 0 3vh 0;
+    font-size: 3.2vw; /* Convert 4rem to vw */
+  }
+  
+  .hero_hd2 {
+    width: 6.0167vw; /* Convert 45.125rem to vw */
+    height: 0.7188vh; /* Convert 4.1875rem to vh */
+    margin: 3.0625vh 0 2.625vh 0;
+    font-size: 2.6667vw; /* Convert 3rem to vw */
+  }
+  
+  .hero_hd3 {
+    width: 4.5vw; /* Convert 33.75rem to vw */
+    height: 0.7188vh; /* Convert 3.0625rem to vh */
+    margin: 2.9375vh 8.6458vw 0 0; /* Convert 11.375rem to vw */
+    font-size: 2.6667vw; /* Convert 3rem to vw */
+  }
+  
+  .pp {
+    padding-top: 0.7813vh; /* Convert 1.5625rem to vh */
+  }
+  
+  .hero_sbh {
+    width: 6.1875vw; /* Convert 40.75rem to vw */
+    height: 0.5938vh; /* Convert 1.6875rem to vh */
+    margin: 1.8125vh 1.625vw 2.25vh 0;
+    font-size: 1.8333vw; /* Convert 1.375rem to vw */
+  }
+  
+  .left_bottom {
+    padding-top: 0.5208vh; /* Convert 1rem to vh */
+  }
+  
+  .report_btn {
+    width: 4.1667vw; /* Convert 31.25rem to vw */
+    height: 0.7813vh; /* Convert 4.375rem to vh */
+    padding: 0 0.6708vw 0 0.4017vw; /* Convert 5.025rem and 3.0125rem to vw */
+    margin: 0.5208vh; /* Convert 1rem to vh */
+    border-radius: 0.5208vw; /* Convert 0.625rem to vw */
+  }
+  
+  .Report_text {
+    width: 2.5542vw; /* Convert 19.3125rem to vw */
+    height: 0.7813vh; /* Convert 4.375rem to vh */
+    margin: 0 0 0 0.2333vw; /* Convert 0.35rem to vw */
+    font-size: 1.6667vw; /* Convert 1.5rem to vw */
+  }
+  
+  .report_btn:hover {
+    width: 4.1917vw; /* Convert 31.375rem to vw */
+    height: 0.8333vh; /* Convert 4.5rem to vh */
+    padding: 0 0.6723vw 0 0.402vw; /* Convert 5.04375rem and 3.025rem to vw */
+    border-radius: 0.5208vw; /* Convert 0.625rem to vw */
+  }
+  
+  .rightside_HS {
+    width: 50%;
+    margin: auto;
+  }
+  
+  .hero_i {
+    height: 80%; /* Keep as percentage */
+    width: 80%; /* Keep as percentage */
+  }
+  
+  .em {
+    border: 0;
+    width: 5.2604vw; /* Convert 39.0625rem to vw */
+    height: 0.5213vh; /* Convert 4.0125rem to vh */
+    border-radius: 0.3125vw; /* Convert 0.3125rem to vw */
+    box-shadow: 0 0.5208vh 0.5208vh 0 rgba(0, 0, 0, 0.25); /* Convert 0.25rem to vh */
+    color: white;
+    background-image: linear-gradient(
+      to right,
+      #111,
+      #431111 22%,
+      #f00 50%,
+      #151515 82%,
+      #431111
+    );
+    transform: translate(-50%, -50%);
+  }
+  
+ 
+
+}
+
+
+/* Add more media queries for other screen sizes as needed */

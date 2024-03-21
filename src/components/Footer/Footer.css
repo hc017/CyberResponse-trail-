@@ -1,14 +1,4 @@
 
-
-  
- .Rectangle-29 {
-    width: 1440px;
-    height: 484px;
-    padding:2px 28px 0 212px;
-    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    background-color: #161616;
-  }
-  
 .image-remofgvsfvebg-preview-1 {
     width: 155px;
     height: 150px;
@@ -148,21 +138,18 @@
 
 
 .Rectangle-29 {
-  width: 1440px;
-  height: 484px;
-  padding:2px 28px 0 212px;
+  width: 100vw;
+  height: 31rem;
   box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: #161616;
 }
 
 .image-remofgvsfvebg-preview-1 {
-  width: 155px;
+  width: 55px;
   height: 150px;
   margin: 35px 57px 0 -100px;
   border-radius: 79px;
 }
-
-
 
 .Group-36 .A-resilient-Framework-for-collecting-and-responding-t-o-digital-crimes-and-frauds {
   width: 541px;

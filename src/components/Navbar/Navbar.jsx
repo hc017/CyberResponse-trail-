@@ -6,10 +6,14 @@ const Navbar = () => {
   return (
     <div className="Rectangle-135">
       <div className="navbar-content">
+        <div className="navC">
         <p className="navcircle">
         <img src={logo} className="image-remofgvsfvebg-preview-2" alt="Logo" />
         </p>
-        <span className="CyberSoochna-1">CyberSoochna</span>
+        </div>
+        <div className="cybers">
+        <p className="CyberSoochna-1">CyberSoochna</p>
+        </div>
         <div className="navbartitle_container">
           <button className="complaint-btn">Register a Complaint</button>
           <button className="complaint-btn">Track a Complaint</button>

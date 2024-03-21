@@ -39,18 +39,8 @@ const Home = () => {
           <div className="hero_img">
             <img className="hero_i" src={H_img} alt="" />
           </div>
-          <div class="Emergency">
-            <button className="em">
-              <span class="em_text">IN ANY EMERGENCY CASE CALL 1930</span>
-            </button>
-          </div>
         </div>
-      </div>
-      <div>
-        <Playback_video />
-        <Banner/>
-        <UsefulLinks />
-      </div>
+      </div>her
     </div>
   );
 };

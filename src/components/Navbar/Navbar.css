@@ -1,62 +1,78 @@
+/* Rectangle-135 */
 .Rectangle-135 {
-    width: 1440px;
-    height: 80px;
-    margin: 0 0 0px;
-    padding: 2px 28px 0 212px;
-    background-color: rgb(0, 0, 0);
-  }
-  .navbar-content {  /* New class for content container */
-    display: flex;  /* Enable flexbox for side-by-side layout */
-  }  
-  .navcircle{
-    width: 79px;
-    height: 80px;
-    background-color: #151F2B;
-    border-radius: 100%;
-    position: relative;
-    bottom: 1.05rem;
-    right: 0.5rem;
-  }
-  .image-remofgvsfvebg-preview-2 {
-    width: 79px;
-    height: 80px;
-  }
-  .CyberSoochna-1 {
-    position: relative;
-    top: 1.2rem;
-    left: 5px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: SawarabiMincho;
-    font-size: 32px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #88bdf2;
-  }
-.navbartitle_container{
-    position: relative;
-    left: 25rem;
+  width: 100vw; /* Maintain full viewport width */
+  height: 4.8rem; /* Keep height consistent */
+  background-color: rgb(0, 0, 0);
 }
-  .complaint-btn {
-    background-color: transparent;
-    margin: 1.5rem;
-    position: relative;
-    top: 0.3rem;
-    font-family: Poppins;
-    font-size: 18px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    border: 0;
-    color: #a4e1f4;
-  }
-  .complaint-btn:hover{
-    color: #88bdf2;
-  }
-  
+
+/* navbar-content */
+.navbar-content {
+  display: flex; /* Enable flexbox for side-by-side layout */
+  justify-content: space-between; /* Distribute content evenly between left and right sides */
+  align-items: center; /* Align content vertically in the center */
+  margin-left: 1rem; /* Use rem for responsive margins */
+  height: 4.8rem;
+}
+
+.navC{
+  padding-left: 4rem;
+}
+
+/* navcircle */
+.navcircle {
+  width: 5rem; /* Keep width consistent */
+  height: 4.5rem; /* Keep height consistent */
+  background-color: #151F2B;
+  border-radius: 100%;
+}
+
+/* image-remofgvsfvebg-preview-2 */
+.image-remofgvsfvebg-preview-2 {
+  width: 5rem; /* Keep width consistent */
+  height: 4.5rem; /* Keep height consistent */
+}
+.cybers{
+  padding-right: 25%;
+}
+
+/* CyberSoochna-1 */
+.CyberSoochna-1 {
+  padding-bottom: 0.3rem;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: SawarabiMincho;
+  font-size: 2.5rem; /* Adjust font size based on design preference for responsiveness */
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal; 
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #88bdf2;
+}
+
+/* navbartitle_container */
+.navbartitle_container {
+  position: relative;
+  padding-right: 3rem;
+  /* Consider using media queries to adjust left position on smaller screens */
+}
+
+/* complaint-btn */
+.complaint-btn {
+  background-color: transparent;
+  margin: 1rem; /* Use rem for responsive margins */
+  font-family: Poppins;
+  font-size: 1rem; /* Adjust font size based on design preference for responsiveness */
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  border: 0;
+  color: #a4e1f4;
+}
+
+.complaint-btn:hover {
+  color: #88bdf2;
+}
