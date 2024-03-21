@@ -3,6 +3,7 @@ import "./Home.css";
 import H_img from "./hero -img.png";
 import UsefulLinks from "../../components/UsefuLinks/UsefulLinks";
 import Playback_video from "./Playback_video/Playback_video";
+import Banner from "./Banner_1/Banner";
 
 const Home = () => {
   return (
@@ -47,6 +48,7 @@ const Home = () => {
       </div>
       <div>
         <Playback_video />
+        <Banner/>
         <UsefulLinks />
       </div>
     </div>

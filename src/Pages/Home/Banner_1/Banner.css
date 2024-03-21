@@ -1,0 +1,8 @@
+.B1_container{
+    width: 1440px;
+  height: 594px;
+  padding: 5px 5px 5px 5px;
+  margin: 50px 0 0 -120px;
+  border-radius: 10px;
+  border: solid 1px #9f9f9f;
+}
