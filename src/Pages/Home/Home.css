@@ -122,7 +122,7 @@
   height: 72px;
   padding: 0 80.7px 0 48.4px;
   border-radius: 10px;
-  background-color: #67acc1;
+  background-image: linear-gradient(to right, #68afc4 100%, #5a737a 0%, #68afc4 100%);
 }
 .rightside_HS{
   margin: 0;
