@@ -77,7 +77,7 @@ const Register = () => {
 
 
                 <div className="register-right-part">
-                    <span class="CHECK-LIST-FOR-COMPLAINANT"> CHECK LIST FOR COMPLAINANT </span>
+                    <span class="CHECK-LIST-FOR-COMPLAINANT"> CHECK LIST FOR COMPLAINT </span>
                     <span class="infotext"> Please keep this information ready before filing your complaint: </span>
 
                     <div className="Mandatory-info">
@@ -85,7 +85,7 @@ const Register = () => {
                         <ol className='info-ol'>
                             <li>Incident Date and Time.</li>
                             <li>Incident details (minimum 200 characters) without any special characters (#$@^*`"~|!).</li>
-                            <li>Soft copy of any national Id (Voter Id, Driving license, Passport, PAN Card, Aadhar Card) of complainant in .jpeg, .jpg, .png format (file size should not more than 5 MB).</li>
+                            <li>Soft copy of any national Id (Voter Id, Driving license, Passport, PAN Card, Aadhar Card) of complaint in .jpeg, .jpg, .png format (file size should not more than 5 MB).</li>
                             <li>In case of financial fraud, please keep following information ready:
                                 <ol type="i">
                                     <li>Name of the Bank/ Wallet/Merchant</li>
