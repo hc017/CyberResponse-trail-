@@ -1,5 +1,9 @@
 /* Login.css */
 
+@media(min-width: 768px){
+    
+}
+
 .Login-page {
     background-color: #151515;
     min-height: 130vh;

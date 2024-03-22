@@ -1,4 +1,5 @@
 /* Register.css */
+/* Short screen */
 @media (max-width: 768px) {
     .register-Rectangle {
         width: 75% !important;
