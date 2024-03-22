@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import logo from "./Logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -15,7 +16,8 @@ const Navbar = () => {
         <p className="CyberSoochna-1">CyberSoochna</p>
         </div>
         <div className="navbartitle_container">
-          <button className="complaint-btn">Register a Complaint</button>
+          {/* <button className="complaint-btn">Register a Complaint</button> */}
+          <Link to="/login" className="complaint-btn">Register a Complaint</Link>
           <button className="complaint-btn">Track a Complaint</button>
           <button className="complaint-btn">Services</button>
           <button className="complaint-btn">Contact Us</button>
