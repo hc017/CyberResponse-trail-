@@ -40,7 +40,12 @@ const Home = () => {
             <img className="hero_i" src={H_img} alt="" />
           </div>
         </div>
+<<<<<<< HEAD
       </div>
+=======
+      </div>her
+      <UsefulLinks/>
+>>>>>>> 5c237555f345d80c24e44482958ab9524036a249
     </div>
   );
 };

@@ -1,86 +1,44 @@
-  
-  .Group-107 .BlueContainer {
-    width: 1440px;
-    height: 253px;
-    padding: 54px 85px 40px 10px;
-    margin:700px 0 0 -140px;
-    border-radius: 10px;
-    border: solid 1px #9f9f9f;
-    background-image: linear-gradient(to right, #88bdf2, #6d97c1 41%, #6d97c1 58%, #88bdf2);
-  }
-  
-  .Group-107 .USEFUL-LINKS {
-    width: 300px;
-    height: 51px;
-    margin: -40px 11px 44px   630px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Roboto;
-    font-size: 36px;
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .Group-107 .ThirdRectangle  {
-    width: 208px;
-    height: 86px;
-    margin: -10px 31px 74px 20px;
-    border-radius: 10px;
-    border: solid 1px #929292;
-    background-color: #d9d9d9;
-  }
-  
-  .Group-107 .FourthRectangle  {
-    width: 208px;
-    height: 86px;
-    margin: -10px 31px 74px 20px;
-    border-radius: 10px;
-    border: solid 1px #929292;
-    background-color: #d9d9d9;
-  }
-  
-  .Group-107 .FifthRectangle  {
-    width: 208px;
-    height: 86px;
-    margin: -10px 31px 74px 20px;
-    border-radius: 10px;
-    border: solid 1px #929292;
-    background-color: #d9d9d9;
-  }
-  
-  .Group-107 .SecondRectangle {
-    width: 208px;
-    height: 86px;
-    margin: -10px 31px 74px 20px;
-    border-radius: 10px;
-    border: solid 1px #929292;
-    background-color: #d9d9d9;
-  }
-  
-  .Group-107 .FirstRectangle {
-    width: 208px;
-    height: 86px;
-    margin: -10px 31px 74px 100px;
-    border-radius: 10px;
-    border: solid 1px #929292;
-    background-color: #d9d9d9;
-  }
-  
+.Group-107 .BlueContainer {
+  width: 80rem;
+  height: 15.8125rem;
+  padding: 3.375rem 5.3125rem 2.5rem 10.625rem;
+  margin: 130.75rem auto 0 auto; /* Updated margin for centering */
+  border-radius: 0.625rem;
+  border: solid 0.0625rem #9f9f9f;
+  background-image: linear-gradient(to right, #88bdf2, #6d97c1 41%, #6d97c1 58%, #88bdf2);
+}
+.Group-107 .USEFUL-LINKS {
+  width: 18.75rem;
+  height: 3.1875rem;
+  margin: -1.5rem 0.6875rem 2.75rem 30.375rem;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Roboto;
+  font-size: 2.25rem;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
 
-  .Group-107.AllRectangles{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    left: 200%;
-  }
+.Group-107 .ThirdRectangle,
+.Group-107 .FourthRectangle,
+.Group-107 .FifthRectangle,
+.Group-107 .SecondRectangle,
+.Group-107 .FirstRectangle {
+  width: 13rem;
+  height: 5.375rem;
+  margin: -0.5rem 1.9375rem 4.625rem 0.25rem;
+  border-radius: 0.625rem;
+  border: solid 0.0625rem #929292;
+  background-color: #d9d9d9;
+}
 
-  .Group-107.AllBoxes{
-    padding-right: 4000px;
-  }
+.Group-107 .AllBoxes {
+  padding-right: 156.25rem;
+}
 
 .FirstRectangle:hover,
 .SecondRectangle:hover,
@@ -88,5 +46,5 @@
 .FourthRectangle:hover,
 .FifthRectangle:hover {
   background-color: #c0c0c0;
-  transform: scale(1.05); /* Change to desired hover background color */
+  transform: scale(1.05);
 }
