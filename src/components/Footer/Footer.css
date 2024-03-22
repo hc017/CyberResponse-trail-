@@ -123,9 +123,9 @@
 }
 
 .Group-36 .Line-1 {
-  width: 74.6875rem;
-  height: 0.125rem;
-  margin: 4.4375rem 0 0.1875rem 2.5rem;
+  width: 94.6875rem;
+  height: 0.130rem;
+  margin: 2.4375rem 0 0.1875rem 2.5rem;
   transform: rotate(180deg);
   background-color: #5b5858;
 }
@@ -134,7 +134,7 @@
 .Group-36 .Legal-Information {
   width: 5.75rem;
   height: 1.3125rem;
-  margin: 0.1875rem 0.625rem 0 2.4375rem;
+  margin: 0.1875rem 0.625rem 0 3rem;
   font-family: SawarabiMincho;
   font-size: 0.625rem;
   font-weight: normal;
@@ -149,14 +149,14 @@
 .Group-36 .Line-2 {
   width: 0.0625rem;
   height: 1.125rem;
-  margin: -1.5625rem 0.5625rem 0 7.2rem;
+  margin: -1.5625rem 0.5625rem 0 7.9rem;
   transform: rotate(-180deg);
   background-color: #5b5858;
 }
 .Group-36 .Accessibility {
   width: 4.1875rem;
   height: 1.3125rem;
-  margin: -1.3125rem 0.1875rem 0 7.3875rem;
+  margin: -1.3125rem 0.1875rem 0 8.7rem;
   font-family: SawarabiMincho;
   font-size: 0.625rem;
   font-weight: normal;
@@ -171,7 +171,7 @@
 .Group-36 .Line-3 {
   width: 0.0625rem;
   height: 1.125rem;
-  margin: -1.125rem 0.5625rem 0 11rem;
+  margin: -1.125rem 0.5625rem 0 12.5rem;
   transform: rotate(-180deg);
   background-color: #5b5858;
 }
@@ -179,7 +179,7 @@
 .Group-36 .Cookie-Management {
   width: 6.5625rem;
   height: 1.3125rem;
-  margin: -1.3125rem 12.0625rem 0 11.3rem;
+  margin: -1.3125rem 12.0625rem 0 13.3rem;
   font-family: SawarabiMincho;
   font-size: 0.625rem;
   font-weight: normal;
