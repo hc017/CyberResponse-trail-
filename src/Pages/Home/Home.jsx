@@ -40,8 +40,10 @@ const Home = () => {
             <img className="hero_i" src={H_img} alt="" />
           </div>
         </div>
-      </div>her
+      </div>
+      <div className="Home_usef">
       <UsefulLinks/>
+      </div>
     </div>
   );
 };

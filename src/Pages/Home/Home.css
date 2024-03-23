@@ -166,6 +166,11 @@
   );
   transform: translate(-50%, -50%);
 }
+.Home_usef{
+  position: absolute;
+  top: 365%;
+  width: 100%;
+}
 
 
 @media (max-width: 768px) {
