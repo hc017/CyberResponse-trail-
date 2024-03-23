@@ -1,6 +1,6 @@
 /* Rectangle-135 */
 .Rectangle-135 {
-  width: 100vw; /* Maintain full viewport width */
+  width: 100%; /* Maintain full viewport width */
   height: 4.8rem; /* Keep height consistent */
   background-color: rgb(0, 0, 0);
 }
