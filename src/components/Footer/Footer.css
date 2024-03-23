@@ -11,10 +11,10 @@
 
 .CyberComponent {
   width: 23.0625vw;
-  height: 4.75vh;
-  margin: -11.75vh 8vw 0.9375vh 3.25vw;
+  height: auto;
+  padding-left: 4rem;
   font-family: SawarabiMincho;
-  font-size: 2.8125vh;
+  font-size: 5vh;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -25,10 +25,11 @@
 }
 
 .image-remofgvsfvebg-preview-1 {
-  width: 20rem;
-  height: 9.375vh;
-  margin: 0.1875vh 3.5625vw 0 1.25vw;
+  width: 9%;
+  height: 7%;
+  padding-left: 2rem;
   border-radius: 4.9375vw;
+  object-fit:fill;
 }
 
 .Group-36 .A-resilient-Framework-for-collecting-and-responding-t-o-digital-crimes-and-frauds {

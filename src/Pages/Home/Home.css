@@ -151,7 +151,7 @@
 }
 .em {
   border: 0;
-  width: 39.0625rem; /* 625px converted to rem */
+  width: 50%; /* 625px converted to rem */
   height: 4.0125rem; /* 64.2px converted to rem */
   border-radius: 0.3125rem; /* 5px converted to rem */
   box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25); /* Convert px values to rem */
@@ -165,6 +165,7 @@
     #431111
   );
   transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 .Home_usef{
   position: absolute;
