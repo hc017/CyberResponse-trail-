@@ -13,7 +13,7 @@ const Navbar = () => {
         </p>
         </div>
         <div className="cybers">
-        <p className="CyberSoochna-1">CyberSoochna</p>
+        <Link to="/"  className="CyberSoochna-1">CyberSoochna</Link>
         </div>
         <div className="navbartitle_container">
           {/* <button className="complaint-btn">Register a Complaint</button> */}

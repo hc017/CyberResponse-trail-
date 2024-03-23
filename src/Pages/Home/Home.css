@@ -146,27 +146,10 @@
   margin: auto;
 }
 .hero_i {
-  height: 46.375rem; /* 742px converted to rem */
-  width: 45rem; /* 750px converted to rem */
+  height: 100%; /* 742px converted to rem */
+  width: 100%; /* 750px converted to rem */
 }
-.em {
-  border: 0;
-  width: 50%; /* 625px converted to rem */
-  height: 4.0125rem; /* 64.2px converted to rem */
-  border-radius: 0.3125rem; /* 5px converted to rem */
-  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25); /* Convert px values to rem */
-  color: white;
-  background-image: linear-gradient(
-    to right,
-    #111,
-    #431111 22%,
-    #f00 50%,
-    #151515 82%,
-    #431111
-  );
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-}
+
 .Home_usef{
   position: absolute;
   top: 365%;
