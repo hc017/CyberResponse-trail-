@@ -1,0 +1,49 @@
+.UP_container{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    border-radius: 1rem ;
+    margin-top: 2rem;
+    background-color: #a4e1f4;
+}
+.ud_text{
+    width: 40%;
+    height: 4rem;
+    margin-top: 0.8rem;
+    margin-left: 1rem;
+    font-family: Poppins;
+    font-size: 2rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+.ud_mail{
+    width: 40%;
+    height: 4rem;
+    margin-top: 0.8rem;
+    margin-left: 1rem;
+    font-family: Poppins;
+    font-size: 2rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #000;
+}
+.log_btn{
+    width: 10%;
+    height: 75%;
+    border-radius: 10px;
+    background-color: #79b3ee;
+    margin-left: 4rem;
+    margin-top: 0.5rem;
+}
+.log_2{
+font-size: 1.5rem;
+}
