@@ -19,7 +19,7 @@
 @media screen and (max-width: 600px) {
     .em_component {
         font-size: 80%;
-        height: 90%rem;
+        height: 90%;
         width: 100%;
     }
 }

@@ -2,6 +2,8 @@ import React from "react";
 import "./UserDetails.css";
 import Em from "../../components/Emergency/Em";
 import UP_bar from "./Userprofilebar/UP_bar";
+import UserFormPanel from "./UserForm/UserFormPanel";
+import UserFormPanel2 from "./UserForm/UserFormPanel2";
 import UserForm from "./UserForm/UserForm";
 
 const UserDetails = () => {
@@ -11,6 +13,10 @@ const UserDetails = () => {
         <Em />
         <div className="UD_up_bar"></div>
         <UP_bar />
+        <div className="UD_up_bar"></div>
+        <UserFormPanel />
+        <div className="UD_up_bar"></div>
+        <UserFormPanel2 />
         <div className="UD_up_bar"></div>
         <UserForm />
       </div>

@@ -1,6 +1,6 @@
 .UD_component{
     width: 100%;
-    height: 400vh;
+    height: 200vh;
     border-radius: 2px;
     background-image: linear-gradient(
       to bottom,
@@ -15,7 +15,6 @@
 }
 .UD_up_bar{
   width: 90%;
-  height: 2rem;
-  
+  height: 1rem;
 }
 

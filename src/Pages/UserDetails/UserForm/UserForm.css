@@ -1,30 +1,217 @@
 *{
     box-sizing: border-box;
+
 }
-.UF_container{
+.UserF_component {
     width: 100%;
-    height: 4rem;
+    height: 200vh;
     border-radius: 10px;
-    background-color: #181818;
+    background-image: linear-gradient(
+      136deg,
+      #111 1%,
+      #1a1a1a 21%,
+      #242424 33%,
+      #444 48%,
+      #2a2a2a 62%,
+      #202020 74%,
+      #111 95%
+    );
+  }
+  
+  .UserF_inner_compnent {
+    width: 95%;
+    height: 200vh;
+    margin-left: 2%;
+  }
+  
+  .userform {
+    width: 100%;
+    height: 200vh;
+  }
+  
+  .vertical_input {
     display: flex;
-}
-.UF_complaint_bar{
-    width: 20%;
-    background-color: #181818;
+    padding-top: 3%;
+  }
+  
+  .vi_text {
+    width: 30%;
+    margin: 0;
+    margin-top: 1%;
     font-family: Poppins;
-    font-size: 125%;
+    font-size: 1.5rem;
     font-weight: bold;
-    text-align: center;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #a4e1f4;
+  }
+  
+  .vi_input {
+    width: 30%;
+    height: 2.5rem;
+    margin-left: 10%;
+    border-radius: 5px;
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #d9d9d9;
+    border: none;
+  }
+  
+  .radio_group {
+    margin-left: 10%;
+    margin-top: 1.2%;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #a4e1f4;
+    justify-items: flex-start;
+  }
+  
+  .emailotp {
+    display: flex;
+    align-items: center; /* Center items vertically */
+  }
+  
+  .otpbutton,
+  .verify_button {
+    width: 100px; /* Adjust width as needed */
+    margin-left: 10px; /* Add space between input and button */
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
+    color: #268ef7;
+    border: solid 1px #268ef7;
+    border-radius: 5px;
+    background-color: #222;
+  }
+  
+  .vi_input_email,
+  .vi_input_otp {
+    flex: 1; /* Take remaining space */
+    height: 2.5rem;
+    margin-left: 10px; /* Add space between input and button */
+    border-radius: 5px;
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #d9d9d9;
     border: none;
+  }
+  .permanentAddcomponent{
+    height: 100vh;
+    width: 95%;
+    padding-top: 3%;
+
+    
+  }
+  .permanentAddinnercomponent{
+    height: 100vh;
+    width: 100%;
+    padding-top:0.1rem ;
+  
+
+  }
+  .pb{
+    width: 15%;
+    height: 5%;
+    margin-left: 3%;
+    text-align: center;
+    justify-content: center;
+    padding-top: 0.4rem;
+    background-color: #444;
+    font-family: Poppins;
+    font-size: 1.3rem;
+    border: 1rem  cornsilk;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+  .PA{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+
+  }
+  .PA_left{
+    width: 50%;
+
+    
+  }
+  .PA_right{
+    width: 50%;
+
+
+  }
+  .PA_vertical_input{
+    display: flex;
+    margin-top:4% ;
+    margin-left: 2%;
+  }
+  .PA_vi_text{
+    width: 30%;
+    margin: 0;
+    margin-top: 1.6%;
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
     color: #a4e1f4;
-}
-.UF_complaint_bar:hover{
-    background-color: #a4e1f4 ;
-    color: #181818;
-    border-radius: 5%;
-}
+
+  }
+  .PA_vi_input{
+    width: 60%;
+    height: 2.2rem;
+    margin-left: 10%;
+    border-radius: 5px;
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #d9d9d9;
+    border: none;
+
+  }
+  .text_h1{
+    width: 100%;
+    height: 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #a4e1f4;
+
+  }
+  .save_btn{
+    margin-left: 45%;
+    margin-top: 4%;
+    font-family: Poppins;
+    font-size: 1.3rem;
+    padding: 1%;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4bd761;
+    background-color: transparent;
+    border: 1px solid ;
+  }
+  .save_btn:hover{
+    color: #000;
+    background-color:#4bd761 ;
+  }
+  
