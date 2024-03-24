@@ -10,6 +10,7 @@ import Register from '../../Pages/LoginRegister/Register'
 import UserDetails from '../../Pages/UserDetails/UserDetails'
 import TrackComplaint from '../../Pages/TrackComplaint/TrackComplaint'
 import ID from '../../Pages/IncidentDetails/ID'
+import SuspectD from '../../Pages/IncidentDetails/SuspectD'
 
 const AllRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AllRoutes = () => {
     <Route path='/userdetails' element={<UserDetails/>}></Route>
     <Route path='/trackcomplaint' element={<TrackComplaint/>}></Route>
     <Route path='/incidentdetails' element={<ID/>}></Route>
+    <Route path='/suspectdetails' element={<SuspectD/>}></Route>
 
    </Routes>
   )
