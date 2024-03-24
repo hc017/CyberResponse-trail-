@@ -8,6 +8,7 @@ import Home from '../../Pages/Home/Home'
 import Login from '../../Pages/LoginRegister/Login'
 import Register from '../../Pages/LoginRegister/Register'
 import UserDetails from '../../Pages/UserDetails/UserDetails'
+import TrackComplaint from '../../Pages/TrackComplaint/TrackComplaint'
 
 const AllRoutes = () => {
   return (
@@ -16,6 +17,8 @@ const AllRoutes = () => {
     <Route path='/login' element={<Login/>}></Route>
     <Route path='/register' element={<Register/>}></Route>
     <Route path='/userdetails' element={<UserDetails/>}></Route>
+    <Route path='/trackcomplaint' element={<TrackComplaint/>}></Route>
+
    </Routes>
   )
 }

@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="navbartitle_container">
           {/* <button className="complaint-btn">Register a Complaint</button> */}
           <Link to="/login" className="complaint-btn">Register a Complaint</Link>
-          <Link to="/userdetails" className="complaint-btn">Track a Complaint</Link>
+          <Link to="/trackcomplaint" className="complaint-btn">Track a Complaint</Link>
           <button className="complaint-btn">Services</button>
           <button className="complaint-btn">Contact Us</button>
         </div>

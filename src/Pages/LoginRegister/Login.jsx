@@ -96,7 +96,7 @@ const Login = () => {
                                 <Link to="/register" style={{ color: '#fff', textDecoration: 'none' }} >New User? Click to Register</Link>
                             </div>
                             <div>
-                                <button type="button" className='login-button' onClick={handleLogin}>Login</button>
+                                <Link to="/userdetails" type="button" className='login-button' onClick={handleLogin}>Login</Link>
                                 <button type="button" className='cancel-button' onClick={handleCancel}>Cancel</button>
                             </div>
                         </form>
