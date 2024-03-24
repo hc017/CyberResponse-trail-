@@ -1,4 +1,4 @@
-.em_component{
+.em_component {
     width: 100%;
     height: 2rem;
     border-radius: 0.1rem;
@@ -13,4 +13,13 @@
     text-align: center;
     color: #fff;
     background-image: linear-gradient(to right, #111, #431111 22%, #f00 50%, #151515 82%, #431111);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .em_component {
+        font-size: 80%;
+        height: 90%rem;
+        width: 100%;
+    }
 }
