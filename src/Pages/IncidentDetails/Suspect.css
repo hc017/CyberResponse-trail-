@@ -1,6 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .SD_component{
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     border-radius: 2px;
     background-image: linear-gradient(
       to bottom,
@@ -8,4 +13,247 @@
       #0b0000,
       rgba(0, 0, 0, 0.89)
     );
+}
+.SD_innercomponent{
+  width: 90%;
+  height: 80vh;
+  margin-left: 5%;
+}
+.SD_innerComp2{
+  width: 85%;
+  height: 80vh;
+  margin-left: 7%;
+}
+.susdetail_bar{
+  width: 100%;
+  height: 2.2rem;
+  background-color: #88bdf2;
+  border-radius: 0.2rem;
+}
+.sus_text{
+  width: 15%;
+  height: 2.2rem;
+  font-family: Poppins;
+  padding-top: 0.5rem;
+  font-size: 17px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+.sus_text2{
+  width: 100%;
+  height: 2.2rem;
+  font-family: Poppins;
+  padding-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+.sus_agree{
+  width: 100%;
+  height: 2.2rem;
+  display: flex;
+
+}
+.sus_text3{
+  width: 100%;
+  height: 2rem;
+  font-family: Poppins;
+  padding-top: 0.5rem;
+  font-size: 0.9rem;
+  margin-left: 2%;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+.suspect_block{
+  height: 2rem;
+  width: 70%;
+  display: flex;
+}
+.SS_vi_text{
+  width: 4rem;
+  height: 2rem;
+  margin: 0;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #a4e1f4;
+}
+.SS_vi_input1{
+  width: 40%;
+  height: 2rem;
+  margin-left: 5%;
+  border-radius: 5px;
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #d9d9d9;
+  border: none;
+
+}
+.SS_vi_input2{
+  width: 15%;
+  height: 2rem;
+  margin-left: 1%;
+  border-radius: 5px;
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #d9d9d9;
+  border: none;
+
+}
+.SS_vi_input3{
+  width: 30%;
+  height: 2rem;
+  margin-left: 4%;
+  border-radius: 5px;
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #d9d9d9;
+  border: none;
+
+}
+.SS_button{
+  width: 4rem;
+  border-radius: 0.1rem;
+  margin-left: 2%;
+  border: solid 1px #a4e1f4;
+  background-color: #1e1e1e;
+  color: #a4e1f4 ;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  display: inline-flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-decoration: none; /* Remove default link underline */
+}
+.div_block{
+  height: 1rem;
+  width: 100%;
+}
+.suspect_bock2{
+  height: 2rem;
+  width: 80%;
+  display: flex;
+}
+.sus_up_text{
+  width: 40%;
+  height: 2rem;
+  font-family: Poppins;
+  font-size: 12px;
+  margin: 0;
+  margin-top: 0.25rem;
+  margin-left: 2%;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+.div_block2{
+  height: 2rem;
+  width: 100%;
+  border-bottom: solid 0.1rem #656565;
+}
+.sus_final_agree{
+  width: 100%;
+  height: 2.2rem;
+  display: flex;
+}
+.ss_radio{
+  background-color: #d9d9d9;
+  height: 1rem;
+  margin-top: 0.2rem;
+}
+.ss_radio1{
+  background-color: #d9d9d9;
+  height: 1rem;
+  margin-top: 1.4rem;
+
+}
+.ss_radio_name{
+  width: 5%;
+  height: 2rem;
+  font-family: Poppins;
+  font-size: 12px;
+  margin: 0;
+  margin-top: 0.3rem;
+  margin-left: 2%;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+
+}
+.div_block3{
+  height: 3rem;
+  width: 100%;
+}
+.ss_btns{
+  display: flex;
+  width: 100%;
+  height: 2rem;
+
+}
+.ss_save_btn1{
+  margin-left: 4%;
+  font-family: Poppins;
+  font-size: 1rem;
+  padding: 1%;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+color: #00ff95;
+  text-decoration: none;
+  display: inline-flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-decoration: none; /* Remove default link underline */
+  background-color: transparent;
+  border: 1px solid ;
+}
+.ss_save_btn2{
+  margin-left: 4%;
+  font-family: Poppins;
+  font-size: 1rem;
+  padding: 1%;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #5e73ff;
+  text-decoration: none;
+  display: inline-flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-decoration: none; /* Remove default link underline */
+  background-color: transparent;
+  border: 1px solid ;
 }

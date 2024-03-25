@@ -10,13 +10,13 @@ const ID = () => {
   return (
     <div className='ID_component'>
       <div className="ID_innercomponent">
-        <Em/>
+      
         <div className="UD_up_bar"></div>
-        <UFP_red />
+        
         <div className="ID_form_component">
           <div className="ID_form_bar">
             <Link className="form_comp">Incident Details</Link>
-            <Link className="form_comp">Suspect Details</Link>
+            <Link to="/suspectdetails" className="form_comp">Suspect Details</Link>
             <Link className="form_comp">Complaint Details</Link>
             <Link className="form_comp">Preview & Submit</Link>
           </div>
