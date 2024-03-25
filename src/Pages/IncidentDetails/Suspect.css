@@ -5,7 +5,7 @@ body {
 }
 .SD_component{
     width: 100%;
-    height: 70vh;
+    height: 90vh;
     border-radius: 2px;
     background-image: linear-gradient(
       to bottom,
@@ -189,6 +189,9 @@ body {
   height: 1rem;
   margin-top: 1.4rem;
 
+}
+.radio_text_isd{
+  color: #fff;
 }
 .ss_radio_name{
   width: 5%;

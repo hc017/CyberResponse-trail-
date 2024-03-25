@@ -1,0 +1,21 @@
+.CD_component{
+    width: 100%;
+    height: 130vh;
+    border-radius: 2px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.85),
+      #0b0000,
+      rgba(0, 0, 0, 0.89)
+    );
+}
+.CD_innercomponent{
+    width: 90%;
+    height: 130vh;
+    margin-left: 5%;
+}
+.CSD_innerComp2{
+    width: 85%;
+    height: 130vh;
+    margin-left: 7%;
+}

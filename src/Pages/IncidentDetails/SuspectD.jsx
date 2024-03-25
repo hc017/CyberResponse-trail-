@@ -100,7 +100,7 @@ const SuspectD = () => {
           <div className="div_block3"></div>
           <div className="ss_btns">
             <Link className="ss_save_btn1">Back</Link>
-            <Link className="ss_save_btn2">Save and Submit</Link>
+            <Link to="/complaintdetails" className="ss_save_btn2">Save and Submit</Link>
           </div>
         </div>
       </div>
