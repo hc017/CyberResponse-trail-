@@ -1,6 +1,6 @@
 .UP_component {
     width: 100%;
-    height: 130vh;
+    height: 80vh;
     border-radius: 2px;
     background-image: linear-gradient(
       to bottom,
@@ -11,7 +11,111 @@
   }
   .UP_innercomponent {
     width: 90%;
-    height: 130vh;
+    height: auto;
     margin-left: 5%;
-    background-color: rgb(0, 84, 157);
+  }
+  .UP_innerform{
+    width: 85%;
+    height: auto;
+    max-height: 100vh;
+    border-radius: 2%;
+    height: auto;
+    margin-left: 7%;
+    background-color: #2d2d2dbd;
+
+  }
+  .UP_susdetail_bar{
+    width: 100%;
+    height: 2.2rem;
+    display: inline-flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-decoration: none; /* Remove default link underline */
+    margin-top: 1rem;
+  
+    border-radius: 0.3rem 0.3rem 0 0;
+
+  }
+  .UP_sus_text{
+    width: 100%;
+    height: 2.2rem;
+    font-family: Poppins;
+    padding-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+
+  }
+  .UP_block{
+    width: 85%;
+    margin-left: 7%;
+    border-bottom: 1px solid rgba(194, 194, 194, 0.192);
+  }
+  .UP_Vi{
+    width: 60%;
+    height: 50vh;
+    margin-left: 20%;
+    margin-top: 1%;
+  }
+  .UP_vertical_input{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    margin-bottom: 3%;
+  }
+  .UP_vi_text{
+    width: 30%;
+    margin: 0;
+    margin-top: 1%;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fdfdfd;
+    
+
+  }
+  .UP_vi_input{
+    width: 50%;
+    height: 2rem;
+    border-radius: 5px;
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #d9d9d9;
+    border: none;
+
+  }
+  .UP_OTP{
+    width: 10%;
+    margin-left: 3%;
+    font-family: Poppins;
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #268ef7;
+    background-color: transparent;
+    border: 1px solid #268ef7 ;
+    display: inline-flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-decoration: none; /* Remove default link underline */
+
+  }
+  .UP_OTP:hover{
+    background-color: #00a259;
+    color: #0b0000;
+    border: none;
+
   }
