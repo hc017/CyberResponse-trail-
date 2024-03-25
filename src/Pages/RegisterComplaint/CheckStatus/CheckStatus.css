@@ -13,5 +13,162 @@
     width: 90%;
     height: 130vh;
     margin-left: 5%;
-    background-color: rgb(74, 83, 90);
   }
+  .CS_innerForm{
+    width: 85%;
+    min-height: 60vh;
+    max-height: 100vh;
+    height: auto;
+    margin-left: 7%;
+    background-color: #2d2d2d;
+  }
+  .CS_susdetail_bar{
+    width: 100%;
+    height: 2.2rem;
+    background-color: #88bdf2;
+    border-radius: 0.3rem 0.3rem 0 0;
+
+  }
+  .CS_sus_text{
+    width: 25%;
+    height: 2.2rem;
+    font-family: Poppins;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+
+  }
+  .CS_block{
+    width: 100%;
+    height: 3rem;
+  }
+  .CS_block3{
+    width: 100%;
+    height: 2.5rem;
+    border-bottom: 1px solid rgba(189, 189, 189, 0.617);
+
+  }
+  .CS_status_container{
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+  }
+  .status_input_container{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+
+  }
+.CS_vi_input1{
+  width: 30%;
+  height: 2rem;
+  margin-left: 10%;
+  border-radius: 5px;
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #d9d9d9;
+  border: none;
+}
+.CS_vi_input2{
+  width: 30%;
+  height: 2rem;
+  margin-left: 5%;
+  border-radius: 5px;
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #d9d9d9;
+  border: none;
+}
+.CS_vi_btn{
+  width: 5%;
+  height: 2rem;
+  margin-left: 2%;
+  border-radius: 5px;
+  color: #a4e1f4;
+  border: 1px solid #a4e1f4;
+  background-color: transparent;
+  display: inline-flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-decoration: none; /* Remove default link underline */
+
+
+}
+.CS_block2{
+  width: 100%;
+  height: 1.5rem;
+
+}
+.CS_status_table {
+  width: 100%;
+  border-collapse: collapse; /* Collapse table borders */
+  margin-top: 1rem; /* Add margin from the top */
+}
+
+.CS_status_table th,
+.CS_status_table td {
+  padding: 0.5rem; /* Add padding inside table cells */
+  border: 1px solid #fff; /* Add border for cells */
+  text-align: center; /* Center-align text in cells */
+  color: #ffffff; /* Set text color */
+}
+
+.CS_status_table th {
+  background-color: #88bdf2; /* Set background color for table header */
+  color: #000000; /* Set text color for table header */
+}
+
+.CS_status_table tbody tr:nth-child(even) {
+  background-color: transparent; /* Alternate row background color */
+  color: white;
+}
+
+.CS_status_table tbody tr:hover {
+  background-color: #88bdf2; /* Hover effect for rows */
+  color: rgb(0, 0, 0);
+}
+.CS_status_table td:hover{
+  color: #66dbff;
+
+}
+.CS_actbtn{
+  width: 50%;
+  height: 30%;
+  border-radius: 5px;
+  color: #a4e1f4;
+  border: 1px solid #a4e1f4;
+  background-color: transparent;
+  display: inline-flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-decoration: none; /* Remove default link underline */
+}
+.CS_radio_block{
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  margin-top: 0.5rem;
+}
+.radioQ{
+  width: 50%;
+  margin: 0;
+  color: #a4e1f4;
+
+}
+.CS_vi_radio_input2{
+  margin-top: 0.3rem;
+  display: inline-flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-decoration: none; /* Remove default link underline */
+  margin-left: 2%;
+  height: 1rem;
+
+}
+.label{
+  color: white;
+}
