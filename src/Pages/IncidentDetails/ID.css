@@ -44,7 +44,13 @@
     color: #a4e1f4;
     border-radius: 0.5rem;
 }
-.form_comp:hover,.form_comp:active{
+.form_comp:hover,
+.form_comp:active,
+.form_comp:focus{
+    background-color: #88bdf2;
+    color: #000;
+}
+.active-link {
     background-color: #88bdf2;
     color: #000;
 }

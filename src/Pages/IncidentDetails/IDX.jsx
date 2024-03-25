@@ -1,16 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
+import "./ID.css"
 
 const IDX = () => {
   return (
     <div className="ID_form_component">
       <div className="ID_form_bar">
-        <Link to="/incidentdetails" className="form_comp">Incident Details</Link>
-        <Link to="/suspectdetails" className="form_comp">
+        <NavLink to="/incidentdetails" className="form_comp" activeClassName="active-link">Incident Details</NavLink>
+        <NavLink to="/suspectdetails" className="form_comp" activeClassName="active-link">
           Suspect Details
-        </Link>
-        <Link to="/complaintdetails" className="form_comp">Complaint Details</Link>
-        <Link to="/submit" className="form_comp">Preview & Submit</Link>
+        </NavLink>
+        <NavLink to="/complaintdetails" className="form_comp" activeClassName="active-link">Complaint Details</NavLink>
+        <NavLink to="/submit" className="form_comp" activeClassName="active-link">Preview & Submit</NavLink>
       </div>
     </div>
   );

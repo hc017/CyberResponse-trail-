@@ -22,6 +22,7 @@
     text-align: center;
     border: none;
     color: #a4e1f4;
+    text-decoration: none;
 }
 .UFP_complaint_bar:hover{
     background-color: #a4e1f4 ;

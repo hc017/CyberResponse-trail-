@@ -7,7 +7,18 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const ID_main = () => {
-    const [count, setCount] = useState(1500);
+  const [count, setCount] = useState(1500);
+  const [complaintCategory, setComplaintCategory] = useState("");
+  const [subCategory, setSubCategory] = useState("");
+  const [other, setOther] = useState("");
+
+  const complaintCategories = [
+    { name: "Category A", subcategories: ["Subcategory A1", "Subcategory A2"] },
+    { name: "Category B", subcategories: ["Subcategory B1", "Subcategory B2"] },
+    { name: "Category C", subcategories: ["Subcategory C1", "Subcategory C2"] }
+  ];
+
+  const otherOptions = ["Option 1", "Option 2", "Option 3"];
 
   const handleChooseFile = () => {
     // Implement file selection logic here
@@ -28,32 +39,61 @@ const ID_main = () => {
             <p className="ISD_sus_text">Complaint/ Incident Details</p>
           </div>
           <div className="ISD_formComp_1">
-            <div className="ISD_vertical_input">
+          <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Complaint Category :</p>
-              <input
-                type="text"
+              <select
                 className="ISD_vi_input"
-                placeholder="Enter your Complaint Category"
-              />
+                value={complaintCategory}
+                onChange={(e) => {
+                  setComplaintCategory(e.target.value);
+                  setSubCategory("");
+                }}
+              >
+                <option value="">Select Category</option>
+                {complaintCategories.map((category, index) => (
+                  <option key={index} value={category.name}>
+                    {category.name}
+                  </option>
+                ))}
+              </select>
             </div>
-            <div className="ISD_vertical_input">
-              <p className="ISD_vi_text">Sub Category :</p>
-              <input
-                type="text"
-                className="ISD_vi_input"
-                placeholder="Enter Sub Category"
-              />
-            </div>
+            {complaintCategory === "Category A" && (
+              <div className="ISD_vertical_input">
+                <p className="ISD_vi_text">Sub Category :</p>
+                <select
+                  className="ISD_vi_input"
+                  value={subCategory}
+                  onChange={(e) => setSubCategory(e.target.value)}
+                >
+                  <option value="">Select Subcategory</option>
+                  {complaintCategories
+                    .find((cat) => cat.name === "Category A")
+                    .subcategories.map((sub, index) => (
+                      <option key={index} value={sub}>
+                        {sub}
+                      </option>
+                    ))}
+                </select>
+              </div>
+            )}
             <div className="ISD_block"></div>
           </div>
+        
           <div className="ISDL_formComp_1">
-            <div className="ISD_vertical_input">
+          <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Other :</p>
-              <input
-                type="text"
+              <select
                 className="ISD_vi_input"
-                placeholder="Other"
-              />
+                value={other}
+                onChange={(e) => setOther(e.target.value)}
+              >
+                <option value="">Select Option</option>
+                {otherOptions.map((option, index) => (
+                  <option key={index} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           <div className="ISD_block"></div>
@@ -132,7 +172,7 @@ const ID_main = () => {
                 id="ISDVII"
                 placeholder="Enter your E-mail ID"
               />
-              <Link to='/suspectdetails' className="ss_save_btn2" id="ss_b">Save and Submit</Link>
+              <Link  className="ss_save_btn2" id="ss_b">Save and Submit</Link>
               
             </div>
             <p className="ISD_lasttext">Maximum of 1500 characters: {count} characters left</p>
