@@ -6,7 +6,7 @@ const UsefulLinks = () => {
     <div className="Group-107">
       <div className="BlueContainer">
         <div className="inside_bluecontainer">
-          <div className="blockforLinks">
+          <div className="blockforLink">
             <div className="USEFUL-LINKS">
               <p>USEFUL LINKS</p>
             </div>
