@@ -5,8 +5,6 @@ import {
     Link
   } from "react-router-dom"
 import Home from '../../Pages/Home/Home'
-import Login from '../../Pages/LoginRegister/Login'
-import Register from '../../Pages/LoginRegister/Register'
 import UserDetails from '../../Pages/UserDetails/UserDetails'
 import TrackComplaint from '../../Pages/TrackComplaint/TrackComplaint'
 import SuspectD from '../../Pages/IncidentDetails/SuspectD'
@@ -18,6 +16,8 @@ import CW from '../../Pages/RegisterComplaint/ComplaintWithdraw/CW'
 import DC from '../../Pages/RegisterComplaint/DraftComplaint/DC'
 import UP from '../../Pages/RegisterComplaint/UpdatePhone/UP'
 import UserPhone from '../../Pages/RegisterComplaint/UserPhone/UserPhone'
+import UserLogin from '../../Pages/LoginRegister/UserLogin'
+import UserRegister from '../../Pages/LoginRegister/UserRegister'
 
 
 
@@ -25,8 +25,8 @@ const AllRoutes = () => {
   return (
     <Routes>
     <Route path='/' element={<Home/>}></Route>
-    <Route path='/login' element={<Login/>}></Route>
-    <Route path='/register' element={<Register/>}></Route>
+    <Route path='/login' element={<UserLogin/>}></Route>
+    <Route path='/register' element={<UserRegister/>}></Route>
     <Route path='/userdetails' element={<UserDetails/>}></Route>
     <Route path='/trackcomplaint' element={<TrackComplaint/>}></Route>
     <Route path='/incidentdetails' element={<ID_main/>}></Route>
