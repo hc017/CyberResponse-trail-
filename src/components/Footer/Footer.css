@@ -1,6 +1,6 @@
 .Group-36 {
   width: 100%;
-  height: 60vh;
+  height: 60;
   box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: #161616;
 }
@@ -10,37 +10,42 @@
   margin-left: 5%;
   padding: 0.1rem;
 }
-.colums {
-  width: 100%;
-  height: 50vh;
-  padding: 0.1rem;
-  display: flex;
-  border-bottom: solid 0.1rem rgba(84, 84, 84, 0.50);
+
+.BoxBox {
+  background-color: #161616;
+  width:45%;
+  height:48vh;
+  margin: 2% 0 0 0;
 }
-.vert-1 {
-  width: 40%;
-  margin-left: 0.5rem;
+
+.LogoBoxes{
+  background-color: red;
+  width:15%;
+  height:48vh;
+  margin: -27.4% 0 0 48%;
+
 }
-.vert-2 {
-  width: 20%;
-  padding-top: 0.2rem;
+
+.LinkBoxes{
+  background-color: blue;
+  width:35%;
+  height:48vh;
+  margin: -27.54% 0 0 68%;
 }
-.vert-3 {
-  width: 40%;
+
+
+.image-remofgvsfvebg-preview-1 img {
+  width:18%;
+  height:14vh;
+  margin: 0 0 0 1%;
 }
-.image-remofgvsfvebg-preview-1 {
-  width: 25%;
-  height: 24%;
-  padding-left: 2rem;
-  border-radius: 4.9375vw;
-  object-fit: fill;
-}
+
 .CyberComponent {
-  width: 23.0625vw;
+  width: 23.0625%;
   height: auto;
-  padding-left: 3rem;
+  padding-left: 2rem;
   font-family: SawarabiMincho;
-  font-size: 3rem;
+  font-size: 3.4rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -49,22 +54,31 @@
   text-align: left;
   color: #fff;
 }
+.ResilienceBlock{
+  margin: 0 0 0 0;
+}
 .A-resilient-Framework-for-collecting-and-responding-t-o-digital-crimes-and-frauds {
   width: 33.8125vw;
   height: 7.25vh;
-  padding-left: 3rem;
+  margin: 3% 0 0 6%;
   font-family: SawarabiMincho;
   font-size: 1.4rem;
   color: #fff;
 }
+
+.threat{
+  margin: 3.2%;
+}
 .Rising-Threat-National-Concern-Action-Needed {
   width: 15vw;
   height: 4.5vh;
-  padding-left: 3rem;
+  padding-left: 2.6rem;
   font-family: SawarabiMincho;
+  margin: -2% 0 0 0;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(230, 230, 230, 0.85);
 }
+
 .F_img_1 {
   padding-top: 0.6rem;
   padding-left: 3.5rem;

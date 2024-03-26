@@ -9,68 +9,36 @@ import LinkedIn from "./LinkedIn.png";
 import Twitter from "./Twitter.png";
 import Emblem from "./emblem.png";
 const Footer = () => {
-  return (
-    <div className="Group-36">
-      <div className="Rectangle-29">
-        <div className="colums">
-          <div className="vert-1">
-            <div className="vert1_logo">
-              <img
-                src={Logo}
-                alt="logo"
-                className="image-remofgvsfvebg-preview-1"
-              />
+    return (
+      <div className="Group-36">
+        <div className="Rectangle-29">
+          <div className="BoxBox">
+            <div className="image-remofgvsfvebg-preview-1">
+              <img src={Logo} alt="Description of the image" />
             </div>
-            <div className="foot_title">
-              <div className="CyberComponent">Cyber Soochna</div>
-            </div>
-            <p className="A-resilient-Framework-for-collecting-and-responding-t-o-digital-crimes-and-frauds">
-              A resilient Framework for collecting and responding <br />
-              to digital crimes and frauds
-            </p>
-            <p className="Rising-Threat-National-Concern-Action-Needed">
-              Rising Threat <br /> National Concern <br /> Action Needed
-            </p>
-          </div>
-          <div className="vert-2">
-            <div className="F_img_1">
-              <img src={Emblem} alt="Image 9" className="emblem" />
-            </div>
-            <div className="F_img_1">
-              <img src={ICC} alt="Image 8" className="icc" />
-            </div>
-            <div className="F_img_1">
-              <img src={CyberDost} alt="Image 10" className="CyberDost" />
-            </div>
-          </div>
-          <div className="vert-3">
-            <div className="left_up">
-              <div className="subtext">https://cybercrime.gov.in</div>
-              <div className="subtext">
-                https://www.meity.gov.in/cyber-surakshit-bharat-brochure
+            <div className="CyberComponent">CyberSoochna</div>
+            <div className="ResilienceBlock">
+              <div className="A-resilient-Framework-for-collecting-and-responding-t-o-digital-crimes-and-frauds">
+                A resilient Framework for collecting and responding t﻿o digital crimes and frauds
               </div>
-              <div className="subtext">https://www.cert-in.org.in</div>
-              <div className="subtext">https://www.mha.gov.in</div>
-              <div className="subtext">https://www.mygov.in</div>
-            </div>
-            <div className="Footer_icons">
-              <img src={Instagram} alt="instagram" className="Frame5" />
-              <img src={Facebook} alt="facebook" className="Frame5" />
-              <img src={Twitter} alt="twitter" className="Frame5" />
-              <img src={LinkedIn} alt="linkedin" className="Frame5" />
+              <div className="threat"></div>
+              <div className="Rising-Threat-National-Concern-Action-Needed">
+                Rising Threat
+              </div>
+              <div className="Rising-Threat-National-Concern-Action-Needed">
+                National Concern
+              </div>
+              <div className="Rising-Threat-National-Concern-Action-Needed">
+                Action Needed
+              </div>
             </div>
           </div>
-        </div>
-        <div className="ho">
-          <p className="ho_text">Legal Information</p>
-          <p className="ho_text">|</p>
-          <p className="ho_text">Accessibility </p>
-          <p className="ho_text">|</p>
-          <p className="ho_text">Cookie Management</p>
+          <div className="LogoBoxes"></div>
+          <div className="LinkBoxes"></div>
         </div>
       </div>
-    </div>
-  );
-};
-
-export default Footer;
+    );
+  };
+  
+  export default Footer;
+  
