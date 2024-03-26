@@ -19,7 +19,7 @@
 }
 
 .LogoBoxes{
-  background-color: red;
+  background-color: #161616;
   width:15%;
   height:48vh;
   margin: -27.4% 0 0 48%;
@@ -27,10 +27,10 @@
 }
 
 .LinkBoxes{
-  background-color: blue;
+  background-color: #161616;
   width:35%;
   height:48vh;
-  margin: -27.54% 0 0 68%;
+  margin: -22.54% 0 0 68%;
 }
 
 
@@ -79,55 +79,100 @@
   color: rgba(230, 230, 230, 0.85);
 }
 
-.F_img_1 {
-  padding-top: 0.6rem;
-  padding-left: 3.5rem;
-  height: 30%;
-  width: 100%;
+.boxmargin{
+  margin: -26.2% 0 0 48% ;
 }
-.icc {
-  width: 60%;
-  height: 70%;
-  padding-left: 1rem;
-}
-
 .emblem {
-  width: 60%;
-  height: 79%;
+  background-color: transparent; /* Set the background color of the button to transparent */
+  border: none;
+  
+  /* Remove the button border */
+}
+.marginal{
+  margin:2%
+}
+.emblem:hover,.icc:hover,.TNC:hover,.instafb:hover{
+  transform: scale(1.05);
 }
 
-.CyberDost {
-  width: 45%;
-  height: 80%;
-  padding-left: 1rem;
+.emblem img {
+  width: 100%;
+  height: 12vh;
+  background-color: transparent; /* Set the background color of the image to transparent */
 }
-.left_up {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-family: SawarabiMincho;
-  margin-top: 5rem;
-  margin-left: 5rem;
 
+.icc {
+  background-color: transparent; /* Set the background color of the button to transparent */
+  border: none;
 }
-.subtext{
-  margin-bottom: 1.2rem;
-}
-.Footer_icons{
+.icc img {
   width: 100%;
-  height: auto;
-  display: flex;
-  margin-left: 5rem;
+  height: 10vh;
+  background-color: transparent; /* Set the background color of the image to transparent */
 }
-.Frame5{
-  width: 10%;
-  height: auto;
+
+.TNC {
+  background-color: transparent; /* Set the background color of the button to transparent */
+  border: none;
+  color: #fff;
+  font-size: medium;
+  margin: 16% 0 0 -50%;
+  
+  /* Remove the button border */
 }
-.ho{
-  display: flex;
+.hello{
+  margin:-5%
+}
+
+.IFTLicon{
+display: flex;
+margin: 15% 2% 0 -56% ;
+}
+
+.instafb{
+  background-color: transparent; /* Set the background color of the button to transparent */
+  border: none;
+}
+
+.instafb img{
   width: 100%;
-  color: rgba(255, 255, 255, 0.50);
+  height: 5vh;
+  background-color: transparent;
 }
-.ho_text{
-  margin-left: 1rem;
-  margin-top: 0.1rem;
+
+.Line-1 {
+  width: 100%;
+  height: 0.3%;
+  margin: -1% 0 0.25% 1.08%;
+  transform: rotate(180deg);
+  background-color: #5b5858;
+}
+
+.Line-2 {
+  width: 100%; /* Converted from 1px */
+  height: 0.3%; /* Converted from 18px */
+  margin: -6% 9% 0 6%; /* Converted from 6px 9px 0 10px */
+  transform: rotate(90deg);
+  background-color: #5b5858;
+}
+
+.LegalInfo{
+ 
+    width: 9.2%; /* 92px converted to % based on a 100px width containing block */
+    height: 2.1%; /* 21px converted to % based on a 100px height containing block */
+    margin: -0.1% -4% 0 1.2%; /* Margins converted to % based on a 100px width containing block */
+    font-family: SawarabiMincho;
+    font-size: 10px; /* Assuming font size is not converted to % */
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    display: flex;
+}
+
+.hellolegal{
+  display: flex;
 }

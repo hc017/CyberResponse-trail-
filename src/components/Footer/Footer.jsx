@@ -34,7 +34,65 @@ const Footer = () => {
             </div>
           </div>
           <div className="LogoBoxes"></div>
-          <div className="LinkBoxes"></div>
+          <div className="boxmargin">
+          <button className="emblem">
+          <img src={Emblem} alt="emblem" />
+          </button>
+          <div className="marginal"></div>
+          <button className="icc">
+          <img src={ICC} alt="emblem" />
+          </button>
+          <div className="marginal"></div>
+          <button className="emblem">
+          <img src={CyberDost} alt="emblem" />
+          </button>
+          </div>
+          <div className="LinkBoxes">
+            <div className="boxmargin">
+            <button className="TNC">
+          Terms and Conditions
+          </button>
+          <div className="hello"></div>
+          <button className="TNC">
+          Terms and Conditions
+          </button>
+          <div className="hello"></div>
+          <button className="TNC">
+          Terms and Conditions
+          </button>
+          <div className="hello"></div>
+          <button className="TNC">
+          Terms and Conditions
+          </button>
+          <div className="hello"></div>
+          <button className="TNC">
+          Terms and Conditions
+          </button>
+          <div className="marginal"></div>
+          <div className="IFTLicon">
+          <button className="instafb">
+          <img src={Instagram} alt="emblem" />
+          </button>
+          <button className="instafb">
+          <img src={Facebook} alt="emblem" />
+          </button>
+          <button className="instafb">
+          <img src={Twitter} alt="emblem" />
+          </button>
+          <button className="instafb">
+          <img src={LinkedIn} alt="emblem" />
+          </button>
+          </div>
+            </div>
+          </div>
+          <div className="Line-1"></div>
+          <div className="hellolegal">
+          <div className="LegalInfo"> Legal Information</div>
+          {/* <div className="Line-2"></div> */}
+          <div className="LegalInfo"> Accessibility</div>
+          <div className="LegalInfo"> Cookie Management</div>
+          </div>
+          
         </div>
       </div>
     );
