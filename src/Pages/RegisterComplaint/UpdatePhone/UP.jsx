@@ -46,7 +46,7 @@ const UP = () => {
             </div>
             <div className="UP_block"></div>
           </div>
-        \
+        
         </div>
       </div>
     </div>
