@@ -53,7 +53,7 @@
 }
 
 .Login-to-Complaint {
-    width: 36%;
+    width: 50%;
     height: 5vh;
     margin: 2rem 0 0.5rem 11rem;
     font-size: 1.5rem;
@@ -322,17 +322,17 @@
     width: 50%;
 }
 .Login-CHECK-LIST-FOR-COMPLAINANT {
-    width: 60% ;
+    width: 75% ;
     height: 4.5vh;
     flex-grow: 0rem;
     margin: 2rem 0.125rem 0rem 6.9rem ;
     font-size: 1.5rem;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     color: #f00;
 }
 .Login-infotext {
-    width: 80% ;
+    width: 95% ;
     height: 4.2vh ;
     flex-grow: 0;
     margin: 0.5rem 0.5rem 0rem 1.3rem ;
