@@ -1,6 +1,7 @@
 import React from "react";
 import "./UserForm.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const UserForm = () => {
   const [showOtpInput, setShowOtpInput] = useState(false);
@@ -269,9 +270,9 @@ const UserForm = () => {
                 </div>
               </div>
               <p className="text_h1">(AlphaNumeric and Symbols like @ , . / () _ - : ; are allowed. Do not use any special characters.)</p>
-              <button className="save_btn">
+              <Link to="/incidentdetails" className="save_btn">
                 Save and Submit
-              </button>
+              </Link>
             </div>
           </div>
         </div>
