@@ -21,8 +21,10 @@ body {
 }
 .SD_innerComp2{
   width: 85%;
-  height: 80vh;
+  min-height: 30vh;
+  max-height: 90vh;
   margin-left: 7%;
+  background-color: #2d2d2dbd;
 }
 .susdetail_bar{
   width: 100%;

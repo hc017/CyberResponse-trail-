@@ -16,8 +16,10 @@
 }
 .ISD_innerComp2 {
   width: 85%;
-  height: 130vh;
+  min-height: 90vh;
+  max-height: 130vh;
   margin-left: 7%;
+  background-color: #2d2d2dbd;
 }
 .ISD_susdetail_bar {
   width: 100%;
