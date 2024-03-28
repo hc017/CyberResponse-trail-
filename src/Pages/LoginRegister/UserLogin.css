@@ -103,6 +103,7 @@
 .extension{
     margin: 1.5rem 0 0 2rem;
 }
+
 #getotp {
     width: 21% !important;
     height: 5.5vh;
@@ -265,27 +266,44 @@
     width: 53%;
     margin: 0rem 0 0 13rem;
     display: block;
-    /* border-radius: 0.11rem; */
     border: 0.2rem solid red;
     background-color: red;
+    font-size: 0.9rem;
 }
 
-.error-msg .error-message-phone{
+.error-message-phone{
     color: white;
     width: 53%;
+    margin: 0rem 0 0 12.9rem;
+    display: block;
+    border: 0.2rem solid red;
+    background-color: red;
+    font-size: 0.9rem;
+}
+.error-message-otp{
+    color: white;
+    width: 21%;
     margin: 0rem 0 0 13rem;
     display: block;
-    /* border-radius: 0.11rem; */
+    font-size: 0.9rem;
     border: 0.2rem solid red;
     background-color: red;
 }
-
+.error-message-captcha{
+    color: white;
+    width: 42%;
+    margin: 0rem 0 0rem 9.75rem;
+    display: block;
+    font-size: 0.9rem;
+    border: 0.2rem solid red;
+    background-color: red;
+}
 
 .register-newuser {
     width: 17.5vw;
     height: 5.3vh;
     flex-grow: 0;
-    margin: 1.5rem 4.9rem 0.56rem 8rem;
+    margin: 3.5rem 4.9rem 0.56rem 8rem;
     font-size: 1.125rem;
     font-weight: 300;
     font-stretch: normal;

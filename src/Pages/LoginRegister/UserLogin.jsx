@@ -21,15 +21,13 @@ const UserLogin = () => {
   const [phoneError, setPhoneError] = useState("");
   const [otpError, setOtpError] = useState("");
   const [captchaError, setCaptchaError] = useState("");
-
-
+  
 
 
   const sendOTP = async () => {
     try {
       const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {})
       const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha)
-      // console.log(confirmation)
       setUser(confirmation);
     }
     catch (err) {
@@ -39,7 +37,7 @@ const UserLogin = () => {
 
   const verifyOTP = async () => {
     try {
-      const captcha = document.querySelector(".captcha"); // Define captcha here
+      const captcha = document.querySelector(".captcha");
       // Check if captcha input matches
       if (captchaInput.trim() === captcha.innerText.replace(/\s/g, "")) {
         const data = await user.confirm(otp);
@@ -73,40 +71,44 @@ const UserLogin = () => {
     setCaptchaError("");
 
     // Validate email
-    if (!validateEmail(loginId)) {
-      setLoginIdError("Invalid email format");
+    if (loginId.trim() === "") {
+      setLoginIdError("Please enter email id.");
+      return;
+    } else if (!validateEmail(loginId)) {
+      setLoginIdError("Invalid email format.");
       return;
     }
 
     // Validate phone number
-    if (phone.length !== 13) {
-      setPhoneError("Mobile number should be exactly 10 digits long");
+    if (phone.trim() === "") {
+      setPhoneError("Please enter mobile number.");
+      return;
+    } else if (phone.length !== 13) {
+      setPhoneError("Mobile number should be exactly 10 digits long.");
       return;
     }
 
-     // Validate OTP
-     if (otp.trim() === "" ) {
-      setOtpError("Please enter OTP");
+    // Validate OTP
+    if (otp.trim() === "") {
+      setOtpError("Please enter OTP.");
       return;
-    }else if (otp.length !== 6) {
-      setOtpError("OTP should be exactly 6 digits long");
+    } else if (otp.length !== 6) {
+      setOtpError("OTP should be exactly 6 digits long.");
       return;
     }
 
     // Validate Captcha
     if (captchaInput.trim() === "") {
-      setCaptchaError("Please enter Captcha");
+      setCaptchaError("Please enter captcha.");
       return;
-    }else if (captchaInput.length !== 6) {
-      setCaptchaError("Captcha should be exactly 6 digits long");
+    } else if (captchaInput.length !== 6) {
+      setCaptchaError("Captcha should be exactly 6 digits long.");
       return;
     }
 
     // Continue with login process
     window.location.href = "/userdetails";
   };
-
-
 
   useEffect(() => {
     initializeCaptcha(); // Call the initializeCaptcha function when component mounts
@@ -128,8 +130,9 @@ const UserLogin = () => {
             <div class="login-horizontal-line"> </div>
 
             <div className='login-form-align'>
-              <form>
+              <form action='' method='post'>
                 <div>
+                
                   <label className="loginid">Login ID:</label>
                   <input type="email" placeholder="Enter your email ID" id="loginid" required value={loginId}
                     onChange={(e) => {
@@ -146,15 +149,18 @@ const UserLogin = () => {
                 </div>
                 <div className="error-msg">
                   {phoneError && <span className="error-message-phone">{phoneError}</span>}
-                  </div>
+                </div>
+                
                 <div className='fillotp'>
                   <label className="getotp">OTP:</label>
                   <input type="text" onChange={(e) => setOtp(e.target.value)} placeholder="Enter OTP" id="getotp" required />
-                  {otpError && <span className="error-message-otp">{otpError}</span>}
+
                   <button type="button" className='getotp-button' onClick={sendOTP} >Get OTP</button>
                   <button type="button" onClick={verifyOTP} className='verifyotp-button' >Verify OTP</button>
-                  <div id='recaptcha'></div>
 
+                </div>
+                {otpError && <span className="error-message-otp">{otpError}</span>}
+                <div id='recaptcha'>
 
                 </div>
 
@@ -175,13 +181,12 @@ const UserLogin = () => {
                     <input type="text" placeholder='Enter the captcha' id="write-captcha" value={captchaInput}
                       onChange={(e) => setCaptchaInput(e.target.value)} required />
                     {captchaError && <span className="error-message-captcha">{captchaError}</span>}
-                    <button class="check-btn">Check</button>
                   </div>
                   <div className="status-text" />
                 </div>
 
                 <div className='register-newuser'>
-                  <Link to="/register" style={{ color: '#fff', textDecoration: 'none' }} >New User? Click to Register</Link>
+                  <Link to="/register" style={{ color: '#fff', textDecoration: 'none'}} >New User? Click to Register</Link>
                 </div>
                 <div>
                   <Link onClick={(e) => handleLogin(e)} type="button" className='confirm-login-button'>Login</Link>
