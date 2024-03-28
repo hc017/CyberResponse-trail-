@@ -11,6 +11,10 @@
   padding: 0.1rem;
 }
 
+.BigAllBox{
+  display: flex;
+}
+
 .BoxBox {
   background-color: #161616;
   width:45%;
@@ -20,17 +24,20 @@
 
 .LogoBoxes{
   background-color: #161616;
-  width:15%;
+  width:25%;
   height:48vh;
-  margin: -27.4% 0 0 48%;
-
+  margin: 0 0 0 0;
+  
 }
 
 .LinkBoxes{
   background-color: #161616;
   width:35%;
   height:48vh;
-  margin: -22.54% 0 0 68%;
+
+  padding-top: 4%;
+  padding-left: 4%;
+  
 }
 
 
@@ -80,7 +87,7 @@
 }
 
 .boxmargin{
-  margin: -26.2% 0 0 48% ;
+  margin-top: 2.4rem ;
 }
 .emblem {
   background-color: transparent; /* Set the background color of the button to transparent */
@@ -89,7 +96,8 @@
   /* Remove the button border */
 }
 .marginal{
-  margin:2%
+  
+  margin:5%
 }
 .emblem:hover,.icc:hover,.TNC:hover,.instafb:hover{
   transform: scale(1.05);
@@ -111,22 +119,28 @@
   background-color: transparent; /* Set the background color of the image to transparent */
 }
 
+
+
+
+
 .TNC {
   background-color: transparent; /* Set the background color of the button to transparent */
   border: none;
   color: #fff;
   font-size: medium;
-  margin: 16% 0 0 -50%;
+  margin-bottom: 2%;
+  
   
   /* Remove the button border */
 }
 .hello{
-  margin:-5%
+  margin: 3%;
 }
 
 .IFTLicon{
 display: flex;
-margin: 15% 2% 0 -56% ;
+
+
 }
 
 .instafb{

@@ -4,6 +4,8 @@ import {
     Route,
     Link
   } from "react-router-dom"
+
+  
 import Home from '../../Pages/Home/Home'
 import UserDetails from '../../Pages/UserDetails/UserDetails'
 import TrackComplaint from '../../Pages/TrackComplaint/TrackComplaint'
@@ -18,6 +20,7 @@ import UP from '../../Pages/RegisterComplaint/UpdatePhone/UP'
 import UserPhone from '../../Pages/RegisterComplaint/UserPhone/UserPhone'
 import UserLogin from '../../Pages/LoginRegister/UserLogin'
 import UserRegister from '../../Pages/LoginRegister/UserRegister'
+import ReportIncident from '../../Pages/ReportIncident/ReportIncident'
 
 
 
@@ -38,8 +41,7 @@ const AllRoutes = () => {
     <Route path='/draftcomplaint' element={<DC/>}></Route>
     <Route path='/updatephone' element={<UP/>}></Route>
     <Route path='/userd' element={<UserPhone/>}></Route>
-
-
+    <Route path='/reportincident' element={<ReportIncident/>}></Route>
    </Routes>
   )
 }

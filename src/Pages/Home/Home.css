@@ -95,14 +95,17 @@
 }
 
 .left_bottom {
-  padding-top: 1rem; /* Convert px values to rem */
+  padding-top: 1rem;
+ /* Convert px values to rem */
 }
 
 .report_btn {
-  width: 31.25rem; /* 500px converted to rem */
+  width: 25.25rem; /* 500px converted to rem */
   height: 4.375rem; /* 70px converted to rem */
-  padding: 0 5.025rem 0 3.0125rem; /* Convert px values to rem */
-  margin: 1rem; /* Convert px value to rem */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-bottom: 5%; /* Convert px value to rem */
   border-radius: 0.625rem; /* 10px converted to rem */
   background-image: linear-gradient(
     to right,
@@ -110,26 +113,27 @@
     #68afc4 49%,
     #5a737a 100%
   );
+  text-decoration: none;
+  text-align: center;
 }
 
 .Report_text {
   width: 19.3125rem; /* 308.7px converted to rem */
-  height: 4.375rem; /* 70px converted to rem */
-  margin: 0 0 0 0.35rem; /* Convert px values to rem */
+  height: 4.375rem; /* 70px converted to rem */ /* Convert px values to rem */
   text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25); /* Convert px values to rem */
   font-family: Roboto;
   font-size: 1.5rem; /* 24px converted to rem */
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: normal;
+  line-height: 4.375rem; /* Center vertically */
   letter-spacing: normal;
-  text-align: center;
   color: #101010;
 }
 
+
 .report_btn:hover {
-  width: 31.375rem; /* 502px converted to rem */
+  width: 28.375rem; /* 502px converted to rem */
   height: 4.5rem; /* 72px converted to rem */
   padding: 0 5.04375rem 0 3.025rem; /* Convert px values to rem */
   border-radius: 0.625rem; /* 10px converted to rem */
@@ -139,6 +143,7 @@
     #5a737a 0%,
     #68afc4 100%
   );
+  transition: all 0.3s ease;
 }
 
 .rightside_HS {
@@ -222,28 +227,8 @@
     padding-top: 0.5208vh; /* Convert 1rem to vh */
   }
   
-  .report_btn {
-    width: 4.1667vw; /* Convert 31.25rem to vw */
-    height: 0.7813vh; /* Convert 4.375rem to vh */
-    padding: 0 0.6708vw 0 0.4017vw; /* Convert 5.025rem and 3.0125rem to vw */
-    margin: 0.5208vh; /* Convert 1rem to vh */
-    border-radius: 0.5208vw; /* Convert 0.625rem to vw */
-  }
   
-  .Report_text {
-    width: 2.5542vw; /* Convert 19.3125rem to vw */
-    height: 0.7813vh; /* Convert 4.375rem to vh */
-    margin: 0 0 0 0.2333vw; /* Convert 0.35rem to vw */
-    font-size: 1.6667vw; /* Convert 1.5rem to vw */
-  }
-  
-  .report_btn:hover {
-    width: 4.1917vw; /* Convert 31.375rem to vw */
-    height: 0.8333vh; /* Convert 4.5rem to vh */
-    padding: 0 0.6723vw 0 0.402vw; /* Convert 5.04375rem and 3.025rem to vw */
-    border-radius: 0.5208vw; /* Convert 0.625rem to vw */
-  }
-  
+   */
   .rightside_HS {
     width: 50%;
     margin: auto;
