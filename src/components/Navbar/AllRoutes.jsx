@@ -21,8 +21,8 @@ import UserPhone from '../../Pages/RegisterComplaint/UserPhone/UserPhone'
 import UserLogin from '../../Pages/LoginRegister/UserLogin'
 import UserRegister from '../../Pages/LoginRegister/UserRegister'
 import ReportIncident from '../../Pages/ReportIncident/ReportIncident'
-
-
+import Victim from '../../Pages/ReportIncident/Victim'
+import ReportButton from '../../Pages/ReportIncident/ReportButton'
 
 const AllRoutes = () => {
   return (
@@ -42,6 +42,9 @@ const AllRoutes = () => {
     <Route path='/updatephone' element={<UP/>}></Route>
     <Route path='/userd' element={<UserPhone/>}></Route>
     <Route path='/reportincident' element={<ReportIncident/>}></Route>
+    <Route path='/victim' element={<Victim/>}></Route>
+    <Route path='/reportbutton' element={<ReportButton/>}></Route>
+
    </Routes>
   )
 }

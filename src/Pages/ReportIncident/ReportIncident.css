@@ -12,44 +12,31 @@
     background-color: #000000;
 }
 
-.IncidentBlock {
-    width: 48%;
-    height: 60vh;
-    border-radius: 0.625rem;
-    background-color: #222222;
-    margin: 5rem auto 2%; /* Adjusted margin */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-}
-.ToAlign {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .Report-An-Incident-Immediately {
     width: auto;
     height: auto;
     font-family: Poppins;
     font-size: 1.5rem;
     font-weight: 300;
-    color: #a4e1f4;
+    color: #A4E1F4;
     white-space: nowrap;
-    margin-bottom: 1rem;
-    position: relative;
-    top: -4rem; /* Adjusted position */
+    margin: 0; /* Remove margin */
+    position: absolute; /* Use absolute positioning */
+    top: 0; /* Align to the top of the container */
+    left: 50%; /* Align horizontally to the center */
+    transform: translateX(-50%); /* Center horizontally */
 }
 
+
 .ReportLine {
-    width: 100%;
-    height: 0.0625vh;
-    background-color: #606060;
-    position: relative;
-    margin-top: -4rem; /* Adjusted position */
+   
+        width: 100%;
+        height: 0.0625vh;
+        background-color: #5b5858;
+        position: absolute; /* Use absolute positioning */
+        top: 3rem; /* Align to the top of the container */
+    
+    
 }
 
 .ButtonCSS {
@@ -60,9 +47,9 @@
     margin-bottom: 1rem;
 }
 
-.ReportButton {
-    width: 36%;
-    height: 14.25vh;
+.ButtonReport {
+    width: 30%;
+    height: 12.25vh;
     margin: 3.5rem;
     padding: 1.25rem 1.875rem;
     border-radius: 0.3125rem;
@@ -95,65 +82,79 @@
     height: 0.2vh;
     background-color: #5b5858;
     margin-top: 0rem;
+    
+}
+
+.AlignToUseAll{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:50%;
+    height:10vh;
+    background-color: #222222;
+    bottom:1rem;
+}
+
+.FinalAlign{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:50%;
+    height:10vh;
+    background-color: #100f0f;
+    bottom:1rem;
 }
 
 
-
-
-.TextFor {
-    width: 16.1875rem;
-    height: 5.25rem;
-    margin: 1.5rem 4.4375rem 6.375rem 0;
-    padding: 1.5rem 3.375rem 1.5625rem 3.4375rem;
-    box-shadow: inset 0 0.25rem 0.25rem 0 #092c4e, inset -0.25rem 0.25rem 0.25rem 0 rgba(9, 44, 78, 0.25);
-    background-color: #505050;
+.BlockForReport1{
+    width: 80%;
+    height: 45vh;
+    border-radius: 0.625rem;
+    background-color: #222222;
+    margin: 1rem auto 2%; /* Adjusted margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.Reporttheblock{
+    width: 80%;
+    height: 45vh;
+    border-radius: 0.625rem;
+    background-color: #100f0f;
+    margin: 1rem auto 2%; /* Adjusted margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .TextBoxText {
-    width: 9.375rem;
-    height: 2.1875rem;
-    font-family: SawarabiMincho;
-    font-size: 1.5rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #fff;
+    width:100%;
+    height:30vh;
+    background-color: #222222;
+    
+    
+
 }
 
-.Refresh {
-    width: 3.75rem;
-    height: 2.625rem;
-    margin: 2.8125rem 0 7.6875rem 1.875rem;
+.forLinks{
+    display:flex;
+    width:100%;
+    height:10%;
+    background-color: #222222;
+    text-decoration: none;
 }
 
-.BackArrow {
-    width: 1.9375rem;
-    height: 1.9375rem;
-    margin: 6.375rem 0.1875rem 0 0.3125rem;
-}
 
-.Previous-Choice {
-    width: 8.75rem;
-    height: 1.6875rem;
-    margin: 6.5rem 4.8125rem 0.125rem 0.1875rem;
-    font-family: SawarabiMincho;
-    font-size: 1.125rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #fff;
-}
-
-.HomePage {
+.IncidentHeader {
     width: 5.625rem;
     height: 1.5rem;
-    margin: 0 0 1.5rem;
+    margin: 1rem 0 1.5rem 0;
     font-family: SawarabiMincho;
     font-size: 1rem;
     font-weight: normal;
@@ -163,11 +164,47 @@
     letter-spacing: normal;
     text-align: left;
     color: #fff;
+    text-decoration: none; /* Remove underline from links */
 }
 
-.VectorArrow {
-    width: 1.1875rem;
-    height: 0.75rem;
-    margin: 0.375rem 0.5rem 1.875rem 0;
-    border: solid 0.0625rem #a4e1f4;
+
+.ArrowIcon{
+    color: #fff;
+    margin: 0.3rem 0 0 0.2rem;
 }
+
+
+.BoxVictimReport {
+    width: 8%;
+    height: 5.25vh;
+    margin: 1rem 0 0 5rem;
+    padding: 1.25rem 1.875rem;
+    border-radius: 0.3125rem;
+    background-color: #222222;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.BoxVictimReport:hover {
+    transform: scale(1.1);
+    background-color: #333333;
+}
+
+.TextVictimReport {
+    height: auto;
+    font-family: SawarabiMincho;
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.AlignmentForVictimReport{
+    display: flex;
+}
+
+
