@@ -18,6 +18,7 @@ import UP from '../../Pages/RegisterComplaint/UpdatePhone/UP'
 import UserPhone from '../../Pages/RegisterComplaint/UserPhone/UserPhone'
 import UserLogin from '../../Pages/LoginRegister/UserLogin'
 import UserRegister from '../../Pages/LoginRegister/UserRegister'
+import ReportIncident from '../../Pages/Home/ReportIncident/ReportIncident'
 
 
 
@@ -38,8 +39,7 @@ const AllRoutes = () => {
     <Route path='/draftcomplaint' element={<DC/>}></Route>
     <Route path='/updatephone' element={<UP/>}></Route>
     <Route path='/userd' element={<UserPhone/>}></Route>
-
-
+    <Route path='/reportincident' element={<ReportIncident/>}></Route>
    </Routes>
   )
 }
