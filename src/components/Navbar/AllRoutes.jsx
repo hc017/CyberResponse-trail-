@@ -18,7 +18,7 @@ import UP from '../../Pages/RegisterComplaint/UpdatePhone/UP'
 import UserPhone from '../../Pages/RegisterComplaint/UserPhone/UserPhone'
 import UserLogin from '../../Pages/LoginRegister/UserLogin'
 import UserRegister from '../../Pages/LoginRegister/UserRegister'
-import ReportIncident from '../../Pages/Home/ReportIncident/ReportIncident'
+import ReportIncident from '../../Pages/ReportIncident/ReportIncident'
 
 
 
