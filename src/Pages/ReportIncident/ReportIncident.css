@@ -61,8 +61,8 @@
 }
 
 .ReportButton {
-    width: 15rem;
-    height: 4.25rem;
+    width: 36%;
+    height: 14.25vh;
     margin: 3.5rem;
     padding: 1.25rem 1.875rem;
     border-radius: 0.3125rem;
@@ -83,7 +83,7 @@
 .ReportText {
     height: auto;
     font-family: SawarabiMincho;
-    font-size: 1.25rem;
+    font-size: 1.7rem;
     font-weight: normal;
     color: #fff;
     margin: 0;
