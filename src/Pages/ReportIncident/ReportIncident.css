@@ -1,110 +1,104 @@
 .ReportContainer {
     width: 100%;
-    height: 100vh; /* Adjusted height */
+    height: 100vh;
     flex-grow: 0;
     border-radius: 2px;
     background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.85),
-      #0b0000,
-      rgba(0, 0, 0, 0.89)
+        to bottom,
+        #000000d9,
+        #0b0000,
+        rgba(0, 0, 0, 0.89)
     );
-     /* Shifting upwards */
     background-color: #000000;
-  }
- 
+}
+
 .IncidentBlock {
     width: 48%;
     height: 60vh;
     border-radius: 0.625rem;
     background-color: #222222;
-    margin: 2% auto; /* Center align vertically and horizontally */
-    display: flex; /* Use flexbox for vertical alignment */
-    justify-content: center; /* Center align horizontally */
-    align-items: center; /* Center align vertically */
-    
-    
-}
-
-.ReportBlock {
-    width: 63rem;
-    height: 18.5rem;
-    margin-top: auto;
-    border-radius: 0.625rem;
-    border: solid 0.0625rem #929292;
-    background-color: #474747;
-}
-
-.ToAlign{
-    position: absolute;
-    top: 22%;
-    left: 50%;
-    transform: translateX(-50%);
-    
-   
-}
-.Report-An-Incident-Immediately {
-    width: 100%; /* Adjusted width */
-    height: auto; /* Adjusted height */
+    margin: 5rem auto 2%; /* Adjusted margin */
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Align text at the top */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.ToAlign {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Report-An-Incident-Immediately {
+    width: auto;
+    height: auto;
     font-family: Poppins;
     font-size: 1.5rem;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
     color: #a4e1f4;
-    white-space: nowrap; /* Ensure text remains on one line */
-    margin-bottom: 5%;/* Add gap below the text */
+    white-space: nowrap;
+    margin-bottom: 1rem;
+    position: relative;
+    top: -6rem; /* Adjusted position */
 }
 
 .ReportLine {
-    width: 100%; /* Adjusted width */
+    width: 100%;
     height: 0.0625vh;
-    margin-top: 1% auto 0; /* Add gap above the line */
     background-color: #606060;
-    
+    position: relative;
+    margin-top: -5rem; /* Adjusted position */
 }
 
-
-
-.Endline {
-    width: 56.375rem;
-    height: 0.0625rem;
-    margin: 9.1875rem 2.25rem 0 4.375rem;
-    background-color: #606060;
+.ButtonCSS {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .ReportButton {
-    width: 17.1875rem;
-    height: 6.25rem;
-    margin: 11rem 10.5625rem 9.125rem 7.625rem;
-    padding: 1.25rem 1.875rem 1.25rem 1.9375rem;
+    width: 15rem;
+    height: 4.25rem;
+    margin: 3.5rem;
+    padding: 1.25rem 1.875rem;
     border-radius: 0.3125rem;
     box-shadow: inset 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
     background-color: #295f86;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ReportButton:hover {
+    transform: scale(1.1);
+    background-color: #1a5995;
 }
 
 .ReportText {
-    width: 13.375rem;
-    height: 3.75rem;
-    text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    height: auto;
     font-family: SawarabiMincho;
     font-size: 1.25rem;
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
     color: #fff;
-    text-decoration: none;
+    margin: 0;
+    white-space: nowrap;
 }
+
+.Endline {
+    width: 60%;
+    height: 0.2vh;
+    background-color: #5b5858;
+    margin-top: 0rem;
+}
+
+
+
 
 .TextFor {
     width: 16.1875rem;
