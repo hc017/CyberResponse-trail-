@@ -18,15 +18,14 @@
   padding-top: 1rem;
 }
 .Group-107 .USEFUL-LINKS {
-  width: 18.75rem;
+  width: 100%;
   height: 3.1875rem;
-  padding-left: 0%;
-  padding-bottom: 2%;
+  /* margin-left: 18rem;
+  margin-bottom: 3%; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Roboto;
   font-size: 2.25rem;
   font-weight: 900;
-  margin:0 0 0 36%;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -35,6 +34,10 @@
   color: #fff;
 }
 
+.paraUseful{
+  width: 100%;
+  text-align: center;
+}
 .Group-107 .ThirdRectangle,
 .Group-107 .FourthRectangle,
 .Group-107 .FifthRectangle,
@@ -62,6 +65,7 @@
 }
 
 .blockforLink{
-  display: flex;
-  margin: 0 0 0 1%;
+ width: 100%;
+ height: 4rem;
+ 
 }

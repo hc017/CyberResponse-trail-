@@ -8,7 +8,7 @@ const UsefulLinks = () => {
         <div className="inside_bluecontainer">
           <div className="blockforLink">
             <div className="USEFUL-LINKS">
-              <p>USEFUL LINKS</p>
+              <p className="paraUseful">USEFUL LINKS</p>
             </div>
           </div>
           <div className="AllRectangles">

@@ -2,10 +2,10 @@ import React from "react";
 import "./Home.css";
 import H_img from "./hero -img.png";
 import UsefulLinks from "../../components/UsefuLinks/UsefulLinks";
-import Playback_video from "./Playback_video/Playback_video";
+// import Playback_video from "./Playback_video/Playback_video";
 import Banner from "./Banner_1/Banner";
 import Banner2 from "./Banner_2/Banner2";
-
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div class="Home-Container">
@@ -25,15 +25,15 @@ const Home = () => {
             </p>
           </div>
           <div className="left_bottom">
-            <button className="report_btn">
+            <Link to="/reportincident" type="button" className="report_btn">
               <span class="Report_text">Report an Incident Now</span>
-            </button>
-            <button className="report_btn">
+            </Link>
+            <Link to="/reportincident" type="button" className="report_btn">
               <span class="Report_text">Learn How to Report</span>
-            </button>
-            <button className="report_btn">
+            </Link>
+            <Link to="/reportincident" type="button" className="report_btn">
               <span class="Report_text">Stay Informed</span>
-            </button>
+            </Link>
           </div>
         </div>
         <div className="rightside_HS">
@@ -45,7 +45,7 @@ const Home = () => {
       <Banner />
       <Banner2 />
       <div className="Home_usef">
-      <UsefulLinks/>
+        <UsefulLinks />
       </div>
     </div>
   );
