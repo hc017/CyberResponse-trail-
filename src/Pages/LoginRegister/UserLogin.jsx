@@ -5,8 +5,108 @@ import logo from './arrow.svg'
 import captchaimg from './captcha-bg.png'
 import '@fortawesome/fontawesome-free/css/all.css';
 import initializeCaptcha from './CaptchaScript';
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
+import { auth } from '../../FirebaseCongfig/FirebaseConfig';
 
 const UserLogin = () => {
+
+  const [phone, setPhone] = useState("");
+  const [user, setUser] = useState(null);
+  const [otp, setOtp] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
+  const [loginId, setLoginId] = useState("");
+  const [loginIdError, setLoginIdError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+  const [otpError, setOtpError] = useState("");
+  const [captchaError, setCaptchaError] = useState("");
+
+
+
+
+  const sendOTP = async () => {
+    try {
+      const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {})
+      const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha)
+      // console.log(confirmation)
+      setUser(confirmation);
+    }
+    catch (err) {
+      console.error(err)
+    }
+  }
+
+  const verifyOTP = async () => {
+    try {
+      const captcha = document.querySelector(".captcha"); // Define captcha here
+      // Check if captcha input matches
+      if (captchaInput.trim() === captcha.innerText.replace(/\s/g, "")) {
+        const data = await user.confirm(otp);
+        console.log(data);
+        // Show success message if OTP is verified
+        alert("OTP and Captcha verified successfully!");
+      } else {
+        console.log("Captcha not matched. Please try again!");
+        // Show error message if captcha is not matched
+        alert("Captcha not matched. Please try again!");
+      }
+    } catch (err) {
+      console.error(err);
+      // Show error message if OTP verification fails
+      alert("OTP verification failed. Please try again!");
+    }
+  };
+
+  const validateEmail = (email) => {
+    const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    return regex.test(email);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Reset previous error messages
+    setLoginIdError("");
+    setPhoneError("");
+    setOtpError("");
+    setCaptchaError("");
+
+    // Validate email
+    if (!validateEmail(loginId)) {
+      setLoginIdError("Invalid email format");
+      return;
+    }
+
+    // Validate phone number
+    if (phone.length !== 13) {
+      setPhoneError("Mobile number should be exactly 10 digits long");
+      return;
+    }
+
+     // Validate OTP
+     if (otp.trim() === "" ) {
+      setOtpError("Please enter OTP");
+      return;
+    }else if (otp.length !== 6) {
+      setOtpError("OTP should be exactly 6 digits long");
+      return;
+    }
+
+    // Validate Captcha
+    if (captchaInput.trim() === "") {
+      setCaptchaError("Please enter Captcha");
+      return;
+    }else if (captchaInput.length !== 6) {
+      setCaptchaError("Captcha should be exactly 6 digits long");
+      return;
+    }
+
+    // Continue with login process
+    window.location.href = "/userdetails";
+  };
+
+
 
   useEffect(() => {
     initializeCaptcha(); // Call the initializeCaptcha function when component mounts
@@ -31,17 +131,31 @@ const UserLogin = () => {
               <form>
                 <div>
                   <label className="loginid">Login ID:</label>
-                  <input type="text" placeholder="Enter your login ID" id="loginid" />
+                  <input type="email" placeholder="Enter your email ID" id="loginid" required value={loginId}
+                    onChange={(e) => {
+                      setLoginId(e.target.value);
+                      setLoginIdError("");
+                    }}
+                  />
+                  {loginIdError && <span className="error-message-email">{loginIdError}</span>}
+
                 </div>
-                <div>
+                <div className='mobile'>
                   <label className="mobileno">Mobile No:</label>
-                  <input type="tel" id="extensionNo" />
-                  <input type="tel" placeholder="Enter your mobile number" id="mobileno" />
+                  <PhoneInput country={"in"} value={phone} onChange={(phone) => setPhone("+" + phone)} className="extension" required />
                 </div>
-                <div>
+                <div className="error-msg">
+                  {phoneError && <span className="error-message-phone">{phoneError}</span>}
+                  </div>
+                <div className='fillotp'>
                   <label className="getotp">OTP:</label>
-                  <input type="text" placeholder="Enter OTP" id="getotp" />
-                  <button type="button" className='getotp-button' >Get OTP</button>
+                  <input type="text" onChange={(e) => setOtp(e.target.value)} placeholder="Enter OTP" id="getotp" required />
+                  {otpError && <span className="error-message-otp">{otpError}</span>}
+                  <button type="button" className='getotp-button' onClick={sendOTP} >Get OTP</button>
+                  <button type="button" onClick={verifyOTP} className='verifyotp-button' >Verify OTP</button>
+                  <div id='recaptcha'></div>
+
+
                 </div>
 
                 <div className="captcha-wrapper">
@@ -58,7 +172,9 @@ const UserLogin = () => {
 
                   <div className='input-captcha'>
                     <label classname='write-captcha' >Enter Captcha:</label>
-                    <input type="text" placeholder='Enter the captcha' id="write-captcha" required />
+                    <input type="text" placeholder='Enter the captcha' id="write-captcha" value={captchaInput}
+                      onChange={(e) => setCaptchaInput(e.target.value)} required />
+                    {captchaError && <span className="error-message-captcha">{captchaError}</span>}
                     <button class="check-btn">Check</button>
                   </div>
                   <div className="status-text" />
@@ -68,7 +184,7 @@ const UserLogin = () => {
                   <Link to="/register" style={{ color: '#fff', textDecoration: 'none' }} >New User? Click to Register</Link>
                 </div>
                 <div>
-                  <Link to="/userdetails" type="button" className='confirm-login-button'>Login</Link>
+                  <Link onClick={(e) => handleLogin(e)} type="button" className='confirm-login-button'>Login</Link>
                   <button type="button" className='cancel-button'>Cancel</button>
                 </div>
               </form>
@@ -85,34 +201,34 @@ const UserLogin = () => {
             <p className='Login-infotext'> Please keep this information ready before filing your complaint: </p>
             <div className="Login-mandatory-info">
               <p className="text-style-1">Mandatory Information</p>
-                        <ol className='info-ol'>
-                            <li>Incident Date and Time.</li>
-                            <li>Incident details (minimum 200 characters) without any special characters (#$@^*`"~|!).</li>
-                            <li>Soft copy of any national Id (Voter Id, Driving license, Passport, PAN Card, Aadhar Card) of complaint in .jpeg, .jpg, .png format (file size should not more than 5 MB).</li>
-                            <li>In case of financial fraud, please keep following information ready:
-                                <ol type="i">
-                                    <li>Name of the Bank/ Wallet/Merchant</li>
-                                    <li>12-digit Transaction id/UTR No.</li>
-                                    <li>Date of transaction</li>
-                                    <li>Fraud amount</li>
-                                </ol>
-                            </li>
-                            <li>Soft copy of all the relevant evidences related to the cyber crime (not more than 10 MB each).</li>
-                        </ol>
-                        <p className="Optional-Desirable-Information">Optional/Desirable Information:</p>
-                        <ol className='info-ol'>
-                            <li>Suspected website URLs/ Social Media handles (wherever applicable).</li>
-                            <li>Suspect Details (if available):
-                                <ol type="i">
-                                    <li>Mobile No.</li>
-                                    <li>Email id</li>
-                                    <li>Bank Account No</li>
-                                    <li>Address</li>
-                                    <li>Soft copy of photograph of suspect in .jpeg, .jpg, .png format (not more than 5 MB).</li>
-                                    <li>Any other document through which suspect can be identified.</li>
-                                </ol>
-                            </li>
-                        </ol>
+              <ol className='info-ol'>
+                <li>Incident Date and Time.</li>
+                <li>Incident details (minimum 200 characters) without any special characters (#$@^*`"~|!).</li>
+                <li>Soft copy of any national Id (Voter Id, Driving license, Passport, PAN Card, Aadhar Card) of complaint in .jpeg, .jpg, .png format (file size should not more than 5 MB).</li>
+                <li>In case of financial fraud, please keep following information ready:
+                  <ol type="i">
+                    <li>Name of the Bank/ Wallet/Merchant</li>
+                    <li>12-digit Transaction id/UTR No.</li>
+                    <li>Date of transaction</li>
+                    <li>Fraud amount</li>
+                  </ol>
+                </li>
+                <li>Soft copy of all the relevant evidences related to the cyber crime (not more than 10 MB each).</li>
+              </ol>
+              <p className="Optional-Desirable-Information">Optional/Desirable Information:</p>
+              <ol className='info-ol'>
+                <li>Suspected website URLs/ Social Media handles (wherever applicable).</li>
+                <li>Suspect Details (if available):
+                  <ol type="i">
+                    <li>Mobile No.</li>
+                    <li>Email id</li>
+                    <li>Bank Account No</li>
+                    <li>Address</li>
+                    <li>Soft copy of photograph of suspect in .jpeg, .jpg, .png format (not more than 5 MB).</li>
+                    <li>Any other document through which suspect can be identified.</li>
+                  </ol>
+                </li>
+              </ol>
             </div>
           </div>
 

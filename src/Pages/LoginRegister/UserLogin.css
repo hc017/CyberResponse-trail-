@@ -67,7 +67,7 @@
     background-color: #606060;
 }
 
-.loginid, .mobileno, .getotp {
+.loginid, .getotp {
     width: 6%;
     height: 5.32vh;
     margin: 0rem 0 0 3.5rem;
@@ -75,9 +75,17 @@
     text-align: left;
     color: #a4e1f4;
 }
+.mobileno {
+    width: 33% !important;
+    height: 5.32vh;
+    margin: 1.5rem 0 0 3.5rem !important;
+    font-size: 1.125rem;
+    text-align: left;
+    color: #a4e1f4;
+}
 
 #loginid {
-    width: 50%;
+    width: 53%;
     height: 5.5vh;
     margin: 1.5rem 0rem 0rem 5rem;
     border-radius: 0.31rem;
@@ -86,28 +94,17 @@
     background-color: #d9d9d9;
 }
 
-#mobileno {
-    width: 38.4%;
-    height: 5.5vh;
-    margin: 1.5rem 0rem 0rem 1.2rem;
-    padding: 10px;
-    border-radius: 0.31rem;
-    box-shadow: inset 0 0.25rem 0.25rem 0 #00000040;
-    background-color: #d9d9d9;
+.mobile{
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-#extensionNo {
-    width: 8.2%;
-    height: 5.5vh;
-    margin: 1.5rem 0rem 0rem 4rem;
-    border-radius: 0.31rem;
-    box-shadow: inset 0rem 0.25rem 0.25rem 0rem rgba(0, 0, 0, 0.25);
-    background-color: #d9d9d9;
+.extension{
+    margin: 1.5rem 0 0 2rem;
 }
-
-
 #getotp {
-    width: 30%;
+    width: 21% !important;
     height: 5.5vh;
     margin: 1.5rem 0 0 7.2rem;
     padding: 10px;
@@ -115,11 +112,23 @@
     box-shadow: inset 0rem 0.25rem 0.25rem 0rem #00000040;
     background-color: #d9d9d9;
 }
+#recaptcha{
+    margin: 2rem 0 0 13rem;
+}
 
 .getotp-button {
-    width: 4.3vw;
+    width: 12%;
     height: 5.3vh;
-    margin: 0rem 0rem 0rem 3rem;
+    margin: 0rem 0rem 0rem 1rem !important;
+    padding: 0.25rem 0rem;
+    border-radius: 0.31rem;
+    background-color: #a4e1f4;
+}
+
+.verifyotp-button{
+    width: 14%;
+    height: 5.3vh;
+    margin: 0rem 0rem 0rem 1rem;
     padding: 0.25rem 0rem;
     border-radius: 0.31rem;
     background-color: #a4e1f4;
@@ -251,6 +260,27 @@
     margin: 20px 0 -5px;
   }
 
+.error-message-email{
+    color: white;
+    width: 53%;
+    margin: 0rem 0 0 13rem;
+    display: block;
+    /* border-radius: 0.11rem; */
+    border: 0.2rem solid red;
+    background-color: red;
+}
+
+.error-msg .error-message-phone{
+    color: white;
+    width: 53%;
+    margin: 0rem 0 0 13rem;
+    display: block;
+    /* border-radius: 0.11rem; */
+    border: 0.2rem solid red;
+    background-color: red;
+}
+
+
 .register-newuser {
     width: 17.5vw;
     height: 5.3vh;
@@ -271,7 +301,7 @@
     height: 7.8vh;
     margin: 1.2rem 2rem 0rem 7rem;
     font-size: 1.5rem;
-    text-align: center;
+    text-align:center;
     color: #268ef7;
     border-radius: 0.31rem;
     border: 1px solid;

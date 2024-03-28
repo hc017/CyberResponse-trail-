@@ -30,20 +30,20 @@ const UserRegister = () => {
                             <form>
                                 <div>
                                     <label className="state">State:</label>
-                                    <input type="text" id="state" placeholder='Enter your state' />
+                                    <input type="text" id="state" placeholder='Enter your state' required />
                                 </div>
                                 <div>
                                     <label className="loginid">Login ID:</label>
-                                    <input type="text" placeholder="Enter your login ID" id="loginid" />
+                                    <input type="text" placeholder="Enter your login ID" id="loginid" required />
                                 </div>
                                 <div>
                                     <label className="mobileno">Mobile No:</label>
-                                    <input type="tel" id="extensionNo" />
-                                    <input type="tel" placeholder="Enter your mobile number" id="mobileno" />
+                                    <input type="tel" id="extensionNo" value="+91" disabled />
+                                    <input type="tel" placeholder="Enter your mobile number" id="mobileno" required />
                                 </div>
                                 <div>
                                     <label className="getotp">OTP:</label>
-                                    <input type="text" placeholder="Enter OTP" id="getotp" />
+                                    <input type="text" placeholder="Enter OTP" id="getotp" required />
                                     <button type="button" className='getotp-button' >Get OTP</button>
                                 </div>
 
