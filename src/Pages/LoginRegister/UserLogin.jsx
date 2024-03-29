@@ -9,110 +9,138 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 import { auth } from '../../FirebaseCongfig/FirebaseConfig';
+import {  signInWithEmailAndPassword } from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database";
+import { useNavigate } from "react-router-dom";
 
 const UserLogin = () => {
 
-  const [phone, setPhone] = useState("");
-  const [user, setUser] = useState(null);
-  const [otp, setOtp] = useState("");
-  const [captchaInput, setCaptchaInput] = useState("");
-  const [loginId, setLoginId] = useState("");
+  const [Lemail, setLEmail] = useState("");
   const [loginIdError, setLoginIdError] = useState("");
-  const [phoneError, setPhoneError] = useState("");
-  const [otpError, setOtpError] = useState("");
-  const [captchaError, setCaptchaError] = useState("");
+  const [Lpassword, setLPassword] = useState("");
+  const navigate = useNavigate();
+  const db = getDatabase();
+
+
+
+  const handleLogin = () => {
+    console.log(Lemail, Lpassword);
+    signInWithEmailAndPassword(auth, Lemail, Lpassword)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        let log = {
+          uids: user.uid
+        };
+        // console.log(log.uids)
+        alert("user login");
+        navigate('/incidentdetails', {
+          state: log
+        });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error("Error signing in:", errorMessage);
+        // Handle error, show error message, etc.
+      });
+  };
   
 
 
-  const sendOTP = async () => {
-    try {
-      const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {})
-      const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha)
-      setUser(confirmation);
-    }
-    catch (err) {
-      console.error(err)
-    }
-  }
 
-  const verifyOTP = async () => {
-    try {
-      const captcha = document.querySelector(".captcha");
-      // Check if captcha input matches
-      if (captchaInput.trim() === captcha.innerText.replace(/\s/g, "")) {
-        const data = await user.confirm(otp);
-        console.log(data);
-        // Show success message if OTP is verified
-        alert("OTP and Captcha verified successfully!");
-      } else {
-        console.log("Captcha not matched. Please try again!");
-        // Show error message if captcha is not matched
-        alert("Captcha not matched. Please try again!");
-      }
-    } catch (err) {
-      console.error(err);
-      // Show error message if OTP verification fails
-      alert("OTP verification failed. Please try again!");
-    }
-  };
 
-  const validateEmail = (email) => {
-    const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-    return regex.test(email);
-  };
+  
 
-  const handleLogin = (e) => {
-    e.preventDefault();
 
-    // Reset previous error messages
-    setLoginIdError("");
-    setPhoneError("");
-    setOtpError("");
-    setCaptchaError("");
+  // const sendOTP = async () => {
+  //   try {
+  //     const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {})
+  //     const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha)
+  //     setUser(confirmation);
+  //   }
+  //   catch (err) {
+  //     console.error(err)
+  //   }
+  // }
 
-    // Validate email
-    if (loginId.trim() === "") {
-      setLoginIdError("Please enter email id.");
-      return;
-    } else if (!validateEmail(loginId)) {
-      setLoginIdError("Invalid email format.");
-      return;
-    }
+  // const verifyOTP = async () => {
+  //   try {
+  //     const captcha = document.querySelector(".captcha");
+  //     // Check if captcha input matches
+  //     if (captchaInput.trim() === captcha.innerText.replace(/\s/g, "")) {
+  //       const data = await user.confirm(otp);
+  //       console.log(data);
+  //       // Show success message if OTP is verified
+  //       alert("OTP and Captcha verified successfully!");
+  //     } else {
+  //       console.log("Captcha not matched. Please try again!");
+  //       // Show error message if captcha is not matched
+  //       alert("Captcha not matched. Please try again!");
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //     // Show error message if OTP verification fails
+  //     alert("OTP verification failed. Please try again!");
+  //   }
+  // };
 
-    // Validate phone number
-    if (phone.trim() === "") {
-      setPhoneError("Please enter mobile number.");
-      return;
-    } else if (phone.length !== 13) {
-      setPhoneError("Mobile number should be exactly 10 digits long.");
-      return;
-    }
+  // const validateEmail = (email) => {
+  //   const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  //   return regex.test(email);
+  // };
 
-    // Validate OTP
-    if (otp.trim() === "") {
-      setOtpError("Please enter OTP.");
-      return;
-    } else if (otp.length !== 6) {
-      setOtpError("OTP should be exactly 6 digits long.");
-      return;
-    }
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
 
-    // Validate Captcha
-    if (captchaInput.trim() === "") {
-      setCaptchaError("Please enter captcha.");
-      return;
-    } else if (captchaInput.length !== 6) {
-      setCaptchaError("Captcha should be exactly 6 digits long.");
-      return;
-    }
+  //   // Reset previous error messages
+  //   setLoginIdError("");
+  //   setPhoneError("");
+  //   setOtpError("");
+  //   setCaptchaError("");
 
-    // Continue with login process
-    window.location.href = "/userdetails";
-  };
+  //   // Validate email
+  //   if (loginId.trim() === "") {
+  //     setLoginIdError("Please enter email id.");
+  //     return;
+  //   } else if (!validateEmail(loginId)) {
+  //     setLoginIdError("Invalid email format.");
+  //     return;
+  //   }
 
-  useEffect(() => {
-    initializeCaptcha(); // Call the initializeCaptcha function when component mounts
-  }, []);
+  //   // Validate phone number
+  //   if (phone.trim() === "") {
+  //     setPhoneError("Please enter mobile number.");
+  //     return;
+  //   } else if (phone.length !== 13) {
+  //     setPhoneError("Mobile number should be exactly 10 digits long.");
+  //     return;
+  //   }
+
+  //   // Validate OTP
+  //   if (otp.trim() === "") {
+  //     setOtpError("Please enter OTP.");
+  //     return;
+  //   } else if (otp.length !== 6) {
+  //     setOtpError("OTP should be exactly 6 digits long.");
+  //     return;
+  //   }
+
+  //   // Validate Captcha
+  //   if (captchaInput.trim() === "") {
+  //     setCaptchaError("Please enter captcha.");
+  //     return;
+  //   } else if (captchaInput.length !== 6) {
+  //     setCaptchaError("Captcha should be exactly 6 digits long.");
+  //     return;
+  //   }
+
+  //   // Continue with login process
+  //   window.location.href = "/userdetails";
+  // };
+
+  // useEffect(() => {
+  //   initializeCaptcha(); // Call the initializeCaptcha function when component mounts
+  // }, []);
 
   return (
     <div className='login-page'>
@@ -134,16 +162,28 @@ const UserLogin = () => {
                 <div>
                 
                   <label className="loginid">Login ID:</label>
-                  <input type="email" placeholder="Enter your email ID" id="loginid" required value={loginId}
+                  <input type="email" placeholder="Enter your email ID" id="loginid" required value={Lemail}
                     onChange={(e) => {
-                      setLoginId(e.target.value);
+                      setLEmail(e.target.value);
                       setLoginIdError("");
                     }}
                   />
                   {loginIdError && <span className="error-message-email">{loginIdError}</span>}
 
                 </div>
-                <div className='mobile'>
+                <div>
+                
+                  <label className="loginid">Password:</label>
+                  <input type="password" placeholder="Enter your Password" id="loginid" required value={Lpassword}
+                    onChange={(e) => {
+                      setLPassword(e.target.value);
+                    }}
+
+                  />
+                  
+
+                </div>
+                {/* <div className='mobile'>
                   <label className="mobileno">Mobile No:</label>
                   <PhoneInput country={"in"} value={phone} onChange={(phone) => setPhone("+" + phone)} className="extension" required />
                 </div>
@@ -183,7 +223,7 @@ const UserLogin = () => {
                     {captchaError && <span className="error-message-captcha">{captchaError}</span>}
                   </div>
                   <div className="status-text" />
-                </div>
+                </div> */}
 
                 <div className='register-newuser'>
                   <Link to="/register" style={{ color: '#fff', textDecoration: 'none'}} >New User? Click to Register</Link>

@@ -1,10 +1,40 @@
-import React from "react";
+
 import "./UserForm.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation,useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
+import { getDatabase, ref, set } from "firebase/database";
 
 const UserForm = () => {
   const [showOtpInput, setShowOtpInput] = useState(false);
+  const location = useLocation();
+  const [userId, setUserId] = useState("");
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
+  const [district, setDistrict] = useState("");
+  const [policeStation, setPoliceStation] = useState("");
+  const navigate = useNavigate();
+  const db = getDatabase();
+
+  
+
+  useEffect(() => {
+    // Retrieve user data from location state
+    if (location.state) {
+      setUserId(location.state.userId);
+      setEmail(location.state.email);
+    }
+  }, [location.state]); 
+
+  const handleSaveAndSubmit = async () => {
+    // Upload additional data to Firestore
+ 
+  };
+
+
+
+
 
   const handleGetOtpClick = () => {
     setShowOtpInput(true);
@@ -13,10 +43,6 @@ const UserForm = () => {
   const handleVerifyClick = () => {
     // Implement OTP verification logic here
   };
-  const [country, setCountry] = useState("");
-  const [state, setState] = useState("");
-  const [district, setDistrict] = useState("");
-  const [policeStation, setPoliceStation] = useState("");
 
   // Dummy data for dropdowns (replace with actual data source)
   const countries = [
@@ -270,7 +296,7 @@ const UserForm = () => {
                 </div>
               </div>
               <p className="text_h1">(AlphaNumeric and Symbols like @ , . / () _ - : ; are allowed. Do not use any special characters.)</p>
-              <Link to="/incidentdetails" className="save_btn">
+              <Link className="save_btn" onClick={handleSaveAndSubmit}>
                 Save and Submit
               </Link>
             </div>
