@@ -3,12 +3,10 @@
     height: 100vh;
     flex-grow: 0;
     border-radius: 2px;
-    background-image: linear-gradient(
-        to bottom,
-        #000000d9,
-        #0b0000,
-        rgba(0, 0, 0, 0.89)
-    );
+    background-image: linear-gradient(to bottom,
+            #000000d9,
+            #0b0000,
+            rgba(0, 0, 0, 0.89));
     background-color: #000000;
 }
 
@@ -20,24 +18,33 @@
     font-weight: 300;
     color: #A4E1F4;
     white-space: nowrap;
-    margin: 0; /* Remove margin */
-    position: absolute; /* Use absolute positioning */
-    top: 0; /* Align to the top of the container */
-    left: 50%; /* Align horizontally to the center */
-    transform: translateX(-50%); /* Center horizontally */
+    margin: 0;
+    /* Remove margin */
+    position: absolute;
+    /* Use absolute positioning */
+    top: 0;
+    /* Align to the top of the container */
+    left: 50%;
+    /* Align horizontally to the center */
+    transform: translateX(-50%);
+    /* Center horizontally */
 }
 
 
 .ReportLine {
-   
-        width: 100%;
-        height: 0.0625vh;
-        background-color: #5b5858;
-        position: absolute; /* Use absolute positioning */
-        top: 3rem; /* Align to the top of the container */
-    
-    
+
+    width: 100%;
+    height: 0.0625vh;
+    background-color: #5b5858;
+    position: absolute;
+    /* Use absolute positioning */
+    top: 3rem;
+    /* Align to the top of the container */
+
+
 }
+
+/* these are big button css */
 
 .ButtonCSS {
     width: 100%;
@@ -62,7 +69,7 @@
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.ReportButton:hover {
+.ButtonReport:hover {
     transform: scale(1.1);
     background-color: #1a5995;
 }
@@ -82,50 +89,52 @@
     height: 0.2vh;
     background-color: #5b5858;
     margin-top: 0rem;
-    
+
 }
 
-.AlignToUseAll{
+.AlignToUseAll {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:50%;
-    height:10vh;
+    width: 50%;
+    height: 10vh;
     background-color: #222222;
-    bottom:1rem;
+    bottom: 1rem;
 }
 
-.FinalAlign{
+.FinalAlign {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:50%;
-    height:10vh;
-    background-color: #100f0f;
-    bottom:1rem;
+    width: 50%;
+    height: 10vh;
+    background-color: #000000;
+    bottom: 1rem;
 }
 
 
-.BlockForReport1{
+.BlockForReport1 {
     width: 80%;
     height: 45vh;
     border-radius: 0.625rem;
     background-color: #222222;
-    margin: 1rem auto 2%; /* Adjusted margin */
+    margin: 1rem auto 2%;
+    /* Adjusted margin */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.Reporttheblock{
+.Reporttheblock {
     width: 80%;
     height: 45vh;
     border-radius: 0.625rem;
-    background-color: #100f0f;
-    margin: 1rem auto 2%; /* Adjusted margin */
+    background-color: #000000;
+    margin: 1rem auto 2%;
+    /* Adjusted margin */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,18 +143,18 @@
 
 
 .TextBoxText {
-    width:100%;
-    height:30vh;
+    width: 100%;
+    height: 30vh;
     background-color: #222222;
-    
-    
+
+
 
 }
 
-.forLinks{
-    display:flex;
-    width:100%;
-    height:10%;
+.forLinks {
+    display: flex;
+    width: 100%;
+    height: 10%;
     background-color: #222222;
     text-decoration: none;
 }
@@ -164,21 +173,23 @@
     letter-spacing: normal;
     text-align: left;
     color: #fff;
-    text-decoration: none; /* Remove underline from links */
+    text-decoration: none;
+    /* Remove underline from links */
 }
 
 
-.ArrowIcon{
+.ArrowIcon {
     color: #fff;
     margin: 0.3rem 0 0 0.2rem;
 }
 
+/* these are text box button css */
 
 .BoxVictimReport {
-    width: 8%;
-    height: 5.25vh;
-    margin: 1rem 0 0 5rem;
-    padding: 1.25rem 1.875rem;
+    /* width: 8%; */
+    /* height: 5.25vh; */
+    margin: 1rem 0 0 1rem;
+    padding: 1.25rem 0.5rem; /* Adjusted padding */
     border-radius: 0.3125rem;
     background-color: #222222;
     text-decoration: none;
@@ -190,7 +201,7 @@
 
 .BoxVictimReport:hover {
     transform: scale(1.1);
-    background-color: #333333;
+    /* background-color: #333333; */
 }
 
 .TextVictimReport {
@@ -203,8 +214,52 @@
     white-space: nowrap;
 }
 
-.AlignmentForVictimReport{
+
+.AlignmentForVictimReport {
     display: flex;
 }
 
 
+/* these are smaller buttons */
+.CSSForSmallerButton {
+    width: 80%;
+    height: auto; /* Adjusted height */
+    border-radius: 0.625rem;
+    background-color: #0b0000;
+    margin: 1rem auto 2%;
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap onto next line */
+    justify-content: center; /* Center align flex items horizontally */
+    align-items: center;
+}
+
+.SmallerButtonCSS {
+    width: 16%; /* Allow button width to adjust according to content */
+    height: 15vh; /* Allow button height to adjust according to content */
+    margin: 1.5rem; /* Adjust margin as needed */
+    padding: 1.25rem 1.875rem;
+    border-radius: 0.3125rem;
+    box-shadow: inset 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+    background-color: #295f86;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.SmallerButtonCSS:hover {
+    transform: scale(1.1);
+    background-color: #1a5995;
+}
+
+.SmallerTextButton {
+    font-family: SawarabiMincho;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #fff;
+    margin: 0;
+    white-space: normal;
+    overflow: hidden;
+    text-align: center;
+}

@@ -4,7 +4,7 @@ import Em from '../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const ReportButton = () => {
+const Impersonation = () => {
     return (
         <div className='ReportContainer'>
             <Em />
@@ -26,10 +26,24 @@ const ReportButton = () => {
                         <Link to="/reportbutton" className="ReportButton">
                             <span className="IncidentHeader">Report</span>
                         </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/cyberbullying" className="ReportButton">
+                            <span className="IncidentHeader">CyberBullying</span>
+                        </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/impersonation" className="ReportButton">
+                            <span className="IncidentHeader">Impersonation</span>
+                        </Link>
                     </div>
                     <div className="AlignmentForVictimReport">
                         <Link to="/reportbutton" className="BoxVictimReport">
                             <span className="TextVictimReport">I report</span>
+                        </Link>
+                        <Link to="/cyberbullying" className="BoxVictimReport">
+                            <span className="TextVictimReport">cyber bullying</span>
+                        </Link>
+                        <Link to="/impersonation" className="BoxVictimReport">
+                            <span className="TextVictimReport">and I am getting impersonated</span>
                         </Link>
                     </div>
 
@@ -37,21 +51,21 @@ const ReportButton = () => {
             </div>
 
 
-            <div className="CSSForSmallerButton">
-                <Link to="/cyberbullying" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Cyber Bullying</span>
+            {/* <div className="CSSForSmallerButton">
+                <Link to="/cyberstalking" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton"> Cyberstalking</span>
                 </Link>
+                <Link to="/trolling" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Trolling</span>
+                </Link>
+                <Link to="/harassment" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Harassment</span>
+                </Link>
+                <Link to="/impersonation" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Impersonating</span>
+                </Link> */}
                 
-                <Link to="/onlinefrauds" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Online Fraud</span>
-                </Link>
-                <Link to="/childexp" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Child Exploitation</span>
-                </Link>
-                <Link to="/hacking" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Hacking</span>
-                </Link>
-            </div>
+            {/* </div> */}
 
 
 
@@ -60,4 +74,4 @@ const ReportButton = () => {
     )
 }
 
-export default ReportButton
+export default Impersonation;

@@ -22,10 +22,10 @@ const ReportIncident = () => {
                     </Link>
                 </div>
                 <div className="Endline"></div>
-                </div>
-                <UsefulLinks/>
             </div>
-        
+            <UsefulLinks />
+        </div>
+
     );
 }
 

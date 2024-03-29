@@ -1,10 +1,10 @@
 import React from 'react';
-import './ReportIncident';
-import Em from '../../components/Emergency/Em';
+import '../ReportIncident.css';
+import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const ReportButton = () => {
+const FinancialFrauds = () => {
     return (
         <div className='ReportContainer'>
             <Em />
@@ -26,10 +26,24 @@ const ReportButton = () => {
                         <Link to="/reportbutton" className="ReportButton">
                             <span className="IncidentHeader">Report</span>
                         </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/onlinefrauds" className="ReportButton">
+                            <span className="IncidentHeader">Online Frauds</span>
+                        </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/financialfrauds" className="ReportButton">
+                            <span className="IncidentHeader"> Financial Frauds</span>
+                        </Link>
                     </div>
                     <div className="AlignmentForVictimReport">
                         <Link to="/reportbutton" className="BoxVictimReport">
                             <span className="TextVictimReport">I report</span>
+                        </Link>
+                        <Link to="/onlinefrauds" className="BoxVictimReport">
+                            <span className="TextVictimReport">online fraud against</span>
+                        </Link>
+                        <Link to="/financialfrauds" className="BoxVictimReport">
+                            <span className="TextVictimReport">finances which includes credit cards, UPI , cryptocurrency crimes etc</span>
                         </Link>
                     </div>
 
@@ -37,27 +51,22 @@ const ReportButton = () => {
             </div>
 
 
-            <div className="CSSForSmallerButton">
+            {/* <div className="CSSForSmallerButton">
                 <Link to="/cyberbullying" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Cyber Bullying</span>
+                    <span className="SmallerTextButton">Financial Frauds</span>
                 </Link>
                 
-                <Link to="/onlinefrauds" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Online Fraud</span>
+                <Link to="/reportbutton" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Tech Support Scams</span>
                 </Link>
-                <Link to="/childexp" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Child Exploitation</span>
+                <Link to="/reportbutton" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Privacy Violations</span>
                 </Link>
-                <Link to="/hacking" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Hacking</span>
-                </Link>
-            </div>
-
-
-
+                
+            </div> */}
 
         </div>
     )
 }
 
-export default ReportButton
+export default FinancialFrauds;
