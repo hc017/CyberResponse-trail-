@@ -14,6 +14,7 @@ function App() {
       <AuthProvider> {/* Wrap your entire application with AuthProvider */}
         <Navbar/>
         <AllRoutes />
+        <ReportRoutes/>
         <Footer/>
       </AuthProvider>
     </Router>
