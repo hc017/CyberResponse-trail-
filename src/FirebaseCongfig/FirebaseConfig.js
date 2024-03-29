@@ -1,10 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth"
+import  {getDatabase} from "firebase/database"
 
 const firebaseConfig = {
   apiKey: "AIzaSyD5kgkbKhHVVa9MmJwpD7zNZP5p-T-Huxw",
   authDomain: "cybersoochna-ec4e6.firebaseapp.com",
+  databaseURL: "https://cybersoochna-ec4e6-default-rtdb.asia-southeast1.firebasedatabase.app/",
   projectId: "cybersoochna-ec4e6",
   storageBucket: "cybersoochna-ec4e6.appspot.com",
   messagingSenderId: "370994734512",
@@ -14,4 +16,5 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app)
+export const auth = getAuth()
+export const  database = getDatabase()
