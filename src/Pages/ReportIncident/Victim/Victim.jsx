@@ -3,6 +3,7 @@ import '../Report/ReportIncident';
 import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { GrLinkPrevious } from "react-icons/gr";
 
 const Victim = () => {
     return (
@@ -34,8 +35,17 @@ const Victim = () => {
                     </div>
 
                 </div>
+                <div className="NormalPagePrev">
+                <Link to="/reportincident" className="PreviousButton">
+                <GrLinkPrevious className='ArrowIcon' />
+                <div>Previous</div>
+                </Link>
+                </div>
             </div>
 
+           
+                
+            
 
             <div className="ButtonCSS">
                 <Link to="/18younger" className="ButtonReport">
@@ -45,6 +55,7 @@ const Victim = () => {
                     <span className="ReportText">I am older than 18 years</span>
                 </Link>
             </div>
+
 
 
 

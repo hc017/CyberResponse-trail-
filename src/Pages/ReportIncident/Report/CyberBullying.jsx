@@ -3,6 +3,7 @@ import './ReportIncident';
 import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { GrLinkPrevious } from "react-icons/gr";
 
 const CyberBullying = () => {
     return (
@@ -40,6 +41,13 @@ const CyberBullying = () => {
                         </Link>
                     </div>
 
+                </div>
+
+                <div className="NormalPagePrev">
+                <Link to="/reportbutton" className="PreviousButton">
+                <GrLinkPrevious className='ArrowIcon' />
+                <div>Previous</div>
+                </Link>
                 </div>
             </div>
 

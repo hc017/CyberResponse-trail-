@@ -1,11 +1,12 @@
 import React from 'react';
-import './ReportIncident';
+import '../Report/ReportIncident';
 import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { GrLinkPrevious } from "react-icons/gr";
 
-const Harassment = () => {
+
+const WebScam= () => {
     return (
         <div className='ReportContainer'>
             <Em />
@@ -24,27 +25,35 @@ const Harassment = () => {
                             <span className="IncidentHeader">ReportIncident</span>
                         </Link>
                         <FaArrowRightLong className='ArrowIcon' />
-                        <Link to="/reportbutton" className="ReportButton">
-                            <span className="IncidentHeader">Report</span>
+                        <Link to="/victim" className="ReportButton">
+                            <span className="IncidentHeader">I am a victim</span>
                         </Link>
                         <FaArrowRightLong className='ArrowIcon' />
-                        <Link to="/cyberbullying" className="ReportButton">
-                            <span className="IncidentHeader">CyberBullying</span>
+                        <Link to="/18older" className="ReportButton">
+                            <span className="IncidentHeader">I am older than 18 years</span>
                         </Link>
                         <FaArrowRightLong className='ArrowIcon' />
-                        <Link to="/harassment" className="ReportButton">
-                            <span className="IncidentHeader">Harassment</span>
+                        <Link to="/moneylaundering" className="ReportButton">
+                            <span className="IncidentHeader">Financial Frauds</span>
                         </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/webscam" className="ReportButton">
+                            <span className="IncidentHeader">Web Scam</span>
+                        </Link>
+                        
                     </div>
                     <div className="AlignmentForVictimReport">
-                        <Link to="/reportbutton" className="BoxVictimReport">
-                            <span className="TextVictimReport">I report</span>
+                        <Link to="/victim" className="BoxVictimReport">
+                            <span className="TextVictimReport">I am a victim</span>
                         </Link>
-                        <Link to="/cyberbullying" className="BoxVictimReport">
-                            <span className="TextVictimReport">cyber bullying</span>
+                        <Link to="/18older" className="BoxVictimReport">
+                            <span className="TextVictimReport">I am a older than 18 years</span>
                         </Link>
-                        <Link to="/harassment" className="BoxVictimReport">
-                            <span className="TextVictimReport">and harassment</span>
+                        <Link to="/sh" className="BoxVictimReport">
+                            <span className="TextVictimReport">I was scammed financially</span>
+                        </Link>
+                        <Link to="/webscam" className="BoxVictimReport">
+                            <span className="TextVictimReport">in instances where fraudulent activities occur online </span>
                         </Link>
                     </div>
 
@@ -54,7 +63,7 @@ const Harassment = () => {
 
             <div className="EndPageButton">
                 
-            <Link to="/cyberbullying" className="PreviousButton">
+            <Link to="/moneylaundering" className="PreviousButton">
             <GrLinkPrevious className='ArrowIcon' />
             <div>Previous</div>
             </Link>
@@ -64,11 +73,8 @@ const Harassment = () => {
             </Link>
                 </div>
 
-
-
-
         </div>
     )
 }
 
-export default Harassment;
+export default WebScam
