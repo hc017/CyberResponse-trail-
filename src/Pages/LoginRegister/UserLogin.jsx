@@ -8,9 +8,9 @@ import initializeCaptcha from './CaptchaScript';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
-import { auth } from '../../FirebaseCongfig/FirebaseConfig';
+import { auth } from '../../FirebaseCongfig/FirebaseConfig'
 import {  signInWithEmailAndPassword } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, get,ref, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 
 const UserLogin = () => {
@@ -31,10 +31,24 @@ const UserLogin = () => {
         let log = {
           uids: user.uid
         };
-        // console.log(log.uids)
-        alert("user login");
-        navigate('/userdetails', {
-          state: log
+        
+        // Check if userdetails data is already filled
+        const userDetailsRef = ref(db, `users/${user.uid}/userdetails`);
+        get(userDetailsRef).then((snapshot) => {
+          if (snapshot.exists()) {
+            // userdetails data is already filled, redirect to incident details
+            navigate('/incidentdetails', {
+              state: log
+            });
+          } else {
+            // userdetails data is not filled, redirect to userdetails page
+            navigate('/userdetails', {
+              state: log
+            });
+          }
+        }).catch((error) => {
+          console.error("Error checking userdetails data:", error);
+          // Handle error, show error message, etc.
         });
       })
       .catch((error) => {

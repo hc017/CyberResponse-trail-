@@ -3,7 +3,8 @@ import "./UserForm.css";
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set } from "firebase/database";
-import { useAuth } from "../../../FirebaseCongfig/AuthContext"; // Import the useAuth hook from the AuthProvider
+import { useAuth } from "../../../FirebaseCongfig/AuthContext";// Import the useAuth hook from the AuthProvider
+import UP_bar from "../Userprofilebar/UP_bar";
 
 const UserForm = () => {
   const [showOtpInput, setShowOtpInput] = useState(false);
@@ -15,6 +16,12 @@ const UserForm = () => {
   const [RegGender, setRegGender] = useState("");
   const [RegEmail, setRegEmail] = useState("");
   const [RegRelation, setRegRelation] = useState("");
+  const [RegHouseNo, setRegHouseNo] = useState("");
+  const [RegStreetName, setRegStreetName] = useState("");
+  const [RegColony, setRegColony] = useState("");
+  const [RegTownCity, setRegTownCity] = useState("");
+  const [RegTeheshil, setRegTeheshil] = useState("");
+  const [RegPinCode, setRegPinCode] = useState("");
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [district, setDistrict] = useState("");
@@ -34,11 +41,6 @@ const UserForm = () => {
     }
   }, [currentUser]);
 
-  // Rest of the component code...
-
-
-
-
   useEffect(() => {
     // Retrieve user data from location state
     if (location.state) {
@@ -48,8 +50,12 @@ const UserForm = () => {
 
   const handleSaveAndSubmit = async () => {
      // Upload additional data to Realtime Database
+     if (currentUser && currentUser.email !== RegLogI) {
+      console.error("Error: Provided email does not match the current user's email");
+      return; // Exit the function if the emails don't match
+    }
      try {
-      await set(ref(db, `users/${currentUser.uid}`), {
+      await set(ref(db, `users/${currentUser.uid}/userdetails`), {
         RegLogI:RegLogI,
         RegName:RegName,
         RegMobile:RegMobile,
@@ -57,12 +63,19 @@ const UserForm = () => {
         RegGender:RegGender,
         RegEmail:RegEmail,
         RegRelation:RegRelation,
+        // Add other fields as needed
+      });
+      await set(ref(db, `users/${currentUser.uid}/userdetails/permanentAddress`), {
+
+
+
+
         country: country,
         state: state,
         district: district,
         policeStation: policeStation,
-        // Add other fields as needed
       });
+
       console.log("Data saved successfully!");
       navigate("/incidentdetails"); // Redirect to the next page after successful submission
     } catch (error) {
@@ -82,35 +95,80 @@ const UserForm = () => {
   const handleVerifyClick = () => {
     // Implement OTP verification logic here
   };
-
-  // Dummy data for dropdowns (replace with actual data source)
   const countries = [
-    { id: 1, name: "Country 1" },
-    { id: 2, name: "Country 2" },
-    { id: 3, name: "Country 3" },
+    { id: 1, name: "India" },
     // Add more countries as needed
   ];
   
   const states = [
-    { id: 1, name: "State 1", countryId: 1 },
-    { id: 2, name: "State 2", countryId: 1 },
-    { id: 3, name: "State 3", countryId: 2 },
+    { id: 1, name: "Maharashtra", countryId: 1 },
     // Add more states as needed
   ];
   
   const districts = [
-    { id: 1, name: "District 1", stateId: 1 },
-    { id: 2, name: "District 2", stateId: 1 },
-    { id: 3, name: "District 3", stateId: 2 },
+    { id: 1, name: "Ahmednagar", stateId: 1 },
+    { id: 2, name: "Akola", stateId: 1 },
+    { id: 3, name: "Amravati", stateId: 1 },
+    { id: 4, name: "Aurangabad", stateId: 1 },
+    { id: 5, name: "Beed", stateId: 1 },
+    { id: 6, name: "Bhandara", stateId: 1 },
+    { id: 7, name: "Buldhana", stateId: 1 },
+    { id: 8, name: "Chandrapur", stateId: 1 },
+    { id: 9, name: "Dhule", stateId: 1 },
+    { id: 10, name: "Gadchiroli", stateId: 1 },
+    { id: 11, name: "Gondia", stateId: 1 },
+    { id: 12, name: "Hingoli", stateId: 1 },
+    { id: 13, name: "Jalgaon", stateId: 1 },
+    { id: 14, name: "Jalna", stateId: 1 },
+    { id: 15, name: "Kolhapur", stateId: 1 },
+    { id: 16, name: "Latur", stateId: 1 },
+    { id: 17, name: "Mumbai City", stateId: 1 },
+    { id: 18, name: "Mumbai Suburban", stateId: 1 },
+    { id: 19, name: "Nagpur", stateId: 1 },
+    { id: 20, name: "Nanded", stateId: 1 },
+    { id: 21, name: "Nandurbar", stateId: 1 },
+    { id: 22, name: "Nashik", stateId: 1 },
+    { id: 23, name: "Osmanabad", stateId: 1 },
+    { id: 24, name: "Palghar", stateId: 1 },
+    { id: 25, name: "Parbhani", stateId: 1 },
+    { id: 26, name: "Pune", stateId: 1 },
+    { id: 27, name: "Raigad", stateId: 1 },
+    { id: 28, name: "Ratnagiri", stateId: 1 },
+    { id: 29, name: "Sangli", stateId: 1 },
+    { id: 30, name: "Satara", stateId: 1 },
+    { id: 31, name: "Sindhudurg", stateId: 1 },
+    { id: 32, name: "Solapur", stateId: 1 },
+    { id: 33, name: "Thane", stateId: 1 },
+    { id: 34, name: "Wardha", stateId: 1 },
+    { id: 35, name: "Washim", stateId: 1 },
+    { id: 36, name: "Yavatmal", stateId: 1 },
     // Add more districts as needed
   ];
   
   const policeStations = [
-    { id: 1, name: "Police Station 1", districtId: 1 },
-    { id: 2, name: "Police Station 2", districtId: 1 },
-    { id: 3, name: "Police Station 3", districtId: 2 },
+    // Ahmednagar
+    { id: 1, name: "Ahmednagar City", districtId: 1 },
+    { id: 2, name: "Ahmednagar Camp", districtId: 1 },
+    { id: 3, name: "Jamkhed", districtId: 1 },
+    // Akola
+    { id: 4, name: "Akola City", districtId: 2 },
+    { id: 5, name: "Barshitakli", districtId: 2 },
+    { id: 6, name: "Akot", districtId: 2 },
+    // Amravati
+    { id: 7, name: "Amravati City", districtId: 3 },
+    { id: 8, name: "Amravati Camp", districtId: 3 },
+    { id: 9, name: "Daryapur", districtId: 3 },
+    // Aurangabad
+    { id: 10, name: "Aurangabad City", districtId: 4 },
+    { id: 11, name: "Aurangabad Camp", districtId: 4 },
+    { id: 12, name: "Chikhalthana", districtId: 4 },
     // Add more police stations as needed
+    { id: 13, name: "Shivajinagar Police Station", districtId: 26 },
+    { id: 14, name: "Bhavani Peth Police Station", districtId: 26 },
+    { id: 15, name: "Wakad Police Station", districtId: 26 },
+    { id: 15, name: "Hinjewadi Police Station", districtId: 26 },
   ];
+
 
 
 
@@ -232,6 +290,8 @@ const UserForm = () => {
                       type="text"
                       className="PA_vi_input"
                       placeholder="Enter your House No."
+                      value={RegHouseNo}
+                      onChange={(e) => setRegHouseNo(e.target.value)} 
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -240,6 +300,8 @@ const UserForm = () => {
                       type="text"
                       className="PA_vi_input"
                       placeholder="Enter your Street Name"
+                      value={RegStreetName}
+                      onChange={(e) => setRegStreetName(e.target.value)} 
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -248,6 +310,8 @@ const UserForm = () => {
                       type="text"
                       className="PA_vi_input"
                       placeholder="Enter your Colony"
+                      value={RegColony}
+                      onChange={(e) => setRegColony(e.target.value)} 
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -256,6 +320,8 @@ const UserForm = () => {
                       type="text"
                       className="PA_vi_input"
                       placeholder="Enter your Town/City"
+                      value={RegTownCity}
+                      onChange={(e) => setRegTownCity(e.target.value)} 
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -264,6 +330,8 @@ const UserForm = () => {
                       type="text"
                       className="PA_vi_input"
                       placeholder="Enter your Teheshil"
+                      value={RegTeheshil}
+                      onChange={(e) => setRegTeheshil(e.target.value)} 
                     />
                   </div>
                 </div>
@@ -343,6 +411,8 @@ const UserForm = () => {
                       type="text"
                       className="PA_vi_input"
                       placeholder="Enter your Pincode"
+                      value={RegPinCode}
+                      onChange={(e) => setRegPinCode(e.target.value)} 
                     />
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./CW.css";
 import Em from "../../../components/Emergency/Em";
 import UFP_red from "../../UserDetails/UserForm/UFP_red";
+import UP_bar from "../../UserDetails/Userprofilebar/UP_bar";
 
 const CW = () => {
   const [statusData, setStatusData] = useState([]);
@@ -46,6 +47,8 @@ const CW = () => {
     <div className="CW_component">
       <div className="CW_innercomponent">
         <Em />
+        <div className="UD_up_bar"></div>
+        <UP_bar />
         <div className="UD_up_bar"></div>
         <UFP_red />
         <div className="UD_up_bar"></div>

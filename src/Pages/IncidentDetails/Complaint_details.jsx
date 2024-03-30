@@ -3,12 +3,15 @@ import "./Complaint_details.css";
 import Em from "../../components/Emergency/Em";
 import UFP_red from "../UserDetails/UserForm/UFP_red";
 import IDX from "./IDX";
+import UP_bar from "../UserDetails/Userprofilebar/UP_bar";
 
 const Complaint_details = () => {
   return (
     <div className="CD_component">
       <div className="CD_innercomponent">
         <Em />
+        <div className="UD_up_bar"></div>
+        <UP_bar />
         <div className="UD_up_bar"></div>
         <UFP_red />
         <div className="UD_up_bar"></div>
