@@ -3,6 +3,7 @@ import './ReportIncident';
 import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { GrLinkPrevious } from "react-icons/gr";
 
 const CyberStalking = () => {
     return (
@@ -51,21 +52,17 @@ const CyberStalking = () => {
             </div>
 
 
-            {/* <div className="CSSForSmallerButton">
-                <Link to="/cyberbullying" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Cyberstalking</span>
-                </Link>
-                <Link to="/reportbutton" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Trolling</span>
-                </Link>
-                <Link to="/reportbutton" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Harassment</span>
-                </Link>
-                <Link to="/reportbutton" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Impersonating</span>
-                </Link>
+            <div className="EndPageButton">
                 
-            </div> */}
+            <Link to="/cyberbullying" className="PreviousButton">
+            <GrLinkPrevious className='ArrowIcon' />
+            <div>Previous</div>
+            </Link>
+            <Link to="/incidentdetails" className="ContinueButton">
+            <FaArrowRightLong className='ArrowIcon' />
+            <div>Continue</div>
+            </Link>
+                </div>
 
 
 

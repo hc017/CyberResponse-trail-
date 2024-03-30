@@ -3,6 +3,8 @@ import '../Report/ReportIncident';
 import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { GrLinkPrevious } from "react-icons/gr";
+
 
 const WrongMessages = () => {
     return (
@@ -58,21 +60,17 @@ const WrongMessages = () => {
             </div>
 
 
-            {/* <div className="CSSForSmallerButton">
-                <Link to="/sh" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton"> Sexual Harassment</span>
-                </Link>
-                <Link to="/moneylaundering" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Financial Fraud</span>
-                </Link>
-                <Link to="/cyterror" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Cyber Terrorism</span>
-                </Link>
-                <Link to="/ransomware" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Ransomware</span>
-                </Link> 
+            <div className="EndPageButton">
                 
-             </div> */}
+                <Link to="/sh" className="PreviousButton">
+                <GrLinkPrevious className='ArrowIcon' />
+                <div>Previous</div>
+                </Link>
+                <Link to="/incidentdetails" className="ContinueButton">
+                <FaArrowRightLong className='ArrowIcon' />
+                <div>Continue</div>
+                </Link>
+                    </div>
 
         </div>
     )

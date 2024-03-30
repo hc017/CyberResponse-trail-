@@ -3,6 +3,7 @@ import '../ReportIncident.css';
 import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { GrLinkPrevious } from "react-icons/gr";
 
 const Technical = () => {
     return (
@@ -51,19 +52,17 @@ const Technical = () => {
             </div>
 
 
-            {/* <div className="CSSForSmallerButton">
-                <Link to="/cyberbullying" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Financial Frauds</span>
-                </Link>
+            <div className="EndPageButton">
                 
-                <Link to="/reportbutton" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Tech Support Scams</span>
+                <Link to="/cyberbullying" className="PreviousButton">
+                <GrLinkPrevious className='ArrowIcon' />
+                <div>Previous</div>
                 </Link>
-                <Link to="/reportbutton" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Privacy Violations</span>
+                <Link to="/incidentdetails" className="ContinueButton">
+                <FaArrowRightLong className='ArrowIcon' />
+                <div>Continue</div>
                 </Link>
-                
-            </div> */}
+            </div>
 
         </div>
     )

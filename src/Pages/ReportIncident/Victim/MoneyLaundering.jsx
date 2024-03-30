@@ -3,6 +3,7 @@ import '../Report/ReportIncident';
 import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { GrLinkPrevious } from "react-icons/gr";
 
 const MoneyLaudering = () => {
     return (
@@ -47,6 +48,12 @@ const MoneyLaudering = () => {
                         </Link>
                     </div>
 
+                </div>
+                <div className="NormalPagePrev">
+                <Link to="/18older" className="PreviousButton">
+                <GrLinkPrevious className='ArrowIcon' />
+                <div>Previous</div>
+                </Link>
                 </div>
             </div>
 
