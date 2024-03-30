@@ -3,15 +3,83 @@ import "./ID_main.css";
 import Em from "../../components/Emergency/Em";
 import UFP_red from "../UserDetails/UserForm/UFP_red";
 import IDX from "./IDX";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link,useLocation,useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
 import UP_bar from "../UserDetails/Userprofilebar/UP_bar";
+import { useAuth } from "../../FirebaseCongfig/AuthContext";// Import the useAuth hook
+import { getDatabase, ref, push,set, dbRef  } from "firebase/database";
+import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 
 const ID_main = () => {
   const [count, setCount] = useState(1500);
+  const location = useLocation();
   const [complaintCategory, setComplaintCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
+  const [ICdob, setICdob] = useState("");
+  const [ICplace, setICPlace] = useState("");
+  const [ICemail, setICEmail] = useState("");
+  const [selectedFile, setSelectedFile] = useState("");
   const [other, setOther] = useState("");
+  const { currentUser } = useAuth(); // Get currentUser from the authentication context
+  const db = getDatabase();
+  const storage = getStorage();
+  const [email, setEmail] = useState(""); 
+
+  const handleChooseFile = (e) => {
+    // Update selected file state when a file is chosen
+    setSelectedFile(e.target.files[0]);
+  };
+  useEffect(() => {
+    if (!currentUser) {
+      // Redirect unauthenticated users to login page or display a message
+      console.log("User not authenticated. Redirecting to login page...");
+    } else {
+      // User is authenticated, proceed with rendering the form
+      console.log("User authenticated:", currentUser);
+    }
+  }, [currentUser]);
+  
+  useEffect(() => {
+    // Retrieve user data from location state
+    if (location.state) {
+      setEmail(location.state.email);
+    }
+  }, [location.state]); 
+
+  const handleSaveAndSubmit = async () => {
+    // Upload file to Firebase Storage
+    let fileUrl = "";
+    if (selectedFile) {
+      const fileRef = storageRef(storage, `users/${currentUser.uid}/incidentdetails/storage${selectedFile.name}`);
+      await uploadBytes(fileRef, selectedFile);
+      fileUrl = await ref.getDownloadURL(fileRef);
+    }
+  
+    // Prepare data to store in Realtime Database
+    const data = {
+      complaintCategory: complaintCategory,
+      subCategory: subCategory,
+      other: other,
+      DateofBirth:ICdob,
+      Place:ICplace,
+      Email:ICemail,
+      fileUrl: fileUrl,
+      // Add other form fields as needed
+    };
+  
+    try {
+      // Generate a unique ID for the incident
+      const newIncidentRef = push(ref(db, `users/${currentUser.uid}/incidentdetails`));
+  
+      // Store form data in Realtime Database with the unique ID
+      await set(newIncidentRef, data);
+      console.log("Data saved successfully!");
+    } catch (error) {
+      console.error("Error adding data: ", error);
+    }
+  };
+
+
 
   const complaintCategories = [
     { name: "Category A", subcategories: ["Subcategory A1", "Subcategory A2"] },
@@ -20,12 +88,6 @@ const ID_main = () => {
   ];
 
   const otherOptions = ["Option 1", "Option 2", "Option 3"];
-
-  const handleChooseFile = () => {
-    // Implement file selection logic here
-    // This function will be called when the "Choose" input is clicked
-  };
-
 
   return (
     <div className="ISD_component">
@@ -111,12 +173,8 @@ const ID_main = () => {
                 className="ISD_vi_input"
                 id="ISDI"
                 placeholder="time"
-              />
-              <input
-                type="text"
-                className="ISD_vi_input"
-                id="ISDI"
-                placeholder="Am/Pm"
+                value={ICdob}
+                onChange={(e) => setICdob(e.target.value)}
               />
             </div>
             <div className="ISD_vertical_input">
@@ -135,7 +193,9 @@ const ID_main = () => {
             </div>
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Where did the incident occur? :</p>
-              <input type="text" className="ISD_vi_input" placeholder="Place" />
+              <input type="text" className="ISD_vi_input" placeholder="Place"
+               value={ICplace}
+               onChange={(e) => setICPlace(e.target.value)} />
             </div>
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Email ID: :</p>
@@ -143,27 +203,24 @@ const ID_main = () => {
                 type="email"
                 className="ISD_vi_input"
                 placeholder="Enter your E-mail ID"
-              />
+                value={ICemail}
+                onChange={(e) => setICEmail(e.target.value)} />
+              
             </div>
             <div className="ISD_vertical_input">
-              <p className="ISD_vi_text">
-                Supporting Evidence <br /> (upload Image/ Media/ Pdf):
-              </p>
-              <input
-                type="file"
-                className="ISD_vi_input-file"
-                onClick={handleChooseFile}
-                style={{ display: "none" }}
-              />
-              <input
-                type="text"
-                className="ISD_vi_input-text"
-                placeholder="No file Chosen"
-                onClick={() =>
-                  document.querySelector(".ISD_vi_input-file").click()
-                }
-                readOnly
-              />
+            <p className="ISD_vi_text">Supporting Evidence (upload Image/ Media/ Pdf):</p>
+            <input
+              type="file"
+              className="ISD_vi_input-file"
+              onChange={handleChooseFile}
+            />
+            <input
+              type="text"
+              className="ISD_vi_input-text"
+              placeholder="No file Chosen"
+              readOnly
+              value={selectedFile ? selectedFile.name : ""}
+            />
                <Link className="SS_button">Upload</Link>
             </div>
             <div className="ISD_block"></div>
@@ -175,7 +232,8 @@ const ID_main = () => {
                 id="ISDVII"
                 placeholder="Enter your E-mail ID"
               />
-              <Link  className="ss_save_btn2" id="ss_b">Save and Submit</Link>
+
+              <Link  className="ss_save_btn2" id="ss_b" onClick={handleSaveAndSubmit}>Save and Submit</Link>
               
             </div>
             <p className="ISD_lasttext">Maximum of 1500 characters: {count} characters left</p>
