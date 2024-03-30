@@ -37,7 +37,7 @@ const UserRegister = () => {
         const user = userCredential.user;
         console.log("user creatted");
 
-        set(ref(db, `users/${userCredential.user.uid}`), {
+        set(ref(db, `users/${userCredential.user.uid}/register`), {
           state: state,
           email: email,
           password: password,

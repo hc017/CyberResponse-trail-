@@ -5,6 +5,7 @@ import UFP_red from "../UserDetails/UserForm/UFP_red";
 import IDX from "./IDX";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import UP_bar from "../UserDetails/Userprofilebar/UP_bar";
 
 const ID_main = () => {
   const [count, setCount] = useState(1500);
@@ -30,6 +31,8 @@ const ID_main = () => {
     <div className="ISD_component">
       <div className="ISD_innercomponent">
         <Em />
+        <div className="UD_up_bar"></div>
+        <UP_bar />
         <div className="UD_up_bar"></div>
         <UFP_red />
         <div className="UD_up_bar"></div>
