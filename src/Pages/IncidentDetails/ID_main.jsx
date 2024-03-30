@@ -30,30 +30,25 @@ const ID_main = () => {
     setSelectedFile(e.target.files[0]);
   };
   useEffect(() => {
+    // Redirect unauthenticated users to login page or handle them accordingly
     if (!currentUser) {
-      // Redirect unauthenticated users to login page or display a message
       console.log("User not authenticated. Redirecting to login page...");
+      // Navigate to login page or show a message
     } else {
       // User is authenticated, proceed with rendering the form
       console.log("User authenticated:", currentUser);
+      setEmail(currentUser.email); // Set email directly from currentUser
     }
   }, [currentUser]);
-  
-  useEffect(() => {
-    // Retrieve user data from location state
-    if (location.state) {
-      setEmail(location.state.email);
-    }
-  }, [location.state]); 
 
   const handleSaveAndSubmit = async () => {
-    // Upload file to Firebase Storage
-    let fileUrl = "";
-    if (selectedFile) {
-      const fileRef = storageRef(storage, `users/${currentUser.uid}/incidentdetails/storage${selectedFile.name}`);
-      await uploadBytes(fileRef, selectedFile);
-      fileUrl = await ref.getDownloadURL(fileRef);
-    }
+  //   // Upload file to Firebase Storage
+  //   let fileUrl = "";
+  //   if (selectedFile) {
+  //     const fileRef = storageRef(storage, `users/${currentUser.uid}/incidentdetails/storage${selectedFile.name}`);
+  //     await uploadBytes(fileRef, selectedFile);
+  //     fileUrl = await ref.getDownloadURL(fileRef);
+  //   }
   
     // Prepare data to store in Realtime Database
     const data = {
@@ -63,7 +58,6 @@ const ID_main = () => {
       DateofBirth:ICdob,
       Place:ICplace,
       Email:ICemail,
-      fileUrl: fileUrl,
       // Add other form fields as needed
     };
   

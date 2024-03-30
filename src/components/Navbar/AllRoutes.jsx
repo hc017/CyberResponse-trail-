@@ -10,7 +10,7 @@ import Home from '../../Pages/Home/Home'
 import UserDetails from '../../Pages/UserDetails/UserDetails'
 import TrackComplaint from '../../Pages/TrackComplaint/TrackComplaint'
 import SuspectD from '../../Pages/IncidentDetails/SuspectD'
-import ID_main from '../../Pages/IncidentDetails/ID_main'
+
 import Complaint_details from '../../Pages/IncidentDetails/Complaint_details'
 import Submit from '../../Pages/IncidentDetails/Submit'
 import CheckStatus from '../../Pages/RegisterComplaint/CheckStatus/CheckStatus'
@@ -21,6 +21,7 @@ import UserPhone from '../../Pages/RegisterComplaint/UserPhone/UserPhone'
 import UserLogin from '../../Pages/LoginRegister/UserLogin'
 import UserRegister from '../../Pages/LoginRegister/UserRegister'
 import ReportRoutes from '../../Pages/ReportIncident/ReportRoutes'
+import ID_main from '../../Pages/IncidentDetails/ID_main'
 const AllRoutes = () => {
   return (
     <Routes>
