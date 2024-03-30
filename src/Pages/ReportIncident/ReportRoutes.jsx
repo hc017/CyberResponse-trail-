@@ -27,6 +27,10 @@ import Ransomware from './Victim/Ransomware'
 import Cyflash from './Victim/CyFlash'
 import Blackmail from './Victim/Blackmail'
 import WrongMessages from './Victim/CommentsM'
+import UPI from './Victim/UPIScam'
+import BankScam from './Victim/BankScam'
+import WebScam from './Victim/WebScam'
+import Younger from './Victim/18younger'
 const ReportRoutes = () => {
   return (
     <Routes>
@@ -52,7 +56,10 @@ const ReportRoutes = () => {
     <Route path='/cyflash' element={<Cyflash/>}></Route>
     <Route path='/blackmailing' element={<Blackmail/>}></Route>
     <Route path='/wrongmessages' element={<WrongMessages/>}></Route>
-
+    <Route path='/upi' element={<UPI/>}></Route>
+    <Route path='/bankscam' element={<BankScam/>}></Route>
+    <Route path='/webscam' element={<WebScam/>}></Route>
+    <Route path='/18younger' element={<Younger/>}></Route>
    </Routes>
   )
 }
