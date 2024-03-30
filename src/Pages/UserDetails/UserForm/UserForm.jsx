@@ -66,10 +66,6 @@ const UserForm = () => {
         // Add other fields as needed
       });
       await set(ref(db, `users/${currentUser.uid}/userdetails/permanentAddress`), {
-
-
-
-
         country: country,
         state: state,
         district: district,
