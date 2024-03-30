@@ -1,10 +1,10 @@
 import React from 'react';
 import './ReportIncident';
-import Em from '../../components/Emergency/Em';
+import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const CyberBullying = () => {
+const Impersonation = () => {
     return (
         <div className='ReportContainer'>
             <Em />
@@ -30,6 +30,10 @@ const CyberBullying = () => {
                         <Link to="/cyberbullying" className="ReportButton">
                             <span className="IncidentHeader">CyberBullying</span>
                         </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/impersonation" className="ReportButton">
+                            <span className="IncidentHeader">Impersonation</span>
+                        </Link>
                     </div>
                     <div className="AlignmentForVictimReport">
                         <Link to="/reportbutton" className="BoxVictimReport">
@@ -38,13 +42,16 @@ const CyberBullying = () => {
                         <Link to="/cyberbullying" className="BoxVictimReport">
                             <span className="TextVictimReport">cyber bullying</span>
                         </Link>
+                        <Link to="/impersonation" className="BoxVictimReport">
+                            <span className="TextVictimReport">and I am getting impersonated</span>
+                        </Link>
                     </div>
 
                 </div>
             </div>
 
 
-            <div className="CSSForSmallerButton">
+            {/* <div className="CSSForSmallerButton">
                 <Link to="/cyberstalking" className="SmallerButtonCSS">
                     <span className="SmallerTextButton"> Cyberstalking</span>
                 </Link>
@@ -56,9 +63,9 @@ const CyberBullying = () => {
                 </Link>
                 <Link to="/impersonation" className="SmallerButtonCSS">
                     <span className="SmallerTextButton">Impersonating</span>
-                </Link>
+                </Link> */}
                 
-            </div>
+            {/* </div> */}
 
 
 
@@ -67,4 +74,4 @@ const CyberBullying = () => {
     )
 }
 
-export default CyberBullying
+export default Impersonation;

@@ -1,0 +1,72 @@
+import React from 'react';
+import '../Report/ReportIncident';
+import Em from '../../../components/Emergency/Em';
+import { Link } from 'react-router-dom';
+import { FaArrowRightLong } from "react-icons/fa6";
+
+const SexualHarassment = () => {
+    return (
+        <div className='ReportContainer'>
+            <Em />
+            <div className="Reporttheblock">
+                <div className="FinalAlign">
+                    <div className="Report-An-Incident-Immediately">Report An Incident Immediately</div>
+                    <div className="ReportLine"></div>
+                </div>
+                <div className="TextBoxText">
+                    <div className="forLinks">
+                        <Link to="/" className="Home">
+                            <span className="IncidentHeader">HomePage</span>
+                        </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/reportincident" className="ReportIncident">
+                            <span className="IncidentHeader">ReportIncident</span>
+                        </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/victim" className="ReportButton">
+                            <span className="IncidentHeader">I am a victim</span>
+                        </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/18older" className="ReportButton">
+                            <span className="IncidentHeader">I am older than 18 years</span>
+                        </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/sh" className="ReportButton">
+                            <span className="IncidentHeader">Sexual Harassment</span>
+                        </Link>
+                    </div>
+                    <div className="AlignmentForVictimReport">
+                        <Link to="/victim" className="BoxVictimReport">
+                            <span className="TextVictimReport">I am a victim</span>
+                        </Link>
+                        <Link to="/18older" className="BoxVictimReport">
+                            <span className="TextVictimReport">I am a older than 18 years</span>
+                        </Link>
+                        <Link to="/sh" className="BoxVictimReport">
+                            <span className="TextVictimReport">I was harassed sexually</span>
+                        </Link>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div className="CSSForSmallerButton">
+                <Link to="/blackmailing" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton"> Blackmailing</span>
+                </Link>
+                <Link to="/wrongmessages" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Sexual Messages or Comments</span>
+                </Link>
+                <Link to="/cyflash" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Cyberflashing</span>
+                </Link>
+                
+                
+             </div>
+
+        </div>
+    )
+}
+
+export default SexualHarassment

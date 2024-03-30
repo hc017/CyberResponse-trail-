@@ -1,10 +1,10 @@
 import React from 'react';
-import './ReportIncident';
-import Em from '../../components/Emergency/Em';
+import '../Report/ReportIncident';
+import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const Victim = () => {
+const Older = () => {
     return (
         <div className='ReportContainer'>
             <Em />
@@ -23,13 +23,20 @@ const Victim = () => {
                             <span className="IncidentHeader">ReportIncident</span>
                         </Link>
                         <FaArrowRightLong className='ArrowIcon' />
-                        <Link to="/reportbutton" className="ReportButton">
+                        <Link to="/victim" className="ReportButton">
                             <span className="IncidentHeader">I am a victim</span>
+                        </Link>
+                        <FaArrowRightLong className='ArrowIcon' />
+                        <Link to="/18older" className="ReportButton">
+                            <span className="IncidentHeader">I am older than 18 years</span>
                         </Link>
                     </div>
                     <div className="AlignmentForVictimReport">
-                        <Link to="/reportincident" className="BoxVictimReport">
+                        <Link to="/victim" className="BoxVictimReport">
                             <span className="TextVictimReport">I am a victim</span>
+                        </Link>
+                        <Link to="/18older" className="BoxVictimReport">
+                            <span className="TextVictimReport">I am a older than 18 years</span>
                         </Link>
                     </div>
 
@@ -37,20 +44,24 @@ const Victim = () => {
             </div>
 
 
-            <div className="ButtonCSS">
-                <Link to="/victim" className="ButtonReport">
-                    <span className="ReportText">I am 18 or younger</span>
+            <div className="CSSForSmallerButton">
+                <Link to="/sh" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton"> Sexual Harassment</span>
                 </Link>
-                <Link to="/reportbutton" className="ButtonReport">
-                    <span className="ReportText">I am older than 18 years</span>
+                <Link to="/moneylaundering" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Financial Fraud</span>
                 </Link>
-            </div>
-
-
-
+                <Link to="/cyterror" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Cyber Terrorism</span>
+                </Link>
+                <Link to="/ransomware" className="SmallerButtonCSS">
+                    <span className="SmallerTextButton">Ransomware</span>
+                </Link> 
+                
+             </div>
 
         </div>
     )
 }
 
-export default Victim
+export default Older

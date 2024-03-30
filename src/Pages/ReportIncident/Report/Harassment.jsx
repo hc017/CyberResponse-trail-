@@ -1,10 +1,10 @@
 import React from 'react';
 import './ReportIncident';
-import Em from '../../components/Emergency/Em';
+import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const Impersonation = () => {
+const Harassment = () => {
     return (
         <div className='ReportContainer'>
             <Em />
@@ -31,8 +31,8 @@ const Impersonation = () => {
                             <span className="IncidentHeader">CyberBullying</span>
                         </Link>
                         <FaArrowRightLong className='ArrowIcon' />
-                        <Link to="/impersonation" className="ReportButton">
-                            <span className="IncidentHeader">Impersonation</span>
+                        <Link to="/harassment" className="ReportButton">
+                            <span className="IncidentHeader">Harassment</span>
                         </Link>
                     </div>
                     <div className="AlignmentForVictimReport">
@@ -42,8 +42,8 @@ const Impersonation = () => {
                         <Link to="/cyberbullying" className="BoxVictimReport">
                             <span className="TextVictimReport">cyber bullying</span>
                         </Link>
-                        <Link to="/impersonation" className="BoxVictimReport">
-                            <span className="TextVictimReport">and I am getting impersonated</span>
+                        <Link to="/harassment" className="BoxVictimReport">
+                            <span className="TextVictimReport">and harassment</span>
                         </Link>
                     </div>
 
@@ -74,4 +74,4 @@ const Impersonation = () => {
     )
 }
 
-export default Impersonation;
+export default Harassment;

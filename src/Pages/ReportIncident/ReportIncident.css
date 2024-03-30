@@ -199,25 +199,7 @@
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.BoxVictimReport:hover {
-    transform: scale(1.1);
-    /* background-color: #333333; */
-}
 
-.TextVictimReport {
-    height: auto;
-    font-family: SawarabiMincho;
-    font-size: 1.75rem;
-    font-weight: normal;
-    color: #fff;
-    margin: 0;
-    white-space: nowrap;
-}
-
-
-.AlignmentForVictimReport {
-    display: flex;
-}
 
 
 /* these are smaller buttons */
@@ -262,4 +244,24 @@
     white-space: normal;
     overflow: hidden;
     text-align: center;
+}
+.BoxVictimReport:hover {
+    transform: scale(1.1);
+    /* background-color: #333333; */
+}
+
+.TextVictimReport {
+    height: auto;
+    font-family: SawarabiMincho;
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+}
+
+
+.AlignmentForVictimReport {
+    display: flex;
+    flex-wrap: wrap;
 }
