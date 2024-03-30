@@ -33,7 +33,7 @@ const UserLogin = () => {
         };
         // console.log(log.uids)
         alert("user login");
-        navigate('/incidentdetails', {
+        navigate('/userdetails', {
           state: log
         });
       })
@@ -43,6 +43,11 @@ const UserLogin = () => {
         console.error("Error signing in:", errorMessage);
         // Handle error, show error message, etc.
       });
+  };
+  const handleCancel = () => {
+    // Clear the form fields by resetting the state variables
+    setLEmail('');
+    setLPassword('');
   };
   
 
@@ -230,7 +235,7 @@ const UserLogin = () => {
                 </div>
                 <div>
                   <Link onClick={(e) => handleLogin(e)} type="button" className='confirm-login-button'>Login</Link>
-                  <button type="button" className='cancel-button'>Cancel</button>
+                  <button type="button" className='cancel-button' onClick={handleCancel}>Cancel</button>
                 </div>
               </form>
             </div>

@@ -14,6 +14,9 @@ import { getDatabase, ref, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
+
+
+
 const UserRegister = () => {
   const [userRegister, setuserRegister] = useState(true);
   const [state, setState] = useState("");
@@ -41,7 +44,7 @@ const UserRegister = () => {
           id: userCredential.user.uid,
         });
          // Redirect to another page after successful registration
-         navigate('/userdetails', { userId: user.uid, email: email }); // Replace '/next-page' with your desired route
+         navigate('/', { userId: user.uid, email: email }); // Replace '/next-page' with your desired route
         // ...
       })
       .catch((error) => {

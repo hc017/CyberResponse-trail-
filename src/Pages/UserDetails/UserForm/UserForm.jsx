@@ -1,34 +1,73 @@
 
 import "./UserForm.css";
 import React, { useState, useEffect } from "react";
-import { Link, useLocation,useNavigate } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set } from "firebase/database";
+import { useAuth } from "../../../FirebaseCongfig/AuthContext"; // Import the useAuth hook from the AuthProvider
 
 const UserForm = () => {
   const [showOtpInput, setShowOtpInput] = useState(false);
   const location = useLocation();
-  const [userId, setUserId] = useState("");
-  const [email, setEmail] = useState("");
+  const [RegLogI, setRegLogI] = useState("");
+  const [RegName, setRegName] = useState("");
+  const [RegMobile, setRegMobile] = useState("");
+  const [ReDob, setRegDob] = useState("");
+  const [RegGender, setRegGender] = useState("");
+  const [RegEmail, setRegEmail] = useState("");
+  const [RegRelation, setRegRelation] = useState("");
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [district, setDistrict] = useState("");
   const [policeStation, setPoliceStation] = useState("");
   const navigate = useNavigate();
   const db = getDatabase();
+  const [email, setEmail] = useState(""); 
+  const { currentUser } = useAuth();
 
-  
+  useEffect(() => {
+    if (!currentUser) {
+      // Redirect unauthenticated users to login page or display a message
+      console.log("User not authenticated. Redirecting to login page...");
+    } else {
+      // User is authenticated, proceed with rendering the form
+      console.log("User authenticated:", currentUser);
+    }
+  }, [currentUser]);
+
+  // Rest of the component code...
+
+
+
 
   useEffect(() => {
     // Retrieve user data from location state
     if (location.state) {
-      setUserId(location.state.userId);
       setEmail(location.state.email);
     }
   }, [location.state]); 
 
   const handleSaveAndSubmit = async () => {
-    // Upload additional data to Firestore
+     // Upload additional data to Realtime Database
+     try {
+      await set(ref(db, `users/${currentUser.uid}`), {
+        RegLogI:RegLogI,
+        RegName:RegName,
+        RegMobile:RegMobile,
+        ReDob:ReDob,
+        RegGender:RegGender,
+        RegEmail:RegEmail,
+        RegRelation:RegRelation,
+        country: country,
+        state: state,
+        district: district,
+        policeStation: policeStation,
+        // Add other fields as needed
+      });
+      console.log("Data saved successfully!");
+      navigate("/incidentdetails"); // Redirect to the next page after successful submission
+    } catch (error) {
+      console.error("Error adding data: ", error);
+    }
  
   };
 
@@ -86,6 +125,8 @@ const UserForm = () => {
                 type="text"
                 className="vi_input"
                 placeholder="Enter your login ID"
+                value={RegLogI}
+                onChange={(e) => setRegLogI(e.target.value)} 
               />
             </div>
             <div className="vertical_input">
@@ -111,6 +152,8 @@ const UserForm = () => {
                 type="text"
                 className="vi_input"
                 placeholder="Enter your name"
+                value={RegName}
+                onChange={(e) => setRegName(e.target.value)} // Use the provided value directly
               />
             </div>
             <div className="vertical_input">
@@ -119,11 +162,14 @@ const UserForm = () => {
                 type="number"
                 className="vi_input"
                 placeholder="Enter your mobile number"
+                value={RegMobile}
+                onChange={(e) => setRegMobile(e.target.value)} 
               />
             </div>
             <div className="vertical_input">
               <p className="vi_text">Date of Birth :</p>
-              <input type="date" className="vi_input" />
+              <input type="date" className="vi_input"   value={ReDob}
+                onChange={(e) => setRegDob(e.target.value)}  />
             </div>
             <div className="vertical_input">
               <p className="vi_text">Gender :</p>
@@ -131,6 +177,8 @@ const UserForm = () => {
                 type="text"
                 className="vi_input"
                 placeholder="Enter your gender"
+                value={RegGender}
+                onChange={(e) => setRegGender(e.target.value)} 
               />
             </div>
             <div className="vertical_input">
@@ -140,6 +188,8 @@ const UserForm = () => {
                   type="text"
                   className="vi_input_email"
                   placeholder="Enter your email ID"
+                  value={RegEmail}
+                  onChange={(e) => setRegEmail(e.target.value)} 
                 />
                 {!showOtpInput && (
                   <button className="otpbutton" onClick={handleGetOtpClick}>
@@ -166,6 +216,8 @@ const UserForm = () => {
                 type="text"
                 className="vi_input"
                 placeholder="Enter your family member's relationship"
+                value={RegRelation}
+                onChange={(e) => setRegRelation(e.target.value)} 
               />
             </div>
           </form>
