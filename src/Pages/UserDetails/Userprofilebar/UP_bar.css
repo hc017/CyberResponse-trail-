@@ -7,17 +7,25 @@
     padding-left: 10%;
     background-color: #a4e1f4;
 }
-.ud_text,.ud_mail{
+.ud_text{
     width: 40%;
     height: 1rem;
+    display: flex;
+}
+.ud_mail{
+    width: 40%;
+    height: 2rem;
+    display: flex;
+    text-align: right;
 }
 .ud_text_in,.ud_mail_text{
     margin: 1%;
     font-size: 1.2rem;
     font-family: poppins;
 }
-.ud_mail{
+.ud_mail_text{
     text-align: right;
+    margin-left: 0.4rem;
 }
 .log_btn{
     width: 6%;
@@ -48,7 +56,16 @@
 .log_2:hover{
     color: white;
 }
-
+.ufp_icons_user{
+    height: 95%;
+    width: 7%;
+    margin: 0.5rem 0rem 0rem 0.4rem;
+}
+.ufp_icons_mail{
+    height: 70%;
+    width: 7%;
+    margin: 0.4rem 0rem 0rem 20rem;
+}
 
 
 

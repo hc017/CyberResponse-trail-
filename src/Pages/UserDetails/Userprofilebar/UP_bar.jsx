@@ -2,6 +2,8 @@ import React from "react";
 import "./UP_bar.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../FirebaseCongfig/AuthContext"; // Import the useAuth hook
+import { FaUser } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 
 const UP_bar = () => {
   const { currentUser, logout } = useAuth(); // Get currentUser and logout function from the authentication context
@@ -18,9 +20,11 @@ const UP_bar = () => {
   return (
     <div className="UP_container">
       <div className="ud_text">
+      <FaUser className='ufp_icons_user'/>
         <p className="ud_text_in">User Details</p>
       </div>
       <div className="ud_mail">
+      <IoIosMail className='ufp_icons_mail'/>
         {currentUser && <p className="ud_mail_text">{currentUser.email}</p>} {/* Display current user's email */}
       </div>
       <div className="log_btn">

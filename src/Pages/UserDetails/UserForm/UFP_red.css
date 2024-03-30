@@ -23,9 +23,30 @@
     border: none;
     color: #a4e1f4;
     text-decoration: none;
+    display: flex;
 }
 .UFP_complaint_bar:hover{
     background-color: #a4e1f4 ;
     color: #181818;
     border-radius: 5%;
+}
+.ufp_icons{
+    height: 95%;
+    width: 9%;
+    margin: 0rem 0.2rem 0rem 0.4rem;
+}
+.ufp_icon_status{
+    height: 95%;
+    width: 6.5%;
+    margin: 0rem 0.4rem 0rem 0.4rem;
+}
+.ufp_icon_phn{
+    height: 95%;
+    width: 8%;
+    margin: 0rem 0.4rem 0rem 0.4rem;
+}
+.ufp_icon_user{
+    height: 95%;
+    width: 7%;
+    margin: 0rem 0.4rem 0rem 0.4rem;
 }
