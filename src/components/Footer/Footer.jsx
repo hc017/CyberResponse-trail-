@@ -53,23 +53,23 @@ const Footer = () => {
           <div className="LinkBoxes">
             <div className="marginalityBox">
               <button className="TNC">
-                Terms and Conditions
+              Disclaimer
               </button>
               <div className="hello"></div>
               <button className="TNC">
-                Terms and Conditions
+              Community
               </button>
               <div className="hello"></div>
               <button className="TNC">
-                Terms and Conditions
+                FAQ
               </button>
               <div className="hello"></div>
               <button className="TNC">
-                Terms and Conditions
+                Privacy Policies
               </button>
               <div className="hello"></div>
               <button className="TNC">
-                Terms and Conditions
+              Terms and Conditions
               </button>
               <div className="marginal"></div>
               <div className="IFTLicon">

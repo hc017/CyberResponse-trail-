@@ -54,7 +54,7 @@ const Technical = () => {
 
             <div className="EndPageButton">
                 
-                <Link to="/cyberbullying" className="PreviousButton">
+                <Link to="/onlinefrauds" className="PreviousButton">
                 <GrLinkPrevious className='ArrowIcon' />
                 <div>Previous</div>
                 </Link>

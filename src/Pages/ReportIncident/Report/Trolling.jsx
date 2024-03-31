@@ -62,7 +62,7 @@ const Trolling = () => {
                 <FaArrowRightLong className='ArrowIcon' />
                 <div>Continue</div>
                 </Link>
-        </div>
+            </div>
 
 
 
