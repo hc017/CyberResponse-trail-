@@ -1,12 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./CheckStatus.css";
 import Em from "../../../components/Emergency/Em";
 import UFP_red from "../../UserDetails/UserForm/UFP_red";
 import UP_bar from "../../UserDetails/Userprofilebar/UP_bar";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 const CheckStatus = () => {
-  // State to manage the status table data
   const [statusData, setStatusData] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const db = getDatabase();
+  //       const incidentRef = ref(db, "incident_details"); // Assuming your incident details are stored under a node named "incident_details"
+  //       onValue(incidentRef, (snapshot) => {
+  //         const data = snapshot.val();
+  //         if (data) {
+  //           const incidents = Object.values(data);
+  //           setStatusData(incidents);
+  //         } else {
+  //           setStatusData([]);
+  //         }
+  //       });
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+
+  //   return () => {
+  //     // Clean up any listeners or subscriptions if needed
+  //   };
+  // }, []); // Run this effect only once on component mount
+
+  // const handleAction = (id) => {
+  //   console.log(`Action clicked for ID: ${id}`);
+  //   // Implement your action logic here based on the provided ID
+  // };
+
+  // State to manage the status table data
+  // const [statusData, setStatusData] = useState([]);
 
   // Function to fetch status data when Search button is clicked
   const handleSearch = () => {
@@ -74,14 +108,14 @@ const CheckStatus = () => {
             </div>
             <div className="CS_block2"></div>
             {/* Display status table if data is available */}
-            {statusData.length > 0 && (
+            {statusData.length > 0 ? (
               <table className="CS_status_table">
                 <thead>
                   <tr>
                     <th>ID</th>
                     <th>Request Date</th>
-                    <th>Subjet</th>
                     <th>Status</th>
+                    <th>Subject</th>
                     <th>Last Update</th>
                     <th>Action</th>
                   </tr>
@@ -106,6 +140,8 @@ const CheckStatus = () => {
                   ))}
                 </tbody>
               </table>
+            ) : (
+              <p>No data available</p>
             )}
             <div className="CS_block3"></div>
             <div className="CS_radio_block">
