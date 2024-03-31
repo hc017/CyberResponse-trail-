@@ -1,0 +1,29 @@
+.S1_component{
+    width: 100%;
+    height: 150vh;
+}
+
+  
+.title_box{
+    height: 35vh;
+    width: 100%;
+    background-color: #295f86;
+}
+
+.title_cyber_awarness{
+    font-weight: bold;
+    color: white;
+    padding-left: 5%;
+    padding-top: 7%;
+}
+
+.I4C{
+    padding-left: 5%;
+    color: #fff;
+}
+
+.abt{
+    
+    padding-left: 2%;
+    padding-right: 10%;
+}

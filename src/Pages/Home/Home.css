@@ -133,7 +133,7 @@
 
 
 .report_btn:hover {
-  width: 28.375rem; /* 502px converted to rem */
+  width: 24rem; /* 502px converted to rem */
   height: 4.5rem; /* 72px converted to rem */
   padding: 0 5.04375rem 0 3.025rem; /* Convert px values to rem */
   border-radius: 0.625rem; /* 10px converted to rem */

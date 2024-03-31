@@ -31,7 +31,7 @@ const Home = () => {
             <Link to="/reportincident" type="button" className="report_btn">
               <span class="Report_text">Learn How to Report</span>
             </Link>
-            <Link to="/reportincident" type="button" className="report_btn">
+            <Link to="/stayinformed" type="button" className="report_btn">
               <span class="Report_text">Stay Informed</span>
             </Link>
           </div>

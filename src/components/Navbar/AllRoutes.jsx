@@ -22,6 +22,8 @@ import UserLogin from '../../Pages/LoginRegister/UserLogin'
 import UserRegister from '../../Pages/LoginRegister/UserRegister'
 import ReportRoutes from '../../Pages/ReportIncident/ReportRoutes'
 import ID_main from '../../Pages/IncidentDetails/ID_main'
+import SI_one from '../../Pages/StayInformed/SI_one'
+import S1 from '../../Pages/StayInformed/S1'
 const AllRoutes = () => {
   return (
     <Routes>
@@ -39,6 +41,8 @@ const AllRoutes = () => {
     <Route path='/draftcomplaint' element={<DC/>}></Route>
     <Route path='/updatephone' element={<UP/>}></Route>
     <Route path='/userd' element={<UserPhone/>}></Route>
+    <Route path='/stayinformed' element={<SI_one/>}></Route>
+    <Route path='/stayinformed_one' element={<S1/>}></Route>
     
    </Routes>
    
