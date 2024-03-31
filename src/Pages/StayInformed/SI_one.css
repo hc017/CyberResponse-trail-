@@ -1,0 +1,293 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.SI_comp{
+    width: 100%;
+    height: 380vh;
+}
+.title_big{
+    height: 25vh;
+    width: 100%;
+    background-color: #295f86;
+}
+
+.title_cyber{
+    font-weight: bold;
+    color: white;
+    padding-left: 13%;
+    padding-top: 65px;
+}
+.title{
+    color: #FFF;
+    padding-left: 5%;
+    font-family: SawarabiMincho;
+}
+.cyber_intro{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 15px;
+    color: #FFF;
+}
+
+.ag-format-container {
+
+    width: 1142px;
+    margin: 0 auto;
+  }
+  
+  
+  body {
+    background-color: #000;
+  }
+  .ag-courses_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  
+    padding: 50px 0;
+  }
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(33.33333% - 30px);
+    flex-basis: calc(33.33333% - 30px);
+  
+    margin: 0 15px 30px;
+  
+    overflow: hidden;
+  
+    border-radius: 28px;
+  }
+  .ag-courses-item_link {
+    display: block;
+    padding: 30px 20px;
+    background-color: #121212;
+  
+    overflow: hidden;
+  
+    position: relative;
+  }
+  .ag-courses-item_link:hover,
+  .ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none;
+    color: #FFF;
+  }
+  .ag-courses-item_link:hover .ag-courses-item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+  }
+  .ag-courses-item_title {
+    min-height: 87px;
+    margin: 0 0 25px;
+  
+    overflow: hidden;
+  
+    font-weight: bold;
+    font-size: 30px;
+    color: #FFF;
+  
+    z-index: 2;
+    position: relative;
+  }
+  
+  .ag-courses-item_bg {
+    height: 128px;
+    width: 128px;
+    background-color: #295f86;
+  
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+  
+    border-radius: 50%;
+  
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  
+  
+  @media only screen and (max-width: 979px) {
+    .ag-courses_item {
+      -ms-flex-preferred-size: calc(50% - 30px);
+      flex-basis: calc(50% - 30px);
+    }
+    .ag-courses-item_title {
+      font-size: 24px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .ag-format-container {
+      width: 96%;
+    }
+  
+  }
+  @media only screen and (max-width: 639px) {
+    .ag-courses_item {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+    }
+    .ag-courses-item_title {
+      min-height: 72px;
+      line-height: 1;
+      font-size: 24px;
+    }
+    .ag-courses-item_link {
+      padding: 22px 40px;
+    }
+    .ag-courses-item_date-box {
+      font-size: 16px;
+    }
+  }
+
+
+
+.container_blog{
+    padding-left: 10%;
+}
+
+h1,h4{
+  font-family: 'Montserrat', sans-serif;
+  color: #FFF;
+}
+.row{
+  padding:50px 0;
+}
+.seperator{
+  margin-bottom: 30px;
+  width:35px;
+  height:3px;
+  background:#ffffff;
+  border:none;
+}
+.title{
+  
+  .row{
+    padding: 50px 0 0;
+  }
+  
+  h1{
+    text-transform: uppercase;
+  }
+  
+  .seperator{
+    margin: 0 auto 10px;
+  }
+}
+.item {
+  position: relative;
+  margin-bottom: 30px;
+  min-height: 1px;
+  float: left;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  .item-in {
+    background: #295f86;
+    padding: 40px;
+    position: relative;
+    width: 75vw;
+    
+    &:hover:before {
+      width: 100%;
+    }
+   
+    &::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 0%;
+    background: #FFF;
+    right: 0px;
+    -webkit-transition: width 0.4s;
+    transition: width 0.4s;
+    }
+  }
+}
+.item{
+    
+  h4{
+      font-size: 18px;
+      color: #FFF;
+      margin-top: 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    p{
+      color: #FFF;
+      font-size: 12px;
+    }
+    a{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-top: 10px;
+
+      i {
+        opacity: 0;
+        padding-left: 0px;
+        transition: 0.4s;
+        font-size: 24px;
+        display: inline-block;
+        top: 5px;
+        position: relative;
+       }
+      
+      &:hover {
+        text-decoration:none;
+        i {
+          padding-left: 10px;
+          opacity: 1;
+          font-weight: 300;
+          }
+        }
+      }
+    }
+.item .icon {
+  position:absolute;
+  top: 27px;
+  left: -16px;
+  cursor:pointer;
+    a{
+      font-family: 'Merriweather', serif;
+      font-size: 14px;
+      font-weight:400;
+      color: #ffffff;
+      text-transform:none;
+    }
+    svg{
+      width:32px;
+      height:32px;
+      float:left;
+    }
+    .icon-topic{
+      opacity: 0;
+      padding-left: 0px;
+      transition: 0.4s;
+      display: inline-block;
+      top: 0px;
+      position: relative;
+    }
+    &:hover .icon-topic{
+      opacity: 1;
+      padding-left: 10px;
+    }
+  }
+@media only screen and (max-width : 768px) {
+  .item .icon{position: relative; top: 0; left:0;}
+}
