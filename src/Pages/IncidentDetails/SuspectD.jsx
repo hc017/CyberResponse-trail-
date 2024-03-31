@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 import Em from "../../components/Emergency/Em";
 import UFP_red from "../UserDetails/UserForm/UFP_red";
 import IDX from "./IDX";
+import { useParams } from "react-router-dom";
 import UP_bar from "../UserDetails/Userprofilebar/UP_bar";
+import { useAuth } from "../../FirebaseCongfig/AuthContext"; // Import the useAuth hook
+import { getDatabase, ref, push, set } from "firebase/database";
 
 const SuspectD = () => {
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
@@ -14,18 +17,17 @@ const SuspectD = () => {
   const [fileChosen, setFileChosen] = useState("");
   const [showTable, setShowTable] = useState(false);
   const [suspectData, setSuspectData] = useState([]);
+  const { incidentId } = useParams();
+  const { currentUser } = useAuth(); // Get currentUser from the authentication context
+  const db = getDatabase(); // Get a reference to the Realtime Database
+  
 
-  const handleChooseFile = () => {
-    // Implement file selection logic here
-    // This function will be called when the "Choose" input is clicked
-  };
-
-  const handleAddSuspect = () => {
+  const handleAddSuspect = async () => {
     const newSuspect = {
       name: suspectName,
       option: selectedOption,
       id: idNumber,
-      file: fileChosen
+      
     };
     setSuspectData([...suspectData, newSuspect]);
     setShowTable(true);
@@ -33,9 +35,29 @@ const SuspectD = () => {
     setSuspectName("");
     setSelectedOption("");
     setIdNumber("");
-    setFileChosen("");
-  };
+  
+  
+    // Prepare data to store in Realtime Database
+    const data = {
+      name: suspectName,
+      option: selectedOption,
+      id: idNumber,
 
+    };
+  
+    try {
+      // Generate a unique ID for the suspect
+      const newSuspectRef = push(ref(db, `users/${currentUser.uid}/incidentdetails/${incidentId}/suspects`));
+    
+      // Store suspect data in Realtime Database with the unique ID
+      await set(newSuspectRef, data);
+      console.log("Suspect data saved successfully!");
+      window.alert("Suspect added successfully!");
+
+    } catch (error) {
+      console.error("Error adding suspect data: ", error);
+    }
+  };
   const handleDelete = (index) => {
     const updatedSuspectData = [...suspectData];
     updatedSuspectData.splice(index, 1);
@@ -154,7 +176,7 @@ const SuspectD = () => {
                 <input
                   type="file"
                   className="SS_vi_input3"
-                  onClick={handleChooseFile}
+                 
                   style={{ display: "none" }}
                 />
                 <input
@@ -176,7 +198,7 @@ const SuspectD = () => {
           <div className="div_block3"></div>
           <div className="ss_btns">
             <Link className="ss_save_btn1">Back</Link>
-            <Link to="/complaintdetails" className="ss_save_btn2">
+            <Link  className="ss_save_btn2">
               Save and Submit
             </Link>
           </div>

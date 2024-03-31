@@ -44,12 +44,15 @@ const UserRegister = () => {
           id: userCredential.user.uid,
         });
          // Redirect to another page after successful registration
+      window.alert("Data added successfully!");
+
          navigate('/', { userId: user.uid, email: email }); // Replace '/next-page' with your desired route
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        window.alert("Error in registration");
         // ..
       });
   };

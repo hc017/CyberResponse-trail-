@@ -24,6 +24,7 @@ const ID_main = () => {
   const db = getDatabase();
   const storage = getStorage();
   const [email, setEmail] = useState(""); 
+  const navigate = useNavigate();
 
   const handleChooseFile = (e) => {
     // Update selected file state when a file is chosen
@@ -68,6 +69,8 @@ const ID_main = () => {
       // Store form data in Realtime Database with the unique ID
       await set(newIncidentRef, data);
       console.log("Data saved successfully!");
+      window.alert("Data added successfully!");
+      navigate("/suspectdetails");
     } catch (error) {
       console.error("Error adding data: ", error);
     }

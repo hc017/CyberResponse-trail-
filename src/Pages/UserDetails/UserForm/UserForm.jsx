@@ -73,6 +73,7 @@ const UserForm = () => {
       });
 
       console.log("Data saved successfully!");
+      window.alert("Data added successfully!");
       navigate("/incidentdetails"); // Redirect to the next page after successful submission
     } catch (error) {
       console.error("Error adding data: ", error);

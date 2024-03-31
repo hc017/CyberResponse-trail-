@@ -37,17 +37,24 @@ const UserLogin = () => {
         get(userDetailsRef).then((snapshot) => {
           if (snapshot.exists()) {
             // userdetails data is already filled, redirect to incident details
+      window.alert("Logged in successfully!");
+
             navigate('/incidentdetails', {
               state: log
             });
           } else {
             // userdetails data is not filled, redirect to userdetails page
+      window.alert("Logged in successfully!");
+
             navigate('/userdetails', {
               state: log
             });
           }
         }).catch((error) => {
           console.error("Error checking userdetails data:", error);
+      window.alert("Error checking userdetails data");
+
+
           // Handle error, show error message, etc.
         });
       })
@@ -55,6 +62,7 @@ const UserLogin = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error("Error signing in:", errorMessage);
+        window.alert("Error in signing in");
         // Handle error, show error message, etc.
       });
   };
