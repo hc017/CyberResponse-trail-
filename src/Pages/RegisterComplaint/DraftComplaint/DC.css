@@ -1,6 +1,6 @@
 .DC_component {
     width: 100%;
-    height: 120vh;
+    height: 110vh;
     border-radius: 2px;
     background-image: linear-gradient(
       to bottom,
@@ -11,7 +11,7 @@
   }
   .DC_innercomponent {
     width: 90%;
-    height: 130vh;
+    height: 110vh;
     margin-left: 5%;
   }
   .DC_innerform{
@@ -21,9 +21,9 @@
 
   }
   .img_dc {
-    width: 50%;
-    height: 55%;
-    margin-left: 24%;
+    width: 40%;
+    height: 45%;
+    margin-left: 30%;
     /* Add animation properties */
     animation-name: rotateAnimation;
     animation-duration: 7s; /* Adjust duration as needed */

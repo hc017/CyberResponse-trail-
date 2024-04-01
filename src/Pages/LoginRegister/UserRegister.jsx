@@ -118,11 +118,12 @@ const UserRegister = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                {/* <div className="reg-mobile">
+                <div className="reg-mobile">
                   <label className="reg-mobileno">Mobile No:</label>
-                  <PhoneInput
+                  <input
                     country={"in"}
-                    className="reg-extension"
+                    className="mobilevi"
+                    placeholder="Enter Your Mobile Number"
                     required
                   />
                 </div>
@@ -141,14 +142,7 @@ const UserRegister = () => {
                   >
                     Get OTP
                   </button>
-                  <button
-                    type="button"
-                    
-                    className="reg-verifyotp-button"
-                  >
-                    
-                  </button> */}
-                {/* </div> */}
+                 </div>
 
                 {/* <div id="recaptcha"></div>
 

@@ -210,23 +210,21 @@ const UserLogin = () => {
                   
 
                 </div>
-                {/* <div className='mobile'>
+                <div className='mobile'>
                   <label className="mobileno">Mobile No:</label>
-                  <PhoneInput country={"in"} value={phone} onChange={(phone) => setPhone("+" + phone)} className="extension" required />
+                  <input placeholder='Enter your phone number'  className="mobilevi" required />
                 </div>
-                <div className="error-msg">
-                  {phoneError && <span className="error-message-phone">{phoneError}</span>}
-                </div>
+            
                 
                 <div className='fillotp'>
                   <label className="getotp">OTP:</label>
-                  <input type="text" onChange={(e) => setOtp(e.target.value)} placeholder="Enter OTP" id="getotp" required />
+                  <input type="text" placeholder="Enter OTP" id="getotp" required />
 
-                  <button type="button" className='getotp-button' onClick={sendOTP} >Get OTP</button>
-                  <button type="button" onClick={verifyOTP} className='verifyotp-button' >Verify OTP</button>
+                  <button type="button" className='getotp-button'  >Get OTP</button>
+                  <button type="button"  className='verifyotp-button' >Verify OTP</button>
 
                 </div>
-                {otpError && <span className="error-message-otp">{otpError}</span>}
+               
                 <div id='recaptcha'>
 
                 </div>
@@ -245,12 +243,12 @@ const UserLogin = () => {
 
                   <div className='input-captcha'>
                     <label classname='write-captcha' >Enter Captcha:</label>
-                    <input type="text" placeholder='Enter the captcha' id="write-captcha" value={captchaInput}
-                      onChange={(e) => setCaptchaInput(e.target.value)} required />
-                    {captchaError && <span className="error-message-captcha">{captchaError}</span>}
+                    <input type="text" placeholder='Enter the captcha' id="write-captcha"
+                      required />
+                  
                   </div>
                   <div className="status-text" />
-                </div> */}
+                </div>
 
                 <div className='register-newuser'>
                   <Link to="/register" style={{ color: '#fff', textDecoration: 'none'}} >New User? Click to Register</Link>
