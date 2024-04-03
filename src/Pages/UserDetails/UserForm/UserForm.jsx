@@ -31,6 +31,7 @@ const UserForm = () => {
   const [email, setEmail] = useState("");
   const { currentUser } = useAuth();
   const [title, setTitle] = useState("");
+  const [famMemName, setFamMemName] = useState("");
 
   useEffect(() => {
     if (!currentUser) {
@@ -58,12 +59,14 @@ const UserForm = () => {
     try {
       await set(ref(db, `users/${currentUser.uid}/userdetails`), {
         RegLogI: RegLogI,
+        title: title,
         RegName: RegName,
         RegMobile: RegMobile,
         ReDob: ReDob,
         RegGender: RegGender,
         RegEmail: RegEmail,
         RegRelation: RegRelation,
+        famMemName: famMemName,
         // Add other fields as needed
       });
       await set(ref(db, `users/${currentUser.uid}/userdetails/permanentAddress`), {
@@ -83,9 +86,6 @@ const UserForm = () => {
   };
 
 
-
-
-
   const handleGetOtpClick = () => {
     setShowOtpInput(true);
   };
@@ -98,6 +98,19 @@ const UserForm = () => {
     { id: 1, name: "Mr." },
     { id: 2, name: "Mrs." },
     { id: 3, name: "Miss" },
+  ];
+
+  const genders = [
+    { id: 1, name: "Male" },
+    { id: 2, name: "Female" },
+    { id: 3, name: "Transgender" },
+    { id: 4, name: "Prefer not to say" }
+  ];
+
+  const relations = [
+    { id: 1, name: "Father" },
+    { id: 2, name: "Mother" },
+    { id: 3, name: "Spouse" },
   ];
 
   const countries = [
@@ -196,18 +209,6 @@ const UserForm = () => {
             <div className="vertical_input">
               <p className="vi_text">Title :</p>
               <div className="title_dropdown">
-                {/* <input type="radio" id="mr" name="title" value="Mr." />
-                <label htmlFor="mr">Mr.</label>
-                <input type="radio" id="mrs" name="title" value="Mrs." />
-                <label htmlFor="mrs">Mrs.</label>
-                <input type="radio" id="miss" name="title" value="Miss" />
-                <label htmlFor="miss">Miss</label>
-                <input type="radio" id="dr" name="title" value="Dr." />
-                <label htmlFor="dr">Dr.</label>
-                <input type="radio" id="prof" name="title" value="Prof." />
-                <label htmlFor="prof">Prof.</label>
-                <input type="radio" id="other" name="title" value="Other" />
-                <label htmlFor="other">Other</label> */}
                 <select
                   name="title"
                   className="select_title"
@@ -215,9 +216,9 @@ const UserForm = () => {
                   onChange={(e) => setTitle(e.target.value)}
                 >
                   <option value="">Select Title</option>
-                  {titleOptions.map((option) => (
-                    <option key={option.id} value={option.name}>
-                      {option.name}
+                  {titleOptions.map((title) => (
+                    <option key={title.id} value={title.name}>
+                      {title.name}
                     </option>
                   ))}
                 </select>
@@ -236,13 +237,23 @@ const UserForm = () => {
             </div>
             <div className="vertical_input">
               <p className="vi_text">Mobile :</p>
-              <input
-                type="number"
-                className="vi_input"
-                placeholder="Enter your mobile number"
-                value={RegMobile}
-                onChange={(e) => setRegMobile(e.target.value)}
-              />
+              <div className="two_fields">
+                <input
+                  type="text"
+                  className="vi_input"
+                  id="num_extension"
+                  value="+91"
+                  readOnly
+                />
+                <input
+                  type="tel"
+                  className="vi_input"
+                  id="mob_num"
+                  placeholder="Enter your mobile number"
+                  value={RegMobile}
+                  onChange={(e) => setRegMobile(e.target.value)}
+                />
+              </div>
             </div>
             <div className="vertical_input">
               <p className="vi_text">Date of Birth :</p>
@@ -251,17 +262,23 @@ const UserForm = () => {
             </div>
             <div className="vertical_input">
               <p className="vi_text">Gender :</p>
-              <input
-                type="text"
+              <select
                 className="vi_input"
-                placeholder="Enter your gender"
                 value={RegGender}
                 onChange={(e) => setRegGender(e.target.value)}
-              />
+              >
+                <option value="">Select Gender</option>
+                {genders.map((RegGender) => (
+                  <option key={RegGender.id} value={RegGender.name}>
+                    {RegGender.name}
+                  </option>
+                ))}
+              </select>
+
             </div>
             <div className="vertical_input">
               <p className="vi_text">Email ID :</p>
-              <div className="emailotp">
+              <div className="emailotp" id="entermail">
                 <input
                   type="text"
                   className="vi_input_email"
@@ -290,15 +307,31 @@ const UserForm = () => {
             </div>
             <div className="vertical_input">
               <p className="vi_text">Father/Mother/Spouse :</p>
-              <input
-                type="text"
-                className="vi_input"
-                placeholder="Enter your family member's relationship"
-                value={RegRelation}
-                onChange={(e) => setRegRelation(e.target.value)}
-              />
+              <div className="two_fields">
+                <select
+                  className="vi_input" id="vi_relation"
+                  value={RegRelation}
+                  onChange={(e) => setRegRelation(e.target.value)}
+                >
+                  <option value="">Select Relation</option>
+                  {relations.map((RegRelation) => (
+                    <option key={RegRelation.id} value={RegRelation.name}>
+                      {RegRelation.name}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  type="text"
+                  className="vi_input" id="vi_memName"
+                  placeholder="Enter Father/Mother/Spouse name"
+                  value={famMemName}
+                  onChange={(e) => setFamMemName(e.target.value)}
+                />
+              </div>
             </div>
+
           </form>
+
           <div className="permanentAddcomponent">
             <div className="permanentAddinnercomponent">
               <p className="pb">Permanent Address</p>
@@ -366,7 +399,7 @@ const UserForm = () => {
                     >
                       <option value="">Select Country</option>
                       {countries.map((country) => (
-                        <option key={country.id} value={country.id}>
+                        <option key={country.id} value={country.name}>
                           {country.name}
                         </option>
                       ))}

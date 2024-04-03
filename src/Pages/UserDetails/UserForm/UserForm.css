@@ -62,20 +62,29 @@
     color: #767676;
   }
   
-  /* .radio_group {
+  .two_fields{
+    display: 'flex';
+    width: 30%;
     margin-left: 10%;
-    margin-top: 1.2%;
-    font-family: Poppins;
-    font-size: 20px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #a4e1f4;
-    justify-items: flex-start;
-  } */
+  }
+  #num_extension{
+    width: 13%;
+    margin: 0 0 0 0%;
+  }
+  #mob_num{
+    width: 82%;
+    margin-left: 5%;
+  }
+  
+  #vi_relation{
+    width: 34%;
+    margin: 0;
+  }
+  #vi_memName{
+    width: 61%;
+    margin-left: 5%;
+  }
+
   .title_dropdown{
     width: 30%;
     height: 2.2rem;
@@ -102,7 +111,10 @@
     align-items: center; /* Center items vertically */
   }
   #enterotp{
-    margin: 0;
+    margin-left: 0.8%;
+  }
+  #entermail{
+    width: 22%;
   }
   #vi_enterotp{
     padding-left: 0.8rem;
