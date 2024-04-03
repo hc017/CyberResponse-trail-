@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./UserRegister.css";
-import { Link,useHistory  } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import logo from "./arrow.svg";
 import captchaimg from "./captcha-bg.png";
 import "@fortawesome/fontawesome-free/css/all.css";
@@ -14,22 +14,18 @@ import { getDatabase, ref, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-
-
-
 const UserRegister = () => {
   const [userRegister, setuserRegister] = useState(true);
   const [state, setState] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [cpassword, setCPassword] = useState("");
-  const [error, setError] = useState("")
+  const [CFpassword, setCFPassword] = useState("");
+  const [Rmobile, setRMobile] = useState("");
+  const [Rotp, setROtp] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const db = getDatabase();
 
-
-
-  
   const handleRegister = () => {
     console.log(email, state, password);
     createUserWithEmailAndPassword(auth, email, password)
@@ -43,10 +39,10 @@ const UserRegister = () => {
           password: password,
           id: userCredential.user.uid,
         });
-         // Redirect to another page after successful registration
-      window.alert("Data added successfully!");
+        // Redirect to another page after successful registration
+        window.alert("Data added successfully!");
 
-         navigate('/', { userId: user.uid, email: email }); // Replace '/next-page' with your desired route
+        navigate("/", { userId: user.uid, email: email }); // Replace '/next-page' with your desired route
         // ...
       })
       .catch((error) => {
@@ -58,10 +54,13 @@ const UserRegister = () => {
   };
   const handleCancel = () => {
     // Clear the form fields by resetting the state variables
-    setState('');
-    setEmail('');
-    setPassword('');
-    setCPassword('');
+    setState("");
+    setEmail("");
+    setPassword("");
+    setCFPassword("");
+    setRMobile("");
+    setROtp("");
+
   };
 
   return (
@@ -86,98 +85,106 @@ const UserRegister = () => {
                   handleRegister(); // Call handleRegister when the form is submitted
                 }}
               >
-                <div className="select-state">
-                  <label className="state">State:</label>
-                  <input
-                    type="text"
-                    placeholder="Enter your State"
-                    value={state}
-                    onChange={(e) => setState(e.target.value)} // Use the provided value directly
-                    id="statename"
-                  />
-                </div>
-                <div>
-                  <label className="reg-loginid">Login ID:</label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email ID"
-                    id="reg-loginid"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label className="reg-loginid">Password:</label>
-                  <input
-                    type="password"
-                    placeholder="Enter your password"
-                    id="reg-loginid"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <div className="reg-mobile">
-                  <label className="reg-mobileno">Mobile No:</label>
-                  <input
-                    country={"in"}
-                    className="mobilevi"
-                    placeholder="Enter Your Mobile Number"
-                    required
-                  />
-                </div>
-                <div className="reg-fillotp">
-                  <label className="reg-getotp">OTP:</label>
-                  <input
-                    type="text"
-                    placeholder="Enter OTP"
-                    id="reg-getotp"
-                    required
-                  />
-
-                  <button
-                    type="button"
-                    className="reg-getotp-button"
-                  >
-                    Get OTP
-                  </button>
-                 </div>
-
-                {/* <div id="recaptcha"></div>
-
-                <div className="reg-captcha-wrapper">
-                  <div className="reg-view-captcha">
-                    <label className="reg-captcha-container"> Captcha: </label>
-                    <div className="reg-captcha-area">
-                      <div className="reg-captcha-img">
-                        <img src={captchaimg} alt="Captcha Background" />
-                        <span className="captcha" />
-                      </div>
-                      <button className="reload-btn">
-                        <i className="fas fa-redo-alt" />
-                      </button>
-                    </div>
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text">State:</label>
                   </div>
-
-                  <div className="input-captcha">
-                    <label classname="reg-write-captcha">Enter Captcha:</label>
+                  <div className="VIdiv">
                     <input
                       type="text"
-                      placeholder="Enter the captcha"
-                      id="reg-write-captcha"
-                      value={regcaptchaInput}
-                      onChange={(e) => setRegCaptchaInput(e.target.value)}
+                      placeholder="Enter your State"
+                      className="R_vi_input"
+                      value={state}
+                      onChange={(e) => setState(e.target.value)} // Use the provided value directly
+                    />
+                  </div>
+                </div>
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text">Login ID:</label>
+                  </div>
+                  <div className="VIdiv">
+                    <input
+                      type="email"
+                      placeholder="Enter your email ID"
+                      className="R_vi_input"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text">Password:</label>
+                  </div>
+                  <div className="VIdiv">
+                    <input
+                      type="password"
+                      placeholder="Enter your password"
+                      className="R_vi_input"
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text">Confirm Password:</label>
+                  </div>
+                  <div className="VIdiv">
+                    <input
+                      type="password"
+                      placeholder="Confirm ypur password"
+                      className="R_vi_input"
+                      required
+                      value={CFpassword}
+                      onChange={(e) => setCFPassword(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text">Mobile No:</label>
+                  </div>
+                  <div className="VIdiv">
+                    <input
+                      type="tel"
+                      country={"in"}
+                      className="R_vi_input"
+                      placeholder="Enter Your Mobile Number"
+                      value={Rmobile}
+                      onChange={(e) => setRMobile(e.target.value)}
                       required
                     />
-                    {regcaptchaError && (
-                      <span className="error-message-captcha">
-                        {regcaptchaError}
-                      </span>
-                    )}
                   </div>
-                  <div className="status-text" />
-                </div> */}
+                </div>
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text" id="VIT_otp">
+                      OTP:
+                    </label>
+                  </div>
+                  <div className="VIdiv">
+                    <input
+                      type="text"
+                      placeholder="Enter OTP"
+                      className="R_vi_input"
+                      id="VIT_input"
+                      value={Rotp}
+                      onChange={(e) => setROtp(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <button type="button" className="R_BTN" id="#VIT_btn">
+                    Get OTP
+                  </button>
+                  <button type="button" className="R_BTN" id="#VIT_btn">
+                    Verify OTP
+                  </button>
+                </div>
 
                 <div className="login-existinguser">
                   <Link
@@ -193,10 +200,14 @@ const UserRegister = () => {
                     className="confirm-register-button"
                     onClick={handleRegister}
                   >
-                    Register
+                    REGISTER
                   </Link>
-                  <button type="button" className="reg-cancel-button" onClick={handleCancel}>
-                    Cancel
+                  <button
+                    type="button"
+                    className="reg-cancel-button"
+                    onClick={handleCancel}
+                  >
+                    CANCEL
                   </button>
                 </div>
               </form>
