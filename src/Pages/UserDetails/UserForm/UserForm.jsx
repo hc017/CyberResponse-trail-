@@ -28,8 +28,9 @@ const UserForm = () => {
   const [policeStation, setPoliceStation] = useState("");
   const navigate = useNavigate();
   const db = getDatabase();
-  const [email, setEmail] = useState(""); 
+  const [email, setEmail] = useState("");
   const { currentUser } = useAuth();
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     if (!currentUser) {
@@ -46,23 +47,23 @@ const UserForm = () => {
     if (location.state) {
       setEmail(location.state.email);
     }
-  }, [location.state]); 
+  }, [location.state]);
 
   const handleSaveAndSubmit = async () => {
-     // Upload additional data to Realtime Database
-     if (currentUser && currentUser.email !== RegLogI) {
+    // Upload additional data to Realtime Database
+    if (currentUser && currentUser.email !== RegLogI) {
       console.error("Error: Provided email does not match the current user's email");
       return; // Exit the function if the emails don't match
     }
-     try {
+    try {
       await set(ref(db, `users/${currentUser.uid}/userdetails`), {
-        RegLogI:RegLogI,
-        RegName:RegName,
-        RegMobile:RegMobile,
-        ReDob:ReDob,
-        RegGender:RegGender,
-        RegEmail:RegEmail,
-        RegRelation:RegRelation,
+        RegLogI: RegLogI,
+        RegName: RegName,
+        RegMobile: RegMobile,
+        ReDob: ReDob,
+        RegGender: RegGender,
+        RegEmail: RegEmail,
+        RegRelation: RegRelation,
         // Add other fields as needed
       });
       await set(ref(db, `users/${currentUser.uid}/userdetails/permanentAddress`), {
@@ -78,7 +79,7 @@ const UserForm = () => {
     } catch (error) {
       console.error("Error adding data: ", error);
     }
- 
+
   };
 
 
@@ -92,16 +93,23 @@ const UserForm = () => {
   const handleVerifyClick = () => {
     // Implement OTP verification logic here
   };
+
+  const titleOptions = [
+    { id: 1, name: "Mr." },
+    { id: 2, name: "Mrs." },
+    { id: 3, name: "Miss" },
+  ];
+
   const countries = [
     { id: 1, name: "India" },
     // Add more countries as needed
   ];
-  
+
   const states = [
     { id: 1, name: "Maharashtra", countryId: 1 },
     // Add more states as needed
   ];
-  
+
   const districts = [
     { id: 1, name: "Ahmednagar", stateId: 1 },
     { id: 2, name: "Akola", stateId: 1 },
@@ -141,7 +149,7 @@ const UserForm = () => {
     { id: 36, name: "Yavatmal", stateId: 1 },
     // Add more districts as needed
   ];
-  
+
   const policeStations = [
     // Ahmednagar
     { id: 1, name: "Ahmednagar City", districtId: 1 },
@@ -181,13 +189,14 @@ const UserForm = () => {
                 className="vi_input"
                 placeholder="Enter your login ID"
                 value={RegLogI}
-                onChange={(e) => setRegLogI(e.target.value)} 
+                onChange={(e) => setRegLogI(e.target.value)}
               />
             </div>
+
             <div className="vertical_input">
               <p className="vi_text">Title :</p>
-              <div className="radio_group">
-                <input type="radio" id="mr" name="title" value="Mr." />
+              <div className="title_dropdown">
+                {/* <input type="radio" id="mr" name="title" value="Mr." />
                 <label htmlFor="mr">Mr.</label>
                 <input type="radio" id="mrs" name="title" value="Mrs." />
                 <label htmlFor="mrs">Mrs.</label>
@@ -198,9 +207,23 @@ const UserForm = () => {
                 <input type="radio" id="prof" name="title" value="Prof." />
                 <label htmlFor="prof">Prof.</label>
                 <input type="radio" id="other" name="title" value="Other" />
-                <label htmlFor="other">Other</label>
+                <label htmlFor="other">Other</label> */}
+                <select
+                  name="title"
+                  className="select_title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                >
+                  <option value="">Select Title</option>
+                  {titleOptions.map((option) => (
+                    <option key={option.id} value={option.name}>
+                      {option.name}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
+
             <div className="vertical_input">
               <p className="vi_text">Name :</p>
               <input
@@ -218,13 +241,13 @@ const UserForm = () => {
                 className="vi_input"
                 placeholder="Enter your mobile number"
                 value={RegMobile}
-                onChange={(e) => setRegMobile(e.target.value)} 
+                onChange={(e) => setRegMobile(e.target.value)}
               />
             </div>
             <div className="vertical_input">
               <p className="vi_text">Date of Birth :</p>
-              <input type="date" className="vi_input"   value={ReDob}
-                onChange={(e) => setRegDob(e.target.value)}  />
+              <input type="date" className="vi_input" value={ReDob}
+                onChange={(e) => setRegDob(e.target.value)} />
             </div>
             <div className="vertical_input">
               <p className="vi_text">Gender :</p>
@@ -233,7 +256,7 @@ const UserForm = () => {
                 className="vi_input"
                 placeholder="Enter your gender"
                 value={RegGender}
-                onChange={(e) => setRegGender(e.target.value)} 
+                onChange={(e) => setRegGender(e.target.value)}
               />
             </div>
             <div className="vertical_input">
@@ -244,7 +267,7 @@ const UserForm = () => {
                   className="vi_input_email"
                   placeholder="Enter your email ID"
                   value={RegEmail}
-                  onChange={(e) => setRegEmail(e.target.value)} 
+                  onChange={(e) => setRegEmail(e.target.value)}
                 />
                 {!showOtpInput && (
                   <button className="otpbutton" onClick={handleGetOtpClick}>
@@ -253,10 +276,10 @@ const UserForm = () => {
                 )}
               </div>
               {showOtpInput && (
-                <div className="emailotp">
+                <div className="emailotp" id="enterotp">
                   <input
                     type="text"
-                    className="vi_input_otp"
+                    className="vi_input_otp" id="vi_enterotp"
                     placeholder="Enter OTP"
                   />
                   <button className="verify_button" onClick={handleVerifyClick}>
@@ -272,7 +295,7 @@ const UserForm = () => {
                 className="vi_input"
                 placeholder="Enter your family member's relationship"
                 value={RegRelation}
-                onChange={(e) => setRegRelation(e.target.value)} 
+                onChange={(e) => setRegRelation(e.target.value)}
               />
             </div>
           </form>
@@ -280,6 +303,7 @@ const UserForm = () => {
             <div className="permanentAddinnercomponent">
               <p className="pb">Permanent Address</p>
               <div className="PA">
+
                 <div className="PA_left">
                   <div className="PA_vertical_input">
                     <p className="PA_vi_text">House No. :</p>
@@ -288,7 +312,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your House No."
                       value={RegHouseNo}
-                      onChange={(e) => setRegHouseNo(e.target.value)} 
+                      onChange={(e) => setRegHouseNo(e.target.value)}
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -298,7 +322,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Street Name"
                       value={RegStreetName}
-                      onChange={(e) => setRegStreetName(e.target.value)} 
+                      onChange={(e) => setRegStreetName(e.target.value)}
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -308,7 +332,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Colony"
                       value={RegColony}
-                      onChange={(e) => setRegColony(e.target.value)} 
+                      onChange={(e) => setRegColony(e.target.value)}
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -318,7 +342,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Town/City"
                       value={RegTownCity}
-                      onChange={(e) => setRegTownCity(e.target.value)} 
+                      onChange={(e) => setRegTownCity(e.target.value)}
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -328,7 +352,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Teheshil"
                       value={RegTeheshil}
-                      onChange={(e) => setRegTeheshil(e.target.value)} 
+                      onChange={(e) => setRegTeheshil(e.target.value)}
                     />
                   </div>
                 </div>
@@ -409,7 +433,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Pincode"
                       value={RegPinCode}
-                      onChange={(e) => setRegPinCode(e.target.value)} 
+                      onChange={(e) => setRegPinCode(e.target.value)}
                     />
                   </div>
                 </div>
