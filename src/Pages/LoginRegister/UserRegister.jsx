@@ -28,6 +28,7 @@ const UserRegister = () => {
 
   const handleRegister = () => {
     console.log(email, state, password);
+  
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -37,6 +38,7 @@ const UserRegister = () => {
           state: state,
           email: email,
           password: password,
+          mobile:Rmobile,
           id: userCredential.user.uid,
         });
         // Redirect to another page after successful registration
@@ -52,6 +54,38 @@ const UserRegister = () => {
         // ..
       });
   };
+  const validateForm = () => {
+    if (!state) {
+      setError("Please select your country");
+      return false;
+    }
+    if (!email) {
+      setError("Please enter your email ID");
+      return false;
+    }
+    if (!password) {
+      setError("Please enter your password");
+      return false;
+    }
+    if (password !== CFpassword) {
+      setError("Passwords do not match");
+      return false;
+    }
+    if (!Rmobile) {
+      setError("Please enter your mobile number");
+      return false;
+    }
+    return true;
+  };
+  const countries = [
+    "India",
+    "Albania",
+    "Algeria",
+    "Andorra",
+    "Angola",
+    "Antigua and Barbuda",
+    // Add more countries as needed
+  ];
   const handleCancel = () => {
     // Clear the form fields by resetting the state variables
     setState("");
@@ -60,7 +94,6 @@ const UserRegister = () => {
     setCFPassword("");
     setRMobile("");
     setROtp("");
-
   };
 
   return (
@@ -87,16 +120,22 @@ const UserRegister = () => {
               >
                 <div className="R_Vi_container">
                   <div className="ldiv">
-                    <label className="R_VI_text">State:</label>
+                    <label className="R_VI_text">Country:</label>
                   </div>
                   <div className="VIdiv">
-                    <input
-                      type="text"
-                      placeholder="Enter your State"
+                    <select
                       className="R_vi_input"
                       value={state}
-                      onChange={(e) => setState(e.target.value)} // Use the provided value directly
-                    />
+                      onChange={(e) => setState(e.target.value)} // Update state when a new country is selected
+                    >
+                      <option value="">Select your Country</option>
+                      {/* Map through the countries array to generate options */}
+                      {countries.map((country, index) => (
+                        <option key={index} value={country}>
+                          {country}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
                 <div className="R_Vi_container">
