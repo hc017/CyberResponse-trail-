@@ -119,72 +119,72 @@ const UserForm = () => {
   ];
 
   const states = [
-    { id: 1, name: "Maharashtra", countryId: 1 },
+    { id: 1, name: "Maharashtra", countryName: "India" },
     // Add more states as needed
   ];
 
   const districts = [
-    { id: 1, name: "Ahmednagar", stateId: 1 },
-    { id: 2, name: "Akola", stateId: 1 },
-    { id: 3, name: "Amravati", stateId: 1 },
-    { id: 4, name: "Aurangabad", stateId: 1 },
-    { id: 5, name: "Beed", stateId: 1 },
-    { id: 6, name: "Bhandara", stateId: 1 },
-    { id: 7, name: "Buldhana", stateId: 1 },
-    { id: 8, name: "Chandrapur", stateId: 1 },
-    { id: 9, name: "Dhule", stateId: 1 },
-    { id: 10, name: "Gadchiroli", stateId: 1 },
-    { id: 11, name: "Gondia", stateId: 1 },
-    { id: 12, name: "Hingoli", stateId: 1 },
-    { id: 13, name: "Jalgaon", stateId: 1 },
-    { id: 14, name: "Jalna", stateId: 1 },
-    { id: 15, name: "Kolhapur", stateId: 1 },
-    { id: 16, name: "Latur", stateId: 1 },
-    { id: 17, name: "Mumbai City", stateId: 1 },
-    { id: 18, name: "Mumbai Suburban", stateId: 1 },
-    { id: 19, name: "Nagpur", stateId: 1 },
-    { id: 20, name: "Nanded", stateId: 1 },
-    { id: 21, name: "Nandurbar", stateId: 1 },
-    { id: 22, name: "Nashik", stateId: 1 },
-    { id: 23, name: "Osmanabad", stateId: 1 },
-    { id: 24, name: "Palghar", stateId: 1 },
-    { id: 25, name: "Parbhani", stateId: 1 },
-    { id: 26, name: "Pune", stateId: 1 },
-    { id: 27, name: "Raigad", stateId: 1 },
-    { id: 28, name: "Ratnagiri", stateId: 1 },
-    { id: 29, name: "Sangli", stateId: 1 },
-    { id: 30, name: "Satara", stateId: 1 },
-    { id: 31, name: "Sindhudurg", stateId: 1 },
-    { id: 32, name: "Solapur", stateId: 1 },
-    { id: 33, name: "Thane", stateId: 1 },
-    { id: 34, name: "Wardha", stateId: 1 },
-    { id: 35, name: "Washim", stateId: 1 },
-    { id: 36, name: "Yavatmal", stateId: 1 },
+    { id: 1, name: "Ahmednagar", stateName: "Maharashtra" },
+    { id: 2, name: "Akola", stateName: "Maharashtra" },
+    { id: 3, name: "Amravati", stateName: "Maharashtra" },
+    { id: 4, name: "Aurangabad", stateName: "Maharashtra" },
+    { id: 5, name: "Beed", stateName: "Maharashtra" },
+    { id: 6, name: "Bhandara", stateName: "Maharashtra" },
+    { id: 7, name: "Buldhana", stateName: "Maharashtra" },
+    { id: 8, name: "Chandrapur", stateName: "Maharashtra" },
+    { id: 9, name: "Dhule", stateName: "Maharashtra" },
+    { id: 10, name: "Gadchiroli", stateName: "Maharashtra" },
+    { id: 11, name: "Gondia", stateName: "Maharashtra" },
+    { id: 12, name: "Hingoli", stateName: "Maharashtra" },
+    { id: 13, name: "Jalgaon", stateName: "Maharashtra" },
+    { id: 14, name: "Jalna", stateName: "Maharashtra" },
+    { id: 15, name: "Kolhapur", stateName: "Maharashtra" },
+    { id: 16, name: "Latur", stateName: "Maharashtra" },
+    { id: 17, name: "Mumbai City", stateName: "Maharashtra" },
+    { id: 18, name: "Mumbai Suburban", stateName: "Maharashtra" },
+    { id: 19, name: "Nagpur", stateName: "Maharashtra" },
+    { id: 20, name: "Nanded", stateName: "Maharashtra" },
+    { id: 21, name: "Nandurbar", stateName: "Maharashtra" },
+    { id: 22, name: "Nashik", stateName: "Maharashtra" },
+    { id: 23, name: "Osmanabad", stateName: "Maharashtra" },
+    { id: 24, name: "Palghar", stateName: "Maharashtra" },
+    { id: 25, name: "Parbhani", stateName: "Maharashtra" },
+    { id: 26, name: "Pune", stateName: "Maharashtra" },
+    { id: 27, name: "Raigad", stateName: "Maharashtra" },
+    { id: 28, name: "Ratnagiri", stateName: "Maharashtra" },
+    { id: 29, name: "Sangli", stateName: "Maharashtra" },
+    { id: 30, name: "Satara", stateName: "Maharashtra" },
+    { id: 31, name: "Sindhudurg", stateName: "Maharashtra" },
+    { id: 32, name: "Solapur", stateName: "Maharashtra" },
+    { id: 33, name: "Thane", stateName: "Maharashtra" },
+    { id: 34, name: "Wardha", stateName: "Maharashtra" },
+    { id: 35, name: "Washim", stateName: "Maharashtra" },
+    { id: 36, name: "Yavatmal", stateName: "Maharashtra" },
     // Add more districts as needed
   ];
 
   const policeStations = [
     // Ahmednagar
-    { id: 1, name: "Ahmednagar City", districtId: 1 },
-    { id: 2, name: "Ahmednagar Camp", districtId: 1 },
-    { id: 3, name: "Jamkhed", districtId: 1 },
+    { id: 1, name: "Ahmednagar City", districtName: "Ahmednagar" },
+    { id: 2, name: "Ahmednagar Camp", districtName: "Ahmednagar" },
+    { id: 3, name: "Jamkhed", districtName: "Ahmednagar" },
     // Akola
-    { id: 4, name: "Akola City", districtId: 2 },
-    { id: 5, name: "Barshitakli", districtId: 2 },
-    { id: 6, name: "Akot", districtId: 2 },
+    { id: 4, name: "Akola City", districtName: "Akola" },
+    { id: 5, name: "Barshitakli", districtName: "Akola" },
+    { id: 6, name: "Akot", districtName: "Akola" },
     // Amravati
-    { id: 7, name: "Amravati City", districtId: 3 },
-    { id: 8, name: "Amravati Camp", districtId: 3 },
-    { id: 9, name: "Daryapur", districtId: 3 },
+    { id: 7, name: "Amravati City", districtName: "Amravati" },
+    { id: 8, name: "Amravati Camp", districtName: "Amravati" },
+    { id: 9, name: "Daryapur", districtName: "Amravati" },
     // Aurangabad
-    { id: 10, name: "Aurangabad City", districtId: 4 },
-    { id: 11, name: "Aurangabad Camp", districtId: 4 },
-    { id: 12, name: "Chikhalthana", districtId: 4 },
+    { id: 10, name: "Aurangabad City", districtName: "Aurangabad" },
+    { id: 11, name: "Aurangabad Camp", districtName: "Aurangabad" },
+    { id: 12, name: "Chikhalthana", districtName: "Aurangabad" },
     // Add more police stations as needed
-    { id: 13, name: "Shivajinagar Police Station", districtId: 26 },
-    { id: 14, name: "Bhavani Peth Police Station", districtId: 26 },
-    { id: 15, name: "Wakad Police Station", districtId: 26 },
-    { id: 15, name: "Hinjewadi Police Station", districtId: 26 },
+    { id: 13, name: "Shivajinagar Police Station", districtName: "Pune" },
+    { id: 14, name: "Bhavani Peth Police Station", districtName: "Pune" },
+    { id: 15, name: "Wakad Police Station", districtName: "Pune" },
+    { id: 15, name: "Hinjewadi Police Station", districtName: "Pune" },
   ];
 
 
@@ -414,9 +414,9 @@ const UserForm = () => {
                     >
                       <option value="">Select State</option>
                       {states
-                        .filter((s) => s.countryId === parseInt(country))
+                        .filter((s) => s.countryName === country)
                         .map((state) => (
-                          <option key={state.id} value={state.id}>
+                          <option key={state.id} value={state.name}>
                             {state.name}
                           </option>
                         ))}
@@ -431,9 +431,9 @@ const UserForm = () => {
                     >
                       <option value="">Select District</option>
                       {districts
-                        .filter((d) => d.stateId === parseInt(state))
+                        .filter((d) => d.stateName === state)
                         .map((district) => (
-                          <option key={district.id} value={district.id}>
+                          <option key={district.id} value={district.name}>
                             {district.name}
                           </option>
                         ))}
@@ -448,11 +448,11 @@ const UserForm = () => {
                     >
                       <option value="">Select Police Station</option>
                       {policeStations
-                        .filter((p) => p.districtId === parseInt(district))
+                        .filter((p) => p.districtName === district)
                         .map((policeStation) => (
                           <option
                             key={policeStation.id}
-                            value={policeStation.id}
+                            value={policeStation.name}
                           >
                             {policeStation.name}
                           </option>

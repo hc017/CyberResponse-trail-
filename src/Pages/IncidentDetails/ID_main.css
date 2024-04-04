@@ -56,24 +56,19 @@
 }
 .ISD_vi_text {
   width: 20%;
-  margin: 0;
+  margin: 1.5rem 0 0 5rem;
   font-family: Poppins;
   font-size: 1.1rem;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: left;
   color: #a4e1f4;
   display: inline-flex; /* Use flexbox */
-  justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   text-decoration: none; /* Remove default link underline */
 }
 .ISD_vi_input {
   width: 30%;
   height: 2rem;
-  margin-left: 10%;
+  margin: 1.4% 0 0 10%;
   border-radius: 5px;
   box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: #d9d9d9;
@@ -81,7 +76,7 @@
 }
 .ISD_block{
     width: 100%;
-    height: 0.5rem;
+    height: 1.5rem;
     border-bottom: #c6c6c6 solid 1px;
 }
 .ISDL2_formComp_1{
@@ -91,10 +86,10 @@
     margin-top: 1rem;
 }
 #ISDT{
-    font-size: 0.8rem;
-    margin-right: 10%;
-    padding-left: 2%;
-    color: #fff;
+    font-size: 1.1rem;
+    width: 27%;
+    margin: 1rem 0 0rem 5rem;
+    color: #a4e1f4;
     display: inline-flex; /* Use flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -102,14 +97,18 @@
 }
 #ISDI{
     width: 15%;
+    margin: 0.3% 0 0 3%;
     color: #676767;
+}
+.radio_isd_btn{
+  margin-top: 1.3rem;
 }
 .radio_text_isd{
     font-size: 1rem;
-    margin-top: 0.2rem;
+    margin: 0.8rem 1.5rem 0 0.3rem;
 }
 #ISD_vi_text_id{
-    margin-right: 10%;
+    margin: 3% 9.5% 0 6.9%;
 }
 .ISD_vi_input-text{
     width: 30%;
