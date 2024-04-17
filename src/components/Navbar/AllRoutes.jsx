@@ -23,6 +23,9 @@ import ReportRoutes from '../../Pages/ReportIncident/ReportRoutes'
 import ID_main from '../../Pages/IncidentDetails/ID_main'
 import SI_one from '../../Pages/StayInformed/SI_one'
 import S1 from '../../Pages/StayInformed/S1'
+import UserProfile from '../../Pages/UserDetails/Userprofilebar/UserProfile'
+
+
 const AllRoutes = () => {
   return (
     <Routes>
@@ -42,7 +45,7 @@ const AllRoutes = () => {
     <Route path='/userd' element={<UserPhone/>}></Route>
     <Route path='/stayinformed' element={<SI_one/>}></Route>
     <Route path='/stayinformed_one' element={<S1/>}></Route>
-    
+    <Route path='/userprofile' element={<UserProfile/>}></Route>
    </Routes>
    
   )
