@@ -14,8 +14,8 @@ const UserDetails = () => {
         <Em />
         <div className="UD_up_bar"></div>
         <UP_bar />
-        <div className="UD_up_bar"></div>
-        <UserFormPanel2 />
+        {/* <div className="UD_up_bar"></div>
+        <UserFormPanel2 /> */}
         <div className="UD_up_bar"></div>
         <UserForm />
       </div>

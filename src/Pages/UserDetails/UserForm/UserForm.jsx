@@ -28,8 +28,10 @@ const UserForm = () => {
   const [policeStation, setPoliceStation] = useState("");
   const navigate = useNavigate();
   const db = getDatabase();
-  const [email, setEmail] = useState(""); 
+  const [email, setEmail] = useState("");
   const { currentUser } = useAuth();
+  const [title, setTitle] = useState("");
+  const [famMemName, setFamMemName] = useState("");
 
   useEffect(() => {
     if (!currentUser) {
@@ -46,23 +48,25 @@ const UserForm = () => {
     if (location.state) {
       setEmail(location.state.email);
     }
-  }, [location.state]); 
+  }, [location.state]);
 
   const handleSaveAndSubmit = async () => {
-     // Upload additional data to Realtime Database
-     if (currentUser && currentUser.email !== RegLogI) {
+    // Upload additional data to Realtime Database
+    if (currentUser && currentUser.email !== RegLogI) {
       console.error("Error: Provided email does not match the current user's email");
       return; // Exit the function if the emails don't match
     }
-     try {
+    try {
       await set(ref(db, `users/${currentUser.uid}/userdetails`), {
-        RegLogI:RegLogI,
-        RegName:RegName,
-        RegMobile:RegMobile,
-        ReDob:ReDob,
-        RegGender:RegGender,
-        RegEmail:RegEmail,
-        RegRelation:RegRelation,
+        RegLogI: RegLogI,
+        title: title,
+        RegName: RegName,
+        RegMobile: RegMobile,
+        ReDob: ReDob,
+        RegGender: RegGender,
+        RegEmail: RegEmail,
+        RegRelation: RegRelation,
+        famMemName: famMemName,
         // Add other fields as needed
       });
       await set(ref(db, `users/${currentUser.uid}/userdetails/permanentAddress`), {
@@ -78,11 +82,8 @@ const UserForm = () => {
     } catch (error) {
       console.error("Error adding data: ", error);
     }
- 
+
   };
-
-
-
 
 
   const handleGetOtpClick = () => {
@@ -92,78 +93,98 @@ const UserForm = () => {
   const handleVerifyClick = () => {
     // Implement OTP verification logic here
   };
+
+  const titleOptions = [
+    { id: 1, name: "Mr." },
+    { id: 2, name: "Mrs." },
+    { id: 3, name: "Miss" },
+  ];
+
+  const genders = [
+    { id: 1, name: "Male" },
+    { id: 2, name: "Female" },
+    { id: 3, name: "Transgender" },
+    { id: 4, name: "Prefer not to say" }
+  ];
+
+  const relations = [
+    { id: 1, name: "Father" },
+    { id: 2, name: "Mother" },
+    { id: 3, name: "Spouse" },
+  ];
+
   const countries = [
     { id: 1, name: "India" },
     // Add more countries as needed
   ];
-  
+
   const states = [
-    { id: 1, name: "Maharashtra", countryId: 1 },
+    { id: 1, name: "Maharashtra", countryName: "India" },
     // Add more states as needed
   ];
-  
+
   const districts = [
-    { id: 1, name: "Ahmednagar", stateId: 1 },
-    { id: 2, name: "Akola", stateId: 1 },
-    { id: 3, name: "Amravati", stateId: 1 },
-    { id: 4, name: "Aurangabad", stateId: 1 },
-    { id: 5, name: "Beed", stateId: 1 },
-    { id: 6, name: "Bhandara", stateId: 1 },
-    { id: 7, name: "Buldhana", stateId: 1 },
-    { id: 8, name: "Chandrapur", stateId: 1 },
-    { id: 9, name: "Dhule", stateId: 1 },
-    { id: 10, name: "Gadchiroli", stateId: 1 },
-    { id: 11, name: "Gondia", stateId: 1 },
-    { id: 12, name: "Hingoli", stateId: 1 },
-    { id: 13, name: "Jalgaon", stateId: 1 },
-    { id: 14, name: "Jalna", stateId: 1 },
-    { id: 15, name: "Kolhapur", stateId: 1 },
-    { id: 16, name: "Latur", stateId: 1 },
-    { id: 17, name: "Mumbai City", stateId: 1 },
-    { id: 18, name: "Mumbai Suburban", stateId: 1 },
-    { id: 19, name: "Nagpur", stateId: 1 },
-    { id: 20, name: "Nanded", stateId: 1 },
-    { id: 21, name: "Nandurbar", stateId: 1 },
-    { id: 22, name: "Nashik", stateId: 1 },
-    { id: 23, name: "Osmanabad", stateId: 1 },
-    { id: 24, name: "Palghar", stateId: 1 },
-    { id: 25, name: "Parbhani", stateId: 1 },
-    { id: 26, name: "Pune", stateId: 1 },
-    { id: 27, name: "Raigad", stateId: 1 },
-    { id: 28, name: "Ratnagiri", stateId: 1 },
-    { id: 29, name: "Sangli", stateId: 1 },
-    { id: 30, name: "Satara", stateId: 1 },
-    { id: 31, name: "Sindhudurg", stateId: 1 },
-    { id: 32, name: "Solapur", stateId: 1 },
-    { id: 33, name: "Thane", stateId: 1 },
-    { id: 34, name: "Wardha", stateId: 1 },
-    { id: 35, name: "Washim", stateId: 1 },
-    { id: 36, name: "Yavatmal", stateId: 1 },
+    { id: 1, name: "Ahmednagar", stateName: "Maharashtra" },
+    { id: 2, name: "Akola", stateName: "Maharashtra" },
+    { id: 3, name: "Amravati", stateName: "Maharashtra" },
+    { id: 4, name: "Aurangabad", stateName: "Maharashtra" },
+    { id: 5, name: "Beed", stateName: "Maharashtra" },
+    { id: 6, name: "Bhandara", stateName: "Maharashtra" },
+    { id: 7, name: "Buldhana", stateName: "Maharashtra" },
+    { id: 8, name: "Chandrapur", stateName: "Maharashtra" },
+    { id: 9, name: "Dhule", stateName: "Maharashtra" },
+    { id: 10, name: "Gadchiroli", stateName: "Maharashtra" },
+    { id: 11, name: "Gondia", stateName: "Maharashtra" },
+    { id: 12, name: "Hingoli", stateName: "Maharashtra" },
+    { id: 13, name: "Jalgaon", stateName: "Maharashtra" },
+    { id: 14, name: "Jalna", stateName: "Maharashtra" },
+    { id: 15, name: "Kolhapur", stateName: "Maharashtra" },
+    { id: 16, name: "Latur", stateName: "Maharashtra" },
+    { id: 17, name: "Mumbai City", stateName: "Maharashtra" },
+    { id: 18, name: "Mumbai Suburban", stateName: "Maharashtra" },
+    { id: 19, name: "Nagpur", stateName: "Maharashtra" },
+    { id: 20, name: "Nanded", stateName: "Maharashtra" },
+    { id: 21, name: "Nandurbar", stateName: "Maharashtra" },
+    { id: 22, name: "Nashik", stateName: "Maharashtra" },
+    { id: 23, name: "Osmanabad", stateName: "Maharashtra" },
+    { id: 24, name: "Palghar", stateName: "Maharashtra" },
+    { id: 25, name: "Parbhani", stateName: "Maharashtra" },
+    { id: 26, name: "Pune", stateName: "Maharashtra" },
+    { id: 27, name: "Raigad", stateName: "Maharashtra" },
+    { id: 28, name: "Ratnagiri", stateName: "Maharashtra" },
+    { id: 29, name: "Sangli", stateName: "Maharashtra" },
+    { id: 30, name: "Satara", stateName: "Maharashtra" },
+    { id: 31, name: "Sindhudurg", stateName: "Maharashtra" },
+    { id: 32, name: "Solapur", stateName: "Maharashtra" },
+    { id: 33, name: "Thane", stateName: "Maharashtra" },
+    { id: 34, name: "Wardha", stateName: "Maharashtra" },
+    { id: 35, name: "Washim", stateName: "Maharashtra" },
+    { id: 36, name: "Yavatmal", stateName: "Maharashtra" },
     // Add more districts as needed
   ];
-  
+
   const policeStations = [
     // Ahmednagar
-    { id: 1, name: "Ahmednagar City", districtId: 1 },
-    { id: 2, name: "Ahmednagar Camp", districtId: 1 },
-    { id: 3, name: "Jamkhed", districtId: 1 },
+    { id: 1, name: "Ahmednagar City", districtName: "Ahmednagar" },
+    { id: 2, name: "Ahmednagar Camp", districtName: "Ahmednagar" },
+    { id: 3, name: "Jamkhed", districtName: "Ahmednagar" },
     // Akola
-    { id: 4, name: "Akola City", districtId: 2 },
-    { id: 5, name: "Barshitakli", districtId: 2 },
-    { id: 6, name: "Akot", districtId: 2 },
+    { id: 4, name: "Akola City", districtName: "Akola" },
+    { id: 5, name: "Barshitakli", districtName: "Akola" },
+    { id: 6, name: "Akot", districtName: "Akola" },
     // Amravati
-    { id: 7, name: "Amravati City", districtId: 3 },
-    { id: 8, name: "Amravati Camp", districtId: 3 },
-    { id: 9, name: "Daryapur", districtId: 3 },
+    { id: 7, name: "Amravati City", districtName: "Amravati" },
+    { id: 8, name: "Amravati Camp", districtName: "Amravati" },
+    { id: 9, name: "Daryapur", districtName: "Amravati" },
     // Aurangabad
-    { id: 10, name: "Aurangabad City", districtId: 4 },
-    { id: 11, name: "Aurangabad Camp", districtId: 4 },
-    { id: 12, name: "Chikhalthana", districtId: 4 },
+    { id: 10, name: "Aurangabad City", districtName: "Aurangabad" },
+    { id: 11, name: "Aurangabad Camp", districtName: "Aurangabad" },
+    { id: 12, name: "Chikhalthana", districtName: "Aurangabad" },
     // Add more police stations as needed
-    { id: 13, name: "Shivajinagar Police Station", districtId: 26 },
-    { id: 14, name: "Bhavani Peth Police Station", districtId: 26 },
-    { id: 15, name: "Wakad Police Station", districtId: 26 },
-    { id: 15, name: "Hinjewadi Police Station", districtId: 26 },
+    { id: 13, name: "Shivajinagar Police Station", districtName: "Pune" },
+    { id: 14, name: "Bhavani Peth Police Station", districtName: "Pune" },
+    { id: 15, name: "Wakad Police Station", districtName: "Pune" },
+    { id: 15, name: "Hinjewadi Police Station", districtName: "Pune" },
   ];
 
 
@@ -181,26 +202,29 @@ const UserForm = () => {
                 className="vi_input"
                 placeholder="Enter your login ID"
                 value={RegLogI}
-                onChange={(e) => setRegLogI(e.target.value)} 
+                onChange={(e) => setRegLogI(e.target.value)}
               />
             </div>
+
             <div className="vertical_input">
               <p className="vi_text">Title :</p>
-              <div className="radio_group">
-                <input type="radio" id="mr" name="title" value="Mr." />
-                <label htmlFor="mr">Mr.</label>
-                <input type="radio" id="mrs" name="title" value="Mrs." />
-                <label htmlFor="mrs">Mrs.</label>
-                <input type="radio" id="miss" name="title" value="Miss" />
-                <label htmlFor="miss">Miss</label>
-                <input type="radio" id="dr" name="title" value="Dr." />
-                <label htmlFor="dr">Dr.</label>
-                <input type="radio" id="prof" name="title" value="Prof." />
-                <label htmlFor="prof">Prof.</label>
-                <input type="radio" id="other" name="title" value="Other" />
-                <label htmlFor="other">Other</label>
+              <div className="title_dropdown">
+                <select
+                  name="title"
+                  className="select_title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                >
+                  <option value="">Select Title</option>
+                  {titleOptions.map((title) => (
+                    <option key={title.id} value={title.name}>
+                      {title.name}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
+
             <div className="vertical_input">
               <p className="vi_text">Name :</p>
               <input
@@ -213,38 +237,54 @@ const UserForm = () => {
             </div>
             <div className="vertical_input">
               <p className="vi_text">Mobile :</p>
-              <input
-                type="number"
-                className="vi_input"
-                placeholder="Enter your mobile number"
-                value={RegMobile}
-                onChange={(e) => setRegMobile(e.target.value)} 
-              />
+              <div className="two_fields">
+                <input
+                  type="text"
+                  className="vi_input"
+                  id="num_extension"
+                  value="+91"
+                  readOnly
+                />
+                <input
+                  type="tel"
+                  className="vi_input"
+                  id="mob_num"
+                  placeholder="Enter your mobile number"
+                  value={RegMobile}
+                  onChange={(e) => setRegMobile(e.target.value)}
+                />
+              </div>
             </div>
             <div className="vertical_input">
               <p className="vi_text">Date of Birth :</p>
-              <input type="date" className="vi_input"   value={ReDob}
-                onChange={(e) => setRegDob(e.target.value)}  />
+              <input type="date" className="vi_input" value={ReDob}
+                onChange={(e) => setRegDob(e.target.value)} />
             </div>
             <div className="vertical_input">
               <p className="vi_text">Gender :</p>
-              <input
-                type="text"
+              <select
                 className="vi_input"
-                placeholder="Enter your gender"
                 value={RegGender}
-                onChange={(e) => setRegGender(e.target.value)} 
-              />
+                onChange={(e) => setRegGender(e.target.value)}
+              >
+                <option value="">Select Gender</option>
+                {genders.map((RegGender) => (
+                  <option key={RegGender.id} value={RegGender.name}>
+                    {RegGender.name}
+                  </option>
+                ))}
+              </select>
+
             </div>
             <div className="vertical_input">
               <p className="vi_text">Email ID :</p>
-              <div className="emailotp">
+              <div className="emailotp" id="entermail">
                 <input
                   type="text"
                   className="vi_input_email"
                   placeholder="Enter your email ID"
                   value={RegEmail}
-                  onChange={(e) => setRegEmail(e.target.value)} 
+                  onChange={(e) => setRegEmail(e.target.value)}
                 />
                 {!showOtpInput && (
                   <button className="otpbutton" onClick={handleGetOtpClick}>
@@ -253,10 +293,10 @@ const UserForm = () => {
                 )}
               </div>
               {showOtpInput && (
-                <div className="emailotp">
+                <div className="emailotp" id="enterotp">
                   <input
                     type="text"
-                    className="vi_input_otp"
+                    className="vi_input_otp" id="vi_enterotp"
                     placeholder="Enter OTP"
                   />
                   <button className="verify_button" onClick={handleVerifyClick}>
@@ -267,19 +307,36 @@ const UserForm = () => {
             </div>
             <div className="vertical_input">
               <p className="vi_text">Father/Mother/Spouse :</p>
-              <input
-                type="text"
-                className="vi_input"
-                placeholder="Enter your family member's relationship"
-                value={RegRelation}
-                onChange={(e) => setRegRelation(e.target.value)} 
-              />
+              <div className="two_fields">
+                <select
+                  className="vi_input" id="vi_relation"
+                  value={RegRelation}
+                  onChange={(e) => setRegRelation(e.target.value)}
+                >
+                  <option value="">Select Relation</option>
+                  {relations.map((RegRelation) => (
+                    <option key={RegRelation.id} value={RegRelation.name}>
+                      {RegRelation.name}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  type="text"
+                  className="vi_input" id="vi_memName"
+                  placeholder="Enter Father/Mother/Spouse name"
+                  value={famMemName}
+                  onChange={(e) => setFamMemName(e.target.value)}
+                />
+              </div>
             </div>
+
           </form>
+
           <div className="permanentAddcomponent">
             <div className="permanentAddinnercomponent">
               <p className="pb">Permanent Address</p>
               <div className="PA">
+
                 <div className="PA_left">
                   <div className="PA_vertical_input">
                     <p className="PA_vi_text">House No. :</p>
@@ -288,7 +345,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your House No."
                       value={RegHouseNo}
-                      onChange={(e) => setRegHouseNo(e.target.value)} 
+                      onChange={(e) => setRegHouseNo(e.target.value)}
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -298,7 +355,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Street Name"
                       value={RegStreetName}
-                      onChange={(e) => setRegStreetName(e.target.value)} 
+                      onChange={(e) => setRegStreetName(e.target.value)}
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -308,7 +365,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Colony"
                       value={RegColony}
-                      onChange={(e) => setRegColony(e.target.value)} 
+                      onChange={(e) => setRegColony(e.target.value)}
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -318,7 +375,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Town/City"
                       value={RegTownCity}
-                      onChange={(e) => setRegTownCity(e.target.value)} 
+                      onChange={(e) => setRegTownCity(e.target.value)}
                     />
                   </div>
                   <div className="PA_vertical_input">
@@ -328,7 +385,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Teheshil"
                       value={RegTeheshil}
-                      onChange={(e) => setRegTeheshil(e.target.value)} 
+                      onChange={(e) => setRegTeheshil(e.target.value)}
                     />
                   </div>
                 </div>
@@ -342,7 +399,7 @@ const UserForm = () => {
                     >
                       <option value="">Select Country</option>
                       {countries.map((country) => (
-                        <option key={country.id} value={country.id}>
+                        <option key={country.id} value={country.name}>
                           {country.name}
                         </option>
                       ))}
@@ -357,9 +414,9 @@ const UserForm = () => {
                     >
                       <option value="">Select State</option>
                       {states
-                        .filter((s) => s.countryId === parseInt(country))
+                        .filter((s) => s.countryName === country)
                         .map((state) => (
-                          <option key={state.id} value={state.id}>
+                          <option key={state.id} value={state.name}>
                             {state.name}
                           </option>
                         ))}
@@ -374,9 +431,9 @@ const UserForm = () => {
                     >
                       <option value="">Select District</option>
                       {districts
-                        .filter((d) => d.stateId === parseInt(state))
+                        .filter((d) => d.stateName === state)
                         .map((district) => (
-                          <option key={district.id} value={district.id}>
+                          <option key={district.id} value={district.name}>
                             {district.name}
                           </option>
                         ))}
@@ -391,11 +448,11 @@ const UserForm = () => {
                     >
                       <option value="">Select Police Station</option>
                       {policeStations
-                        .filter((p) => p.districtId === parseInt(district))
+                        .filter((p) => p.districtName === district)
                         .map((policeStation) => (
                           <option
                             key={policeStation.id}
-                            value={policeStation.id}
+                            value={policeStation.name}
                           >
                             {policeStation.name}
                           </option>
@@ -409,7 +466,7 @@ const UserForm = () => {
                       className="PA_vi_input"
                       placeholder="Enter your Pincode"
                       value={RegPinCode}
-                      onChange={(e) => setRegPinCode(e.target.value)} 
+                      onChange={(e) => setRegPinCode(e.target.value)}
                     />
                   </div>
                 </div>
