@@ -1,0 +1,79 @@
+@keyframes pulse {
+    0% {
+        background-color: #05A8AA;
+    }
+    50% {
+        background-color: #087CA7;
+    }
+    100% {
+        background-color: #05A8AA;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('/src/Pages/Home/herobg.webp') center/cover;
+    padding: 150px 0;
+    text-align: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: slideIn 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+   
+}
+
+.hero-button {
+    padding: 15px 30px;
+    margin: 0 10px;
+    height: 200px;
+    width: 200px;
+    font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #087CA7;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: pulse 2s infinite;
+    border-radius: 100%;
+}
+
+.hero-button:hover {
+    background-color: #05A8AA;
+}

@@ -3,7 +3,9 @@ import "./Banner.css";
 const Banner = () => {
   return (
     <div className="B1_container">
-      <div className="B1_left"></div>
+      <div className="B1_left">
+       <div className="leftimg"></div>
+      </div>
       <div className="B1_right">
         <div className="B1_right_inner">
           <p className="B1_right_title">

@@ -73,102 +73,6 @@ const UserLogin = () => {
   };
   
 
-
-
-
-  
-
-
-  // const sendOTP = async () => {
-  //   try {
-  //     const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {})
-  //     const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha)
-  //     setUser(confirmation);
-  //   }
-  //   catch (err) {
-  //     console.error(err)
-  //   }
-  // }
-
-  // const verifyOTP = async () => {
-  //   try {
-  //     const captcha = document.querySelector(".captcha");
-  //     // Check if captcha input matches
-  //     if (captchaInput.trim() === captcha.innerText.replace(/\s/g, "")) {
-  //       const data = await user.confirm(otp);
-  //       console.log(data);
-  //       // Show success message if OTP is verified
-  //       alert("OTP and Captcha verified successfully!");
-  //     } else {
-  //       console.log("Captcha not matched. Please try again!");
-  //       // Show error message if captcha is not matched
-  //       alert("Captcha not matched. Please try again!");
-  //     }
-  //   } catch (err) {
-  //     console.error(err);
-  //     // Show error message if OTP verification fails
-  //     alert("OTP verification failed. Please try again!");
-  //   }
-  // };
-
-  // const validateEmail = (email) => {
-  //   const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-  //   return regex.test(email);
-  // };
-
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-
-  //   // Reset previous error messages
-  //   setLoginIdError("");
-  //   setPhoneError("");
-  //   setOtpError("");
-  //   setCaptchaError("");
-
-  //   // Validate email
-  //   if (loginId.trim() === "") {
-  //     setLoginIdError("Please enter email id.");
-  //     return;
-  //   } else if (!validateEmail(loginId)) {
-  //     setLoginIdError("Invalid email format.");
-  //     return;
-  //   }
-
-  //   // Validate phone number
-  //   if (phone.trim() === "") {
-  //     setPhoneError("Please enter mobile number.");
-  //     return;
-  //   } else if (phone.length !== 13) {
-  //     setPhoneError("Mobile number should be exactly 10 digits long.");
-  //     return;
-  //   }
-
-  //   // Validate OTP
-  //   if (otp.trim() === "") {
-  //     setOtpError("Please enter OTP.");
-  //     return;
-  //   } else if (otp.length !== 6) {
-  //     setOtpError("OTP should be exactly 6 digits long.");
-  //     return;
-  //   }
-
-  //   // Validate Captcha
-  //   if (captchaInput.trim() === "") {
-  //     setCaptchaError("Please enter captcha.");
-  //     return;
-  //   } else if (captchaInput.length !== 6) {
-  //     setCaptchaError("Captcha should be exactly 6 digits long.");
-  //     return;
-  //   }
-
-  //   // Continue with login process
-  //   window.location.href = "/userdetails";
-  // };
-
-  // useEffect(() => {
-  //   initializeCaptcha(); // Call the initializeCaptcha function when component mounts
-  // }, []);
-
   return (
     <div className='login-page'>
       <div className="inner-login">
@@ -207,15 +111,12 @@ const UserLogin = () => {
                     }}
 
                   />
-                  
 
                 </div>
                 <div className='mobile'>
                   <label className="mobileno">Mobile No:</label>
                   <input placeholder='Enter your phone number'  className="mobilevi" required />
                 </div>
-            
-                
                 <div className='fillotp'>
                   <label className="getotp">OTP:</label>
                   <input type="text" placeholder="Enter OTP" id="getotp" required />

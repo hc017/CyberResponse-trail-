@@ -4,7 +4,8 @@
   border-radius: 1rem;
   margin-left: 5%;
   margin-top: 5%;
-  background-image: url("./Banner1bg.png");
+  background-image: url("./b1.png");
+  background-color: rgba(0, 0, 0, 100%); /* Change the last value (0.5) to adjust transparency */
   background-size: cover; /* This will make the background image cover the entire container */
   background-position: center; /* This will center the background image */
   display: flex;
@@ -12,7 +13,17 @@
 .B1_left{
   width: 45%;
   height: 100%;
-
+}
+.leftimg{
+  width: 85%;
+  height: 90%;
+  background-image: url("./b1two.jpg");
+  margin-left: 7%;
+  margin-top: 5%;
+  background-size: cover; /* This will make the background image cover the entire container */
+  background-position: center; /* This will center the background image */
+  display: flex;
+  border-radius: 100%;
 }
 .B1_right{
   width: 55%;

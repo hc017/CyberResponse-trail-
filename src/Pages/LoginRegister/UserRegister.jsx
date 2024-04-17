@@ -43,7 +43,6 @@ const UserRegister = () => {
         });
         // Redirect to another page after successful registration
         window.alert("Data added successfully!");
-
         navigate("/", { userId: user.uid, email: email }); // Replace '/next-page' with your desired route
         // ...
       })
@@ -54,29 +53,9 @@ const UserRegister = () => {
         // ..
       });
   };
-  const validateForm = () => {
-    if (!state) {
-      setError("Please select your country");
-      return false;
-    }
-    if (!email) {
-      setError("Please enter your email ID");
-      return false;
-    }
-    if (!password) {
-      setError("Please enter your password");
-      return false;
-    }
-    if (password !== CFpassword) {
-      setError("Passwords do not match");
-      return false;
-    }
-    if (!Rmobile) {
-      setError("Please enter your mobile number");
-      return false;
-    }
-    return true;
-  };
+
+
+  
   const countries = [
     "India",
     "Albania",

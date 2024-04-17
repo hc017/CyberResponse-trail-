@@ -10,7 +10,6 @@ import Home from '../../Pages/Home/Home'
 import UserDetails from '../../Pages/UserDetails/UserDetails'
 import TrackComplaint from '../../Pages/TrackComplaint/TrackComplaint'
 import SuspectD from '../../Pages/IncidentDetails/SuspectD'
-
 import Complaint_details from '../../Pages/IncidentDetails/Complaint_details'
 import Submit from '../../Pages/IncidentDetails/Submit'
 import CheckStatus from '../../Pages/RegisterComplaint/CheckStatus/CheckStatus'
