@@ -56,7 +56,7 @@
 }
 .ISD_vi_text {
   width: 20%;
-  margin: 0;
+  margin-left: 1rem;
   font-family: Poppins;
   font-size: 1.1rem;
   font-stretch: normal;
@@ -66,7 +66,7 @@
   text-align: left;
   color: #a4e1f4;
   display: inline-flex; /* Use flexbox */
-  justify-content: center; /* Center horizontally */
+   /* Center horizontally */
   align-items: center; /* Center vertically */
   text-decoration: none; /* Remove default link underline */
 }
