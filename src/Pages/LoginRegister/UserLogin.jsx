@@ -1,62 +1,60 @@
-import React, { useEffect, useState } from 'react'
-import './UserLogin.css'
-import { Link } from 'react-router-dom'
-import logo from './arrow.svg'
-import captchaimg from './captcha-bg.png'
-import '@fortawesome/fontawesome-free/css/all.css';
-import initializeCaptcha from './CaptchaScript';
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
-import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
-import { auth } from '../../FirebaseCongfig/FirebaseConfig'
-import {  signInWithEmailAndPassword } from "firebase/auth";
-import { getDatabase, get,ref, set } from "firebase/database";
+import React, { useEffect, useState } from "react";
+import "./UserLogin.css";
+import { Link } from "react-router-dom";
+import logo from "./arrow.svg";
+import captchaimg from "./captcha-bg.png";
+import "@fortawesome/fontawesome-free/css/all.css";
+
+import "react-phone-input-2/lib/style.css";
+
+import { auth } from "../../FirebaseCongfig/FirebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { getDatabase, get, ref, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 
 const UserLogin = () => {
-
-  const [Lemail, setLEmail] = useState("");
-  const [loginIdError, setLoginIdError] = useState("");
-  const [Lpassword, setLPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [Rmobile, setRMobile] = useState("");
+  const [Rotp, setROtp] = useState("");
   const navigate = useNavigate();
   const db = getDatabase();
 
-
-
   const handleLogin = () => {
-    console.log(Lemail, Lpassword);
-    signInWithEmailAndPassword(auth, Lemail, Lpassword)
+    console.log(email, password);
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         let log = {
-          uids: user.uid
+          uids: user.uid,
         };
-        
+
         // Check if userdetails data is already filled
         const userDetailsRef = ref(db, `users/${user.uid}/userdetails`);
-        get(userDetailsRef).then((snapshot) => {
-          if (snapshot.exists()) {
-            // userdetails data is already filled, redirect to incident details
-      window.alert("Logged in successfully!");
+        get(userDetailsRef)
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              // userdetails data is already filled, redirect to incident details
+              window.alert("Logged in successfully!");
 
-            navigate('/incidentdetails', {
-              state: log
-            });
-          } else {
-            // userdetails data is not filled, redirect to userdetails page
-      window.alert("Logged in successfully!");
+              navigate("/incidentdetails", {
+                state: log,
+              });
+            } else {
+              // userdetails data is not filled, redirect to userdetails page
+              window.alert("Logged in successfully!");
 
-            navigate('/userdetails', {
-              state: log
-            });
-          }
-        }).catch((error) => {
-          console.error("Error checking userdetails data:", error);
-      window.alert("Error checking userdetails data");
+              navigate("/userdetails", {
+                state: log,
+              });
+            }
+          })
+          .catch((error) => {
+            console.error("Error checking userdetails data:", error);
+            window.alert("Error checking userdetails data");
 
-
-          // Handle error, show error message, etc.
-        });
+            // Handle error, show error message, etc.
+          });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -68,115 +66,163 @@ const UserLogin = () => {
   };
   const handleCancel = () => {
     // Clear the form fields by resetting the state variables
-    setLEmail('');
-    setLPassword('');
+    setEmail("");
+    setPassword("");
   };
+
   
-
   return (
-    <div className='login-page'>
-      <div className="inner-login">
-
-        <div className="where-to-location">
-          <Link className='visit-home' to='/' >Home</Link>
-          <img src={logo} alt="arrow" className='arrow-img' />
-          <p className='reg-text'>Register to complaint</p>
+    <div className="register-page">
+      <div className="inner-register">
+        <div className="reg-where-to-location">
+          <Link className="visit-home" to="/">
+            Home
+          </Link>
+          <img src={logo} alt="arrow" className="arrow-img" />
+          <p className="reg-text">Login to complaint</p>
         </div>
+        <div className="register-rectangle">
+          <div className="left-register">
+            <p class="register-to-Complaint"> Login to Complaint </p>
+            <div class="register-horizontal-line"> </div>
 
-        <div className="login-rectangle">
-          <div className="left-login">
-            <p class="Login-to-Complaint"> Login to Complaint </p>
-            <div class="login-horizontal-line"> </div>
-
-            <div className='login-form-align'>
-              <form action='' method='post'>
-                <div>
-                
-                  <label className="loginid">Login ID:</label>
-                  <input type="email" placeholder="Enter your email ID" id="loginid" required value={Lemail}
-                    onChange={(e) => {
-                      setLEmail(e.target.value);
-                      setLoginIdError("");
-                    }}
-                  />
-                  {loginIdError && <span className="error-message-email">{loginIdError}</span>}
-
+            <div className="register-form-align">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault(); // Prevent default form submission behavior
+                  // Call handleRegister when the form is submitted
+                }}
+              >
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text">Login ID:</label>
+                  </div>
+                  <div className="VIdiv">
+                    <input
+                      type="email"
+                      placeholder="Enter your email ID"
+                      className="R_vi_input"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
                 </div>
-                <div>
-                
-                  <label className="loginid">Password:</label>
-                  <input type="password" placeholder="Enter your Password" id="loginid" required value={Lpassword}
-                    onChange={(e) => {
-                      setLPassword(e.target.value);
-                    }}
-
-                  />
-
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text">Password:</label>
+                  </div>
+                  <div className="VIdiv">
+                    <input
+                      type="password"
+                      placeholder="Enter your password"
+                      className="R_vi_input"
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </div>
                 </div>
-                <div className='mobile'>
-                  <label className="mobileno">Mobile No:</label>
-                  <input placeholder='Enter your phone number'  className="mobilevi" required />
+          
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text">Mobile No:</label>
+                  </div>
+                  <div className="VIdiv">
+                    <input
+                      type="tel"
+                      country={"in"}
+                      className="R_vi_input"
+                      placeholder="Enter Your Mobile Number"
+                      value={Rmobile}
+                      onChange={(e) => setRMobile(e.target.value)}
+                      required
+                    />
+                  </div>
                 </div>
-                <div className='fillotp'>
-                  <label className="getotp">OTP:</label>
-                  <input type="text" placeholder="Enter OTP" id="getotp" required />
-
-                  <button type="button" className='getotp-button'  >Get OTP</button>
-                  <button type="button"  className='verifyotp-button' >Verify OTP</button>
-
-                </div>
-               
-                <div id='recaptcha'>
-
-                </div>
-
-                <div className="captcha-wrapper">
-                  <div className="view-captcha">
-                    <label className='captcha-container'> Captcha: </label>
-                    <div className="captcha-area">
-                      <div className="captcha-img">
-                        <img src={captchaimg} alt="Captcha Background" />
-                        <span className="captcha" />
-                      </div>
-                      <button className="reload-btn"><i className="fas fa-redo-alt" /></button>
-                    </div>
+                <div className="R_Vi_container">
+                  <div className="ldiv">
+                    <label className="R_VI_text" id="VIT_otp">
+                      OTP:
+                    </label>
+                  </div>
+                  <div className="VIdiv">
+                    <input
+                      type="text"
+                      placeholder="Enter OTP"
+                      className="R_vi_input"
+                      id="VIT_input"
+                      value={Rotp}
+                      onChange={(e) => setROtp(e.target.value)}
+                      required
+                    />
                   </div>
 
-                  <div className='input-captcha'>
-                    <label classname='write-captcha' >Enter Captcha:</label>
-                    <input type="text" placeholder='Enter the captcha' id="write-captcha"
-                      required />
-                  
-                  </div>
-                  <div className="status-text" />
+                  <button type="button" className="R_BTN" id="#VIT_btn">
+                    Get OTP
+                  </button>
+                  <button type="button" className="R_BTN" id="#VIT_btn">
+                    Verify OTP
+                  </button>
                 </div>
 
-                <div className='register-newuser'>
-                  <Link to="/register" style={{ color: '#fff', textDecoration: 'none'}} >New User? Click to Register</Link>
+                <div className="login-existinguser">
+                  <Link
+                    to="/register"
+                    style={{ color: "#fff", textDecoration: "none" }}
+                  >
+                    New User? Click here to Register
+                  </Link>
                 </div>
                 <div>
-                  <Link onClick={(e) => handleLogin(e)} type="button" className='confirm-login-button'>Login</Link>
-                  <button type="button" className='cancel-button' onClick={handleCancel}>Cancel</button>
+                  <Link
+                    type="button"
+                    className="confirm-register-button"
+                    onClick={handleLogin}
+                  >
+                    LOGIN
+                  </Link>
+                  <button
+                    type="button"
+                    className="reg-cancel-button"
+                    onClick={handleCancel}
+                  >
+                    CANCEL
+                  </button>
                 </div>
               </form>
             </div>
-
           </div>
 
-          <div className="middle-line">
-            <div className="login-verticle-line"> </div>
+          <div className="reg-middle-line">
+            <div className="register-verticle-line"> </div>
           </div>
 
           <div className="right-instructions">
-            <p className="Login-CHECK-LIST-FOR-COMPLAINANT"> CHECK LIST FOR COMPLAINT </p>
-            <p className='Login-infotext'> Please keep this information ready before filing your complaint: </p>
-            <div className="Login-mandatory-info">
-              <p className="text-style-1">Mandatory Information</p>
-              <ol className='info-ol'>
+            <p className="register-CHECK-LIST-FOR-COMPLAINANT">
+              {" "}
+              CHECK LIST FOR COMPLAINT{" "}
+            </p>
+            <p className="register-infotext">
+              {" "}
+              Please keep this information ready before filing your complaint:{" "}
+            </p>
+            <div className="register-mandatory-info">
+              <p className="reg-text-style-1">Mandatory Information</p>
+              <ol className="info-ol">
                 <li>Incident Date and Time.</li>
-                <li>Incident details (minimum 200 characters) without any special characters (#$@^*`"~|!).</li>
-                <li>Soft copy of any national Id (Voter Id, Driving license, Passport, PAN Card, Aadhar Card) of complaint in .jpeg, .jpg, .png format (file size should not more than 5 MB).</li>
-                <li>In case of financial fraud, please keep following information ready:
+                <li>
+                  Incident details (minimum 200 characters) without any special
+                  characters (#$@^*`"~|!).
+                </li>
+                <li>
+                  Soft copy of any national Id (Voter Id, Driving license,
+                  Passport, PAN Card, Aadhar Card) of complaint in .jpeg, .jpg,
+                  .png format (file size should not more than 5 MB).
+                </li>
+                <li>
+                  In case of financial fraud, please keep following information
+                  ready:
                   <ol type="i">
                     <li>Name of the Bank/ Wallet/Merchant</li>
                     <li>12-digit Transaction id/UTR No.</li>
@@ -184,30 +230,44 @@ const UserLogin = () => {
                     <li>Fraud amount</li>
                   </ol>
                 </li>
-                <li>Soft copy of all the relevant evidences related to the cyber crime (not more than 10 MB each).</li>
+                <li>
+                  Soft copy of all the relevant evidences related to the cyber
+                  crime (not more than 10 MB each).
+                </li>
               </ol>
-              <p className="Optional-Desirable-Information">Optional/Desirable Information:</p>
-              <ol className='info-ol'>
-                <li>Suspected website URLs/ Social Media handles (wherever applicable).</li>
-                <li>Suspect Details (if available):
+              <p className="reg-Optional-Desirable-Information">
+                Optional/Desirable Information:
+              </p>
+              <ol className="reg-info-ol">
+                <li>
+                  Suspected website URLs/ Social Media handles (wherever
+                  applicable).
+                </li>
+                <li>
+                  Suspect Details (if available):
                   <ol type="i">
                     <li>Mobile No.</li>
                     <li>Email id</li>
                     <li>Bank Account No</li>
                     <li>Address</li>
-                    <li>Soft copy of photograph of suspect in .jpeg, .jpg, .png format (not more than 5 MB).</li>
-                    <li>Any other document through which suspect can be identified.</li>
+                    <li>
+                      Soft copy of photograph of suspect in .jpeg, .jpg, .png
+                      format (not more than 5 MB).
+                    </li>
+                    <li>
+                      Any other document through which suspect can be
+                      identified.
+                    </li>
                   </ol>
                 </li>
               </ol>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
-  )
-}
+  );
 
-export default UserLogin
+};
+
+export default UserLogin;

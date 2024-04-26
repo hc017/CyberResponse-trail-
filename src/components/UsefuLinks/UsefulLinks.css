@@ -9,9 +9,7 @@
   width: 100%;
   height: 100%;
   border-radius: 0.625rem;
-  border: solid 0.0625rem #9f9f9f;
-  background-image: linear-gradient(to right, #88bdf2, #6d97c1 41%, #6d97c1 58%, #88bdf2);
-  margin: 0.6rem 0 0 8%;
+  margin-left: 5%;
 }
 .inside_bluecontainer{
   padding-left: 7rem;
