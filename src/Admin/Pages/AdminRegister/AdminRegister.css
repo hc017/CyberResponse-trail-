@@ -1,0 +1,74 @@
+.adminregisterpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #060000;
+}
+
+.adminregistercontainer {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 400px;
+}
+.namePh{
+  display: flex;
+}
+#phone{
+  margin-left: 2%;
+}
+
+.AdH2 {
+  text-align: center;
+  color: #333333;
+}
+
+.ADformgroup {
+  margin-bottom: 20px;
+}
+
+.ADlabel {
+  display: block;
+  margin-bottom: 8px;
+  color: #333333;
+}
+
+.ADInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
+.ADInput:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.ADformbuttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Adbtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.Adbtn:hover {
+  background-color: #0056b3;
+}
+
+.Adbtn[type='button'] {
+  background-color: #dc3545;
+}
+
+.Adbtn[type='button']:hover {
+  background-color: #c82333;
+}

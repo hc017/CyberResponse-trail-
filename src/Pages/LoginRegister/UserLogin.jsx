@@ -21,30 +21,26 @@ const UserLogin = () => {
   const db = getDatabase();
 
   const handleLogin = () => {
-    console.log(email, password);
-
-    // Sign in with the provided email and password
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-
-        // Check if the email is an admin email
-        if (email.endsWith("@admin.com")) {
+        
+        if (email.endsWith("@csadmin.com")) {
           // If it's an admin email, redirect to the admin dashboard
-          window.alert("Logged in as admin!");
+          alert("Logged in as admin!");
           navigate("/adminDashboard");
         } else {
-          // If it's a regular email, check if user details are filled
+          // Otherwise, proceed with user-specific logic
           const userDetailsRef = ref(db, `users/${user.uid}/userdetails`);
           get(userDetailsRef)
             .then((snapshot) => {
               if (snapshot.exists()) {
-                window.alert("Logged in successfully!");
+                alert("Logged in successfully!");
                 navigate("/incidentdetails", {
                   state: { uids: user.uid },
                 });
               } else {
-                window.alert("Logged in successfully!");
+                alert("Logged in successfully!");
                 navigate("/userdetails", {
                   state: { uids: user.uid },
                 });
@@ -52,17 +48,18 @@ const UserLogin = () => {
             })
             .catch((error) => {
               console.error("Error checking userdetails data:", error);
-              window.alert("Error checking userdetails data");
+              alert("Error checking userdetails data");
             });
         }
       })
       .catch((error) => {
         console.error("Error signing in:", error.message);
-        window.alert("Error in signing in");
+        alert("Error in signing in");
       });
   };
 
   const handleCancel = () => {
+    // Clear the form fields by resetting the state variables
     setEmail("");
     setPassword("");
   };
