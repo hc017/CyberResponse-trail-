@@ -1,6 +1,8 @@
 import React from "react";
 import "./Hero_section.css";
 import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
+
 const Hero_section = () => {
   const navigate= useNavigate();
   const handleReport=()=>{
@@ -12,9 +14,9 @@ const Hero_section = () => {
             <h1 class="hero-title">Report Cybercrimes</h1>
             <p class="hero-subtitle">Empower a safer digital world</p>
             <div class="hero-buttons">
-                <button class="hero-button" onClick={handleReport}>REPORT <br /> INCIDENT</button>
-                <button class="hero-button">HOW TO <br /> REPORT</button>
-                <button class="hero-button">STAY <br /> INFORMED</button>
+                <button onClick={handleReport} class="hero-button">REPORT <br /> INCIDENT</button>
+                <button onClick={handleHowto} class="hero-button">HOW TO <br /> REPORT</button>
+                <button  onClick={handleStayInformed} class="hero-button">STAY <br /> INFORMED</button>
             </div>
         </div>
     </div>

@@ -2,13 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./UserRegister.css";
 import { Link, useHistory } from "react-router-dom";
 import logo from "./arrow.svg";
-import captchaimg from "./captcha-bg.png";
 import "@fortawesome/fontawesome-free/css/all.css";
-import initializeCaptcha from "./CaptchaScript";
-import { StateDropdown } from "react-country-state-dropdown";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "../../FirebaseCongfig/FirebaseConfig";
 import { getDatabase, ref, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +23,7 @@ const UserRegister = () => {
 
   const handleRegister = () => {
     console.log(email, state, password);
-  
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -38,7 +33,7 @@ const UserRegister = () => {
           state: state,
           email: email,
           password: password,
-          mobile:Rmobile,
+          mobile: Rmobile,
           id: userCredential.user.uid,
         });
         // Redirect to another page after successful registration
@@ -54,8 +49,6 @@ const UserRegister = () => {
       });
   };
 
-
-  
   const countries = [
     "India",
     "Albania",

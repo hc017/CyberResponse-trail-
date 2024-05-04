@@ -15,6 +15,21 @@
     background-color: black;
     display: flex;
 }
+.rightTop{
+    width: 100%;
+    height: 5rem;
+    padding-top: 4%;
+}
+#RTs{
+    height: 1.5rem;
+    background-color: #268ef7;
+    padding: 0;
+}
+.rightmid{
+    width: 100%;
+    height: 50%;
+    background-color: #268ef7;
+}
 
 .visit-home {
     width: 5%;
@@ -40,7 +55,7 @@
 
 .login-rectangle {
     width: 75%;
-    height: 100%;
+    height: auto;
     padding: .5rem 0 1.5rem 0;
     margin: 1rem 0 1rem 12rem;
     background-color: #222;
@@ -368,50 +383,4 @@
 
 .right-instructions {
     width: 50%;
-}
-.Login-CHECK-LIST-FOR-COMPLAINANT {
-    width: 75% ;
-    height: 4.5vh;
-    flex-grow: 0rem;
-    margin: 2rem 0.125rem 0rem 6.9rem ;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: left;
-    color: #f00;
-}
-.Login-infotext {
-    width: 95% ;
-    height: 4.2vh ;
-    flex-grow: 0;
-    margin: 0.5rem 0.5rem 0rem 1.3rem ;
-    font-size: 1rem;
-    text-align: left;
-    color: #f50000;
-}
-.Login-mandatory-info {
-    width: 29.36vw;
-    height: 66.2vh;
-    margin: 0rem 5.9rem 0rem 1.25rem ;
-    font-size: 0.75rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #fff;
-    float: right;
-}
-  
-.Login-Mandatory-info .text-style-1 {
-    font-weight: bold;
-    font-size: 15px;
-}
-  
-.Optional-Desirable-Information {
-    font-weight: bold;
-    font-size: 0.93rem;
-}
-.info-ol{
-    font-size: 0.81rem;
 }
