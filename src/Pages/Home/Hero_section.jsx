@@ -1,13 +1,22 @@
 import React from "react";
 import "./Hero_section.css";
-import { useNavigate } from "react-router";
 import { useNavigate } from "react-router-dom";
 
 const Hero_section = () => {
-  const navigate= useNavigate();
-  const handleReport=()=>{
-    navigate('/reportincident')
+  const navigate = useNavigate();
+
+  const handleReport = () => {
+    navigate("/reportincident")
   }
+  const handleHowto = () => {
+    navigate("/")
+  }
+  const handleStayInformed = () => {
+    navigate("/stayinformed")
+  }
+
+
+
   return (
 <div class="hero">
         <div class="hero-content">
