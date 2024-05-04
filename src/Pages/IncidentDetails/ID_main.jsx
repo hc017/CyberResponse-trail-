@@ -72,7 +72,7 @@ const ID_main = () => {
       // Store form data in Realtime Database with the unique ID
       await set(newIncidentRef, data);
       console.log("Data saved successfully!");
-      window.alert("Data added succ essfully!");
+      window.alert("Data added successfully!");
       navigate("/suspectdetails");
     } catch (error) {
       console.error("Error adding data: ", error);
@@ -80,11 +80,34 @@ const ID_main = () => {
   };
 
   const complaintCategories = [
-    { name: "Financial Fraud", subcategories: ["Subcategory A1", "Subcategory A2"] },
-    { name: "Non-Financial Fraud", subcategories: ["Subcategory B1", "Subcategory B2"] },
+    { name: "Financial Fraud", subcategories: ["UPI/Credit Card", "Bank Scams", "Website Scams"] },
+    { name: "Non-Financial Fraud", subcategories: ["Sexual Harassment", "Cyber Terrorism", "Ransomware"] },
   ];
 
-  const otherOptions = ["Option 1", "Option 2", "Option 3"];
+  const renderSubCategorySelect = () => {
+    if (complaintCategory && complaintCategories.some((cat) => cat.name === complaintCategory)) {
+      return (
+        <div className="ISD_vertical_input">
+          <p className="ISD_vi_text">Sub Category:</p>
+          <select
+            className={`ISD_vi_input ${subCategory ? '' : 'change_color'}`}
+            value={subCategory}
+            onChange={(e) => setSubCategory(e.target.value)}
+          >
+            <option value="">Select Subcategory</option>
+            {complaintCategories
+              .find((cat) => cat.name === complaintCategory)
+              .subcategories.map((sub, index) => (
+                <option key={index} value={sub}>
+                  {sub}
+                </option>
+              ))}
+          </select>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <div className="ISD_component">
@@ -126,44 +149,18 @@ const ID_main = () => {
               </select>
             </div>
 
-            {complaintCategory === "Financial Fraud" && (
-              <div className="ISD_vertical_input">
-                <p className="ISD_vi_text">Sub Category:</p>
-                <select
-                  className={`ISD_vi_input ${subCategory ? '' : 'change_color'}`}
-                  value={subCategory}
-                  onChange={(e) => setSubCategory(e.target.value)}
-                >
-                  <option value="">Select Subcategory</option>
-                  {complaintCategories
-                    .find((cat) => cat.name === "Financial Fraud")
-                    .subcategories.map((sub, index) => (
-                      <option key={index} value={sub}>
-                        {sub}
-                      </option>
-                    ))}
-                </select>
-              </div>
-            )}
+            {renderSubCategorySelect()}
+
             <div className="ISD_block"></div>
 
           </div>
 
           <div className="ISDL_formComp_1">
             <div className="ISD_vertical_input">
-              <p className="ISD_vi_text">Other:</p>
-              <select
-                className={`ISD_vi_input ${other ? '' : 'change_color'}`}
+              <p className="ISD_vi_text">Other (if any):</p>
+              <input type="text" className="ISD_vi_input" placeholder="Enter your specific complaint category"
                 value={other}
-                onChange={(e) => setOther(e.target.value)}
-              >
-                <option value="">Select Option</option>
-                {otherOptions.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
+                onChange={(e) => setOther(e.target.value)} />
             </div>
             <div className="ISD_block"></div>
 
