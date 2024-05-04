@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { GrLinkPrevious } from "react-icons/gr";
 
-const Older = () => {
+const NonFinancial = () => {
     return (
         <div className='ReportContainer'>
             <Em />
@@ -43,7 +43,7 @@ const Older = () => {
 
                 </div>
                 <div className="NormalPagePrev">
-                <Link to="/victim" className="PreviousButton">
+                <Link to="/18older" className="PreviousButton">
                 <GrLinkPrevious className='ArrowIcon' />
                 <div>Previous</div>
                 </Link>
@@ -51,12 +51,9 @@ const Older = () => {
             </div>
 
 
-            {/* <div className="CSSForSmallerButton">
+            <div className="CSSForSmallerButton">
                 <Link to="/sh" className="SmallerButtonCSS">
                     <span className="SmallerTextButton"> Sexual Harassment</span>
-                </Link>
-                <Link to="/moneylaundering" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Financial Fraud</span>
                 </Link>
                 <Link to="/cyterror" className="SmallerButtonCSS">
                     <span className="SmallerTextButton">Cyber Terrorism</span>
@@ -64,19 +61,12 @@ const Older = () => {
                 <Link to="/ransomware" className="SmallerButtonCSS">
                     <span className="SmallerTextButton">Ransomware</span>
                 </Link> 
-             </div> */}
+             </div>
 
-             <div className="ButtonCSS">
-                <Link to="/moneylaundering" className="ButtonReport">
-                    <span className="ReportText">Financial Fraud</span>
-                </Link>
-                <Link to="/nonfinancial" className="ButtonReport">
-                    <span className="ReportText">Non-Financial Fraud</span>
-                </Link>
-            </div>
+             
 
         </div>
     )
 }
 
-export default Older
+export default NonFinancial

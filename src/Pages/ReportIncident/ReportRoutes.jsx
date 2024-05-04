@@ -31,6 +31,7 @@ import UPI from './Victim/UPIScam'
 import BankScam from './Victim/BankScam'
 import WebScam from './Victim/WebScam'
 import Younger from './Victim/18younger'
+import NonFinancial from './Victim/NonFinancial'
 const ReportRoutes = () => {
   return (
     <Routes>
@@ -60,6 +61,8 @@ const ReportRoutes = () => {
     <Route path='/bankscam' element={<BankScam/>}></Route>
     <Route path='/webscam' element={<WebScam/>}></Route>
     <Route path='/18younger' element={<Younger/>}></Route>
+    <Route path='/nonfinancial' element={<NonFinancial/>}></Route>
+
    </Routes>
   )
 }
