@@ -75,6 +75,9 @@
   background-color: #d9d9d9;
   border: none;
 }
+.change_color {
+  color: #676767;
+}
 
 .ISD_block {
   width: 100%;

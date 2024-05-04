@@ -21,6 +21,7 @@ const ID_main = () => {
   const [ICemail, setICEmail] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [other, setOther] = useState("");
+  const [delayReporting, setDelayReporting] = useState("");
   const { currentUser } = useAuth(); // Get currentUser from the authentication context
   const db = getDatabase();
   const storage = getStorage();
@@ -60,6 +61,7 @@ const ID_main = () => {
       DateofBirth: ICdob,
       Place: ICplace,
       Email: ICemail,
+      delayReporting: delayReporting
       // Add other form fields as needed
     };
 
@@ -70,7 +72,7 @@ const ID_main = () => {
       // Store form data in Realtime Database with the unique ID
       await set(newIncidentRef, data);
       console.log("Data saved successfully!");
-      window.alert("Data added successfully!");
+      window.alert("Data added succ essfully!");
       navigate("/suspectdetails");
     } catch (error) {
       console.error("Error adding data: ", error);
@@ -78,9 +80,8 @@ const ID_main = () => {
   };
 
   const complaintCategories = [
-    { name: "Category A", subcategories: ["Subcategory A1", "Subcategory A2"] },
-    { name: "Category B", subcategories: ["Subcategory B1", "Subcategory B2"] },
-    { name: "Category C", subcategories: ["Subcategory C1", "Subcategory C2"] }
+    { name: "Financial Fraud", subcategories: ["Subcategory A1", "Subcategory A2"] },
+    { name: "Non-Financial Fraud", subcategories: ["Subcategory B1", "Subcategory B2"] },
   ];
 
   const otherOptions = ["Option 1", "Option 2", "Option 3"];
@@ -108,7 +109,8 @@ const ID_main = () => {
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Complaint Category:</p>
               <select
-                className="ISD_vi_input"
+                // className="ISD_vi_input"
+                className={`ISD_vi_input ${complaintCategory ? '' : 'change_color'}`}
                 value={complaintCategory}
                 onChange={(e) => {
                   setComplaintCategory(e.target.value);
@@ -124,17 +126,17 @@ const ID_main = () => {
               </select>
             </div>
 
-            {complaintCategory === "Category A" && (
+            {complaintCategory === "Financial Fraud" && (
               <div className="ISD_vertical_input">
                 <p className="ISD_vi_text">Sub Category:</p>
                 <select
-                  className="ISD_vi_input"
+                  className={`ISD_vi_input ${subCategory ? '' : 'change_color'}`}
                   value={subCategory}
                   onChange={(e) => setSubCategory(e.target.value)}
                 >
                   <option value="">Select Subcategory</option>
                   {complaintCategories
-                    .find((cat) => cat.name === "Category A")
+                    .find((cat) => cat.name === "Financial Fraud")
                     .subcategories.map((sub, index) => (
                       <option key={index} value={sub}>
                         {sub}
@@ -151,7 +153,7 @@ const ID_main = () => {
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Other:</p>
               <select
-                className="ISD_vi_input"
+                className={`ISD_vi_input ${other ? '' : 'change_color'}`}
                 value={other}
                 onChange={(e) => setOther(e.target.value)}
               >
@@ -190,11 +192,11 @@ const ID_main = () => {
               </p>
               <div className="radio_id_btn">
                 <div className="radio_isd"></div>
-                <input type="radio" placeholder="yes" className="radio_isd_btn" />
+                <input type="radio" placeholder="yes" className="radio_isd_btn" checked={delayReporting === "yes"} onChange={() => setDelayReporting("yes")} />
                 <label className="radio_text_isd" htmlFor="yes">
                   Yes
                 </label>
-                <input type="radio" placeholder="no" className="radio_isd_btn" />
+                <input type="radio" placeholder="no" className="radio_isd_btn" checked={delayReporting === "no"} onChange={() => setDelayReporting("no")} />
                 <label className="radio_text_isd" htmlFor="no">
                   No
                 </label>
@@ -219,7 +221,7 @@ const ID_main = () => {
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text" id="ISDE">Supporting Evidence (upload Image/ Media/ Pdf):</p>
 
-              <input id="picture" type="file" className="input-file" />
+              <input type="file" className="input-file" />
               <Link className="SS_button" id="ss_upload" >Upload</Link>
             </div>
 
