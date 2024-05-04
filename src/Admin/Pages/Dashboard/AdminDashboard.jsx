@@ -1,15 +1,23 @@
-import React from 'react'
-import "./AdminDashboard.css"
-
+import React from "react";
+import { Admin, Resource, ListGuesser } from "react-admin";
+import Dashboard from "./DashboadComponents/Dashboard";
+import IncidentList from "./DashboadComponents/IncidentList";
+import IncidentEdit from "./DashboadComponents/IncidentEdit";
+import { Menu, AppBar } from "@mui/material";
+// import dataProvider from "./dataProvider"; // This connects to a backend or an API
 
 const AdminDashboard = () => {
   return (
-    <div className='AdminDashboard_Component'>
+    <Admin dashboard={Dashboard}>
+      <Resource
+        name="incidents"
+        list={IncidentList}
+        edit={IncidentEdit}
+        icon={null}
+      />
+      {/* Add more resources as needed */}
+    </Admin>
+  );
+};
 
-      <h1 className='dashH1'>DASHBOARD</h1>
-
-    </div>
-  )
-}
-
-export default AdminDashboard
+export default AdminDashboard;
