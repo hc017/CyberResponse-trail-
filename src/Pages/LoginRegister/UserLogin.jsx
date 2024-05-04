@@ -22,50 +22,47 @@ const UserLogin = () => {
 
   const handleLogin = () => {
     console.log(email, password);
+
+    // Sign in with the provided email and password
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        let log = {
-          uids: user.uid,
-        };
 
-        // Check if userdetails data is already filled
-        const userDetailsRef = ref(db, `users/${user.uid}/userdetails`);
-        get(userDetailsRef)
-          .then((snapshot) => {
-            if (snapshot.exists()) {
-              // userdetails data is already filled, redirect to incident details
-              window.alert("Logged in successfully!");
-
-              navigate("/incidentdetails", {
-                state: log,
-              });
-            } else {
-              // userdetails data is not filled, redirect to userdetails page
-              window.alert("Logged in successfully!");
-
-              navigate("/userdetails", {
-                state: log,
-              });
-            }
-          })
-          .catch((error) => {
-            console.error("Error checking userdetails data:", error);
-            window.alert("Error checking userdetails data");
-
-            // Handle error, show error message, etc.
-          });
+        // Check if the email is an admin email
+        if (email.endsWith("@admin.com")) {
+          // If it's an admin email, redirect to the admin dashboard
+          window.alert("Logged in as admin!");
+          navigate("/adminDashboard");
+        } else {
+          // If it's a regular email, check if user details are filled
+          const userDetailsRef = ref(db, `users/${user.uid}/userdetails`);
+          get(userDetailsRef)
+            .then((snapshot) => {
+              if (snapshot.exists()) {
+                window.alert("Logged in successfully!");
+                navigate("/incidentdetails", {
+                  state: { uids: user.uid },
+                });
+              } else {
+                window.alert("Logged in successfully!");
+                navigate("/userdetails", {
+                  state: { uids: user.uid },
+                });
+              }
+            })
+            .catch((error) => {
+              console.error("Error checking userdetails data:", error);
+              window.alert("Error checking userdetails data");
+            });
+        }
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Error signing in:", errorMessage);
+        console.error("Error signing in:", error.message);
         window.alert("Error in signing in");
-        // Handle error, show error message, etc.
       });
   };
+
   const handleCancel = () => {
-    // Clear the form fields by resetting the state variables
     setEmail("");
     setPassword("");
   };
