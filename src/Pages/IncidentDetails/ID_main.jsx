@@ -44,6 +44,37 @@ const ID_main = () => {
     }
   }, [currentUser]);
 
+  
+  const generateIncidentID = () => {
+    let categoryPrefix = "";
+    let subCategoryPrefix = "";
+
+    if (complaintCategory === "Financial Fraud") {
+      categoryPrefix = "fn";
+      if (subCategory === "UPI/Credit Card") {
+        subCategoryPrefix = "upicc";
+      } else if (subCategory === "Bank Scams") {
+        subCategoryPrefix = "bksm";
+      } else if (subCategory === "Website Scams") {
+        subCategoryPrefix = "wbsm";
+      }
+    } else if (complaintCategory === "Non-Financial Fraud") {
+      categoryPrefix = "nfn";
+      if (subCategory === "Sexual Harassment") {
+        subCategoryPrefix = "sxh";
+      } else if (subCategory === "Cyber Terrorism") {
+        subCategoryPrefix = "cbtm";
+      } else if (subCategory === "Ransomware") {
+        subCategoryPrefix = "rsmw";
+      }
+    }
+
+    const incidentRef = ref(db, `users/${currentUser.uid}/incidentdetails`);
+    const newIncidentRef = push(incidentRef);
+    const newIncidentKey = newIncidentRef.key;
+    return `${categoryPrefix}${newIncidentKey}${subCategoryPrefix}`;
+  };
+
   const handleSaveAndSubmit = async () => {
     //   // Upload file to Firebase Storage
     //   let fileUrl = "";
@@ -66,11 +97,17 @@ const ID_main = () => {
     };
 
     try {
-      // Generate a unique ID for the incident
-      const newIncidentRef = push(ref(db, `users/${currentUser.uid}/incidentdetails`));
+      // // Generate a unique ID for the incident
+      // const newIncidentRef = push(ref(db, `users/${currentUser.uid}/incidentdetails`));
 
-      // Store form data in Realtime Database with the unique ID
-      await set(newIncidentRef, data);
+      // // Store form data in Realtime Database with the unique ID
+      // await set(newIncidentRef, data);
+       // Generate incident ID
+       const incidentID = generateIncidentID();
+
+       // Store form data in Realtime Database with the unique ID
+       await set(ref(db, `users/${currentUser.uid}/incidentdetails/${incidentID}`), data);
+       
       console.log("Data saved successfully!");
       window.alert("Data added successfully!");
       navigate("/suspectdetails");
