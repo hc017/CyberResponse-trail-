@@ -35,7 +35,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)) ;
     padding: 150px 0;
     text-align: center;
-    height: 100vh;
+    height: auto;
     font-family: 'Roboto', sans-serif;
 }
 /* 
