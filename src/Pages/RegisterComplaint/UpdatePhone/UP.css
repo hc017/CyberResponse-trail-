@@ -2,6 +2,7 @@
     width: 100%;
     height: 80vh;
     border-radius: 2px;
+    margin-bottom: 7%;
     background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.85),
@@ -16,13 +17,11 @@
   }
   .UP_innerform{
     width: 85%;
-    height: auto;
     max-height: 100vh;
     border-radius: 2%;
     height: auto;
     margin-left: 7%;
     background-color: #2d2d2dbd;
-
   }
   .UP_susdetail_bar{
     width: 100%;
@@ -32,9 +31,7 @@
     align-items: center; /* Center vertically */
     text-decoration: none; /* Remove default link underline */
     margin-top: 1rem;
-  
     border-radius: 0.3rem 0.3rem 0 0;
-
   }
   .UP_sus_text{
     width: 100%;
@@ -53,12 +50,12 @@
   }
   .UP_block{
     width: 85%;
-    margin-left: 7%;
+    margin: 1% 0 5% 7%;
     border-bottom: 1px solid rgba(194, 194, 194, 0.192);
   }
   .UP_Vi{
     width: 60%;
-    height: 50vh;
+    height: 40vh;
     margin-left: 20%;
     margin-top: 1%;
   }
@@ -70,7 +67,6 @@
   }
   .UP_vi_text{
     width: 30%;
-    margin: 0;
     margin-top: 1%;
     font-family: Poppins;
     font-size: 1rem;
@@ -81,41 +77,36 @@
     letter-spacing: normal;
     text-align: left;
     color: #fdfdfd;
-    
-
   }
   .UP_vi_input{
     width: 50%;
     height: 2rem;
+    padding-left: 0.8rem;
     border-radius: 5px;
     box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     background-color: #d9d9d9;
     border: none;
-
   }
   .UP_OTP{
-    width: 10%;
-    margin-left: 3%;
-    font-family: Poppins;
-    font-size: 0.7rem;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #268ef7;
-    background-color: transparent;
-    border: 1px solid #268ef7 ;
-    display: inline-flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-decoration: none; /* Remove default link underline */
-
+    width: 13%;
+  height: 5vh;
+  margin-left: 4%;
+  font-weight: bold;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: monospace;
+  cursor: pointer;
+  font-size: 17px;
+  text-transform: uppercase;
+  border: transparent;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  background: #4f86d2;
+  color: white;
+  border-radius: 4px;
   }
   .UP_OTP:hover{
-    background-color: #00a259;
-    color: #0b0000;
-    border: none;
-
+    background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, #4f86d2 0%, rgb(36, 123, 210) 100%);
   }
