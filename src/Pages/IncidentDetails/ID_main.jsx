@@ -78,14 +78,6 @@ const ID_main = () => {
   };
 
   const handleSaveAndSubmit = async () => {
-    //   // Upload file to Firebase Storage
-    //   let fileUrl = "";
-    //   if (selectedFile) {
-    //     const fileRef = storageRef(storage, `users/${currentUser.uid}/incidentdetails/storage${selectedFile.name}`);
-    //     await uploadBytes(fileRef, selectedFile);
-    //     fileUrl = await ref.getDownloadURL(fileRef);
-    //   }
-
     // Prepare data to store in Realtime Database
     const data = {
       complaintCategory: complaintCategory,
@@ -97,26 +89,14 @@ const ID_main = () => {
       Description: inputValue,
       delayReporting: delayReporting,
       // Add other form fields as needed
-      
     };
 
     try {
-      // // Generate a unique ID for the incident
-      // const newIncidentRef = push(
-        ref(db, `users/${currentUser.uid}/incidentdetails`)
-      );
-      const IRef = push(
-        ref(db, `incidents/${currentUser.uid}/incidentdetails`)
-      );
-
-      // // Store form data in Realtime Database with the unique ID
-      // await set(newIncidentRef, data);
-       // Generate incident ID
-       const incidentID = generateIncidentID();
-
+      // Generate a unique ID for the incident
       // Store form data in Realtime Database with the unique ID
-      await set(newIncidentRef, data);
-      await set(IRef, data);
+       const incidentID = generateIncidentID();
+       await set(ref(db, `users/${currentUser.uid}/incidentdetails/${incidentID}`), data);
+       await set(ref(db, `incidents/${currentUser.uid}/incidentdetails/${incidentID}`), data);
       console.log("Data saved successfully!");
       window.alert("Data added successfully!");
       navigate("/suspectdetails");
