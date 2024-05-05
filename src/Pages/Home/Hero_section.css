@@ -1,4 +1,4 @@
-@keyframes pulse {
+/* @keyframes pulse {
     0% {
         background-color: #05A8AA;
     }
@@ -19,18 +19,26 @@
         transform: translateY(0);
         opacity: 1;
     }
-}
+} */
 
 
 
-.hero {
+/* .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('/src/Pages/Home/herobg.webp') center/cover;
     padding: 150px 0;
     text-align: center;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
-}
+} */
 
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)) ;
+    padding: 150px 0;
+    text-align: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+/* 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
@@ -55,9 +63,9 @@
     justify-content: center;
     margin-top: 40px;
    
-}
+} */
 
-.hero-button {
+/* .hero-button {
     padding: 15px 30px;
     margin: 0 10px;
     height: 200px;
@@ -76,4 +84,85 @@
 
 .hero-button:hover {
     background-color: #05A8AA;
+} */
+
+.banner {
+    margin-top: 0;
+    padding: 120px 20px 30vh 0;
+    background-image: url('./banner-bg.png');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    flex-direction: column; /* Ensure items are stacked vertically */
+    align-items: flex-start; /* Align items at the top */
+    justify-content: flex-start; /* Align content at the start of the container */
 }
+  .banner .tagline {
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 8px 10px;
+    background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .banner h1 {
+    font-size: 65px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: 5%;
+  }
+  .banner p {
+    color: #B8B8B8;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    width: 96%;
+    margin-left: 5%;
+  }
+  .banner button {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 60px;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+  }
+  .banner button svg {
+    font-size: 25px;
+    margin-left: 10px;
+    transition: 0.3s ease-in-out;
+    line-height: 1;
+  }
+  .banner button:hover svg {
+    margin-left: 25px;
+  }
+  .banner img {
+    animation: updown 3s linear infinite;
+  }
+  @keyframes updown {
+      0% {
+          transform: translateY(-20px);
+      }
+      50% {
+          transform: translateY(20px);
+      }
+      100% {
+          transform: translateY(-20px);
+      }
+  }
+  .txt-rotate > .wrap {
+    border-right: 0.08em solid #666;
+  }
+
+  .aligh-items-center{
+    background-color: #05A8AA;
+    display: flex;
+    align-items: flex-start;
+  }

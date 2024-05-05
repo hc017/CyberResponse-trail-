@@ -7,6 +7,7 @@ import Banner from "./Banner_1/Banner";
 import Banner2 from "./Banner_2/Banner2";
 import { Link } from "react-router-dom";
 import Hero_section from "./Hero_section";
+import HomeButtons from "./HomeButtons";
 const Home = () => {
   return (
     <div class="Home-Container">
