@@ -1,0 +1,30 @@
+.incident-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .incident-table th,
+  .incident-table td {
+    padding: 10px;
+    text-align: left;
+    color: #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .incident-table tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .incident-table button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .incident-table button:hover {
+    background-color: #555;
+  }
+  

@@ -1,0 +1,29 @@
+.incident-details {
+    margin-top: 20px;
+    color: aliceblue;
+  }
+  
+  .status-update {
+    margin-top: 10px;
+  }
+  
+  .status-update label {
+    margin-right: 10px;
+  }
+  
+  .status-update select {
+    padding: 5px;
+  }
+  
+  .status-update button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .status-update button:hover {
+    background-color: #555;
+  }
+  
