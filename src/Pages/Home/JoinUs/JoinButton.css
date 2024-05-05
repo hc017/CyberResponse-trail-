@@ -1,0 +1,43 @@
+.Joinswipe {
+    position: relative;
+    background-color: #F1F7F7;
+    width: 200px;
+    height: 60px;
+    color: rgb(0, 0, 0);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.35);
+    border-left: 0.5px solid rgba(0, 0, 0, 0.35);
+    padding-left: 40px;
+    cursor: pointer;
+    transition: 0.35s ease;
+  }
+  
+  .Joinswipe:hover {
+    padding-left: 0;
+    padding-right: 40px;
+    color: #324B4C;
+  }
+  
+  .Joincontainer {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background: #295f86;
+    border-radius: 50%;
+    transition: 0.35s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f1f4f7;
+  }
+  
+  .Joinswipe:hover .Joincontainer {
+    left: calc(100% - 55px);
+    color: #2faaae;
+  }

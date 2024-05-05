@@ -8,6 +8,7 @@ import Banner2 from "./Banner_2/Banner2";
 import { Link } from "react-router-dom";
 import Hero_section from "./Hero_section";
 import HomeButtons from "./HomeButtons";
+import JoinUs from "./JoinUs/JoinUs";
 const Home = () => {
   return (
     <div class="Home-Container">
@@ -27,10 +28,10 @@ const Home = () => {
 
 
 
-      <Banner />
+     
       <Banner2 />
       <div className="Home_usef">
-        <UsefulLinks />
+       <JoinUs/>
       </div>
     </div>
   );
