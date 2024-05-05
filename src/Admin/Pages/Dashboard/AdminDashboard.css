@@ -14,6 +14,10 @@
   padding: 10px;
   cursor: pointer;
 }
+.adlogo{
+  width: 60%;
+  margin-left: 5%;
+}
 
 .sidebar .tab:hover {
   background-color: #444;
@@ -22,4 +26,21 @@
 .content {
   width: 80%;
   padding: 20px;
+}
+#namead{
+  margin-top: 100%;
+  width: 100%;
+  text-align: center;
+}
+#btnad{
+  background-color: #e74c3c; /* A red color to indicate logout */
+  color: white; /* White text for contrast */
+  padding: 10px 20px; /* Padding for size */
+  border: none; /* No border for a cleaner look */
+  border-radius: 5px; /* Slightly rounded corners */
+  font-size: 16px; /* A readable font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  margin-left: 30%;
 }

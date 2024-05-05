@@ -1,4 +1,3 @@
-
 import React from "react";
 import "./ID_main.css";
 import Em from "../../components/Emergency/Em";
@@ -7,7 +6,7 @@ import IDX from "./IDX";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import UP_bar from "../UserDetails/Userprofilebar/UP_bar";
-import { useAuth } from "../../FirebaseCongfig/AuthContext";// Import the useAuth hook
+import { useAuth } from "../../FirebaseCongfig/AuthContext"; // Import the useAuth hook
 import { getDatabase, ref, push, set, dbRef } from "firebase/database";
 import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 
@@ -22,6 +21,9 @@ const ID_main = () => {
   const [selectedFile, setSelectedFile] = useState("");
   const [other, setOther] = useState("");
   const [delayReporting, setDelayReporting] = useState("");
+  const maxChars = 1500; // Maximum allowed characters
+  const [inputValue, setInputValue] = useState(''); // State to hold the input field value
+  const [charsLeft, setCharsLeft] = useState(maxChars); // State to hold the count of characters left
   const { currentUser } = useAuth(); // Get currentUser from the authentication context
   const db = getDatabase();
   const storage = getStorage();
@@ -58,19 +60,27 @@ const ID_main = () => {
       complaintCategory: complaintCategory,
       subCategory: subCategory,
       other: other,
-      DateofBirth: ICdob,
+      DateTime: ICdob,
       Place: ICplace,
       Email: ICemail,
-      delayReporting: delayReporting
+      Description: inputValue,
+      delayReporting: delayReporting,
       // Add other form fields as needed
+      
     };
 
     try {
       // Generate a unique ID for the incident
-      const newIncidentRef = push(ref(db, `users/${currentUser.uid}/incidentdetails`));
+      const newIncidentRef = push(
+        ref(db, `users/${currentUser.uid}/incidentdetails`)
+      );
+      const IRef = push(
+        ref(db, `incidents/${currentUser.uid}/incidentdetails`)
+      );
 
       // Store form data in Realtime Database with the unique ID
       await set(newIncidentRef, data);
+      await set(IRef, data);
       console.log("Data saved successfully!");
       window.alert("Data added successfully!");
       navigate("/suspectdetails");
@@ -80,17 +90,26 @@ const ID_main = () => {
   };
 
   const complaintCategories = [
-    { name: "Financial Fraud", subcategories: ["UPI/Credit Card", "Bank Scams", "Website Scams"] },
-    { name: "Non-Financial Fraud", subcategories: ["Sexual Harassment", "Cyber Terrorism", "Ransomware"] },
+    {
+      name: "Financial Fraud",
+      subcategories: ["UPI/Credit Card", "Bank Scams", "Website Scams"],
+    },
+    {
+      name: "Non-Financial Fraud",
+      subcategories: ["Sexual Harassment", "Cyber Terrorism", "Ransomware"],
+    },
   ];
 
   const renderSubCategorySelect = () => {
-    if (complaintCategory && complaintCategories.some((cat) => cat.name === complaintCategory)) {
+    if (
+      complaintCategory &&
+      complaintCategories.some((cat) => cat.name === complaintCategory)
+    ) {
       return (
         <div className="ISD_vertical_input">
           <p className="ISD_vi_text">Sub Category:</p>
           <select
-            className={`ISD_vi_input ${subCategory ? '' : 'change_color'}`}
+            className={`ISD_vi_input ${subCategory ? "" : "change_color"}`}
             value={subCategory}
             onChange={(e) => setSubCategory(e.target.value)}
           >
@@ -109,9 +128,14 @@ const ID_main = () => {
     return null;
   };
 
+  const handleInputChange = (e) => {
+    const newValue = e.target.value; // The updated input value
+    setInputValue(newValue); // Update the input field value
+    setCharsLeft(maxChars - newValue.length); // Update the remaining characters count
+  };
+
   return (
     <div className="ISD_component">
-
       <div className="ISD_innercomponent">
         <Em />
         <div className="UD_up_bar"></div>
@@ -122,18 +146,18 @@ const ID_main = () => {
         <IDX />
 
         <div className="ISD_innerComp2">
-
           <div className="ISD_susdetail_bar">
             <p className="ISD_sus_text">Complaint/ Incident Details</p>
           </div>
 
           <div className="ISD_formComp_1">
-
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Complaint Category:</p>
               <select
                 // className="ISD_vi_input"
-                className={`ISD_vi_input ${complaintCategory ? '' : 'change_color'}`}
+                className={`ISD_vi_input ${
+                  complaintCategory ? "" : "change_color"
+                }`}
                 value={complaintCategory}
                 onChange={(e) => {
                   setComplaintCategory(e.target.value);
@@ -152,26 +176,27 @@ const ID_main = () => {
             {renderSubCategorySelect()}
 
             <div className="ISD_block"></div>
-
           </div>
 
           <div className="ISDL_formComp_1">
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Other (if any):</p>
-              <input type="text" className="ISD_vi_input" placeholder="Enter your specific complaint category"
+              <input
+                type="text"
+                className="ISD_vi_input"
+                placeholder="Enter your specific complaint category"
                 value={other}
-                onChange={(e) => setOther(e.target.value)} />
+                onChange={(e) => setOther(e.target.value)}
+              />
             </div>
             <div className="ISD_block"></div>
-
           </div>
 
           <div className="ISDL2_formComp_1">
-
             <div className="ISD_vertical_input">
               <p id="ISDT" className="ISD_vi_text">
-                Appropriate date and time for incident/ receiving/
-                viewing of content:
+                Appropriate date and time for incident/ receiving/ viewing of
+                content:
               </p>
               <input
                 type="datetime-local"
@@ -189,11 +214,23 @@ const ID_main = () => {
               </p>
               <div className="radio_id_btn">
                 <div className="radio_isd"></div>
-                <input type="radio" placeholder="yes" className="radio_isd_btn" checked={delayReporting === "yes"} onChange={() => setDelayReporting("yes")} />
+                <input
+                  type="radio"
+                  placeholder="yes"
+                  className="radio_isd_btn"
+                  checked={delayReporting === "yes"}
+                  onChange={() => setDelayReporting("yes")}
+                />
                 <label className="radio_text_isd" htmlFor="yes">
                   Yes
                 </label>
-                <input type="radio" placeholder="no" className="radio_isd_btn" checked={delayReporting === "no"} onChange={() => setDelayReporting("no")} />
+                <input
+                  type="radio"
+                  placeholder="no"
+                  className="radio_isd_btn"
+                  checked={delayReporting === "no"}
+                  onChange={() => setDelayReporting("no")}
+                />
                 <label className="radio_text_isd" htmlFor="no">
                   No
                 </label>
@@ -201,9 +238,13 @@ const ID_main = () => {
             </div>
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Where did the incident occur?:</p>
-              <input type="text" className="ISD_vi_input" placeholder="Enter the place of incident occured"
+              <input
+                type="text"
+                className="ISD_vi_input"
+                placeholder="Enter the place of incident occured"
                 value={ICplace}
-                onChange={(e) => setICPlace(e.target.value)} />
+                onChange={(e) => setICPlace(e.target.value)}
+              />
             </div>
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Email ID:</p>
@@ -212,32 +253,48 @@ const ID_main = () => {
                 className="ISD_vi_input"
                 placeholder="Enter your E-mail ID"
                 value={ICemail}
-                onChange={(e) => setICEmail(e.target.value)} />
+                onChange={(e) => setICEmail(e.target.value)}
+              />
             </div>
 
             <div className="ISD_vertical_input">
-              <p className="ISD_vi_text" id="ISDE">Supporting Evidence (upload Image/ Media/ Pdf):</p>
+              <p className="ISD_vi_text" id="ISDE">
+                Supporting Evidence (upload Image/ Media/ Pdf):
+              </p>
 
               <input type="file" className="input-file" />
-              <Link className="SS_button" id="ss_upload" >Upload</Link>
+              <Link className="SS_button" id="ss_upload">
+                Upload
+              </Link>
             </div>
 
             <div className="ISD_block"></div>
 
             <div className="ISD_vertical_input" id="ISD_VI">
-              <p className="ISD_vi_text" id="ISDA">Please provide any additional <br /> information about the incident: </p>
+              <p className="ISD_vi_text" id="ISDA">
+                Please provide any additional <br /> information about the
+                incident:
+              </p>
               <input
-                type="email"
+                type="text" // Changed to 'text' since it's not for email
                 className="ISD_vi_input"
                 id="ISDVII"
                 placeholder="Enter the information here"
+                value={inputValue} // Bound to the state value
+                onChange={handleInputChange} // Event handler for input change
               />
-              <p className="ISD_lasttext"> ( Maximum of 1500 characters: {count} characters left ) </p>
-
+              <p className="ISD_lasttext">
+                (Maximum of 1500 characters: {charsLeft} characters left)
+              </p>
             </div>
-            <Link className="ss_save_btn2" id="ss_b" onClick={handleSaveAndSubmit}>Save and Submit</Link>
+            <Link
+              className="ss_save_btn2"
+              id="ss_b"
+              onClick={handleSaveAndSubmit}
+            >
+              Save and Submit
+            </Link>
           </div>
-
         </div>
       </div>
     </div>
