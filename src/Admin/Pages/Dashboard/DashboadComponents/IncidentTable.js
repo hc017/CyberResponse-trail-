@@ -7,7 +7,11 @@ const IncidentTable = ({ incidents, onSelectIncident, onRequestIncident }) => {
       <thead>
         <tr>
           <th>ID</th>
-          <th>Title</th>
+          <th>Date&Time</th>
+          <th>Complaint-Category</th>
+          <th>Sub-Category</th>
+          <th>Other</th>
+          <th>Place</th>
           <th>Status</th>
           {onRequestIncident && <th>Action</th>} {/* Add action column */}
         </tr>
@@ -16,7 +20,11 @@ const IncidentTable = ({ incidents, onSelectIncident, onRequestIncident }) => {
         {incidents.map((incident) => (
           <tr key={incident.id} onClick={() => onSelectIncident(incident)}>
             <td>{incident.id}</td>
-            <td>{incident.title}</td>
+            <td>{incident.datetime}</td>
+            <td>{incident.complaintCategory}</td>
+            <td>{incident.subCategory}</td>
+            <td>{incident.others}</td>
+            <td>{incident.place}</td>
             <td>{incident.status}</td>
             {onRequestIncident && (
               <td>
