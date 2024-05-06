@@ -76,22 +76,32 @@
   }
   
   .CW_status_table tbody tr:hover {
-    background-color: #88bdf2; /* Hover effect for rows */
+    background-color: #4f4f4f; /* Hover effect for rows */
     color: rgb(0, 0, 0);
   }
-  .CW_status_table td:hover{
-    color: #66dbff;
-  
-  }
   .CW_actbtn{
-    width: 50%;
-    height: 30%;
-    border-radius: 5px;
-    color: #a4e1f4;
-    border: 1px solid #a4e1f4;
-    background-color: transparent;
-    display: inline-flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-decoration: none; /* Remove default link underline */
+    width: 76%;
+    height: 5vh;
+    margin-left: 4%;
+    font-size: 1.1rem;
+    font-family: monospace;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    background: #4f86d2;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    display: inline-flex; 
+    cursor: pointer;
+  }
+  #CW_actbtn:hover {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, #4f86d2 0%, rgb(36, 123, 210) 100%);
+  }
+  #CW_actbtn:active {
+    transform: translate(0em, 0.2em);
   }
