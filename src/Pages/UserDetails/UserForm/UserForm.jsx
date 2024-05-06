@@ -51,6 +51,14 @@ const UserForm = () => {
   }, [location.state]);
 
   const handleSaveAndSubmit = async () => {
+
+     // Check if any of the fields are empty
+    if ( !RegLogI || !title || !RegName || !RegMobile || !ReDob || !RegGender || !RegEmail || !RegRelation || !famMemName || !RegHouseNo || !RegStreetName || !RegColony || !RegTownCity || !RegTeheshil || !country || !state || !district || !policeStation || !RegPinCode ) 
+    {
+      alert("Please fill in all fields");
+      return;
+    }
+
     // Upload additional data to Realtime Database
     if (currentUser && currentUser.email !== RegLogI) {
       console.error("Error: Provided email does not match the current user's email");
@@ -86,13 +94,13 @@ const UserForm = () => {
   };
 
 
-  const handleGetOtpClick = () => {
-    setShowOtpInput(true);
-  };
+  // const handleGetOtpClick = () => {
+  //   setShowOtpInput(true);
+  // };
 
-  const handleVerifyClick = () => {
-    // Implement OTP verification logic here
-  };
+  // const handleVerifyClick = () => {
+  //   // Implement OTP verification logic here
+  // };
 
   const titleOptions = [
     { id: 1, name: "Mr." },
@@ -286,13 +294,13 @@ const UserForm = () => {
                   value={RegEmail}
                   onChange={(e) => setRegEmail(e.target.value)}
                 />
-                {!showOtpInput && (
+                {/* {!showOtpInput && (
                   <button className="otpbutton" onClick={handleGetOtpClick}>
                     Get OTP
                   </button>
-                )}
+                )} */}
               </div>
-              {showOtpInput && (
+              {/* {showOtpInput && (
                 <div className="emailotp" id="enterotp">
                   <input
                     type="text"
@@ -303,7 +311,7 @@ const UserForm = () => {
                     Verify
                   </button>
                 </div>
-              )}
+              )} */}
             </div>
             <div className="vertical_input">
               <p className="vi_text">Father/Mother/Spouse :</p>

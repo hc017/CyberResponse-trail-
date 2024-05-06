@@ -3,8 +3,10 @@ import IncidentTable from "./DashboadComponents/IncidentTable";
 import IncidentDetails from "./DashboadComponents/IncidentDetails";
 import "./AdminDashboard.css";
 import adlogo from "./Logo.png";
+import {useNavigate} from 'react-router-dom';
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
   // List of all incidents
   const allIncidents = [
     {
@@ -69,6 +71,10 @@ const AdminDashboard = () => {
     }
   };
 
+  const gotohome = () =>{
+    navigate('/');
+  }
+
   return (
     <div className="admin-dashboard">
       <div className="sidebar">
@@ -84,11 +90,9 @@ const AdminDashboard = () => {
           <h3>hc@csadmin.com</h3>
         </div>
         <div  >
-          <button id="btnad">Logout</button>
+          <button id="btnad" onClick={gotohome}>Logout</button>
         </div>
 
-
-      
       </div>
 
       <div className="content">
@@ -113,7 +117,7 @@ const AdminDashboard = () => {
             }}
           />
         )}
-      
+
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const Navbar = () => {
           <Link to="/login" className="complaint-btn">Register a Complaint</Link>
           <Link to="/trackcomplaint" className="complaint-btn">Track a Complaint</Link>
           <button className="complaint-btn">Services</button>
-          <button className="complaint-btn">Contact Us</button>
+          <Link to="/contactus" className="complaint-btn">Contact Us</Link>
         </div>
       </div>
     </div>

@@ -1,10 +1,11 @@
 .admin-dashboard {
   display: flex;
-  height: 100vh;
+  height: 120vh;
 }
 
 .sidebar {
   width: 20%;
+  height: auto;
   background-color: #333;
   color: white;
   padding: 20px;
@@ -28,7 +29,7 @@
   padding: 20px;
 }
 #namead{
-  margin-top: 100%;
+  margin-top: 60%;
   width: 100%;
   text-align: center;
 }
@@ -37,8 +38,9 @@
   color: white; /* White text for contrast */
   padding: 10px 20px; /* Padding for size */
   border: none; /* No border for a cleaner look */
+  text-transform: uppercase;
   border-radius: 5px; /* Slightly rounded corners */
-  font-size: 16px; /* A readable font size */
+  font-size: 0.9rem; /* A readable font size */
   font-weight: bold; /* Bold text */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */

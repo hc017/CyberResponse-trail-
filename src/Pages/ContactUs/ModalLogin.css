@@ -1,0 +1,220 @@
+/* CSS */
+.blurred-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .blur-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px); /* Adjust blur radius as needed */
+    z-index: 999; /* Ensure it's below other content */
+  }
+  
+  .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d9d9d9; /* Adjust as needed */
+    padding: 20px;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1001; /* Ensure it's above the background */
+    height:auto;
+    width: 35%;
+  }
+
+  .CloseButton{
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    top: 1.4%
+    
+  }
+.CloseButton:hover{
+  color: rgb(185, 32, 5);
+}
+
+.PageBlock{
+  width:100%;
+  height:auto;
+  background-color: #ffffff;
+  margin-top: 3%;
+  padding-bottom: 4%;
+  padding-top: 0.5%;
+}
+.Registration{
+  width: 50%;
+  height: 5vh;
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: InknutAntiqua;
+  color: rgb(81, 79, 79);
+  font-weight: bold;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+}
+
+.Registration:hover{
+  background-color: rgb(177, 174, 174);
+  
+}
+.form-group {
+  width: 90%; /* Occupy full width of FormContainer */
+  height: auto; /* Automatically adjust height */
+  background-color: #ffffff;
+  margin-top: 3%;
+  display: block;
+  font-size: 1rem;
+  margin-left: 4%;
+}
+
+.ItemBlocks {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem; /* Adjust as needed */
+  color: rgb(81, 79, 79);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.TextFieldLogin{
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f3f3f3;
+  border-radius: 5px;;
+  width:90%;
+  height:5vh;
+}
+
+.phone-number-input{
+  display: flex;
+}
+
+.CountryCode{
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f3f3f3;
+  border-radius: 5px;;
+  width:8%;
+  height:5vh;
+  margin-right: 1%;
+}
+
+#PhoneField{
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f3f3f3;
+  border-radius: 5px;;
+  width:81%;
+  height:5vh;
+}
+
+.SignUP{
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #20433c;
+    border-radius: 5px;
+    width: 60%;
+    height: 6vh;
+    margin: 2rem auto 0 auto; /* Center the button horizontally and apply top margin */
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+  
+}
+.SignUP:hover{
+  background-color: #42754e;
+}
+
+.SmallLogin {
+  font-family: Inter;
+  font-size: 75%;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000;
+  margin-top: 0%;
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  width: 100px; /* Example width */
+  height: 30px; /* Example height */
+  margin: 0 auto; 
+  white-space: nowrap;/* Center the button horizontally */
+}
+
+#OnlyLogin{
+  color: #1387f2;
+}
+
+.ButtonsLoginReg{
+  display: flex;
+  text-align: center;
+}
+
+#TextPage{
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.Remember-me {
+  display: flex; /* Use flexbox to arrange items */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  width: 95%;
+  height: 5vh;
+  background-color: rgb(255, 255, 255);
+  font-size: small;
+  padding: 0 3.5%;  /* Add padding for spacing */
+}
+
+#Forgot-Password {
+  margin-left: auto; /* Move the link to the far right */
+}
+
+.OR-Line {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.Line-1 {
+  width:35%; /* Allow the line to grow to fill available space */
+  height: 0.1vh;
+  background-color: #5b5858;
+  margin-left: 6%;
+  margin-top: 3%;
+}
+
+.PageOR {
+  font-size: small;
+  color: #5b5858;
+  margin-left: 6%;
+  margin-top: 3%; /* Add margin for spacing around the text */
+}
+
+.ContactTextField{
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f3f3f3;
+  border-radius: 5px;;
+  width:90%;
+  height:14vh;
+  padding-top: 0.5rem;
+}
