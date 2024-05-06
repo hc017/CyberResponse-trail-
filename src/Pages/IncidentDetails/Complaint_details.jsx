@@ -77,8 +77,8 @@ const Complaint_details = () => {
       doc.setFontSize(14);
       doc.text(`Incident ${index + 1}`, 20, startY);
       doc.setFontSize(12);
-      doc.text(`Complaint Category: ${incident.complaintCategory}`, 20, startY + 10);
-      doc.text(`Sub Category: ${incident.subCategory}`, 20, startY + 20);
+      doc.text(`Complaint Category: ${incident.categories}`, 20, startY + 10);
+      doc.text(`Sub Category: ${incident.subcategories}`, 20, startY + 20);
       doc.text(`Date and Time: ${incident.DateTime}`, 20, startY + 30);
       doc.text(`Place: ${incident.Place}`, 20, startY + 40);
     });

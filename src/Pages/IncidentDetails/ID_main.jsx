@@ -37,8 +37,8 @@ const ID_main = () => {
         setCategories(categoriesArray);
         
         // Auto-select the dropdown if the input matches any category
-        if (categoriesArray.includes(complaintCategory)) {
-          setComplaintCategory(complaintCategory);
+        if (categoriesArray.includes(categories)) {
+          setComplaintCategory(categories);
         }
       }
     });
@@ -52,18 +52,18 @@ const ID_main = () => {
         setSubcategories(subcategoriesArray);
         
         // Auto-select the dropdown if the input matches any subcategory
-        if (subcategoriesArray.includes(subCategory)) {
-          setSubCategory(subCategory);
+        if (subcategoriesArray.includes(subcategories)) {
+          setSubCategory(subcategories);
         }
       }
     });
-  }, [complaintCategory, subCategory]);
+  }, [categories, subcategories]);
 
   const handleSaveAndSubmit = async () => {
     // Prepare data to store in Realtime Database
     const data = {
-      complaintCategory: complaintCategory,
-      subCategory: subCategory,
+      complaintCategory: categories,
+      subCategory: subcategories,
       other: other,
       DateTime: ICdob,
       Place: ICplace,
@@ -122,18 +122,6 @@ const ID_main = () => {
           <div className="ISD_formComp_1">
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Complaint Category:</p>
-              {/* <select
-                className="ISD_vi_input"
-                value={complaintCategory}
-                onChange={(e) => setComplaintCategory(e.target.value)}
-              >
-                <option value="">Select Category</option>
-                {categories.map((category, index) => (
-                  <option key={index} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select> */}
               <input
   type="text"
   className="ISD_vi_input"
@@ -144,18 +132,6 @@ const ID_main = () => {
 
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Sub Category:</p>
-              {/* <select
-                className="ISD_vi_input"
-                value={subCategory}
-                onChange={(e) => setSubCategory(e.target.value)}
-              >
-                <option value="">Select Subcategory</option>
-                {subcategories.map((subcategory, index) => (
-                  <option key={index} value={subcategory}>
-                    {subcategory}
-                  </option>
-                ))}
-              </select> */}
               <input
   type="text"
   className="ISD_vi_input"
