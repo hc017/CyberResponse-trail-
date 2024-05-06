@@ -4,8 +4,32 @@ import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { GrLinkPrevious } from "react-icons/gr";
+import { getDatabase, ref, push,remove  } from "firebase/database";
 
 const Older = () => {
+    const db = getDatabase();
+
+    const handleClick = (category) => {
+        const reportsRef = ref(db, 'victim/maincategory/');
+
+        // Clear existing data in the temporary_reports node
+        remove(reportsRef)
+            .then(() => {
+                // Add the new category to the database
+                push(reportsRef, category)
+                    .then(() => {
+                        alert(`${category} report added successfully!`);
+                    })
+                    .catch((error) => {
+                        console.error("Error writing to database:", error.message);
+                        alert("Error in adding report");
+                    });
+            })
+            .catch((error) => {
+                console.error("Error removing data from database:", error.message);
+                alert("Error in removing existing report data");
+            });
+    };
     return (
         <div className='ReportContainer'>
             <Em />
@@ -36,7 +60,7 @@ const Older = () => {
                         <Link to="/victim" className="BoxVictimReport">
                             <span className="TextVictimReport">I am a victim</span>
                         </Link>
-                        <Link to="/18older" className="BoxVictimReport">
+                        <Link to="/18older" className="BoxVictimReport" onClick={() => handleClick("18 older")}>
                             <span className="TextVictimReport">I am a older than 18 years</span>
                         </Link>
                     </div>
@@ -50,27 +74,11 @@ const Older = () => {
                 </div>
             </div>
 
-
-            {/* <div className="CSSForSmallerButton">
-                <Link to="/sh" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton"> Sexual Harassment</span>
-                </Link>
-                <Link to="/moneylaundering" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Financial Fraud</span>
-                </Link>
-                <Link to="/cyterror" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Cyber Terrorism</span>
-                </Link>
-                <Link to="/ransomware" className="SmallerButtonCSS">
-                    <span className="SmallerTextButton">Ransomware</span>
-                </Link> 
-             </div> */}
-
              <div className="ButtonCSS">
-                <Link to="/moneylaundering" className="ButtonReport">
+                <Link to="/moneylaundering" className="ButtonReport" onClick={() => handleClick("financialfraud")}>
                     <span className="ReportText">Financial Fraud</span>
                 </Link>
-                <Link to="/nonfinancial" className="ButtonReport">
+                <Link to="/nonfinancial" className="ButtonReport" onClick={() => handleClick("nonfinancialfraud")}>
                     <span className="ReportText">Non-Financial Fraud</span>
                 </Link>
             </div>

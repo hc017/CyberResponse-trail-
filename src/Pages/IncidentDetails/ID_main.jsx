@@ -7,11 +7,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import UP_bar from "../UserDetails/Userprofilebar/UP_bar";
 import { useAuth } from "../../FirebaseCongfig/AuthContext"; // Import the useAuth hook
-import { getDatabase, ref, push, set, dbRef } from "firebase/database";
+import { getDatabase, ref, push, set} from "firebase/database";
 import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 
 const ID_main = () => {
-  const location = useLocation();
   const [complaintCategory, setComplaintCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
   const [ICdob, setICdob] = useState("");

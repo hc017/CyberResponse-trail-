@@ -4,8 +4,32 @@ import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { GrLinkPrevious } from "react-icons/gr";
+import { getDatabase, ref, push,remove  } from "firebase/database";
 
 const MoneyLaudering = () => {
+    const db = getDatabase();
+
+    const handleClick = (category) => {
+        const reportsRef = ref(db, 'victim/subcategory/');
+
+        // Clear existing data in the temporary_reports node
+        remove(reportsRef)
+            .then(() => {
+                // Add the new category to the database
+                push(reportsRef, category)
+                    .then(() => {
+                        alert(`${category} report added successfully!`);
+                    })
+                    .catch((error) => {
+                        console.error("Error writing to database:", error.message);
+                        alert("Error in adding report");
+                    });
+            })
+            .catch((error) => {
+                console.error("Error removing data from database:", error.message);
+                alert("Error in removing existing report data");
+            });
+    };
     return (
         <div className='ReportContainer'>
             <Em />
@@ -59,13 +83,13 @@ const MoneyLaudering = () => {
 
 
             <div className="CSSForSmallerButton">
-                <Link to="/upi" className="SmallerButtonCSS">
+                <Link to="/upi" className="SmallerButtonCSS"  onClick={() => handleClick("UPI Scams")}>
                     <span className="SmallerTextButton"> UPI/Credit Card</span>
                 </Link>
-                <Link to="/bankscam" className="SmallerButtonCSS">
+                <Link to="/bankscam" className="SmallerButtonCSS"  onClick={() => handleClick("Bank Scams")}>
                     <span className="SmallerTextButton">Bank Scams</span>
                 </Link>
-                <Link to="/webscam" className="SmallerButtonCSS">
+                <Link to="/webscam" className="SmallerButtonCSS"  onClick={() => handleClick("Website Scams")}>
                     <span className="SmallerTextButton">Website Scams</span>
                 </Link>
                 
