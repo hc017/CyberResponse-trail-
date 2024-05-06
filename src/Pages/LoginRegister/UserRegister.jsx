@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import "./UserRegister.css";
 import { Link, useHistory } from "react-router-dom";
@@ -7,7 +8,9 @@ import "react-phone-input-2/lib/style.css";
 import { auth } from "../../FirebaseCongfig/FirebaseConfig";
 import { getDatabase, ref, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 const UserRegister = () => {
   const [userRegister, setuserRegister] = useState(true);
@@ -18,16 +21,33 @@ const UserRegister = () => {
   const [Rmobile, setRMobile] = useState("");
   const [Rotp, setROtp] = useState("");
   const [error, setError] = useState("");
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const db = getDatabase();
 
   const handleRegister = () => {
-    console.log(email, state, password);
+    // console.log(email, state, password);
+
+    if (!state || !email || !password || !CFpassword || !Rmobile || !Rotp) {
+      alert("All fields are required!");
+      return;
+    }
+
+    if (password !== CFpassword) {
+      alert("Password and Confirm Password do not match!");
+      return;
+    }
+
+    if (Rmobile.length !== 13 || isNaN(Rmobile)) {
+      alert("Mobile number should be 10 digits!");
+      return;
+    }
+
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log("user creatted");
+        console.log("user created");
 
         set(ref(db, `users/${userCredential.user.uid}/register`), {
           state: state,
@@ -38,7 +58,7 @@ const UserRegister = () => {
         });
         // Redirect to another page after successful registration
         window.alert("Data added successfully!");
-        navigate("/", { userId: user.uid, email: email }); // Replace '/next-page' with your desired route
+        navigate("/login", { userId: user.uid, email: email }); // Replace '/next-page' with your desired route
         // ...
       })
       .catch((error) => {
@@ -67,6 +87,29 @@ const UserRegister = () => {
     setRMobile("");
     setROtp("");
   };
+
+  const sendotp = async () => {
+    try {
+      const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {});
+      const confirm = await signInWithPhoneNumber(auth, Rmobile, recaptcha);
+      setUser(confirm);
+      console.log("OTP sent");
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  
+  const verifyOtp = async () => {
+    try {
+      const otpdata = await user.confirm(Rotp);
+      console.log(otpdata)
+      alert("Correct OTP entered");
+    } catch (err) {
+      alert("OTP not matched");
+      console.error(err);
+    }
+  };
+  
 
   return (
     <div className="register-page">
@@ -147,7 +190,7 @@ const UserRegister = () => {
                   <div className="VIdiv">
                     <input
                       type="password"
-                      placeholder="Confirm ypur password"
+                      placeholder="Confirm your password"
                       className="R_vi_input"
                       required
                       value={CFpassword}
@@ -159,43 +202,46 @@ const UserRegister = () => {
                   <div className="ldiv">
                     <label className="R_VI_text">Mobile No:</label>
                   </div>
+
                   <div className="VIdiv">
-                    <input
-                      type="tel"
-                      country={"in"}
-                      className="R_vi_input"
-                      placeholder="Enter Your Mobile Number"
+                    <PhoneInput
+                      country={'in'}
+                      className="mobile"
                       value={Rmobile}
-                      onChange={(e) => setRMobile(e.target.value)}
-                      required
+                      onChange={(Rmobile) => setRMobile("+" + Rmobile)}
                     />
                   </div>
                 </div>
-                <div className="R_Vi_container">
+
+                <div className="otp_container">
                   <div className="ldiv">
                     <label className="R_VI_text" id="VIT_otp">
                       OTP:
                     </label>
                   </div>
+
                   <div className="VIdiv">
                     <input
                       type="text"
                       placeholder="Enter OTP"
-                      className="R_vi_input"
+                      className="otp_vi_input"
                       id="VIT_input"
                       value={Rotp}
                       onChange={(e) => setROtp(e.target.value)}
                       required
                     />
                   </div>
-
-                  <button type="button" className="R_BTN" id="#VIT_btn">
+                </div>
+                <div className="otp_btn">
+                  <button type="button" className="R_BTN" onClick={sendotp}>
                     Get OTP
                   </button>
-                  <button type="button" className="R_BTN" id="#VIT_btn">
+                  <button type="button" className="R_BTN" onClick={verifyOtp}>
                     Verify OTP
                   </button>
                 </div>
+                <div id="recaptcha"></div>
+
 
                 <div className="login-existinguser">
                   <Link
