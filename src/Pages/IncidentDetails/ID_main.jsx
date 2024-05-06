@@ -106,44 +106,44 @@ const ID_main = () => {
     }
   };
 
-  const complaintCategories = [
-    {
-      name: "Financial Fraud",
-      subcategories: ["UPI/Credit Card", "Bank Scams", "Website Scams"],
-    },
-    {
-      name: "Non-Financial Fraud",
-      subcategories: ["Sexual Harassment", "Cyber Terrorism", "Ransomware"],
-    },
-  ];
+  // const complaintCategories = [
+  //   {
+  //     name: "Financial Fraud",
+  //     subcategories: ["UPI/Credit Card", "Bank Scams", "Website Scams"],
+  //   },
+  //   {
+  //     name: "Non-Financial Fraud",
+  //     subcategories: ["Sexual Harassment", "Cyber Terrorism", "Ransomware"],
+  //   },
+  // ];
 
-  const renderSubCategorySelect = () => {
-    if (
-      complaintCategory &&
-      complaintCategories.some((cat) => cat.name === complaintCategory)
-    ) {
-      return (
-        <div className="ISD_vertical_input">
-          <p className="ISD_vi_text">Sub Category:</p>
-          <select
-            className={`ISD_vi_input ${subCategory ? "" : "change_color"}`}
-            value={subCategory}
-            onChange={(e) => setSubCategory(e.target.value)}
-          >
-            <option value="">Select Subcategory</option>
-            {complaintCategories
-              .find((cat) => cat.name === complaintCategory)
-              .subcategories.map((sub, index) => (
-                <option key={index} value={sub}>
-                  {sub}
-                </option>
-              ))}
-          </select>
-        </div>
-      );
-    }
-    return null;
-  };
+  // const renderSubCategorySelect = () => {
+  //   if (
+  //     complaintCategory &&
+  //     complaintCategories.some((cat) => cat.name === complaintCategory)
+  //   ) {
+  //     return (
+  //       <div className="ISD_vertical_input">
+  //         <p className="ISD_vi_text">Sub Category:</p>
+  //         <select
+  //           className={`ISD_vi_input ${subCategory ? "" : "change_color"}`}
+  //           value={subCategory}
+  //           onChange={(e) => setSubCategory(e.target.value)}
+  //         >
+  //           <option value="">Select Subcategory</option>
+  //           {complaintCategories
+  //             .find((cat) => cat.name === complaintCategory)
+  //             .subcategories.map((sub, index) => (
+  //               <option key={index} value={sub}>
+  //                 {sub}
+  //               </option>
+  //             ))}
+  //         </select>
+  //       </div>
+  //     );
+  //   }
+  //   return null;
+  // };
 
   const handleInputChange = (e) => {
     const newValue = e.target.value; // The updated input value
@@ -170,7 +170,14 @@ const ID_main = () => {
           <div className="ISD_formComp_1">
             <div className="ISD_vertical_input">
               <p className="ISD_vi_text">Complaint Category:</p>
-              <select
+              <input
+                type="text"
+                className="ISD_vi_input"
+                placeholder="Complaint category"
+                value={complaintCategory}
+                onChange={(e) => setComplaintCategory(e.target.value)}
+              />
+              {/* <select
                 // className="ISD_vi_input"
                 className={`ISD_vi_input ${complaintCategory ? "" : "change_color"
                   }`}
@@ -186,10 +193,21 @@ const ID_main = () => {
                     {category.name}
                   </option>
                 ))}
-              </select>
+              </select> */}
             </div>
 
-            {renderSubCategorySelect()}
+            <div className="ISD_vertical_input">
+              <p className="ISD_vi_text">Sub Category:</p>
+              <input
+                type="text"
+                className="ISD_vi_input"
+                placeholder="Complaint sub-category"
+                value={subCategory}
+                onChange={(e) => setSubCategory(e.target.value)}
+              />
+            </div>
+
+            {/* {renderSubCategorySelect()} */}
 
             <div className="ISD_block"></div>
           </div>
