@@ -17,8 +17,6 @@ const UserPhone = () => {
       <div className="DC_innerform">
       <img className='img_dc' src={DCL} alt="DC Logo" />
       <h1 className='dc_text'>PAGE UNDER DEVELOPEMENT</h1>
-
-
       </div>
     </div>
   </div>

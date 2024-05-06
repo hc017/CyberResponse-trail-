@@ -17,10 +17,12 @@
 }
 .CSD_innerComp2{
     width: 85%;
-    min-height: 100vh;
+    min-height: 90vh;
     max-height: 150vh;
     margin: 1% 0 0 7%;
     background-color: #2d2d2dbd;
+    overflow-y: auto;
+   
 }
 .complaintdetails_bar{
     width: 100%;
