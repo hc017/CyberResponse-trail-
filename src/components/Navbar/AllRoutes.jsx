@@ -26,6 +26,7 @@ import S1 from '../../Pages/StayInformed/S1'
 import UserProfile from '../../Pages/UserDetails/Userprofilebar/UserProfile'
 import AdminRegister from '../../Admin/Pages/AdminRegister/AdminRegister'
 import AdminDashboard from '../../Admin/Pages/Dashboard/AdminDashboard'
+import How_to_report from '../../Pages/Home/How_to/How_to_report'
 
 
 const AllRoutes = () => {
@@ -51,6 +52,7 @@ const AllRoutes = () => {
     {/* ------------------------------------------------------------------ */}
     <Route path='/adminregister' element={<AdminRegister/>}></Route>
     <Route path='/adminDashboard' element={<AdminDashboard/>}></Route>
+    <Route path="/how_to_report" element={<How_to_report/>}></Route>
 
 
    </Routes>

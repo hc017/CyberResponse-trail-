@@ -9,17 +9,17 @@
 }
 .TextContentJoin{
     background-color: #000;
-    width:65%;
+    width:70%;
     height:auto;
 }
 
 .TextContentTwoJoin{
-    background-color: rgb(20, 59, 59);
+    background-color: rgb(54, 185, 185);
     width:35%;
     height:50vh;
     margin-bottom: 2%;
 
-}
+} 
 
 .ImgJoin {
     background-color: #000;
