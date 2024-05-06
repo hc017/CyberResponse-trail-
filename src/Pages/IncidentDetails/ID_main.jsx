@@ -109,11 +109,10 @@ const ID_main = () => {
   return (
     <div className="ISD_component">
       <div className="ISD_innercomponent">
-        <Em />
-        <UP_bar/>
-        <div className="UD_up_bar">
-          
-        </div>
+      <Em />
+        <div className="UD_up_bar"></div>
+        <UP_bar />
+        <div className="UD_up_bar"></div>
         <UFP_red />
         <div className="UD_up_bar"></div>
         <IDX />
