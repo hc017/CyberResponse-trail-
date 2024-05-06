@@ -43,7 +43,7 @@ const UPI = () => {
                         
                     </div>
                     <div className="AlignmentForVictimReport">
-                        <Link to="/victim" className="BoxVictimReport">
+                        <Link to="/victim" className="BoxVictimReport" >
                             <span className="TextVictimReport">I am a victim</span>
                         </Link>
                         <Link to="/18older" className="BoxVictimReport">

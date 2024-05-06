@@ -4,8 +4,29 @@ import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { GrLinkPrevious } from "react-icons/gr";
+import { getDatabase, ref, push,remove  } from "firebase/database";
 
 const NonFinancial = () => {
+    const db = getDatabase();
+
+    const handleClick = (category) => {
+        const reportsRef = ref(db, 'victim/subcategory/');
+
+        // Clear existing data in the temporary_reports node
+        remove(reportsRef)
+            .then(() => {
+                // Add the new category to the database
+                push(reportsRef, category)
+                    .catch((error) => {
+                        console.error("Error writing to database:", error.message);
+                        alert("Error in adding report");
+                    });
+            })
+            .catch((error) => {
+                console.error("Error removing data from database:", error.message);
+                alert("Error in removing existing report data");
+            });
+    };
     return (
         <div className='ReportContainer'>
             <Em />
@@ -52,13 +73,13 @@ const NonFinancial = () => {
 
 
             <div className="CSSForSmallerButton">
-                <Link to="/sh" className="SmallerButtonCSS">
+                <Link to="/sh" className="SmallerButtonCSS" onClick={() => handleClick("Sexual Harassment")}>
                     <span className="SmallerTextButton"> Sexual Harassment</span>
                 </Link>
-                <Link to="/cyterror" className="SmallerButtonCSS">
+                <Link to="/cyterror" className="SmallerButtonCSS" onClick={() => handleClick("Cyber Terrorism")}>
                     <span className="SmallerTextButton">Cyber Terrorism</span>
                 </Link>
-                <Link to="/ransomware" className="SmallerButtonCSS">
+                <Link to="/ransomware" className="SmallerButtonCSS" onClick={() => handleClick("Ransomware")}>
                     <span className="SmallerTextButton">Ransomware</span>
                 </Link> 
              </div>
