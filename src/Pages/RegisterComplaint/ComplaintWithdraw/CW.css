@@ -1,125 +1,107 @@
 .CW_component {
-  width: 100%;
-  height: 130vh;
-  border-radius: 2px;
-  background-image: linear-gradient(to bottom,
+    width: 100%;
+    height: 130vh;
+    border-radius: 2px;
+    background-image: linear-gradient(
+      to bottom,
       rgba(0, 0, 0, 0.85),
       #0b0000,
-      rgba(0, 0, 0, 0.89));
-}
+      rgba(0, 0, 0, 0.89)
+    );
+  }
+  .CW_innercomponent {
+    width: 90%;
+    height: 130vh;
+    margin-left: 5%;
 
-.CW_innercomponent {
-  width: 90%;
-  height: 130vh;
-  margin-left: 5%;
+  }
+  .CW_innerform{
+    width: 85%;
+    min-height: 60vh;
+    max-height: 100vh;
+    border-radius: 2%;
+    height: auto;
+    margin-left: 7%;
+    background-color: #2d2d2dbd;
+  }
+  .CW_susdetail_bar{
+    width: 100%;
+    height: 2.2rem;
+    background-color: #88bdf2;
+    border-radius: 0.3rem 0.3rem 0 0;
 
-}
+  }
+  .CW_sus_text{
+    width: 25%;
+    height: 2.2rem;
+    font-family: Poppins;
+    padding-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
 
-.CW_innerform {
-  width: 85%;
-  min-height: 76vh;
-  max-height: 100vh;
-  border-radius: 2%;
-  height: auto;
-  margin-left: 7%;
-  background-color: #2d2d2dbd;
-}
+  }
+  .CW_table{
+    width: 85% ;
+    margin-left: 7%;
+  }
 
-.CW_susdetail_bar {
-  width: 100%;
-  height: 2.2rem;
-  background-color: #88bdf2;
-  border-radius: 0.3rem 0.3rem 0 0;
-
-}
-
-.CW_sus_text {
-  width: 25%;
-  height: 2.2rem;
-  font-family: Poppins;
-  padding-top: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #000000;
-
-}
-
-.CW_table {
-  width: 85%;
-  margin-left: 7%;
-  margin-top: 5%;
-}
-
-.CW_status_table {
-  width: 100%;
-  border-collapse: collapse;
-  /* Collapse table borders */
-  margin-top: 1rem;
-  /* Add margin from the top */
-}
-
-.CW_status_table th,
-.CW_status_table td {
-  padding: 0.5rem;
-  /* Add padding inside table cells */
-  border: 1px solid #fff;
-  /* Add border for cells */
-  text-align: center;
-  /* Center-align text in cells */
-  color: #ffffff;
-  /* Set text color */
-}
-
-.CW_status_table th {
-  background-color: #88bdf2;
-  /* Set background color for table header */
-  color: #000000;
-  /* Set text color for table header */
-}
-
-.CW_status_table tbody tr:nth-child(even) {
-  background-color: transparent;
-  /* Alternate row background color */
-  color: white;
-}
-
-.CW_status_table tbody tr:hover {
-  background-color: #4f4f4f;
-  /* Hover effect for rows */
-  color: rgb(0, 0, 0);
-}
-
-.CW_status_table td:hover {
-  color: #ffffff;
-
-}
-
-.CW_actbtn {
-  width: 75%;
-  height: 5vh;
-  margin: 4%;
-  font-weight: bold;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  font-family: monospace;
-  cursor: pointer;
-  font-size: 17px;
-  text-transform: uppercase;
-  border: transparent;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  background: #4f86d2;
-  color: white;
-  border-radius: 4px;
-}
-
-.CW_actbtn:hover {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, #4f86d2 0%, rgb(36, 123, 210) 100%);
-}
+  .CW_status_table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse table borders */
+    margin-top: 1rem; /* Add margin from the top */
+  }
+  
+  .CW_status_table th,
+  .CW_status_table td {
+    padding: 0.5rem; /* Add padding inside table cells */ 
+    border: 1px solid #fff; /* Add border for cells */
+    text-align: center; /* Center-align text in cells */
+    color: #ffffff; /* Set text color */
+  }
+  
+  .CW_status_table th {
+    background-color: #88bdf2; /* Set background color for table header */
+    color: #000000; /* Set text color for table header */
+  }
+  
+  .CW_status_table tbody tr:nth-child(even) {
+    background-color: transparent; /* Alternate row background color */
+    color: white;
+  }
+  
+  .CW_status_table tbody tr:hover {
+    background-color: #4f4f4f; /* Hover effect for rows */
+    color: rgb(0, 0, 0);
+  }
+  .CW_actbtn{
+    width: 76%;
+    height: 5vh;
+    margin-left: 4%;
+    font-size: 1.1rem;
+    font-family: monospace;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    background: #4f86d2;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    display: inline-flex; 
+    cursor: pointer;
+  }
+  #CW_actbtn:hover {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, #4f86d2 0%, rgb(36, 123, 210) 100%);
+  }
+  #CW_actbtn:active {
+    transform: translate(0em, 0.2em);
+  }

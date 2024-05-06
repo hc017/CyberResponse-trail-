@@ -2,15 +2,52 @@
     width: 100%;
     height: 120vh;
     border-radius: 2px;
+    /* background-color: aqua; */
     background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.85),
       #0b0000,
       rgba(0, 0, 0, 0.89)
-    );
+    ); 
   }
   .UserD_innercomponent {
     width: 90%;
     height: 130vh;
     margin-left: 5%;
   }
+  .innerform{
+    width: 85%;
+    min-height: 60vh;
+    max-height: 100vh;
+    border-radius: 2%;
+    height: auto;
+    margin-left: 7%;
+    background-color: #2d2d2dbd;
+  }
+  .mail_text{
+    color: yellow;
+  }
+/* UserPhone.css */
+
+/* Style for the table */
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Remove borders between table cells */
+}
+
+/* Style for table rows */
+.table tbody tr {
+  border-bottom: 1px solid #ddd; /* Add a bottom border for separation between rows */
+}
+
+/* Style for table cells */
+.table td {
+  padding: 8px;
+  text-align: left;
+  color: white; /* Set text color to white */
+}
+
+/* Style for table cell on even rows */
+.table tbody tr:nth-child(even) td {
+  background-color: #f2f2f2; /* Add alternate background color for better readability */
+}
