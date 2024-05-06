@@ -9,7 +9,7 @@ const HomeButtons = () => {
     navigate("/reportincident")
   }
   const handleHowto = () => {
-    navigate("/")
+    navigate("/how_to_report")
   }
   const handleStayInformed = () => {
     navigate("/stayinformed")

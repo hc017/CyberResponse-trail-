@@ -1,0 +1,51 @@
+.patterns {
+    height: 15vh;
+  }
+  svg text {
+    font-family: Lora;
+    letter-spacing: 10px;
+    stroke: #88bdf2;
+    font-size: 80px;
+    font-weight: 200;
+    stroke-width: 3;
+    animation: textAnimate 5s infinite alternate;
+    
+  }
+  @keyframes textAnimate {
+    0% {
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset:  20%;
+      fill:hsl(189, 68%, 75%)
+  
+    }
+    
+    100% {
+      stroke-dasharray: 50% 0;
+      stroke-dashoffstet: -20%;
+      fill: hsla(189, 68%, 75%,0%)
+    }
+    
+  }
+
+  /* How_to_report.css */
+
+.video-placeholder {
+    width: 100%; /* Adjust as needed */
+    max-width: 1000px; /* Maximum width for the video player */
+    margin: 0 auto; /* Center the video player horizontally */
+    height: 700px; /* Adjust the height as needed */
+  }
+  
+  .video-placeholder video {
+    width: 100%; /* Make the video player responsive */
+    height: 100%; /* Make the video player take up full height of its container */
+  }
+  .AboutTextContentJoi {
+    background-color: #000;
+    width: 65%;
+    height: auto;
+    display: flex; /* Use Flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    text-align: center; /* Center text horizontally */
+  }
