@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getDatabase, ref, get } from "firebase/database";
+import { getDatabase, ref, get, update } from "firebase/database";
 import { useAuth } from "../../../FirebaseCongfig/AuthContext";
 import Em from "../../../components/Emergency/Em";
 import UFP_red from "../UserForm/UFP_red";
@@ -48,6 +48,39 @@ const UserProfile = () => {
     }
   }, [currentUser]);
 
+  const handleUserDetailsChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails((prevDetails) => ({
+      ...prevDetails,
+      [name]: value,
+    }));
+
+    // Update Firebase database
+    update(ref(getDatabase(), `users/${currentUser.uid}/userdetails`), {
+      [name]: value,
+    }).catch((error) => {
+      console.error("Error updating user details:", error);
+    });
+  };
+
+  const handlePermanentAddressChange = (e) => {
+    const { name, value } = e.target;
+    setPermanentAddress((prevAddress) => ({
+      ...prevAddress,
+      [name]: value,
+    }));
+
+    // Update Firebase database
+    update(
+      ref(getDatabase(), `users/${currentUser.uid}/userdetails/permanentAddress`),
+      {
+        [name]: value,
+      }
+    ).catch((error) => {
+      console.error("Error updating permanent address:", error);
+    });
+  };
+
   return (
     <div className="UserP_component">
       <div className="UserD_innercomponent">
@@ -63,141 +96,147 @@ const UserProfile = () => {
             <p className="CW_sus_text">User Profile</p>
           </div>
           <div className="innerComp2">
-  {userDetails ? (
-    <table className="user-details">
-      <tbody>
-        <tr>
-          <td className="label">Name:</td>
-          <td className="value">{userDetails.RegName}</td>
-        </tr>
-        <tr>
-          <td className="label">Email:</td>
-          <td className="value">{currentUser.email}</td>
-        </tr>
-        <tr>
-          <td className="label">Phone Number:</td>
-          <td className="value">{userDetails.RegMobile}</td>
-        </tr>
-        <tr>
-          <td className="label">Gender:</td>
-          <td className="value">{userDetails.RegGender}</td>
-        </tr>
-        <tr>
-          <td className="label">DOB:</td>
-          <td className="value">{userDetails.ReDob}</td>
-        </tr>
-        {permanentAddress ? (
-          <>
-            <tr>
-              <td className="label">Nearest Police Station:</td>
-              <td className="value">{permanentAddress.policeStation}</td>
-            </tr>
-            <tr>
-              <td className="label">State:</td>
-              <td className="value">{permanentAddress.state}</td>
-            </tr>
-            <tr>
-              <td className="label">District:</td>
-              <td className="value">{permanentAddress.district}</td>
-            </tr>
-            <tr>
-              <td className="label">Country:</td>
-              <td className="value">{permanentAddress.country}</td>
-            </tr>
-          </>
-        ) : (
-          <tr>
-            <td colSpan="2">Permanent address not available</td>
-          </tr>
-        )}
-      </tbody>
-    </table>
-  ) : (
-    <p>Loading user details...</p>
-  )}
-</div>
-
+            {userDetails ? (
+              <form className="user-details">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label>Name:</label>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          value={userDetails.RegName}
+                          name="RegName"
+                          onChange={handleUserDetailsChange}
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Email:</label>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          value={currentUser.email}
+                          readOnly
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Phone Number:</label>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          value={userDetails.RegMobile}
+                          name="RegMobile"
+                          onChange={handleUserDetailsChange}
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Gender:</label>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          value={userDetails.RegGender}
+                          name="RegGender"
+                          onChange={handleUserDetailsChange}
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>DOB:</label>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          value={userDetails.ReDob}
+                          name="ReDob"
+                          onChange={handleUserDetailsChange}
+                        />
+                      </td>
+                    </tr>
+                    {permanentAddress ? (
+                      <>
+                        <tr>
+                          <td>
+                            <label>Nearest Police Station:</label>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              value={permanentAddress.policeStation}
+                              name="policeStation"
+                              // onChange={handlePermanentAddressChange}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>State:</label>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              value={permanentAddress.state}
+                              name="state"
+                              onChange={handlePermanentAddressChange}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>District:</label>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              value={permanentAddress.district}
+                              name="district"
+                              onChange={handlePermanentAddressChange}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>Country:</label>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              value={permanentAddress.country}
+                              name="country"
+                              onChange={handlePermanentAddressChange}
+                            />
+                          </td>
+                        </tr>
+                      </>
+                    ) : (
+                      <tr>
+                        <td colSpan="2">Permanent address not available</td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </form>
+            ) : (
+              <p>Loading user details...</p>
+            )}
+            <button className="save_btn" onClick={() => alert("Data changed")}>Save Data</button>
+          </div>
         </div>
       </div>
     </div>
   );
+  
 };
 
 export default UserProfile;
-
-/* // import React from 'react'
-// import './UserProfile.css'
-// import { useAuth } from "../../../FirebaseCongfig/AuthContext";
-
-// const UserProfile = () => {
-//     const { currentUser, logout } = useAuth();
-
-//     return (
-//         <div>
-//             <div className="profile_box">
-//                 <div className="edit_name">
-//                     <div className="profile_buttons">
-//                         <div className="profile_tag">
-//                             <p className='pf_name'>Profile</p>
-//                             <p className='personal_pf'>Settings for your personal profile</p>
-//                         </div>
-
-//                         <div className="pf_button">
-//                             <button className='edit-pf'>Edit</button>
-//                             <button className='save-pf'>Save Changes</button>
-//                             <button className='cancel-pf'>Cancel</button>
-//                         </div>
-//                     </div>
-//                     <div className="hz_line"></div>
-
-//                     <div className="pf_details">
-//                         <p className='pf_name'>User Name</p>
-//                         <p className='my_name'>My Name</p>
-//                     </div>
-
-//                     <div className="pf_edit_form">
-//                         <label className='fullname'>Full Name</label>
-//                         <input type="text" id='fullname' />
-
-//                         <label className='pf_email'>Email ID</label>
-//                         <input type="text" id='pf_email' /> 
-
-//                         <label className='pf_phone'>Mobile Number</label>
-//                         <input type="text" id='pf_phone' />
-
-//                     </div>
-//                 </div>
-
-//                 <div className="edit_other">
-//                     <div className="pf_edit_form">
-//                         <label className='fullname'>Date Of Birth </label>
-//                         <input type="text" id='fullname' />
-
-//                         <label className='pf_email'>Gender</label>
-//                         <input type="text" id='pf_email' />
-
-//                         <label className='pf_phone'>Father/Mother/Spouse Relationship</label>
-//                         <input type="text" id='pf_phone' />
-
-//                     </div>
-//                 </div>
-
-//                 <div className="edit_address">
-//                     <div className="pf_edit_form">
-//                         <label className='fullname'> Street Name/Colony </label>
-//                         <input type="text" id='fullname' />
-
-//                         <label className='pf_email'>City</label>
-//                         <input type="text" id='pf_email' />
-
-//                         <label className='pf_phone'>State</label>
-//                         <input type="text" id='pf_phone' />
-
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default UserProfile */
