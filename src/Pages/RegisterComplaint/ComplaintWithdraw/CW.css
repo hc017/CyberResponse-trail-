@@ -59,7 +59,7 @@
   
   .CW_status_table th,
   .CW_status_table td {
-    padding: 0.5rem; /* Add padding inside table cells */
+    padding: 0.5rem; /* Add padding inside table cells */ 
     border: 1px solid #fff; /* Add border for cells */
     text-align: center; /* Center-align text in cells */
     color: #ffffff; /* Set text color */

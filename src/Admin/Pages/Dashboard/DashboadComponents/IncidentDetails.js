@@ -12,7 +12,11 @@ const IncidentDetails = ({ incident, onUpdateStatus }) => {
     <div className="incident-details">
       <h3>Incident Details</h3>
       <p>ID: {incident.id}</p>
-      <p>Title: {incident.title}</p>
+      <p>Date&Time: {incident.datetime}</p>
+      <p>Complaint-Category: {incident.complaintCategory}</p>
+      <p>Sub-Category: {incident.subCategory}</p>
+      <p>Other: {incident.others}</p>
+      <p>Place: {incident.place}</p>
       <p>Status: {incident.status}</p>
 
       <div className="status-update">

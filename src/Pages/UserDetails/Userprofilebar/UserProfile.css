@@ -1,4 +1,4 @@
-.profile_box{
+/* .profile_box{
     width: 100%;
     background-color: #fff;
     padding-top: 1rem;
@@ -72,4 +72,32 @@
     margin: 0rem 0 1rem 2rem;
     border-radius: 5px;
     border: 1px solid rgb(210, 208, 208);
-}
+} */
+.innerComp2 {
+    font-family: Arial, sans-serif;
+  }
+  
+  .user-details {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-details td {
+    padding: 8px;
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  .user-details .label {
+    font-weight: bold;
+    width: 30%; /* Adjust the width of the label column */
+  }
+  
+  .user-details .value {
+    color: #ffffff;
+    width: 70%; /* Adjust the width of the value column */
+  }
+  
+  .user-details td[colspan="2"] {
+    text-align: center;
+  }
+  

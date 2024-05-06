@@ -1,0 +1,67 @@
+.HomePageKabutton {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #000;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #295f86;
+    background-color: #0d0e0f;
+    
+  }
+  
+  .HomePageKabutton:hover {
+    color: #fff;
+    transform: scale(1.1);
+    outline: 2px solid #70bdca;
+    box-shadow: 4px 5px 17px -4px #295f86;
+  }
+  
+  .HomePageKabutton::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #295f86;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+  
+  .HomePageKabutton:hover::before {
+    width: 250%;
+  }
+  
+
+
+
+.hero {
+    /* background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)) ; */
+    padding: 150px 0;
+    text-align: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero-content {
+   width: 80%;
+   margin: 0 auto; /* This will center the element horizontally */
+   text-align: center; 
+   
+}
+
+
+.hero-buttons {
+   display: flex;
+   justify-content: space-between;
+   
+   
+} 

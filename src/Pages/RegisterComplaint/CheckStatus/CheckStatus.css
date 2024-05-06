@@ -16,7 +16,7 @@
   }
   .CS_innerForm{
     width: 85%;
-    min-height: 60vh;
+    min-height: 75vh;
     max-height: 100vh;
     height: auto;
     margin-left: 7%;
@@ -42,7 +42,6 @@
     letter-spacing: normal;
     text-align: center;
     color: #000000;
-
   }
   .CS_block{
     width: 100%;
@@ -52,7 +51,6 @@
     width: 100%;
     height: 2.5rem;
     border-bottom: 1px solid rgba(189, 189, 189, 0.617);
-
   }
   .CS_status_container{
     width: 90%;
@@ -63,7 +61,6 @@
     width: 100%;
     height: 2rem;
     display: flex;
-
   }
 .CS_vi_input1{
   width: 30%;
@@ -73,34 +70,47 @@
   box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: #d9d9d9;
   border: none;
+  padding-left: 0.8rem;
 }
 .CS_vi_input2{
   width: 30%;
   height: 2rem;
   margin-left: 5%;
+  padding-left: 0.8rem;
   border-radius: 5px;
   box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: #d9d9d9;
   border: none;
 }
 .CS_vi_btn{
-  width: 5%;
-  height: 2rem;
+  width: 8%;
+  height: 100%;
   margin-left: 2%;
-  border-radius: 5px;
-  color: #a4e1f4;
-  border: 1px solid #a4e1f4;
-  background-color: transparent;
-  display: inline-flex; /* Use flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  text-decoration: none; /* Remove default link underline */
-
-
+  display: inline-flex; 
+  justify-content: center;
+  align-items: center; 
+  text-decoration: none;
+  font-family: monospace;
+  cursor: pointer;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding: 0.5em 2em;
+  border: transparent;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  background: #4f86d2;
+  color: white;
+  border-radius: 4px;
+}
+.CS_vi_btn:hover{
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, #4f86d2 0%, rgb(36, 123, 210) 100%);
+}
+#CS_vi_btn:active {
+  transform: translate(0em, 0.2em);
 }
 .CS_block2{
   width: 100%;
-  height: 1.5rem;
+  height: 2.5rem;
 
 }
 .CS_status_table {
@@ -111,7 +121,7 @@
 
 .CS_status_table th,
 .CS_status_table td {
-  padding: 0.5rem; /* Add padding inside table cells */
+  padding: 0.7rem; /* Add padding inside table cells */
   border: 1px solid #fff; /* Add border for cells */
   text-align: center; /* Center-align text in cells */
   color: #ffffff; /* Set text color */
@@ -128,17 +138,18 @@
 }
 
 .CS_status_table tbody tr:hover {
-  background-color: #88bdf2; /* Hover effect for rows */
+  background-color: #4f4f4f; /* Hover effect for rows */
   color: rgb(0, 0, 0);
 }
 .CS_status_table td:hover{
-  color: #66dbff;
+  color: #ffffff;
 
 }
 .CS_actbtn{
-  width: 50%;
-  height: 30%;
+  width: 60%;
+  height: 4vh;
   border-radius: 5px;
+  font-weight: bold;
   color: #a4e1f4;
   border: 1px solid #a4e1f4;
   background-color: transparent;
@@ -147,9 +158,13 @@
   align-items: center; /* Center vertically */
   text-decoration: none; /* Remove default link underline */
 }
+.CS_actbtn:hover{
+  background-color: #a4e1f4;
+  color: #000000;
+}
 .CS_radio_block{
   width: 100%;
-  height: 1rem;
+  height: 2rem;
   display: flex;
   margin-top: 0.5rem;
 }
@@ -165,10 +180,13 @@
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   text-decoration: none; /* Remove default link underline */
-  margin-left: 2%;
   height: 1rem;
 
 }
 .label{
   color: white;
+}
+.CS_no_data{
+  color: #fff;
+  margin-left: 10%;
 }
