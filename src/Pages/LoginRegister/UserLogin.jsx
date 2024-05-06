@@ -50,7 +50,7 @@ const UserLogin = () => {
             .then((snapshot) => {
               if (snapshot.exists()) {
                 alert("Logged in successfully!");
-                navigate("/incidentdetails", {
+                navigate("/reportincident", {
                   state: { uids: user.uid },
                 });
               } else {
