@@ -7,6 +7,7 @@ import { getDatabase, ref, onValue } from "firebase/database";
 
 const CheckStatus = () => {
   const [statusData, setStatusData] = useState([]);
+  const [delayReporting, setDelayReporting] = useState("");
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -141,15 +142,15 @@ const CheckStatus = () => {
                 </tbody>
               </table>
             ) : (
-              <p>No data available</p>
+              <p className="CS_no_data">No data available</p>
             )}
             <div className="CS_block3"></div>
             <div className="CS_radio_block">
               <p className="radioQ"> Do you want to share address of the suspect?</p>
               
-            <input type="radio" className="CS_vi_radio_input2" />
+            <input type="radio" className="CS_vi_radio_input2" checked={delayReporting === "yes"} onChange={() => setDelayReporting("yes")}/>
             <label className="label" htmlFor="">Yes</label>
-            <input type="radio" className="CS_vi_radio_input2" />
+            <input type="radio" className="CS_vi_radio_input2" checked={delayReporting === "no"} onChange={() => setDelayReporting("no")}/>
             <label className="label" htmlFor="">No</label>
 
             </div>

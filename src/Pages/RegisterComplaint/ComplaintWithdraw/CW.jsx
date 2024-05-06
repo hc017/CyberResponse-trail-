@@ -8,39 +8,39 @@ const CW = () => {
   const [statusData, setStatusData] = useState([
     {
       id: 1,
-      requestDate: "2024-03-27",
-      status: "Pending",
-      subject: "Subject 1",
-      lastUpdate: "2024-03-27 10:00:00",
+      requestDate: "2024-05-05",
+      status: "Open",
+      case: "Email Phishing",
+      lastUpdate: "2024-05-06 10:00:00",
     },
     {
       id: 2,
-      requestDate: "2024-03-28",
-      status: "Completed",
-      subject: "Subject 2",
-      lastUpdate: "2024-03-28 12:00:00",
+      requestDate: "2024-05-04",
+      status: "Under Investigation",
+      case: "Unauthorized Access",
+      lastUpdate: "2024-05-06 12:00:00",
     },
     {
       id: 3,
-      requestDate: "2024-03-29",
-      status: "Pending",
-      subject: "Subject 3",
-      lastUpdate: "2024-03-29 08:00:00",
+      requestDate: "2024-05-02",
+      status: "Closed",
+      case: "Social Security Fraud",
+      lastUpdate: "2024-05-03 08:00:00",
     },
     // Additional dummy data for cybercrime incidents
     {
       id: 4,
-      requestDate: "2024-03-30",
-      status: "Completed",
-      subject: "Cybercrime Incident A",
-      lastUpdate: "2024-03-30 09:30:00",
+      requestDate: "2024-05-03",
+      status: "Resolved",
+      case: "Malicious Software",
+      lastUpdate: "2024-05-04 09:30:00",
     },
     {
       id: 5,
-      requestDate: "2024-03-31",
-      status: "Pending",
-      subject: "Cybercrime Incident B",
-      lastUpdate: "2024-03-31 11:45:00",
+      requestDate: "2024-05-01",
+      status: "Under Investigation",
+      case: "Trojan Horse",
+      lastUpdate: "2024-05-03 11:45:00",
     },
   ]);
 
@@ -69,7 +69,7 @@ const CW = () => {
                 <tr>
                   <th>ID</th>
                   <th>Request Date</th>
-                  <th>Subject</th>
+                  <th>Case</th>
                   <th>Status</th>
                   <th>Last Update</th>
                   <th>Action</th>
@@ -80,7 +80,7 @@ const CW = () => {
                   <tr key={status.id}>
                     <td>{status.id}</td>
                     <td>{status.requestDate}</td>
-                    <td>{status.subject}</td>
+                    <td>{status.case}</td>
                     <td>{status.status}</td>
                     <td>{status.lastUpdate}</td>
                     <td>

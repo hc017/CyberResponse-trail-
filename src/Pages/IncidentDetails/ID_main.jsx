@@ -46,7 +46,7 @@ const ID_main = () => {
     }
   }, [currentUser]);
 
-  
+
   const generateIncidentID = () => {
     let categoryPrefix = "";
     let subCategoryPrefix = "";
@@ -94,9 +94,9 @@ const ID_main = () => {
     try {
       // Generate a unique ID for the incident
       // Store form data in Realtime Database with the unique ID
-       const incidentID = generateIncidentID();
-       await set(ref(db, `users/${currentUser.uid}/incidentdetails/${incidentID}`), data);
-       await set(ref(db, `incidents/${currentUser.uid}/incidentdetails/${incidentID}`), data);
+      const incidentID = generateIncidentID();
+      await set(ref(db, `users/${currentUser.uid}/incidentdetails/${incidentID}`), data);
+      await set(ref(db, `incidents/${currentUser.uid}/incidentdetails/${incidentID}`), data);
       console.log("Data saved successfully!");
       window.alert("Data added successfully!");
       navigate("/suspectdetails");
@@ -171,9 +171,8 @@ const ID_main = () => {
               <p className="ISD_vi_text">Complaint Category:</p>
               <select
                 // className="ISD_vi_input"
-                className={`ISD_vi_input ${
-                  complaintCategory ? "" : "change_color"
-                }`}
+                className={`ISD_vi_input ${complaintCategory ? "" : "change_color"
+                  }`}
                 value={complaintCategory}
                 onChange={(e) => {
                   setComplaintCategory(e.target.value);
