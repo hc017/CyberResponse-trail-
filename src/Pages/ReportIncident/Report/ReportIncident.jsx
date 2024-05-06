@@ -7,7 +7,7 @@ const ReportIncident = () => {
     return (
         <div className='ReportContainer'>
             <Em />
-            <div className="BlockForReport1">
+            <div className="BlockForReport1" id="movereport">
                 <div className="AlignToUseAll">
                     <div className="Report-An-Incident-Immediately">Report An Incident Immediately</div>
                     <div className="ReportLine"></div>
