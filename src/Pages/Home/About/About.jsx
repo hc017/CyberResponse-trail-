@@ -30,7 +30,7 @@ const About = () => {
                 </div>
                 <div className="AboutTextContentJoin" ref={ref}>
                     <div className={`AboutUsText ${isVisible ? 'isVisible' : ''}`}>
-                        <h1 className="TextDecoration">About CyberSecurity</h1>
+                        <h1 className="TextDecoration">About CyberSoochna</h1>
                         
                         
                        

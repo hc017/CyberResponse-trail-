@@ -2,7 +2,6 @@ import React from 'react';
 import '../ReportIncident.css';
 import Em from "../../../components/Emergency/Em";
 import { Link } from 'react-router-dom';
-import UsefulLinks from '../../../components/UsefuLinks/UsefulLinks';
 
 const ReportIncident = () => {
     return (
@@ -23,7 +22,6 @@ const ReportIncident = () => {
                 </div>
                 <div className="Endline"></div>
             </div>
-            <UsefulLinks />
         </div>
 
     );

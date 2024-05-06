@@ -1,13 +1,6 @@
 import React from "react";
 import "./Home.css";
-import H_img from "./hero -img.png";
-import UsefulLinks from "../../components/UsefuLinks/UsefulLinks";
-// import Playback_video from "./Playback_video/Playback_video";
-import Banner from "./Banner_1/Banner";
-import Banner2 from "./Banner_2/Banner2";
-import { Link } from "react-router-dom";
 import Hero_section from "./Hero_section";
-import HomeButtons from "./HomeButtons";
 import JoinUs from "./JoinUs/JoinUs";
 import About from "./About/About";
 const Home = () => {
