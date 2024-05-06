@@ -17,9 +17,6 @@ const MoneyLaudering = () => {
             .then(() => {
                 // Add the new category to the database
                 push(reportsRef, category)
-                    .then(() => {
-                        alert(`${category} report added successfully!`);
-                    })
                     .catch((error) => {
                         console.error("Error writing to database:", error.message);
                         alert("Error in adding report");

@@ -17,9 +17,7 @@ const Older = () => {
             .then(() => {
                 // Add the new category to the database
                 push(reportsRef, category)
-                    .then(() => {
-                        alert(`${category} report added successfully!`);
-                    })
+                    
                     .catch((error) => {
                         console.error("Error writing to database:", error.message);
                         alert("Error in adding report");
@@ -75,10 +73,10 @@ const Older = () => {
             </div>
 
              <div className="ButtonCSS">
-                <Link to="/moneylaundering" className="ButtonReport" onClick={() => handleClick("financialfraud")}>
+                <Link to="/moneylaundering" className="ButtonReport" onClick={() => handleClick("Financial Frauds")}>
                     <span className="ReportText">Financial Fraud</span>
                 </Link>
-                <Link to="/nonfinancial" className="ButtonReport" onClick={() => handleClick("nonfinancialfraud")}>
+                <Link to="/nonfinancial" className="ButtonReport" onClick={() => handleClick("Non-financial Frauds")}>
                     <span className="ReportText">Non-Financial Fraud</span>
                 </Link>
             </div>
