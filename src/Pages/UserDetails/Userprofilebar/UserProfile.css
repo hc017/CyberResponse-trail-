@@ -1,103 +1,51 @@
-/* .profile_box{
-    width: 100%;
-    background-color: #fff;
-    padding-top: 1rem;
-}
-.edit_name{
-    width: 50%;
-    height: 60vh;
-    margin: 0rem 0 0 21rem;
-    border-radius: 7px;
-    border: 1px solid rgb(210, 208, 208);
-    background-color: #fff;
-    box-shadow: inset 0rem 0.1rem 0.1rem 0rem #00000040;
-
-}
-.edit_other{
-    width: 50%;
-    height: 40vh;
-    margin: 2rem 0 0 21rem;
-    border-radius: 7px;
-    border: 1px solid rgb(210, 208, 208);
-    background-color: #fff;
-    box-shadow: inset 0rem 0.1rem 0.1rem 0rem #00000040;
-}
-.edit_address{
-    width: 50%;
-    height: 40vh;
-    margin: 2rem 0 0 21rem;
-    border-radius: 7px;
-    border: 1px solid rgb(210, 208, 208);
-    background-color: #fff;
-    box-shadow: inset 0rem 0.1rem 0.1rem 0rem #00000040;
-}
-.profile_buttons{
-    margin: 0 0 0 2rem;
-    display: flex;
-}
-.pf_name{
-    font-weight: bold;
-    margin: 1.2rem 0 0 0;
-}
-.personal_pf{
-    font-size: 0.8rem;
-    margin: 0 0 0.6rem 0;
-}
-.hz_line{
-    width: 95%;
-    border-bottom: 1.5px solid rgb(210, 208, 208);
-    margin: 0.2rem 0;
-}
-.pf_details{
-    margin-left: 2rem;
-}
-.my_name{
-    margin: 0;
-    font-size: 0.9rem;
-}
-.pf_edit_form{
-    margin: 2rem 0 0 0;
-}
-.fullname, .pf_email, .pf_phone{
-    width: 90%;
-    height: 4vh;
-    display: block;
-    margin: 0rem 0 0 2rem;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-#fullname, #pf_email, #pf_phone{
-    width: 80%;
-    height: 5vh;
-    margin: 0rem 0 1rem 2rem;
-    border-radius: 5px;
-    border: 1px solid rgb(210, 208, 208);
-} */
 .innerComp2 {
-    font-family: Arial, sans-serif;
+    margin: 20px;
   }
   
+  /* Form styling */
   .user-details {
-    width: 100%;
+    display: grid;
+    gap: 10px;
+  }
+  
+  /* Label styling */
+  .user-details label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+  }
+  
+  /* Input field styling */
+  .user-details input {
+    width: 60%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Style for the paragraph inside form */
+  .user-details p {
+    margin-top: 10px;
+    color: #ffffff;
+  }
+  table {
     border-collapse: collapse;
   }
   
-  .user-details td {
-    padding: 8px;
-    border-bottom: 1px solid #ffffff;
+  table, th, td {
+    border: none;
+  }
+  .save_btn {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
   }
   
-  .user-details .label {
-    font-weight: bold;
-    width: 30%; /* Adjust the width of the label column */
+  .save_btn:hover {
+    background-color: #45a049;
   }
-  
-  .user-details .value {
-    color: #ffffff;
-    width: 70%; /* Adjust the width of the value column */
-  }
-  
-  .user-details td[colspan="2"] {
-    text-align: center;
-  }
-  
