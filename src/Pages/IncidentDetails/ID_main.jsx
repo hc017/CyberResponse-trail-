@@ -11,7 +11,6 @@ import { getDatabase, ref, push, set, dbRef } from "firebase/database";
 import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 
 const ID_main = () => {
-  const [count, setCount] = useState(1500);
   const location = useLocation();
   const [complaintCategory, setComplaintCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
@@ -23,7 +22,7 @@ const ID_main = () => {
   const [delayReporting, setDelayReporting] = useState("");
   const maxChars = 1500; // Maximum allowed characters
   const [inputValue, setInputValue] = useState(''); // State to hold the input field value
-  const [charsLeft, setCharsLeft] = useState(maxChars); // State to hold the count of characters left
+  const [charsLeft, setCharsLeft] = useState(maxChars); // State to hold the  of characters left
   const { currentUser } = useAuth(); // Get currentUser from the authentication context
   const db = getDatabase();
   const storage = getStorage();
@@ -74,7 +73,10 @@ const ID_main = () => {
     const incidentRef = ref(db, `users/${currentUser.uid}/incidentdetails`);
     const newIncidentRef = push(incidentRef);
     const newIncidentKey = newIncidentRef.key;
-    return `${categoryPrefix}${newIncidentKey}${subCategoryPrefix}`;
+    // return `${categoryPrefix}${newIncidentKey}${subCategoryPrefix}`;
+    const incidentsID = `${categoryPrefix}${newIncidentKey}${subCategoryPrefix}`;
+    localStorage.setItem("incidentID", incidentsID); // Store incident ID in local storage
+    return incidentsID;
   };
 
   const handleSaveAndSubmit = async () => {
@@ -147,7 +149,7 @@ const ID_main = () => {
   const handleInputChange = (e) => {
     const newValue = e.target.value; // The updated input value
     setInputValue(newValue); // Update the input field value
-    setCharsLeft(maxChars - newValue.length); // Update the remaining characters count
+    setCharsLeft(maxChars - newValue.length); // Update the remaining characters 
   };
 
   return (

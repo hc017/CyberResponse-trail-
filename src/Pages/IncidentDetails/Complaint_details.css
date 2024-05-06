@@ -1,6 +1,6 @@
 .CD_component{
     width: 100%;
-    height: 130vh;
+    height: 150vh;
     border-radius: 2px;
     margin-bottom: 5%;
     background-image: linear-gradient(
@@ -35,6 +35,7 @@
     height: 2.2rem;
     font-family: Poppins;
     padding-top: 0.5rem;
+    margin: 0;
     font-size: 17px;
     font-weight: bold;
     font-stretch: normal;
