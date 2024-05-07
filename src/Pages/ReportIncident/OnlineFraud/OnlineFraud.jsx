@@ -4,8 +4,30 @@ import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { GrLinkPrevious } from "react-icons/gr";
+import { getDatabase, ref, push,remove  } from "firebase/database";
 
 const OnlineFrauds = () => {
+    const db = getDatabase();
+
+    const handleClick = (category) => {
+        const reportsRef = ref(db, 'victim/subcategory/');
+
+        // Clear existing data in the temporary_reports node
+        remove(reportsRef)
+            .then(() => {
+                // Add the new category to the database
+                push(reportsRef, category)
+                    
+                    .catch((error) => {
+                        console.error("Error writing to database:", error.message);
+                        alert("Error in adding report");
+                    });
+            })
+            .catch((error) => {
+                console.error("Error removing data from database:", error.message);
+                alert("Error in removing existing report data");
+            });
+    };
     return (
         <div className='ReportContainer'>
             <Em />
@@ -52,14 +74,14 @@ const OnlineFrauds = () => {
 
 
             <div className="CSSForSmallerButton">
-                <Link to="/financialfrauds" className="SmallerButtonCSS">
+                <Link to="/financialfrauds" className="SmallerButtonCSS" onClick={() => handleClick("Financial Frauds")}>
                     <span className="SmallerTextButton">Financial Frauds</span>
                 </Link>
                 
-                <Link to="/technical" className="SmallerButtonCSS">
+                <Link to="/technical" className="SmallerButtonCSS" onClick={() => handleClick("Tech Support Scams")}>
                     <span className="SmallerTextButton">Tech Support Scams</span>
                 </Link>
-                <Link to="/pv" className="SmallerButtonCSS">
+                <Link to="/pv" className="SmallerButtonCSS" onClick={() => handleClick("Privacy Violations")}>
                     <span className="SmallerTextButton">Privacy Violations</span>
                 </Link>
                 

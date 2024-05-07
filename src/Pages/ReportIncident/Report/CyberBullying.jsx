@@ -4,8 +4,31 @@ import Em from '../../../components/Emergency/Em';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { GrLinkPrevious } from "react-icons/gr";
+import { getDatabase, ref, push,remove  } from "firebase/database";
+
 
 const CyberBullying = () => {
+    const db = getDatabase();
+
+    const handleClick = (category) => {
+        const reportsRef = ref(db, 'victim/subcategory/');
+
+        // Clear existing data in the temporary_reports node
+        remove(reportsRef)
+            .then(() => {
+                // Add the new category to the database
+                push(reportsRef, category)
+                    
+                    .catch((error) => {
+                        console.error("Error writing to database:", error.message);
+                        alert("Error in adding report");
+                    });
+            })
+            .catch((error) => {
+                console.error("Error removing data from database:", error.message);
+                alert("Error in removing existing report data");
+            });
+    };
     return (
         <div className='ReportContainer'>
             <Em />
@@ -53,16 +76,16 @@ const CyberBullying = () => {
 
 
             <div className="CSSForSmallerButton">
-                <Link to="/cyberstalking" className="SmallerButtonCSS">
+                <Link to="/cyberstalking" className="SmallerButtonCSS" onClick={() => handleClick("Cyber Stalking")}>
                     <span className="SmallerTextButton"> Cyberstalking</span>
                 </Link>
-                <Link to="/trolling" className="SmallerButtonCSS">
+                <Link to="/trolling" className="SmallerButtonCSS" onClick={() => handleClick("Trolling")}>
                     <span className="SmallerTextButton">Trolling</span>
                 </Link>
-                <Link to="/harassment" className="SmallerButtonCSS">
+                <Link to="/harassment" className="SmallerButtonCSS" onClick={() => handleClick("Harassment")}>
                     <span className="SmallerTextButton">Harassment</span>
                 </Link>
-                <Link to="/impersonation" className="SmallerButtonCSS">
+                <Link to="/impersonation" className="SmallerButtonCSS" onClick={() => handleClick("Impersonating")}>
                     <span className="SmallerTextButton">Impersonating</span>
                 </Link>
                 
