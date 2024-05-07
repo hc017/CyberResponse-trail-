@@ -4,10 +4,10 @@
 
 .SI_comp{
     width: 100%;
-    height: auto;
+    height: 260vh;
 }
 .title_big{
-    height: 25vh;
+    height: 10vh;
     width: 100%;
     background-color: #295f86;
 }
@@ -15,8 +15,8 @@
 .title_cyber{
     font-weight: bold;
     color: white;
-    padding-left: 13%;
-    padding-top: 65px;
+    padding-left: 5%;
+    padding-top: 27px;
 }
 .title{
     color: #FFF;
@@ -68,7 +68,7 @@
     display: block;
     padding: 30px 20px;
     background-color: #121212;
-  
+    text-decoration: none;
     overflow: hidden;
   
     position: relative;
@@ -149,7 +149,7 @@
     }
   }
 
-
+/* dabba3 */
 
 .container_blog{
     padding-left: 10%;
