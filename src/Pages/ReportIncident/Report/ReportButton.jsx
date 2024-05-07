@@ -10,16 +10,14 @@ const ReportButton = () => {
     const db = getDatabase();
 
     const handleClick = (category) => {
-        const reportsRef = ref(db, 'reports/temporary_reports/');
+        const reportsRef = ref(db, 'victim/maincategory/');
 
         // Clear existing data in the temporary_reports node
         remove(reportsRef)
             .then(() => {
                 // Add the new category to the database
                 push(reportsRef, category)
-                    .then(() => {
-                        alert(`${category} report added successfully!`);
-                    })
+                    
                     .catch((error) => {
                         console.error("Error writing to database:", error.message);
                         alert("Error in adding report");
