@@ -123,3 +123,18 @@
   border: none;
 
 }
+
+#VIT_input1{
+  width: 71%;
+  margin-left: 4.6%;
+}
+.urmobile1{
+
+}
+.status_check{
+  color: aliceblue;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
