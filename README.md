@@ -16,3 +16,10 @@ The CyberSoochna includes:
 - Dashboard: IT experts can view, update, and manage reported issues through a comprehensive dashboard. 
 - Notifications: Real-time notifications for users and admins on issue updates. 
 - Responsive Design: A mobile-friendly user interface for a seamless experience across all devices. 
+# Technologies Used 
+- React: A popular JavaScript library for building user interfaces. 
+- React Router: For handling navigation within the application. The react router we used (react-router-dom) is v6. 
+- Firebase: A comprehensive platform for building web applications. 
+-- Firestore: A NoSQL database for storing and syncing data in real-time. 
+-- Functions: Serverless functions for backend logic. 
+-- Authentication: Secure user authentication and authorization. 
