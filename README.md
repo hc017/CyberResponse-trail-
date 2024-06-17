@@ -21,5 +21,5 @@ The CyberSoochna includes:
 - React Router: For handling navigation within the application. The react router we used (react-router-dom) is v6. 
 - Firebase: A comprehensive platform for building web applications. 
   - Firestore: A NoSQL database for storing and syncing data in real-time. 
- - Functions: Serverless functions for backend logic. 
- - Authentication: Secure user authentication and authorization. 
+   - Functions: Serverless functions for backend logic. 
+   - Authentication: Secure user authentication and authorization. 
