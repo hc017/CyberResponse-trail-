@@ -32,6 +32,13 @@ The CyberSoochna Incident Response Portal includes:
 - **BootStrap**: For responsive development. 
 
 ## Installation
+### Prerequisites
+
+Before you begin, ensure you have the following installed on your local machine:
+
+- **Node.js** (v14.x or higher)
+- **npm** (v6.x or higher) or **Yarn**
+- **Git**
 To get started with the CyberSoochna Incident Response Portal, follow these steps:
 
 1. Clone this repository to your local machine using Git.
