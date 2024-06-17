@@ -87,6 +87,7 @@ If you have Firebase functions that need to be deployed, navigate to the functio
 
 ## Usage
 Configuration of your firebase account. Login to your google account and create a new firebase project [click here](https://console.firebase.google.com/u/0/)
+
 Create a FirebaseConfig.js file and add the following variables:
 ```bash
 // SAMPLE CONFIG, you should put the actual config details found on your project settings
@@ -103,6 +104,7 @@ const firebaseConfig = {
 };
 
 After setting up necessary configuration, create a Realtime Database and start the development server.
+exit
 
 ## License
 
