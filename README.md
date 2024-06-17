@@ -45,7 +45,7 @@ To get started with the CyberSoochna Incident Response Portal, follow these step
 4. Install dependencies.
    ```bash
    npm install
-5. Create a .env file or rename .env.example to .env and add your own configuration based on the provided .env.example file.
+5. Create a .env file or rename .env.example to .env and add your own configuration.
 
 6. Start the development server using this command.
    ```bash
