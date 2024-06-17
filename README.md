@@ -7,3 +7,12 @@ Welcome to the CyberSoochna! This project is a ReactJS and Firebase based incide
 - Usage 
 - Contributing 
 - License 
+# Features 
+The CyberSoochna includes: 
+-Issue Reporting: Users can report issues by filling forms. 
+-Automatic Categorization: Issues are automatically categorized based on predefined rules or algorithms. 
+-User Authentication: Secure registration and login process for users. 
+-Issue Tracking: Users can track the status of their reported issues in real-time. 
+-Dashboard: IT experts can view, update, and manage reported issues through a comprehensive dashboard. 
+-Notifications: Real-time notifications for users and admins on issue updates. 
+-Responsive Design: A mobile-friendly user interface for a seamless experience across all devices. 
