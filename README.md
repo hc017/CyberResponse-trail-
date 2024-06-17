@@ -52,18 +52,22 @@ To get started with the CyberSoochna Incident Response Portal, follow these step
 3. Install dependencies from the terminal.
    ```bash
    npm install
+   ```
    OR
    ```bash
    yarn install
+   ```
    
 4. Create a .env file or rename .env.example to .env and add your own configuration.
 
 5. Now you can run the project, start the development server.
    ```bash
    npm start
+   ```
     OR
    ```bash
    yarn start
+   ```
    
 6. Access the application in your web browser at `http://localhost:3000`.
 
@@ -82,12 +86,12 @@ If you have Firebase functions that need to be deployed, navigate to the functio
    cd functions
    npm install
    firebase deploy --only functions
-
+   ```
 ## Usage
 Configuration of your firebase account. Login to your google account and create a new firebase project [click here](https://console.firebase.google.com/u/0/)
 
 Create a FirebaseConfig.js file and add the following variables:
-    ```bash
+    ```js
       // SAMPLE CONFIG, you should put the actual config details found on your project settings
 
       const firebaseConfig = {
@@ -100,9 +104,8 @@ Create a FirebaseConfig.js file and add the following variables:
         appId: "1:370994734512:web:3e82c1a31746693779e275",
         measurementId: "G-STG4B5C20Z"
       };
-
+    ```
 After setting up necessary configuration, create a Realtime Database and start the development server.
-exit
 
 ## License
 
