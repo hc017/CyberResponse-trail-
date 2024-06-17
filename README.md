@@ -64,6 +64,8 @@ To get started with the CyberSoochna Incident Response Portal, follow these step
 ## License
 
 This project is licensed under the Apache License 2.0. You can freely use, modify, and distribute this software as per the terms of the license.
+For more detailed information, you can refer to the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+
 
 
 
