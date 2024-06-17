@@ -9,19 +9,30 @@ Welcome to the CyberSoochna! This project is a ReactJS and Firebase based incide
 - [License](#license)
 - [About](#about)
 - [Keywords](#keywords)
-## Features 
-The CyberSoochna includes: 
-- Issue Reporting: Users can report issues by filling forms. 
-- Automatic Categorization: Issues are automatically categorized based on predefined rules or algorithms. 
-- User Authentication: Secure registration and login process for users. 
-- Issue Tracking: Users can track the status of their reported issues in real-time. 
-- Dashboard: IT experts can view, update, and manage reported issues through a comprehensive dashboard. 
-- Notifications: Real-time notifications for users and admins on issue updates. 
-- Responsive Design: A mobile-friendly user interface for a seamless experience across all devices. 
-## Technologies Used 
-- React: A popular JavaScript library for building user interfaces. 
-- React Router: For handling navigation within the application. The react router we used (react-router-dom) is v6. 
-- Firebase: A comprehensive platform for building web applications. 
-  - Firestore: A NoSQL database for storing and syncing data in real-time. 
-   - Functions: Serverless functions for backend logic. 
-   - Authentication: Secure user authentication and authorization. 
+## Features
+The CyberSoochna Incident Response Portal includes:
+
+- **Issue Reporting**: Users can report issues with detailed descriptions.
+- **Automatic Categorization**: Issues are automatically categorized based on predefined rules or algorithms.
+- **User Authentication**: Secure registration and login process for users.
+- **Issue Tracking**: Users can track the status of their reported issues in real-time.
+- **Admin Panel**: Admins can view, assign, and manage reported issues through a comprehensive dashboard.
+- **Notifications**: Real-time notifications for users and admins on issue updates.
+- **Responsive Design**: A mobile-friendly user interface for a seamless experience across all devices.
+
+## Technologies Used
+- **React**: A popular JavaScript library for building user interfaces.
+- **Firebase**: A comprehensive platform for building web applications.
+  - **Firestore**: A NoSQL database for storing and syncing data in real-time.
+  - **Functions**: Serverless functions for backend logic.
+  - **Authentication**: Secure user authentication and authorization.
+- **Redux**: A state management library for predictable application state.
+- **Tailwind CSS**: For styling the user interface.
+
+## Installation
+To get started with the CyberSoochna Incident Response Portal, follow these steps:
+
+1. Clone this repository to your local machine using Git.
+
+   ```bash
+   git clone https://github.com/yourusername/cybersoochna.git
