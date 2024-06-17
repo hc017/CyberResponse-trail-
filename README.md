@@ -9,7 +9,7 @@ Welcome to the CyberSoochna! This project is a ReactJS and Firebase based incide
 - [License](#license)
 - [About](#about)
 - [Keywords](#keywords)
-# Features 
+## Features 
 The CyberSoochna includes: 
 - Issue Reporting: Users can report issues by filling forms. 
 - Automatic Categorization: Issues are automatically categorized based on predefined rules or algorithms. 
@@ -18,7 +18,7 @@ The CyberSoochna includes:
 - Dashboard: IT experts can view, update, and manage reported issues through a comprehensive dashboard. 
 - Notifications: Real-time notifications for users and admins on issue updates. 
 - Responsive Design: A mobile-friendly user interface for a seamless experience across all devices. 
-# Technologies Used 
+## Technologies Used 
 - React: A popular JavaScript library for building user interfaces. 
 - React Router: For handling navigation within the application. The react router we used (react-router-dom) is v6. 
 - Firebase: A comprehensive platform for building web applications. 
