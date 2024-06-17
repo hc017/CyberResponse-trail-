@@ -65,7 +65,8 @@ Additional Steps for Firebase Configuration
 Since CyberSoochna uses Firebase for its backend services, you may need to set up Firebase services:
 
 1. Firebase Project Setup
-[Firebase Console](https://console.firebase.google.com/)
+Create a new project on the [Firebase Console](https://console.firebase.google.com/).
+
 
 
 2. Add Firebase SDK
