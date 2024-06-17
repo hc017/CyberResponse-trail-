@@ -91,9 +91,8 @@ If you have Firebase functions that need to be deployed, navigate to the functio
 Configuration of your firebase account. Login to your google account and create a new firebase project [click here](https://console.firebase.google.com/u/0/)
 
 Create a FirebaseConfig.js file and add the following variables:
-    ```javascript
-      // SAMPLE CONFIG, you should put the actual config details found on your project settings
-
+SAMPLE CONFIG, you should put the actual config details found on your project settings.
+```
       const firebaseConfig = {
         apiKey: "AIzaSyD5kgkbKhHVVa9MmJwpD7zNZP5p-T-Huxw",
         authDomain: "yourauthdomin.firebaseapp.com",
@@ -104,7 +103,7 @@ Create a FirebaseConfig.js file and add the following variables:
         appId: "1:370994734512:web:3e82c1a31746693779e275",
         measurementId: "G-STG4B5C20Z"
       };
-    ```
+   ``` 
 After setting up necessary configuration, create a Realtime Database and start the development server.
 
 ## Contributing
