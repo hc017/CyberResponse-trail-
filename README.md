@@ -22,12 +22,14 @@ The CyberSoochna Incident Response Portal includes:
 
 ## Technologies Used
 - **React**: A popular JavaScript library for building user interfaces.
+- **React Router**: For handling navigation within the application. The react router we used (react-router-dom) is v6. 
 - **Firebase**: A comprehensive platform for building web applications.
   - **Firestore**: A NoSQL database for storing and syncing data in real-time.
   - **Functions**: Serverless functions for backend logic.
   - **Authentication**: Secure user authentication and authorization.
 - **Redux**: A state management library for predictable application state.
 - **Tailwind CSS**: For styling the user interface.
+- **BootStrap**: For responsive development. 
 
 ## Installation
 To get started with the CyberSoochna Incident Response Portal, follow these steps:
@@ -35,4 +37,22 @@ To get started with the CyberSoochna Incident Response Portal, follow these step
 1. Clone this repository to your local machine using Git.
 
    ```bash
-   git clone https://github.com/yourusername/cybersoochna.git
+   git clone https://github.com/hc017/CyberSoochna.git
+
+2. Change to the project directory.
+   ```bash
+   cd cybersoochna
+4. Install dependencies.
+   ```bash
+   npm install
+5. Create a .env file or rename .env.example to .env and add your own configuration based on the provided .env.example file.
+
+6. Start the development server using this command.
+   ```bash
+   npm start
+   
+7. Access the application in your web browser at `http://localhost:3000`.
+
+
+
+
