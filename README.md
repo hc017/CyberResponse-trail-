@@ -7,8 +7,6 @@ Welcome to the CyberSoochna! This project is a ReactJS and Firebase based incide
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-- [About](#about)
-- [Keywords](#keywords)
 ## Features
 The CyberSoochna Incident Response Portal includes:
 
