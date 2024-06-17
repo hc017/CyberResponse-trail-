@@ -1,4 +1,4 @@
-#  CyberSoochna- A resilient Framework for collecting and responding to digital crimes and frauds
+z#  CyberSoochna- A resilient Framework for collecting and responding to digital crimes and frauds
 Welcome to the CyberSoochna! This project is a ReactJS and Firebase based incident management solution used for reporting, tracking and automatically assigning cases and categorizing them for the users. Whether you're a business owner interested in our platform, or just a curious user, this README will guide you through the essential details of our project. 
 ## Table of Contents
 - [Features](#features)
@@ -75,10 +75,10 @@ Additional Steps for Firebase Configuration
 Since CyberSoochna uses Firebase for its backend services, you may need to set up Firebase services:
 
 1. Firebase Project Setup
-Create a new project on the Firebase Console.
+Create a new project on the [Firebase Console](https://console.firebase.google.com/).
 
 2. Add Firebase SDK
-Configure your Firebase project by adding the Firebase SDK to your project. Update your .env file with your Firebase project credentials.
+Configure your Firebase project by adding the Firebase SDK to your project. Update your `.env `file with your Firebase project credentials.
 
 3. Deploy Firebase Functions (Optional)
 If you have Firebase functions that need to be deployed, navigate to the functions directory and run the following commands:
