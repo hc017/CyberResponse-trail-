@@ -42,35 +42,41 @@ Before you begin, ensure you have the following installed on your local machine:
   
 To get started with the CyberSoochna Incident Response Portal, follow these steps:
 
-1. Clone this repository to your local machine using Git.
+1. Make a directory where you want to clone this repository to your local machine using Git.
 
    ```bash
    git clone https://github.com/hc017/CyberSoochna.git
 
-2. Change to the project directory.
+2. Open the project in any IDE or editor and navigate to cloned repository directory.
    ```bash
    cd cybersoochna
-4. Install dependencies.
+   
+3. Install dependencies from the terminal.
    ```bash
    npm install
-5. Create a .env file or rename .env.example to .env and add your own configuration.
+   OR
+   ```bash
+   yarn install
+   
+4. Create a .env file or rename .env.example to .env and add your own configuration.
 
-6. Start the development server using this command.
+5. Now you can run the project, start the development server.
    ```bash
    npm start
+    OR
+   ```bash
+   yarn start
    
-7. Access the application in your web browser at `http://localhost:3000`.
+6. Access the application in your web browser at `http://localhost:3000`.
 
 Additional Steps for Firebase Configuration
 Since CyberSoochna uses Firebase for its backend services, you may need to set up Firebase services:
 
 1. Firebase Project Setup
-Create a new project on the [Firebase Console](https://console.firebase.google.com/).
-
-
+Create a new project on the Firebase Console.
 
 2. Add Firebase SDK
-Configure your Firebase project by adding the Firebase SDK to your project. Update your `.env` file with your Firebase project credentials.
+Configure your Firebase project by adding the Firebase SDK to your project. Update your .env file with your Firebase project credentials.
 
 3. Deploy Firebase Functions (Optional)
 If you have Firebase functions that need to be deployed, navigate to the functions directory and run the following commands:
@@ -79,12 +85,26 @@ If you have Firebase functions that need to be deployed, navigate to the functio
    npm install
    firebase deploy --only functions
 
+## Usage
+Configuration of your firebase account. Login to your google account and create a new firebase project [click here](https://console.firebase.google.com/u/0/)
+Create a FirebaseConfig.js file and add the following variables:
+```bash
+// SAMPLE CONFIG, you should put the actual config details found on your project settings
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD5kgkbKhHVVa9MmJwpD7zNZP5p-T-Huxw",
+  authDomain: "yourauthdomin.firebaseapp.com",
+  databaseURL: "yourdburl.firebasedatabase.app/",
+  projectId: "yourproject-id",
+  storageBucket: "yourstoragebucket.appspot.com",
+  messagingSenderId: "370994734512",
+  appId: "1:370994734512:web:3e82c1a31746693779e275",
+  measurementId: "G-STG4B5C20Z"
+};
+
+After setting up necessary configuration, create a Realtime Database and start the development server.
+
 ## License
 
 This project is licensed under the Apache License 2.0. You can freely use, modify, and distribute this software as per the terms of the license.
 For more detailed information, you can refer to the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
-
-
-
-
