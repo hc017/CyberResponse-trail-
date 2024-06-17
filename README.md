@@ -1,1 +1,1 @@
-#CyberSoochna  
+CyberSoochna  
