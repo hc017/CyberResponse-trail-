@@ -61,6 +61,22 @@ To get started with the CyberSoochna Incident Response Portal, follow these step
    
 7. Access the application in your web browser at `http://localhost:3000`.
 
+Additional Steps for Firebase Configuration
+Since CyberSoochna uses Firebase for its backend services, you may need to set up Firebase services:
+
+1. Firebase Project Setup
+Create a new project on the Firebase Console.
+
+2. Add Firebase SDK
+Configure your Firebase project by adding the Firebase SDK to your project. Update your .env file with your Firebase project credentials.
+
+3. Deploy Firebase Functions (Optional)
+If you have Firebase functions that need to be deployed, navigate to the functions directory and run the following commands:
+   ```bash
+   cd functions
+   npm install
+   firebase deploy --only functions
+
 ## License
 
 This project is licensed under the Apache License 2.0. You can freely use, modify, and distribute this software as per the terms of the license.
