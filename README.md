@@ -61,6 +61,10 @@ To get started with the CyberSoochna Incident Response Portal, follow these step
    
 7. Access the application in your web browser at `http://localhost:3000`.
 
+## License
+
+This project is licensed under the Apache License 2.0. You can freely use, modify, and distribute this software as per the terms of the license.
+
 
 
 
