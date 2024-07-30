@@ -1,107 +1,84 @@
 import React from "react";
-import "./Footer.css"; // Assuming you name the CSS file as Footer.css
+import "./Footer.css"; 
 import Logo from "./Logo.png";
-import ICC from "./ICC.png"; // Import the image file// Import the image file
-import CyberDost from "./CyberDost.png"; // Import the image file
-import Instagram from "./Instagram.png";
-import Facebook from "./Facebook.png";
-import LinkedIn from "./LinkedIn.png";
-import Twitter from "./Twitter.png";
-import Emblem from "./emblem.png";
+
+
 const Footer = () => {
   return (
-    <div className="Group-36">
-      <div className="Rectangle-29">
-        <div className="BigAllBox">
-          <div className="BoxBox">
-            <div className="image-remofgvsfvebg-preview-1">
+    <footer class="footer">
+      <div class="footer__addr">
+      <div className="image-remofgvsfvebg-preview-1">
               <img src={Logo} alt="Description of the image" />
             </div>
-            <div className="CyberComponent">CyberSoochna</div>
-            <div className="ResilienceBlock">
-              <div className="A-resilient-Framework-for-collecting-and-responding-t-o-digital-crimes-and-frauds">
-                A resilient Framework for collecting and <br/> responding to digital crimes and frauds
-              </div>
-              <div className="threat"></div>
-              <div className="Rising-Threat-National-Concern-Action-Needed">
-                Rising Threat
-              </div>
-              <div className="Rising-Threat-National-Concern-Action-Needed">
-                National Concern
-              </div>
-              <div className="Rising-Threat-National-Concern-Action-Needed">
-                Action Needed
-              </div>
-            </div>
-          </div>
-          <div className="LogoBoxes">
-            <div className="boxmargin">
-              <button className="emblem">
-                <img src={Emblem} alt="emblem" />
-              </button>
-              <div className="marginal"></div>
-              <button className="icc">
-                <img src={ICC} alt="emblem" />
-              </button>
-              <div className="marginal"></div>
-              <button className="emblem">
-                <img src={CyberDost} alt="emblem" />
-              </button>
-            </div>
-          </div>
+        <h1 class="footer__logo">CyberSoochna</h1>
+        <address>
+          A Resilient Framework for collecting and responding to digital crimes and frauds
+          <br />
+        </address>
+      </div>
 
-          <div className="LinkBoxes">
-            <div className="marginalityBox">
-              <button className="TNC">
-              Disclaimer
-              </button>
-              <div className="hello"></div>
-              <button className="TNC">
-              Community
-              </button>
-              <div className="hello"></div>
-              <button className="TNC">
-                FAQ
-              </button>
-              <div className="hello"></div>
-              <button className="TNC">
-                Privacy Policies
-              </button>
-              <div className="hello"></div>
-              <button className="TNC">
-              Terms and Conditions
-              </button>
-              <div className="marginal"></div>
-              <div className="IFTLicon">
-                <button className="instafb">
-                  <img src={Instagram} alt="emblem" />
-                </button>
-                <button className="instafb">
-                  <img src={Facebook} alt="emblem" />
-                </button>
-                <button className="instafb">
-                  <img src={Twitter} alt="emblem" />
-                </button>
-                <button className="instafb">
-                  <img src={LinkedIn} alt="emblem" />
-                </button>
-              </div>
-            </div>
-          </div>
+      <ul class="footer__nav">
+        <li class="nav__item">
+          <h2 class="nav__title">Media</h2>
 
-        </div>
-        <div className="Line-1"></div>
-        <div className="hellolegal">
-          <div className="LegalInfo"> Legal Information</div>
-          {/* <div className="Line-2"></div> */}
-          <div className="LegalInfo"> Accessibility</div>
-          <div className="LegalInfo"> Cookie Management</div>
-        </div>
+          <ul class="nav__ul">
+            <li>
+              <a href="#">Instagram</a>
+            </li>
+
+            <li>
+              <a href="#">Youtube</a>
+            </li>
+
+            <li>
+              <a href="#">Twitter</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <h2 class="nav__title">About</h2>
+
+          <ul class="nav__ul">
+            <li>
+              <a href="#">Disclaimer</a>
+            </li>
+
+            <li>
+              <a href="#">Community</a>
+            </li>
+
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <h2 class="nav__title">Legal</h2>
+
+          <ul class="nav__ul">
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+
+            <li>
+              <a href="#">Terms of Use</a>
+            </li>
+
+            <li>
+              <a href="#">Sitemap</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="legal">
+        <p>&copy; 2024 Something. All rights reserved.</p>
 
       </div>
-    </div>
+    </footer>
   );
 };
 
 export default Footer;
-

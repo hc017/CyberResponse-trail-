@@ -1,0 +1,193 @@
+.Group-36 {
+    width: 100%;
+    height: 60;
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #161616;
+  }
+  .Rectangle-29 {
+    width: 89%;
+    height: 60vh;
+    margin-left: 5%;
+    padding: 0.1rem;
+  }
+  
+  .BigAllBox{
+    display: flex;
+  }
+  
+  .BoxBox {
+    background-color: #161616;
+    width:45%;
+    height:48vh;
+    margin: 2% 0 0 0;
+  }
+  
+  .LogoBoxes{
+    background-color: #161616;
+    width:25%;
+    height:48vh;
+    margin: 0 0 0 0;
+    
+  }
+  
+  .LinkBoxes{
+    background-color: #161616;
+    width:35%;
+    height:48vh;
+  
+    padding-top: 4%;
+    padding-left: 4%;
+    
+  }
+  
+  
+  .image-remofgvsfvebg-preview-1 img {
+    width:18%;
+    height:14vh;
+    margin: 0 0 0 1%;
+  }
+  
+  .CyberComponent {
+    width: 23.0625%;
+    height: auto;
+    padding-left: 2rem;
+    font-family: SawarabiMincho;
+    font-size: 3.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  }
+  .ResilienceBlock{
+    margin: 0 0 0 0;
+  }
+  .A-resilient-Framework-for-collecting-and-responding-t-o-digital-crimes-and-frauds {
+    width: 33.8125vw;
+    height: 7.25vh;
+    margin: 3% 0 0 6%;
+    font-family: SawarabiMincho;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+  
+  .threat{
+    margin: 3.2%;
+  }
+  .Rising-Threat-National-Concern-Action-Needed {
+    width: 15vw;
+    height: 4.5vh;
+    padding-left: 2.6rem;
+    font-family: SawarabiMincho;
+    margin: -2% 0 0 0;
+    font-size: 1rem;
+    color: rgba(230, 230, 230, 0.85);
+  }
+  
+  .boxmargin{
+    margin-top: 2.4rem ;
+  }
+  .emblem {
+    background-color: transparent; /* Set the background color of the button to transparent */
+    border: none;
+    
+    /* Remove the button border */
+  }
+  .marginal{
+    
+    margin:5%
+  }
+  .emblem:hover,.icc:hover,.TNC:hover,.instafb:hover{
+    transform: scale(1.05);
+  }
+  
+  .emblem img {
+    width: 100%;
+    height: 12vh;
+    background-color: transparent; /* Set the background color of the image to transparent */
+  }
+  
+  .icc {
+    background-color: transparent; /* Set the background color of the button to transparent */
+    border: none;
+  }
+  .icc img {
+    width: 100%;
+    height: 10vh;
+    background-color: transparent; /* Set the background color of the image to transparent */
+  }
+  
+  
+  
+  
+  
+  .TNC {
+    background-color: transparent; /* Set the background color of the button to transparent */
+    border: none;
+    color: #fff;
+    font-size: medium;
+    margin-bottom: 2%;
+    
+    
+    /* Remove the button border */
+  }
+  .hello{
+    margin: 3%;
+  }
+  
+  .IFTLicon{
+  display: flex;
+  
+  
+  }
+  
+  .instafb{
+    background-color: transparent; /* Set the background color of the button to transparent */
+    border: none;
+  }
+  
+  .instafb img{
+    width: 100%;
+    height: 5vh;
+    background-color: transparent;
+  }
+  
+  .Line-1 {
+    width: 100%;
+    height: 0.3%;
+    margin: -1% 0 0.25% 1.08%;
+    transform: rotate(180deg);
+    background-color: #5b5858;
+  }
+  
+  .Line-2 {
+    width: 100%; /* Converted from 1px */
+    height: 0.3%; /* Converted from 18px */
+    margin: -6% 9% 0 6%; /* Converted from 6px 9px 0 10px */
+    transform: rotate(90deg);
+    background-color: #5b5858;
+  }
+  
+  .LegalInfo{
+   
+      width: 9.2%; /* 92px converted to % based on a 100px width containing block */
+      height: 2.1%; /* 21px converted to % based on a 100px height containing block */
+      margin: -0.1% -4% 0 1.2%; /* Margins converted to % based on a 100px width containing block */
+      font-family: SawarabiMincho;
+      font-size: 10px; /* Assuming font size is not converted to % */
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #fff;
+      display: flex;
+  }
+  
+  .hellolegal{
+    display: flex;
+  }
+  
