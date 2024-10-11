@@ -5,6 +5,7 @@ import Logo from "./Logo.png";
 
 const Footer = () => {
   return (
+    <>
     <footer class="footer">
       <div class="footer__addr">
       <div className="image-remofgvsfvebg-preview-1">
@@ -78,6 +79,7 @@ const Footer = () => {
 
       </div>
     </footer>
+    </>
   );
 };
 

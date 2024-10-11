@@ -11,6 +11,7 @@ export const Header = () => {
       <Link to="/" className="title">
         <img src={logo} alt="Website Logo" className="logo" />
       </Link>
+      <span className="titleCR">CyberResponse</span>
       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>
         <span></span>

@@ -29,6 +29,7 @@ import AdminDashboard from '../../Admin/Pages/Dashboard/AdminDashboard'
 import How_to_report from '../../Pages/Home/How_to/How_to_report'
 import DisplayData from '../../Pages/ReportIncident/Victim/DisplayData'
 import ContactUs from '../../Pages/ContactUs/ContactUs'
+import LOGIN from '../../Pages/LoginRegister/LOGIN'
 
 
 const AllRoutes = () => {
@@ -54,6 +55,8 @@ const AllRoutes = () => {
     <Route path='/displaydata' element={<DisplayData/>}></Route>
     <Route path='/contactus' element={<ContactUs/>}></Route>
     <Route path="/how_to_report" element={<How_to_report/>}></Route>
+    <Route path="/log" element={<LOGIN/>}></Route>
+
 
     {/* ------------------------------------------------------------------ */}
     <Route path='/adminregister' element={<AdminRegister/>}></Route>

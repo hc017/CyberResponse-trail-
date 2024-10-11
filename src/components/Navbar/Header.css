@@ -55,6 +55,12 @@ nav .menu span {
     border-radius: 0.2rem;
 }
 
+.titleCR {
+    color: rgb(239, 239, 239);
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
 
 @media (max-width: 760px) {
     nav .menu {
