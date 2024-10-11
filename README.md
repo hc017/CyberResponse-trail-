@@ -94,12 +94,12 @@ Create a FirebaseConfig.js file and add the following variables:
 SAMPLE CONFIG, you should put the actual config details found on your project settings.
 ```
       const firebaseConfig = {
-        apiKey: "AIzaSyD5kgkbKhHVVa9MmJwpD7zNZP5p-T-Huxw",
+        apiKey: "yourapikey",
         authDomain: "yourauthdomin.firebaseapp.com",
         databaseURL: "yourdburl.firebasedatabase.app/",
         projectId: "yourproject-id",
         storageBucket: "yourstoragebucket.appspot.com",
-        messagingSenderId: "370994734512",
+        messagingSenderId: "yourmessageid",
         appId: "1:370994734512:web:3e82c1a31746693779e275",
         measurementId: "G-STG4B5C20Z"
       };
