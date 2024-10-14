@@ -8,7 +8,7 @@ Welcome to the CyberSoochna! This project is a ReactJS and Firebase based incide
 - [Contributing](#contributing)
 - [License](#license)
 ## Features
-The CyberSoochna Incident Response Portal includes:
+The CyberSoochna Incident Response Portal are included here:
 
 - **Issue Reporting**: Users can report issues with detailed descriptions.
 - **Automatic Categorization**: Issues are automatically categorized based on predefined rules or algorithms.
