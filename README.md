@@ -1,5 +1,5 @@
-#  CyberSoochna- A resilient Framework for collecting and responding to digital crimes and frauds
-Welcome to the CyberSoochna! This project is a ReactJS and Firebase based incident management solution used for reporting, tracking and automatically assigning cases and categorizing them for the users. Whether you're a business owner interested in our platform, or just a curious user, this README will guide you through the essential details of our project. 
+#  CyberResponse- A resilient Framework for collecting and responding to digital crimes and frauds
+Welcome to the CyberResponse! This project is a ReactJS and Firebase based incident management solution used for reporting, tracking and automatically assigning cases and categorizing them for the users. Whether you're a business owner interested in our platform, or just a curious user, this README will guide you through the essential details of our project. 
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
@@ -8,7 +8,7 @@ Welcome to the CyberSoochna! This project is a ReactJS and Firebase based incide
 - [Contributing](#contributing)
 - [License](#license)
 ## Features
-The CyberSoochna Incident Response Portal are included here:
+The CyberResponse Incident Response Portal are included here:
 
 - **Issue Reporting**: Users can report issues with detailed descriptions.
 - **Automatic Categorization**: Issues are automatically categorized based on predefined rules or algorithms.
@@ -38,16 +38,16 @@ Before you begin, ensure you have the following installed on your local machine:
 - **npm** (v6.x or higher) or **Yarn**
 - **Git**
   
-To get started with the CyberSoochna Incident Response Portal, follow these steps:
+To get started with the CyberResponse Incident Response Portal, follow these steps:
 
 1. Make a directory where you want to clone this repository to your local machine using Git.
 
    ```bash
-   git clone https://github.com/hc017/CyberSoochna.git
+   git clone https://github.com/hc017/CyberResponse.git
 
 2. Open the project in any IDE or editor and navigate to cloned repository directory.
    ```bash
-   cd cybersoochna
+   cd CyberResponse
    
 3. Install dependencies from the terminal.
    ```bash
@@ -58,9 +58,7 @@ To get started with the CyberSoochna Incident Response Portal, follow these step
    yarn install
    ```
    
-4. Create a .env file or rename .env.example to .env and add your own configuration.
-
-5. Now you can run the project, start the development server.
+4. Now you can run the project, start the development server.
    ```bash
    npm start
    ```
@@ -69,10 +67,10 @@ To get started with the CyberSoochna Incident Response Portal, follow these step
    yarn start
    ```
    
-6. Access the application in your web browser at `http://localhost:3000`.
+5. Access the application in your web browser at `http://localhost:3000`.
 
 Additional Steps for Firebase Configuration
-Since CyberSoochna uses Firebase for its backend services, you may need to set up Firebase services:
+Since CyberResponse uses Firebase for its backend services, you may need to set up Firebase services:
 
 1. Firebase Project Setup
 Create a new project on the [Firebase Console](https://console.firebase.google.com/).
