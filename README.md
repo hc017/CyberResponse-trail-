@@ -100,8 +100,8 @@ SAMPLE CONFIG, you should put the actual config details found on your project se
         projectId: "yourproject-id",
         storageBucket: "yourstoragebucket.appspot.com",
         messagingSenderId: "yourmessageid",
-        appId: "1:370994734512:web:3e82c1a31746693779e275",
-        measurementId: "G-STG4B5C20Z"
+        appId: "yourappid",
+        measurementId: "yourid"
       };
    ``` 
 After setting up necessary configuration, create a Realtime Database and start the development server.
