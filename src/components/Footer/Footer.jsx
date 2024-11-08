@@ -14,7 +14,7 @@ const Footer = () => {
         <h1 class="footer__logo">CyberSoochna</h1>
         <address>
           A Resilient Framework for collecting and responding to digital crimes and frauds
-          <br />
+          {/* <br /> */}
         </address>
       </div>
 
@@ -24,15 +24,15 @@ const Footer = () => {
 
           <ul class="nav__ul">
             <li>
-              <a href="https://www.instagram.com/">Instagram</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" >Instagram</a>
             </li>
 
             <li>
-              <a href="https://www.youtube.com/">Youtube</a>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" >Youtube</a>
             </li>
 
             <li>
-              <a href="https://x.com/?lang=en">Twitter</a>
+              <a href="https://x.com/?lang=en" target="_blank" rel="noopener noreferrer" >Twitter</a>
             </li>
           </ul>
         </li>
@@ -42,15 +42,15 @@ const Footer = () => {
 
           <ul class="nav__ul">
             <li>
-              <a href="https://github.com/hc017/CyberResponse-trail-">Disclaimer</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-" target="_blank" rel="noopener noreferrer" >Disclaimer</a>
             </li>
 
             <li>
-              <a href="https://github.com/hc017/CyberResponse-trail-">Community</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-" target="_blank" rel="noopener noreferrer" >Community</a>
             </li>
 
             <li>
-              <a href="https://github.com/hc017/CyberResponse-trail-">FAQ</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-" target="_blank" rel="noopener noreferrer" >FAQ</a>
             </li>
           </ul>
         </li>
@@ -60,15 +60,15 @@ const Footer = () => {
 
           <ul class="nav__ul">
             <li>
-              <a href="https://github.com/hc017/CyberResponse-trail-">Privacy Policy</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-" target="_blank" rel="noopener noreferrer" >Privacy Policy</a>
             </li>
 
             <li>
-              <a href="https://github.com/hc017/CyberResponse-trail-">Terms of Use</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-" target="_blank" rel="noopener noreferrer" >Terms of Use</a>
             </li>
 
             <li>
-              <a href="https://github.com/hc017/CyberResponse-trail-">Sitemap</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-" target="_blank" rel="noopener noreferrer" >Sitemap</a>
             </li>
           </ul>
         </li>

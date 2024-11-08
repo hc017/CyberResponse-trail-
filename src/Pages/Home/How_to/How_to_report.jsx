@@ -7,7 +7,7 @@ import check from "./check.png";
 import suspect from "./suspect.png";
 import "./How_to_report.css";
 import reportVideo from "./report.mp4"; // Import the video file
-import bgImage from "./bbg.jpg";
+import bgImage from "./bbg21.JPG";
 
 const How_to_report = () => {
   const [isVisible1, setIsVisible1] = useState(false);

@@ -22,7 +22,7 @@
     100% {
       stroke-dasharray: 50% 0;
       stroke-dashoffstet: -20%;
-      fill: hsla(189, 68%, 75%,0%)
+      fill: hsla(189, 69%, 75%, 0)
     }
     
   }
@@ -47,3 +47,11 @@
     justify-content: center; /* Center horizontally */
     text-align: center; /* Center text horizontally */
   }
+
+  /* Add this to your CSS file */
+.ImgJoin img {
+  width: 100%; /* Adjust width as desired */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Adjust if you want to keep the image proportions */
+  padding: 0 5% 0 5%;
+}

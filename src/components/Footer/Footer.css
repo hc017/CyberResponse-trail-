@@ -52,6 +52,7 @@ body {
 .footer address {
   font-style: normal;
   color: #999;
+  width: 70%;
 }
 
 .footer__btn {
