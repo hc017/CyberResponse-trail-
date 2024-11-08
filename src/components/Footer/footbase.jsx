@@ -1,8 +1,8 @@
 import React from "react";
-import "./Footer.css"; // Assuming you name the CSS file as Footer.css
+import "./Footer.css";
 import Logo from "./Logo.png";
-import ICC from "./ICC.png"; // Import the image file// Import the image file
-import CyberDost from "./CyberDost.png"; // Import the image file
+import ICC from "./ICC.png";
+import CyberDost from "./CyberDost.png";
 import Instagram from "./Instagram.png";
 import Facebook from "./Facebook.png";
 import LinkedIn from "./LinkedIn.png";

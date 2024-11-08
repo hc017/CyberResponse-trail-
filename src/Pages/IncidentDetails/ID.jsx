@@ -1,7 +1,7 @@
 import React from 'react'
 import "./ID.css"
-import Em from "../../components/Emergency/Em"
-import UFP_red from '../UserDetails/UserForm/UFP_red'
+// import Em from "../../components/Emergency/Em"
+// import UFP_red from '../UserDetails/UserForm/UFP_red'
 import { Link } from 'react-router-dom'
 
 

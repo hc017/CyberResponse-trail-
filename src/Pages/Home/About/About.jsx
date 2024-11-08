@@ -2,7 +2,7 @@ import React, { useState , useEffect} from 'react';
 import '../JoinUs/JoinUs.css';
 import { useInView } from 'react-intersection-observer';
 import AboutP from './about.jpg' 
-import JoinButton from '../JoinUs/JoinButton';
+// import JoinButton from '../JoinUs/JoinButton';
 import LearnMore from './LearnMore';
 
 const About = () => {

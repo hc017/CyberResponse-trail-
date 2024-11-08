@@ -1,6 +1,6 @@
 import React from "react";
 import "./SI_one.css";
-import S1 from "./S1";
+// import S1 from "./S1";
 
 const SI_one = () => {
   return (
@@ -23,7 +23,7 @@ const SI_one = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="/stayinformed_one" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
               <p class="ag-courses-item_title">
                 What you can do
@@ -34,7 +34,7 @@ const SI_one = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="/stayinformed_one" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
               <p class="ag-courses-item_title">
                 Cyber Hygiene
@@ -45,7 +45,7 @@ const SI_one = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="/stayinformed_one" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
               <p class="ag-courses-item_title">
                 Cryptojacking
@@ -56,7 +56,7 @@ const SI_one = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="/stayinformed_one" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
               <p class="ag-courses-item_title">
                 Frauds
@@ -67,7 +67,7 @@ const SI_one = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="/stayinformed_one" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
               <p class="ag-courses-item_title">
                 Deepfakes
@@ -146,7 +146,6 @@ const SI_one = () => {
             </div>
         </div>
       </div>
-    // </div>
   );
 };
 

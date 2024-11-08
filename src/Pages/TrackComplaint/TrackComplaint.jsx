@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./TrackComplaint.css";
 import Em from "../../components/Emergency/Em";
-import { Link } from "react-router-dom";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'

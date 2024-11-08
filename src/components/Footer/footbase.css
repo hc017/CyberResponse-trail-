@@ -90,13 +90,10 @@
     margin-top: 2.4rem ;
   }
   .emblem {
-    background-color: transparent; /* Set the background color of the button to transparent */
+    background-color: transparent;
     border: none;
-    
-    /* Remove the button border */
   }
   .marginal{
-    
     margin:5%
   }
   .emblem:hover,.icc:hover,.TNC:hover,.instafb:hover{
@@ -106,17 +103,17 @@
   .emblem img {
     width: 100%;
     height: 12vh;
-    background-color: transparent; /* Set the background color of the image to transparent */
+    background-color: transparent;
   }
   
   .icc {
-    background-color: transparent; /* Set the background color of the button to transparent */
+    background-color: transparent;
     border: none;
   }
   .icc img {
     width: 100%;
     height: 10vh;
-    background-color: transparent; /* Set the background color of the image to transparent */
+    background-color: transparent;
   }
   
   

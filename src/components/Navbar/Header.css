@@ -12,8 +12,8 @@ nav {
 
 .logo {
     height: auto;
-    width: 50%; /* Default size */
-    max-width: 150px; /* Maximum size */
+    width: 50%;
+    max-width: 150px;
   }
 
 nav ul {

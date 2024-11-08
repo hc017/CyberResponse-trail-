@@ -34,15 +34,14 @@
   text-align: center;
 }
 #btnad{
-  background-color: #e74c3c; /* A red color to indicate logout */
-  color: white; /* White text for contrast */
-  padding: 10px 20px; /* Padding for size */
-  border: none; /* No border for a cleaner look */
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px; 
+  border: none;
   text-transform: uppercase;
-  border-radius: 5px; /* Slightly rounded corners */
-  font-size: 0.9rem; /* A readable font size */
-  font-weight: bold; /* Bold text */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s; 
   margin-left: 30%;
 }

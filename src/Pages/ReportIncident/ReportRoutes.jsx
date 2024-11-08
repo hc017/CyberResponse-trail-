@@ -1,8 +1,7 @@
 import React from 'react'
 import {
     Routes,
-    Route,
-    Link
+    Route
   } from "react-router-dom"
 
 import ReportIncident from './Report/ReportIncident'

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { getDatabase, ref, get, update } from "firebase/database";
 import { useAuth } from "../../../FirebaseCongfig/AuthContext";
 import Em from "../../../components/Emergency/Em";
-import UFP_red from "../UserForm/UFP_red";
-import UP_bar from "./UP_bar";
+import UFPRed from "../UserForm/UFP_red";
+import UPBar from "./UP_bar";
 import "./UserProfile.css";
 
 const UserProfile = () => {
@@ -86,9 +86,9 @@ const UserProfile = () => {
       <div className="UserD_innercomponent">
         <Em />
         <div className="UD_up_bar"></div>
-        <UP_bar />
+        <UPBar />
         <div className="UD_up_bar"></div>
-        <UFP_red />
+        <UFPRed />
         <div className="UD_up_bar"></div>
         <div className="UD_up_bar"></div>
         <div className="innerform">

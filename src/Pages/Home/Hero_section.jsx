@@ -1,11 +1,11 @@
 import React from "react";
 import "./Hero_section.css";
 import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import HomeButtons from "./HomeButtons";
-import HeaderImg from './header-img.svg'
+// import HeaderImg from './header-img.svg'
 
 const Hero_section = () => {
   const [loopNum, setLoopNum] = useState(0);

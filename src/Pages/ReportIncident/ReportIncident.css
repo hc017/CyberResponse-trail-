@@ -19,15 +19,10 @@
     color: #A4E1F4;
     white-space: nowrap;
     margin: 0;
-    /* Remove margin */
     position: absolute;
-    /* Use absolute positioning */
     top: 0;
-    /* Align to the top of the container */
     left: 50%;
-    /* Align horizontally to the center */
     transform: translateX(-50%);
-    /* Center horizontally */
 }
 
 
@@ -37,14 +32,8 @@
     height: 0.0625vh;
     background-color: #5b5858;
     position: absolute;
-    /* Use absolute positioning */
     top: 3rem;
-    /* Align to the top of the container */
-
-
 }
-
-/* these are big button css */
 
 .ButtonCSS {
     width: 100%;
@@ -121,7 +110,6 @@
     border-radius: 0.625rem;
     background-color: #222222;
     margin: 1rem auto 2%;
-    /* Adjusted margin */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,7 +122,6 @@
     border-radius: 0.625rem;
     background-color: #000000;
     margin: 1rem auto 2%;
-    /* Adjusted margin */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,9 +135,6 @@
     max-height: 30vh; /* Set a maximum height */
     overflow-y: auto; /* Add overflow-y to enable scrolling if content exceeds max height */
     background-color: #222222;
-   
-
-
 }
 
 .forLinks {
@@ -162,7 +146,6 @@
 }
 
 .BoxFitYounger{
-    
         width: 100%;
         height: auto; /* Adjusted height */
         max-height: 70vh; /* Added max-height to limit height */
@@ -185,7 +168,6 @@
     text-align: left;
     color: #fff;
     text-decoration: none;
-    /* Remove underline from links */
 }
 
 
@@ -193,8 +175,6 @@
     color: #fff;
     margin: 0.3rem 0 0 0.2rem;
 }
-
-/* these are text box button css */
 
 .BoxVictimReport {
     /* width: 8%; */
@@ -210,10 +190,6 @@
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-
-
-
-/* these are smaller buttons */
 .CSSForSmallerButton {
     width: 80%;
     height: auto; /* Adjusted height */
@@ -258,7 +234,6 @@
 }
 .BoxVictimReport:hover {
     transform: scale(1.1);
-    /* background-color: #333333; */
 }
 
 .TextVictimReport {
@@ -305,7 +280,6 @@
     border-radius: 0.625rem;
     background-color: #000000;
     margin: 1rem auto 2%;
-    /* Adjusted margin */
     display: flex;
     flex-direction: column;
     justify-content: center;

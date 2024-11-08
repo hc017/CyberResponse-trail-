@@ -9,7 +9,7 @@ const Footer = () => {
     <footer class="footer">
       <div class="footer__addr">
       <div className="image-remofgvsfvebg-preview-1">
-              <img src={Logo} alt="Description of the image" />
+              <img src={Logo} alt="Description of the logo" />
             </div>
         <h1 class="footer__logo">CyberSoochna</h1>
         <address>
@@ -24,15 +24,15 @@ const Footer = () => {
 
           <ul class="nav__ul">
             <li>
-              <a href="#">Instagram</a>
+              <a href="https://www.instagram.com/">Instagram</a>
             </li>
 
             <li>
-              <a href="#">Youtube</a>
+              <a href="https://www.youtube.com/">Youtube</a>
             </li>
 
             <li>
-              <a href="#">Twitter</a>
+              <a href="https://x.com/?lang=en">Twitter</a>
             </li>
           </ul>
         </li>
@@ -42,15 +42,15 @@ const Footer = () => {
 
           <ul class="nav__ul">
             <li>
-              <a href="#">Disclaimer</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-">Disclaimer</a>
             </li>
 
             <li>
-              <a href="#">Community</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-">Community</a>
             </li>
 
             <li>
-              <a href="#">FAQ</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-">FAQ</a>
             </li>
           </ul>
         </li>
@@ -60,15 +60,15 @@ const Footer = () => {
 
           <ul class="nav__ul">
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-">Privacy Policy</a>
             </li>
 
             <li>
-              <a href="#">Terms of Use</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-">Terms of Use</a>
             </li>
 
             <li>
-              <a href="#">Sitemap</a>
+              <a href="https://github.com/hc017/CyberResponse-trail-">Sitemap</a>
             </li>
           </ul>
         </li>

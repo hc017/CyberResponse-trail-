@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./UserRegister.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "./arrow.svg";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "react-phone-input-2/lib/style.css";
@@ -13,7 +13,7 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
 const UserRegister = () => {
-  const [userRegister, setuserRegister] = useState(true);
+  // const [userRegister, setuserRegister] = useState(true);
   const [state, setState] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -96,7 +96,6 @@
 
 .left_bottom {
   padding-top: 1rem;
- /* Convert px values to rem */
 }
 
 .report_btn {
@@ -122,11 +121,11 @@
   height: 4.375rem; /* 70px converted to rem */ /* Convert px values to rem */
   text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25); /* Convert px values to rem */
   font-family: Roboto;
-  font-size: 1.5rem; /* 24px converted to rem */
+  font-size: 1.5rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 4.375rem; /* Center vertically */
+  line-height: 4.375rem;
   letter-spacing: normal;
   color: #101010;
 }
@@ -261,8 +260,6 @@
 
 }
 
-
-/* Add more media queries for other screen sizes as needed */
 .report-cybercrimes {
   background-color: #111;
   padding: 80px 0;

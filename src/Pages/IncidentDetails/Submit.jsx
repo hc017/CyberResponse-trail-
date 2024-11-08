@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Submit.css";
 import Em from "../../components/Emergency/Em";
-import UFP_red from "../UserDetails/UserForm/UFP_red";
+import UFPred from "../UserDetails/UserForm/UFP_red";
 import IDX from "./IDX";
-import UP_bar from "../UserDetails/Userprofilebar/UP_bar";
+import UPbar from "../UserDetails/Userprofilebar/UP_bar";
 import { useAuth } from "../../FirebaseCongfig/AuthContext"; // Import the useAuth hook
 import { getDatabase, ref, get } from "firebase/database";
 
@@ -36,9 +36,9 @@ const Submit = () => {
       <div className="CD_innercomponent">
       <Em />
         <div className="UD_up_bar"></div>
-        <UP_bar />
+        <UPbar />
         <div className="UD_up_bar"></div>
-        <UFP_red />
+        <UFPred />
         <div className="UD_up_bar"></div>
         <IDX />
       <div className="CSD_innerComp2">

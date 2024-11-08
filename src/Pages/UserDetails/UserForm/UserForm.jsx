@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set } from "firebase/database";
 import { useAuth } from "../../../FirebaseCongfig/AuthContext";// Import the useAuth hook from the AuthProvider
-import UP_bar from "../Userprofilebar/UP_bar";
+// import UP_bar from "../Userprofilebar/UP_bar";
 
 const UserForm = () => {
-  const [showOtpInput, setShowOtpInput] = useState(false);
+  // const [showOtpInput, setShowOtpInput] = useState(false);
   const location = useLocation();
   const [RegLogI, setRegLogI] = useState("");
   const [RegName, setRegName] = useState("");
@@ -28,7 +28,7 @@ const UserForm = () => {
   const [policeStation, setPoliceStation] = useState("");
   const navigate = useNavigate();
   const db = getDatabase();
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const { currentUser } = useAuth();
   const [title, setTitle] = useState("");
   const [famMemName, setFamMemName] = useState("");
@@ -46,7 +46,7 @@ const UserForm = () => {
   useEffect(() => {
     // Retrieve user data from location state
     if (location.state) {
-      setEmail(location.state.email);
+      // setEmail(location.state.email);
     }
   }, [location.state]);
 
@@ -75,7 +75,6 @@ const UserForm = () => {
         RegEmail: RegEmail,
         RegRelation: RegRelation,
         famMemName: famMemName,
-        // Add other fields as needed
       });
       await set(ref(db, `users/${currentUser.uid}/userdetails/permanentAddress`), {
         country: country,
@@ -123,12 +122,10 @@ const UserForm = () => {
 
   const countries = [
     { id: 1, name: "India" },
-    // Add more countries as needed
   ];
 
   const states = [
     { id: 1, name: "Maharashtra", countryName: "India" },
-    // Add more states as needed
   ];
 
   const districts = [
@@ -194,8 +191,6 @@ const UserForm = () => {
     { id: 15, name: "Wakad Police Station", districtName: "Pune" },
     { id: 15, name: "Hinjewadi Police Station", districtName: "Pune" },
   ];
-
-
 
 
   return (

@@ -1,6 +1,5 @@
 .Contact-Line {
     width: 70%;
-    /* Allow the line to grow to fill available space */
     height: 0.2vh;
     background-color: #5b5858;
     margin-left: 10%;
@@ -37,7 +36,6 @@
     margin: auto;
     display: block;
     align-items: left;
-    /* Center vertically */
     justify-content: center;
 }
 
@@ -54,12 +52,9 @@
     color: #20433c;
     display: flex;
     justify-content: center;
-    /* Centers the content horizontally */
     align-items: center;
     overflow: hidden;
-    /* Prevents text overflow */
     word-wrap: break-word;
-    /* Change overflow property */
 }
 
 .Contact-Text {
@@ -81,7 +76,7 @@
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    float: right;
+    /* float: right; */
     font-weight: 700;
     letter-spacing: 0.05em;
     margin-top: 5%;
@@ -209,7 +204,6 @@
     text-align: center;
     overflow: hidden;
     word-wrap: break-word;
-    /* Aligning the text to the left */
 }
 
 .Contact-Image-Container {
@@ -217,10 +211,8 @@
     height: 80vh;
     background-color: antiquewhite;
     display: flex;
-    /* Add display flex */
     justify-content: center;
     align-items: center;
-    /* Center vertically */
 }
 
 .reflection-content-Contact {
@@ -228,9 +220,6 @@
     width: 80%;
     height: 50vh;
     display: flex;
-    /* Add display flex */
     justify-content: center;
-    /* Center horizontally */
     align-items: center;
-    /* Center vertically */
 }

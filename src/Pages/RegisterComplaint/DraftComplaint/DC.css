@@ -23,20 +23,18 @@
   width: 40%;
   height: 45%;
   margin-left: 30%;
-  /* Add animation properties */
   animation-name: rotateAnimation;
-  animation-duration: 7s; /* Adjust duration as needed */
-  animation-iteration-count: infinite; /* Rotate infinitely */
-  animation-timing-function: linear; /* Linear timing */
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-/* Define the animation */
 @keyframes rotateAnimation {
   from {
-    transform: rotateY(0deg); /* Start rotation from 0 degrees along Y-axis */
+    transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(360deg); /* End rotation at 360 degrees along Y-axis */
+    transform: rotateY(360deg);
   }
 }
 

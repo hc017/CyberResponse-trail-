@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./CW.css";
 import Em from "../../../components/Emergency/Em";
-import UFP_red from "../../UserDetails/UserForm/UFP_red";
-import UP_bar from "../../UserDetails/Userprofilebar/UP_bar";
+import UFPRed from "../../UserDetails/UserForm/UFP_red";
+import UPBar from "../../UserDetails/Userprofilebar/UP_bar";
 
 const CW = () => {
   const [statusData, setStatusData] = useState([
@@ -54,9 +54,9 @@ const CW = () => {
       <div className="CW_innercomponent">
         <Em />
         <div className="UD_up_bar"></div>
-        <UP_bar />
+        <UPBar />
         <div className="UD_up_bar"></div>
-        <UFP_red />
+        <UFPRed />
         <div className="UD_up_bar"></div>
         <div className="UD_up_bar"></div>
         <div className="CW_innerform">
